@@ -1,0 +1,46 @@
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
+
+#zshrc node specific
+source ~/.zshrc_node
+
+# Set name of the theme to load.
+ZSH_THEME="greenedit"
+#ZSH_THEME="rededit"
+#ZSH_THEME="blueedit"
+#ZSH_THEME="yellowedit"
+
+#print motd
+cat /etc/motd
+
+#turn on comments with # in shell
+setopt interactivecomments
+
+#aliases
+alias zshconfig="vi ~/.zshrc_node"
+alias zshconfig_global="vi ~/.zshrc"
+alias motdconfig="vi ~/bash_scripts/update_motd.sh"
+alias vimconfig="vi ~/.vimrc"
+alias sshconfig="vi ~/.ssh/config"
+alias lh="du -hsc * | sort -hr"
+alias sprunge="curl -F 'sprunge=<-' http://sprunge.us"
+alias upics="curl -F c=@- https://ptpb.pw <"
+alias vi="vim"
+alias sudo="sudo "
+
+#exports
+export EDITOR='vim'
+#deactivate gaskpass
+unset SSH_ASKPASS
+#man colors
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;44;33m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;32m'
+
+#zshconf
+plugins=(git python)
+source $ZSH/oh-my-zsh.sh
