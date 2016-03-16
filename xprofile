@@ -1,0 +1,18 @@
+#daemonize urxvt
+urxvtd -q -o -f &
+
+#compton launch
+compton -GCb --config $HOME/.i3/compton.conf &
+
+#set background
+feh --bg-scale ~/img/wallpaper/current_wp.jpg &
+
+#key mapping
+xbindkeys &
+
+#sound
+cadence &
+pavucontrol &
+
+#ssh-agent
+#eval $(ssh-agent)
