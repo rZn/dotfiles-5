@@ -3,7 +3,11 @@ URxvt*foreground: White
 URxvt.font: xft:Ubuntu Mono:size:10
 URxvt*.depth: 32
 URxvt*.background: [80]#000000
+URxvt.perl-ext-common: default,matcher
 URxvt.url-launcher: /usr/bin/firefox
+URxvt.matcher.button: 1
+URxvt.matcher.rend.0: Uline Bold fg5
+URxvt.colorUL: #4682B4
 x11-ssh-askpass*font:                   -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
 x11-ssh-askpass*background:             #000000
 x11-ssh-askpass*foreground:             #ffffff
