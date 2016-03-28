@@ -5,7 +5,9 @@ set nu
 " active colors
 syntax on
 " choose colors
-colorscheme Tomorrow-Night-Bright
+set background=dark
+colorscheme solarized
+hi Normal ctermbg=none
 " no tab when pasting
 " set paste
 " mouse selection to not have line numbers
