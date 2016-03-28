@@ -1,6 +1,9 @@
 URxvt*scrollBar: False
 URxvt.font: xft: hack:style=Medium:size=10
 URxvt.perl-ext-common: default,matcher
+URxvt*.depth: 32
+URxvt*.background: [90]#202020
+URxvt*.fadeColor: #202020
 
 ! url open
 URxvt.matcher.rend.0: Uline Bold fg5
