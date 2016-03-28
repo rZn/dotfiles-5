@@ -2,6 +2,7 @@ URxvt*scrollBar: False
 URxvt.font: xft: hack:style=Medium:size=10
 URxvt*.depth: 32
 URxvt*.background: [90]#202020
+URxvt*fading: 0
 URxvt*.fadeColor: #202020
 
 ! url open

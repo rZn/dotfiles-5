@@ -117,7 +117,8 @@ exec --no-startup-id i3-msg 'workspace $tag4; exec urxvtc -e screen -rd weechat;
 ###################################################################################
 
 # lock screen
-bindsym $mod+Control+Delete exec "i3lock -d -e -i ~/img/wallpaper/current_i3lock.png ; sleep 1 ; ~/scripts/bash/interfaceliftdownloader/interfacelift.sh -c ~/scripts/bash/interfaceliftdownloader/i3lock.conf"
+#bindsym $mod+Control+Delete exec "i3lock -d -e -i ~/img/wallpaper/current_i3lock.png ; sleep 1 ; ~/scripts/bash/interfaceliftdownloader/interfacelift.sh -c ~/scripts/bash/interfaceliftdownloader/i3lock.conf"
+bindsym $mod+Control+Delete exec "~/.i3/i3lock-fancy-multimonitor/lock"
 
 # apps
 bindsym $mod+Control+t exec thunar
