@@ -1,5 +1,5 @@
 # Env setup
-sudo pacman -S zsh ttf-hack git vim weechat
+sudo pacman -S zsh ttf-hack git vim weechat powerline-fonts xorg-xrdb xclip
 # ansible
 sudo pip install ansible
 # conf weechat
