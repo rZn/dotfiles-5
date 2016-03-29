@@ -1,3 +1,10 @@
+# I3WM full config
+
+![alt tag](http://img15.hostingpics.net/pics/971001201603291106411920x1200scrot.png)
+![alt tag](http://img15.hostingpics.net/pics/391607201603291109041920x1200scrot.png)
+![alt tag](http://img15.hostingpics.net/pics/487495201603291117121920x1200scrot.png)
+
+
 # Env setup
 sudo pacman -S i3-wm zsh git weechat i3lock ttf-hack vim weechat compton conky xbindkeys powerline powerline-fonts xorg-xrdb xclip 
 
