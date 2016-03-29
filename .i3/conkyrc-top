@@ -45,29 +45,29 @@ ${if_match "${execi 120 ping -q -w 2 -c 1 176.34.135.167 > /dev/null && echo ok}
 
     #PACMAN
     ${if_match "${execi 200 checkupdates | wc -l}"!="0"}\
-    {"full_text":" ${execi 200 checkupdates | wc -l}","color":"\#D0151E","separator":false,"separator_block_width":6},\
+    {"full_text":" ${execi 200 checkupdates | wc -l}","color":"\#dc322f","separator":false,"separator_block_width":6},\
     #SEPARATOR
-    {"full_text":" ","color":"\#00AE58","separator":false,"separator_block_width":6},\
+    {"full_text":" ","color":"\#037352","separator":false,"separator_block_width":6},\
     $endif
 
     #AUR
     ${if_match "${execi 1900 cower -u | wc -l}"!="0"}\
     {"full_text":" ${execi 1900 cower -u | wc -l}","color":"\#F15D25","separator":false,"separator_block_width":0},\
     #SEPARATOR
-    {"full_text":" ","color":"\#00AE58","separator":false,"separator_block_width":15},\
+    {"full_text":" ","color":"\#037352","separator":false,"separator_block_width":15},\
     $endif
 
     #WEATHER
     {"full_text":"${execi 1800 ~/.i3/weather.sh | cut -d' ' -f1} ","color":"\#C5C5C5","separator":false,"separator_block_width":0},\
     {"full_text":" ${execi 1800 ~/.i3/weather.sh | cut -d' ' -f2}","color":"\#4285F4","separator":false,"separator_block_width":0},\
     {"full_text":" ${execi 1800 ~/.i3/weather.sh | cut -d' ' -f3}","color":"\#C5C5C5","separator":false,"separator_block_width":0},\
-    {"full_text":" ","color":"\#00AE58","separator":false,"separator_block_width":20},\
+    {"full_text":" ","color":"\#037352","separator":false,"separator_block_width":20},\
 
 $endif
 
 #VOLUME
 ${if_match "${exec amixer get 'Master' | grep '\[on\]' | grep Left | cut -d"[" -f2 | cut -d"%" -f1}" == "" }\
-{"full_text":" ","color":"\#D0151E","separator":false,"separator_block_width":6},\
+{"full_text":" ","color":"\#dc322f","separator":false,"separator_block_width":6},\
 ${else}
     ${if_match ${exec amixer get 'Master' | grep '\[on\]' | grep Left | cut -d"[" -f2 | cut -d"%" -f1} >= 75 }\
     {"full_text":"  ${exec amixer get 'Master' | grep '\[on\]' | grep Left | cut -d"[" -f2 | cut -d"%" -f1}%","color":"\#C5C5C5","separator":false,"separator_block_width":6},\
@@ -82,13 +82,13 @@ $endif
 
 
 #SEPARATOR
-{"full_text":" ","color":"\#00AE58","separator":false,"separator_block_width":15},\
+{"full_text":" ","color":"\#037352","separator":false,"separator_block_width":15},\
 
 #BACKLIGHT
 {"full_text":"  ${exec xbacklight -get | cut -d"." -f1}","color":"\#C5C5C5","separator":false,"separator_block_width":6},\
 
 #SEPARATOR
-{"full_text":" ","color":"\#00AE58","separator":false,"separator_block_width":15},\
+{"full_text":" ","color":"\#037352","separator":false,"separator_block_width":15},\
 
 #WIRED
 ${if_match "${addr br0}" != "No Address" }\
@@ -103,10 +103,10 @@ $endif
 ${if_match "${wireless_essid wlp2s0}" != "off/any" }\
 {"full_text":" ","color":"\#C5C5C5","separator":false,"separator_block_width":6},\
     ${if_match ${wireless_link_qual_perc wlp2s0} >= 75 }\
-    {"full_text":"${wireless_essid wlp2s0}","color":"\#00AE58","separator":false,"separator_block_width":6},\
+    {"full_text":"${wireless_essid wlp2s0}","color":"\#037352","separator":false,"separator_block_width":6},\
     ${else}
         ${if_match ${wireless_link_qual_perc wlp2s0} <= 25 }\
-        {"full_text":"${wireless_essid wlp2s0}","color":"\#D0151E","separator":false,"separator_block_width":6},\
+        {"full_text":"${wireless_essid wlp2s0}","color":"\#dc322f","separator":false,"separator_block_width":6},\
         ${else}
         {"full_text":"${wireless_essid wlp2s0}","color":"\#C5C5C5","separator":false,"separator_block_width":6},\
 
@@ -125,7 +125,7 @@ ${if_match "${exec systemctl status tor | grep 'active (running)'}" != "" }\
 $endif
 
 #SEPARATOR
-{"full_text":" ","color":"\#00AE58","separator":false,"separator_block_width":15},\
+{"full_text":" ","color":"\#073642","separator":false,"separator_block_width":15},\
 
 #BATTERY
 
@@ -139,27 +139,27 @@ ${else}
     ${else}
         ${if_match ${battery_percent BAT0} >= 80}\
         {"full_text":" ","color":"\#C5C5C5","separator":false,"separator_block_width":6},\
-        {"full_text":"${battery_percent BAT0}%","color":"\#00AE58","separator":false,"separator_block_width":6},\
-        {"full_text":"[${battery_time BAT0}]","color":"\#00AE58","separator":false,"separator_block_width":6},\
+        {"full_text":"${battery_percent BAT0}%","color":"\#073642","separator":false,"separator_block_width":6},\
+        {"full_text":"[${battery_time BAT0}]","color":"\#073642","separator":false,"separator_block_width":6},\
         ${else}
             ${if_match ${battery_percent BAT0} >= 50}\
             {"full_text":" ","color":"\#C5C5C5","separator":false,"separator_block_width":6},\
-            {"full_text":"${battery_percent BAT0}%","color":"\#00AE58","separator":false,"separator_block_width":6},\
-            {"full_text":"[${battery_time BAT0}]","color":"\#00AE58","separator":false,"separator_block_width":6},\
+            {"full_text":"${battery_percent BAT0}%","color":"\#073642","separator":false,"separator_block_width":6},\
+            {"full_text":"[${battery_time BAT0}]","color":"\#073642","separator":false,"separator_block_width":6},\
             ${else}
                 ${if_match ${battery_percent BAT0} >= 30}\
                 {"full_text":" ","color":"\#C5C5C5","separator":false,"separator_block_width":6},\
-                {"full_text":"${battery_percent BAT0}%","color":"\#00AE58","separator":false,"separator_block_width":6},\
-                {"full_text":"[${battery_time BAT0}]","color":"\#00AE58","separator":false,"separator_block_width":6},\
+                {"full_text":"${battery_percent BAT0}%","color":"\#073642","separator":false,"separator_block_width":6},\
+                {"full_text":"[${battery_time BAT0}]","color":"\#073642","separator":false,"separator_block_width":6},\
                 ${else}
                     ${if_match ${battery_percent BAT0} >= 10}\
                     {"full_text":" ","color":"\#E56C08","separator":false,"separator_block_width":6},\
                     {"full_text":"${battery_percent BAT0}%","color":"\#E56C08","separator":false,"separator_block_width":6},\
                     {"full_text":"[${battery_time BAT0}]","color":"\#E56C08","separator":false,"separator_block_width":6},\
                     ${else}
-                    {"full_text":" ","color":"\#D0151E","separator":false,"separator_block_width":6},\
-                    {"full_text":"${battery_percent BAT0}%","color":"\#D0151E","separator":false,"separator_block_width":6},\
-                    {"full_text":"[${battery_time BAT0}]","color":"\#D0151E","separator":false,"separator_block_width":6},\
+                    {"full_text":" ","color":"\#dc322f","separator":false,"separator_block_width":6},\
+                    {"full_text":"${battery_percent BAT0}%","color":"\#dc322f","separator":false,"separator_block_width":6},\
+                    {"full_text":"[${battery_time BAT0}]","color":"\#dc322f","separator":false,"separator_block_width":6},\
 
                     $endif
                 $endif
@@ -169,16 +169,16 @@ ${else}
 $endif
 
 #DATE
-{"full_text":" ","color":"\#00AE58","separator":false,"separator_block_width":6},\
+{"full_text":" ","color":"\#073642","separator":false,"separator_block_width":6},\
 {"full_text":"${time %d}","color":"\#C5C5C5","separator":false,"separator_block_width":0},\
-{"full_text":"/","color":"\#00AE58","separator":false,"separator_block_width":0},\
+{"full_text":"/","color":"\#073642","separator":false,"separator_block_width":0},\
 {"full_text":"${time %m}","color":"\#C5C5C5","separator":false,"separator_block_width":0},\
-{"full_text":"/","color":"\#00AE58","separator":false,"separator_block_width":0},\
+{"full_text":"/","color":"\#073642","separator":false,"separator_block_width":0},\
 {"full_text":"${time %Y}","color":"\#C5C5C5","separator":false,"separator_block_width":6},\
-{"full_text":" ","color":"\#00AE58","separator":false,"separator_block_width":6},\
+{"full_text":" ","color":"\#073642","separator":false,"separator_block_width":6},\
 
 #TIME
 {"full_text":"${time %H:%M:%S}","color":"\#C5C5C5","separator":false,"separator_block_width":6},\
-{"full_text":"  ","color":"\#00AE58","separator":false,"separator_block_width":6}\
+{"full_text":"  ","color":"\#073642","separator":false,"separator_block_width":6}\
 
 ],

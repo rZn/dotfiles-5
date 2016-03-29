@@ -42,18 +42,18 @@ TEXT
 
 #ADD DYNAMIC INTERFACE
 
-{"full_text":" ${downspeed wlp2s0}","color":"\#00AE58","separator":false,"separator_block_width":15, "min_width": 65, "align": "left"},\
+{"full_text":" ${downspeed wlp2s0}","color":"\#037352","separator":false,"separator_block_width":15, "min_width": 65, "align": "left"},\
 
 #UP
 
 #ADD DYNAMIC INTERFACE
 
-{"full_text":" ${upspeed wlp2s0}","color":"\#D0151E","separator":false,"separator_block_width":15, "min_width": 65, "align": "left"},\
+{"full_text":" ${upspeed wlp2s0}","color":"\#dc322f","separator":false,"separator_block_width":15, "min_width": 65, "align": "left"},\
 
 #CPU
 
 ${if_match ${cpu cpu0} >= 80}\
-{"full_text":" ${cpu cpu0}%","color":"\#D0151E","separator":false,"separator_block_width":6, "min_width": 65, "align": "left"},\
+{"full_text":" ${cpu cpu0}%","color":"\#dc322f","separator":false,"separator_block_width":6, "min_width": 65, "align": "left"},\
 ${else}
     ${if_match ${cpu cpu0} >= 50}\
     {"full_text":" ${cpu cpu0}%","color":"\#E56C08","separator":false,"separator_block_width":6, "min_width": 65, "align": "left"},\
@@ -69,7 +69,7 @@ $endif
 
 #SYSTEM
 ${if_match ${execi 60 df -h | grep universe-lvroot | awk '{print $5}' | cut -d"%" -f1} >= 95 }\
-    {"full_text":" ${execi 60 df -h | grep universe-lvroot | awk '{print $5}'}","color":"\#D0151E","separator":false,"separator_block_width":6, "min_width": 65, "align": "left"},\
+    {"full_text":" ${execi 60 df -h | grep universe-lvroot | awk '{print $5}'}","color":"\#dc322f","separator":false,"separator_block_width":6, "min_width": 65, "align": "left"},\
     ${else}
     ${if_match ${execi 60 df -h | grep universe-lvroot | awk '{print $5}' | cut -d"%" -f1} >= 90 }\
         {"full_text":" ${execi 60 df -h | grep universe-lvroot | awk '{print $5}'}","color":"\#F15D25","separator":false,"separator_block_width":6, "min_width": 65, "align": "left"},\
@@ -81,7 +81,7 @@ $endif
 
 #HOME
 ${if_match ${execi 60 df -h | grep universe-lvhome | awk '{print $5}' | cut -d"%" -f1} >= 95 }\
-    {"full_text":" ${execi 60 df -h | grep universe-lvhome | awk '{print $5}'}","color":"\#D0151E","separator":false,"separator_block_width":6, "min_width": 65, "align": "left"}\
+    {"full_text":" ${execi 60 df -h | grep universe-lvhome | awk '{print $5}'}","color":"\#dc322f","separator":false,"separator_block_width":6, "min_width": 65, "align": "left"}\
     ${else}
     ${if_match ${execi 60 df -h | grep universe-lvhome | awk '{print $5}' | cut -d"%" -f1} >= 90 }\
         {"full_text":" ${execi 60 df -h | grep universe-lvhome | awk '{print $5}'}","color":"\#F15D25","separator":false,"separator_block_width":6, "min_width": 65, "align": "left"}\
@@ -93,7 +93,7 @@ $endif
 #MPV
 
 #${if_match "${exec xdotool search --class mpv}"==""}\
-#{"full_text":" ","color":"\#00AE58","separator":false,"separator_block_width":6, "min_width": 570, "align": "right"},\
+#{"full_text":" ","color":"\#037352","separator":false,"separator_block_width":6, "min_width": 570, "align": "right"},\
 #${else}
 #{"full_text": "    ${exec xprop -id $(xdotool search --class mpv) | grep 'NET_WM_NAME(UTF8_STRING)' | cut -d'"' -f2}   ","color":"\#C5C5C5","separator":false,"separator_block_width":6, "min_width":570 , "align": "right"}\
 #$endif
@@ -101,7 +101,7 @@ $endif
 #MUSIC
 
 #${if_match "${exec mpc -f %artist% | head  -n 1 | grep -v 'consume: off'| sed 's/\\n//g'}"==""}\
-#{"full_text":" ","color":"\#00AE58","separator":false,"separator_block_width":6, "min_width": 600, "align": "left"}\
+#{"full_text":" ","color":"\#037352","separator":false,"separator_block_width":6, "min_width": 600, "align": "left"}\
 #${else}
 #    ${if_match "${exec mpc status | egrep 'paused|playing' | cut -d" " -f1}"=="[playing]"}\
 #    {"full_text": "    ${exec echo $(mpc -f "%artist%" | head -n 1 | head -c 40 | cut -d"%" -f1) - $(mpc -f "%title%" | head -n 1 | head -c 40 | cut -d"%" -f1)}   ","color":"\#C5C5C5","separator":false,"separator_block_width":6, "min_width": 600, "align": "right"}\
