@@ -4,7 +4,6 @@
 ![alt tag](http://img15.hostingpics.net/pics/391607201603291109041920x1200scrot.png)
 ![alt tag](http://img15.hostingpics.net/pics/487495201603291117121920x1200scrot.png)
 
-
 # Env setup
 sudo pacman -S i3-wm zsh git weechat i3lock ttf-hack vim weechat compton conky xbindkeys powerline powerline-fonts xorg-xrdb xclip 
 
@@ -33,3 +32,9 @@ xrdb ~/.Xresources
 /set weechat.color.chat_highlight black
 
 /script install colorize_nicks.py buffers.pl iset.pl highmon.pl
+
+# Subprojects used
+https://github.com/guimeira/i3lock-fancy-multimonitor
+https://github.com/chjj/compton
+
+
