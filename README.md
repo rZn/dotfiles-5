@@ -1,13 +1,16 @@
 # Env setup
-sudo pacman -S i3-wm zsh git i3lock ttf-hack vim weechat compton conky xbindkeys powerline powerline-fonts xorg-xrdb xclip 
+sudo pacman -S i3-wm zsh git weechat i3lock ttf-hack vim weechat compton conky xbindkeys powerline powerline-fonts xorg-xrdb xclip 
 
 yaourt compton-git powerline ttf-font-awesome ttf-font-icons
 
-# reload Xresources
-xrdb ~/.Xresources
-
 # update font cache
 fc-cache -f
+
+# link to .Xdefaults
+ln -s ~/.Xresources ~/.Xdefaults
+
+# reload Xresources
+xrdb ~/.Xresources
 
 # Weechat solarized
 /set weechat.bar.status.color_bg 0
