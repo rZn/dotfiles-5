@@ -5,7 +5,7 @@
 ![alt tag](http://img15.hostingpics.net/pics/487495201603291117121920x1200scrot.png)
 
 # Env setup
-sudo pacman -S i3-wm zsh git weechat i3lock ttf-hack vim weechat compton conky xbindkeys powerline powerline-fonts xorg-xrdb xclip 
+sudo pacman -S i3-wm rxvt-unicode zsh git weechat i3lock ttf-hack vim weechat compton conky xbindkeys powerline powerline-fonts xorg-xrdb xclip 
 
 yaourt compton-git powerline ttf-font-awesome ttf-font-icons
 
@@ -33,8 +33,14 @@ xrdb ~/.Xresources
 
 /script install colorize_nicks.py buffers.pl iset.pl highmon.pl
 
+# Enable services
+systemctl --user enable weechat.service
+
+systemctl --user enable ssh-agent.service
+
+systemctl --user enable interfacelift.timer
+
 # Subprojects used
 https://github.com/guimeira/i3lock-fancy-multimonitor
+
 https://github.com/chjj/compton
-
-
