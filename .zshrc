@@ -6,13 +6,6 @@ source ~/.zshrc_node
 
 # Set name of the theme to load.
 ZSH_THEME="agnoster"
-#ZSH_THEME="greenedit"
-#ZSH_THEME="rededit"
-#ZSH_THEME="blueedit"
-#ZSH_THEME="yellowedit"
-
-#print motd
-cat /etc/motd
 
 #turn on comments with # in shell
 setopt interactivecomments
