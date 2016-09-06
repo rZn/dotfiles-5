@@ -6,7 +6,7 @@
 
 # Env setup
     
-    sudo pacman -S i3-wm rxvt-unicode zsh git weechat i3lock ttf-hack vim weechat compton conky xbindkeys powerline powerline-fonts xorg-xrdb xclip 
+    sudo pacman -S i3-wm rxvt-unicode zsh git weechat i3lock ttf-hack vim weechat compton conky xbindkeys powerline powerline-fonts xorg-xrdb xclip zsh-syntax-highlighting
 
     yaourt compton-git powerline ttf-font-awesome ttf-font-icons
 

@@ -1,11 +1,11 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-#zshrc node specific
-source ~/.zshrc_node
-
 # Set name of the theme to load.
 ZSH_THEME="agnoster"
+#DEFAULT_USER="user"
+autoload -U promptinit; promptinit
+prompt pure
 
 #turn on comments with # in shell
 setopt interactivecomments
@@ -34,7 +34,13 @@ export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
+#ssh-agent
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
+#zshrc node specific
+source ~/.zshrc_node
 
 #zshconf
 plugins=(git python)
 source $ZSH/oh-my-zsh.sh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
