@@ -1,8 +1,20 @@
-# I3WM full config
+# Archlinux i3wm screenshots
 
-![alt tag](http://img15.hostingpics.net/pics/971001201603291106411920x1200scrot.png)
-![alt tag](http://img15.hostingpics.net/pics/391607201603291109041920x1200scrot.png)
-![alt tag](http://img15.hostingpics.net/pics/487495201603291117121920x1200scrot.png)
+i3wm zsh conky
+
+![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/i3wm.png)
+
+weechat
+
+![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/weechat.png)
+
+thunar dmenu2
+
+![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/thunar.png)
+
+i3lock
+
+![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/i3lock.png)
 
 # Env setup
     
