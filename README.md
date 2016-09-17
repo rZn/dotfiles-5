@@ -8,7 +8,7 @@ weechat
 
 ![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/weechat.png)
 
-thunar dmenu2
+thunar gtk dmenu2
 
 ![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/thunar.png)
 
