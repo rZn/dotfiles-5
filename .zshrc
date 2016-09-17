@@ -4,8 +4,6 @@ export ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load.
 ZSH_THEME="agnoster"
 #DEFAULT_USER="user"
-autoload -U promptinit; promptinit
-prompt pure
 
 #turn on comments with # in shell
 setopt interactivecomments
@@ -16,6 +14,7 @@ alias zshconfig_global="vi ~/.zshrc"
 alias vimconfig="vi ~/.vimrc"
 alias sshconfig="vi ~/.ssh/config"
 alias lh="du -hsc * | sort -hr"
+alias lha="du -hsc .* | sort -hr"
 alias sprunge="curl -F 'sprunge=<-' http://sprunge.us"
 alias ix="curl -s -F 'f:1=<-' ix.io"
 alias upics="curl -F c=@- https://ptpb.pw <"
