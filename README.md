@@ -12,6 +12,10 @@ thunar gtk dmenu2
 
 ![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/thunar.png)
 
+firefox O!MPD
+
+![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/web.png)
+
 i3lock
 
 ![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/i3lock.png)
