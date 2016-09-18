@@ -20,9 +20,12 @@ alias ix="curl -s -F 'f:1=<-' ix.io"
 alias upics="curl -F c=@- https://ptpb.pw <"
 alias vi="vim"
 alias sudo="sudo "
+alias installed="pacman -Qqen"
+alias tmux="tmux -2"
 
 #exports
 export EDITOR='vim'
+export POWERLINE_CONFIG_COMMAND=/usr/bin/powerline-config
 #deactivate gaskpass
 unset SSH_ASKPASS
 #man colors

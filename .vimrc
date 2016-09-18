@@ -40,3 +40,8 @@ set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 set autoindent		" always set autoindenting on
+
+" powerline
+set laststatus=2
+set t_Co=256
+let g:powerline_pycmd="py3"

@@ -22,7 +22,7 @@ i3lock
 
 # Env setup
     
-    sudo pacman -S i3-wm rxvt-unicode zsh git weechat i3lock ttf-hack vim weechat compton conky xbindkeys powerline powerline-fonts xorg-xrdb xclip zsh-syntax-highlighting
+    sudo pacman -S i3-wm rxvt-unicode zsh git weechat i3lock ttf-hack vim weechat compton conky xbindkeys powerline powerline-fonts powerline-vim xorg-xrdb xclip zsh-syntax-highlighting tmux
 
     yaourt compton-git powerline ttf-font-awesome ttf-font-icons
 
