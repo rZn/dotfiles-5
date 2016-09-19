@@ -11,5 +11,5 @@ feh --bg-scale ~/img/wallpaper/current_wp.jpg &
 xbindkeys &
 
 #sound
-cadence &
-pavucontrol &
+#cadence &
+#pavucontrol &
