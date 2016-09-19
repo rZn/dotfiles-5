@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/home/user/.config/beets'
 let g:netrw_dirhist_2='/etc/X11/xorg.conf.d'
 let g:netrw_dirhist_3='/home/user/.config/dunst'
@@ -7,3 +7,4 @@ let g:netrw_dirhist_4='/home/user/.config/beets'
 let g:netrw_dirhist_5='/home/user/downloads/torrents'
 let g:netrw_dirhist_6='/home/user/text'
 let g:netrw_dirhist_7='/home/user/.config/gtk-2.0'
+let g:netrw_dirhist_8='/home/user/.i3/i3lock-fancy-multimonitor'

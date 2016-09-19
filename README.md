@@ -26,6 +26,11 @@ i3lock
 
     yaourt -S compton-git powerline ttf-font-awesome ttf-font-icons j4-dmenu-desktop
 
+    cd ~/.i3
+    git clone https://github.com/guimeira/i3lock-fancy-multimonitor
+    # change BLURTYPE="5x3" in "lock" file
+
+
 # update font cache
     
     fc-cache -f
