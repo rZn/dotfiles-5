@@ -1,4 +1,4 @@
-# Archlinux i3wm screenshots
+# Archlinux i3wm Dark Solarized
 
 i3wm zsh conky
 
