@@ -143,9 +143,7 @@ for_window [class="Bitwig Studio"] move to workspace $tag10
 #for_window [class="Conky"] move scratchpad, scratchpad show
 
 #mpd controls
-bindsym $mod+Control+Left exec mpc prev
-bindsym $mod+Control+Down exec mpc toggle
-bindsym $mod+Control+Right exec mpc next
+bindsym $mod+Control+Down exec ~/.i3/mpcmenu.sh
 bindsym $mod+Control+Up exec ~/scripts/bash/lyricsdownloader/graphicalrapgenius.sh
 #bindsym $mod+Control+Prior exec "cd ~/scripts/bash/interfaceliftdownloader/ ; ./interfacelift.sh -c ./wallpaper.conf ; ./interfacelift.sh -c ./wallpaper_DP1-1.conf ; ./interfacelift.sh -c ./wallpaper_HDMI1.conf ; ./interfacelift.sh -c ./wallpaper_HDMI2.conf"
 bindsym $mod+Control+Prior exec "cd ~/scripts/bash/interfaceliftdownloader/ ; ./interfacelift.sh -c ./wallpaper.conf"

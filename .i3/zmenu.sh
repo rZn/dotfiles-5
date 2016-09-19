@@ -5,7 +5,7 @@ then
     ~/.i3/i3lock-fancy-multimonitor/lock
 fi
 
-if [[ "$action" == "exit" ]]
+if [[ "$action" == "logout" ]]
 then
     i3-msg exit
 fi
