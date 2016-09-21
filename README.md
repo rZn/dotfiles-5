@@ -53,6 +53,11 @@ i3lock
     /set weechat.color.chat_highlight black
     /script install colorize_nicks.py buffers.pl iset.pl highmon.pl
 
+# Google-chrome hide toolbar
+
+    #start google chrome and in a tab enabled ->
+    chrome://flags/#overlay-scrollbars
+
 # Enable services
 
     systemctl --user enable weechat.service
