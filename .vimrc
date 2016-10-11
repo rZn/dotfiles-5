@@ -8,6 +8,8 @@ syntax on
 set background=dark
 colorscheme solarized
 hi Normal ctermbg=none
+let g:solarized_termtrans=1
+" highlight NonText ctermbg=none
 " no tab when pasting
 " set paste
 " mouse selection to not have line numbers

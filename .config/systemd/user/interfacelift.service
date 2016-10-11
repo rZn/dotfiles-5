@@ -3,7 +3,7 @@ Description=Download new wallpaper
 
 [Service]
 Type=forking
-ExecStart=/home/user/scripts/bash/interfaceliftdownloader/interfacelift.sh -c /home/user/scripts/bash/interfaceliftdownloader/wallpaper.conf
+ExecStart=/home/user/dev/git/interfaceliftdownloader/interfacelift.sh -c /home/user/dev/git/interfaceliftdownloader/wallpaper.conf
 
 [Install]
 WantedBy=default.target

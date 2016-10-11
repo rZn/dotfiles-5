@@ -13,8 +13,10 @@ alias zshconfig="vi ~/.zshrc_node"
 alias zshconfig_global="vi ~/.zshrc"
 alias vimconfig="vi ~/.vimrc"
 alias sshconfig="vi ~/.ssh/config"
-alias lh="du -hsc * | sort -hr"
-alias lha="du -hsc .* | sort -hr"
+alias lh="du -hs * | sort -h"
+alias lha="du -hs .* | sort -h"
+alias lhs="(lh;lha) | sort -h"
+#lhs() { for list in $(ls -a | sed 's/\ /\\ /g'); do du -hs $list; done | sort -hr }
 alias sprunge="curl -F 'sprunge=<-' http://sprunge.us"
 alias ix="curl -s -F 'f:1=<-' ix.io"
 alias upics="curl -F c=@- https://ptpb.pw <"
@@ -22,6 +24,7 @@ alias vi="vim"
 alias sudo="sudo "
 alias installed="pacman -Qqen"
 alias tmux="tmux -2"
+chromeapp() { google-chrome-stable --app=$1 }
 
 #exports
 export EDITOR='vim'
@@ -43,6 +46,7 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 source ~/.zshrc_node
 
 #zshconf
+autoload -U zmv
 plugins=(git python)
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

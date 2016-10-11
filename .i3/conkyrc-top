@@ -57,12 +57,12 @@ ${if_match "${execi 120 ping -q -w 2 -c 1 176.34.135.167 > /dev/null && echo ok}
     {"full_text":" ","color":"\#2aa198","separator":false,"separator_block_width":15},\
     $endif
 
-    #WEATHER
-#    {"full_text":"${execi 1800 ~/.i3/weather.sh | cut -d' ' -f1} ","color":"\#c5c5c5","separator":false,"separator_block_width":0},\
-#    {"full_text":" ${execi 1800 ~/.i3/weather.sh | cut -d' ' -f2}","color":"\#4285F4","separator":false,"separator_block_width":0},\
-#    {"full_text":" ${execi 1800 ~/.i3/weather.sh | cut -d' ' -f3}","color":"\#c5c5c5","separator":false,"separator_block_width":0},\
-#    {"full_text":" ","color":"\#2aa198","separator":false,"separator_block_width":20},\
-
+    #PIP
+    ${if_match "${execi 1900 pip list --outdated --timeout 1 --retries 1 | wc -l}"!="0"}\
+    {"full_text":" ${execi 1900 pip list --outdated --timeout 1 --retries 1| wc -l}","color":"\#E7AD00","separator":false,"separator_block_width":0},\
+    #SEPARATOR
+    {"full_text":" ","color":"\#2aa198","separator":false,"separator_block_width":15},\
+    $endif
 $endif
 
 #VOLUME
@@ -85,7 +85,7 @@ $endif
 {"full_text":" ","color":"\#2aa198","separator":false,"separator_block_width":15},\
 
 #BACKLIGHT
-{"full_text":"  ${exec xbacklight -get | cut -d"." -f1}","color":"\#c5c5c5","separator":false,"separator_block_width":6},\
+{"full_text":"  ${exec light -G | cut -d"." -f1}","color":"\#c5c5c5","separator":false,"separator_block_width":6},\
 
 #SEPARATOR
 {"full_text":" ","color":"\#2aa198","separator":false,"separator_block_width":15},\
@@ -116,7 +116,7 @@ $endif
 
 #VPN CONNECTED
 ${if_match "${exec ip address show | grep tun}" != "" }\
-{"full_text":"   VPN","color":"\#F15D25","separator":false,"separator_block_width":6},\
+{"full_text":"     VPN","color":"\#F15D25","separator":false,"separator_block_width":6},\
 $endif
 
 #TOR CONNECTED
