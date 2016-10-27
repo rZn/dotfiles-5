@@ -141,39 +141,36 @@ ${if_match "${exec cat /sys/class/power_supply/BAT0/status}" == "Charging" }\
 {"full_text":" ","color":"\#c5c5c5","separator":false,"separator_block_width":6},\
 {"full_text":"${battery_percent BAT0}%","color":"\#c5c5c5","separator":false,"separator_block_width":6},\
 ${else}
-    ${if_match "${exec cat /sys/class/power_supply/BAT0/status}" == "Full" }\
-    {"full_text":" ","color":"\#c5c5c5","separator":false,"separator_block_width":6},\
-    {"full_text":"${battery_percent BAT0}%","color":"\#c5c5c5","separator":false,"separator_block_width":6},\
-    ${else}
+    ${if_match "${exec cat /sys/class/power_supply/BAT0/status}" != "Full" }\
         ${if_match ${battery_percent BAT0} >= 80}\
-        {"full_text":" ","color":"\#c5c5c5","separator":false,"separator_block_width":6},\
+        {"full_text":" ","color":"\#c5c5c5","separator":false,"separator_block_width":6},\
         {"full_text":"${battery_percent BAT0}%","color":"\#2aa198","separator":false,"separator_block_width":6},\
         {"full_text":" ","color":"\#2aa198","separator":false,"separator_block_width":15},\
         {"full_text":" ","color":"\#c5c5c5","separator":false,"separator_block_width":6},\
         {"full_text":"${battery_time BAT0}","color":"\#2aa198","separator":false,"separator_block_width":6},\
         ${else}
             ${if_match ${battery_percent BAT0} >= 50}\
-            {"full_text":" ","color":"\#c5c5c5","separator":false,"separator_block_width":6},\
+            {"full_text":" ","color":"\#c5c5c5","separator":false,"separator_block_width":6},\
             {"full_text":"${battery_percent BAT0}%","color":"\#2aa198","separator":false,"separator_block_width":6},\
             {"full_text":" ","color":"\#2aa198","separator":false,"separator_block_width":15},\
             {"full_text":" ","color":"\#c5c5c5","separator":false,"separator_block_width":6},\
             {"full_text":"${battery_time BAT0}","color":"\#2aa198","separator":false,"separator_block_width":6},\
             ${else}
                 ${if_match ${battery_percent BAT0} >= 30}\
-                {"full_text":" ","color":"\#c5c5c5","separator":false,"separator_block_width":6},\
+                {"full_text":" ","color":"\#c5c5c5","separator":false,"separator_block_width":6},\
                 {"full_text":"${battery_percent BAT0}%","color":"\#2aa198","separator":false,"separator_block_width":6},\
                 {"full_text":" ","color":"\#2aa198","separator":false,"separator_block_width":15},\
                 {"full_text":" ","color":"\#c5c5c5","separator":false,"separator_block_width":6},\
                 {"full_text":"${battery_time BAT0}","color":"\#2aa198","separator":false,"separator_block_width":6},\
                 ${else}
                     ${if_match ${battery_percent BAT0} >= 10}\
-                    {"full_text":" ","color":"\#E56C08","separator":false,"separator_block_width":6},\
+                    {"full_text":" ","color":"\#E56C08","separator":false,"separator_block_width":6},\
                     {"full_text":"${battery_percent BAT0}%","color":"\#E56C08","separator":false,"separator_block_width":6},\
                     {"full_text":" ","color":"\#2aa198","separator":false,"separator_block_width":15},\
                     {"full_text":" ","color":"\#c5c5c5","separator":false,"separator_block_width":6},\
                     {"full_text":"${battery_time BAT0}","color":"\#E56C08","separator":false,"separator_block_width":6},\
                     ${else}
-                    {"full_text":" ","color":"\#dc322f","separator":false,"separator_block_width":6},\
+                    {"full_text":" ","color":"\#dc322f","separator":false,"separator_block_width":6},\
                     {"full_text":"${battery_percent BAT0}%","color":"\#dc322f","separator":false,"separator_block_width":6},\
                     {"full_text":" ","color":"\#2aa198","separator":false,"separator_block_width":15},\
                     {"full_text":" ","color":"\#c5c5c5","separator":false,"separator_block_width":6},\
