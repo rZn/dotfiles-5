@@ -1,9 +1,14 @@
 #!/bin/bash
-action=$(echo -e "ompd\nspotify\ntransmission\nnicotine\nstreamstudio\nnetflix\nmps-youtube" | dmenu -fn 'hack-10' -h 20 -nb '#202020' -nf '#FFFFFF' -sf '#dc322f' -sb '#202020' -p "wapps >" -w 190 -o 0.9 -y 21 -l 7)
+action=$(echo -e "ompd\nompd-git\nspotify\ntransmission\nnicotine\nstreamstudio\nnetflix\nmps-youtube" | dmenu -fn 'hack-10' -h 20 -nb '#202020' -nf '#FFFFFF' -sf '#dc322f' -sb '#202020' -p "wapps >" -w 190 -o 0.9 -y 21 -l 8)
 
 if [[ "$action" == "ompd" ]]
 then
-    /usr/bin/google-chrome-stable --app="http://127.0.0.1/ompd"
+    /usr/bin/google-chrome-stable --app="http://127.0.0.1/OMPD"
+fi
+
+if [[ "$action" == "ompd-git" ]]
+then
+    /usr/bin/google-chrome-stable --app="http://127.0.0.1/ompd_test"
 fi
 
 if [[ "$action" == "transmission" ]]

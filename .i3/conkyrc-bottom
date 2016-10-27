@@ -39,6 +39,19 @@ TEXT
 
 [
 
+#backup disk
+${if_match ${execi 60 df -h | grep sdb1 | wc -l} == 1 }\
+    ${if_match ${execi 60 df -h | grep sdb1 | awk '{print $5}' | cut -d"%" -f1} >= 95 }\
+        {"full_text":" ${execi 60 df -h | grep sdb1 | awk '{print $5}'}","color":"\#dc322f","separator":false,"separator_block_width":10, "min_width": 65, "align": "left"}\
+        ${else}
+        ${if_match ${execi 60 df -h | grep sdb1 | awk '{print $5}' | cut -d"%" -f1} >= 90 }\
+            {"full_text":" ${execi 60 df -h | grep sdb1 | awk '{print $5}'}","color":"\#F15D25","separator":false,"separator_block_width":10, "min_width": 65, "align": "left"}\
+            ${else}
+            {"full_text":" ${execi 60 df -h | grep sdb1 | awk '{print $5}'}","color":"\#268bd2","separator":false,"separator_block_width":10, "min_width": 65, "align": "left"},\
+
+        $endif
+    $endif
+$endif
 
 #ADD DYNAMIC INTERFACE
 

@@ -1,3 +1,6 @@
+#motd
+cat ~/.config/motd
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -28,6 +31,7 @@ chromeapp() { google-chrome-stable --app=$1 }
 
 #exports
 export EDITOR='vim'
+export VISUAL='vim'
 export POWERLINE_CONFIG_COMMAND=/usr/bin/powerline-config
 #deactivate gaskpass
 unset SSH_ASKPASS

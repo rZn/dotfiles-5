@@ -6,7 +6,7 @@
 set $mod Mod4
 
 # fonts
-font pango: hack, Icons 10
+font pango: hack, Awesome 10
 
 # resolv i3 transparancy bug
 new_window pixel
@@ -101,7 +101,7 @@ exec --no-startup-id i3-msg 'workspace $tag1; exec firefox'
 exec --no-startup-id i3-msg 'workspace $tag2; exec urxvtc -e ~/dev/bash/sshaddmotd/motdprint.sh && urxvtc; workspace $tag1'
 exec --no-startup-id i3-msg 'workspace $tag3; exec thunderbird; workspace $tag1'
 exec --no-startup-id i3-msg 'workspace $tag4; exec urxvtc -e screen -rd weechat; workspace $tag1'
-exec --no-startup-id i3-msg 'workspace $tag5; exec google-chrome-stable --app=http://127.0.0.1/ompd; workspace $tag2'
+exec --no-startup-id i3-msg 'workspace $tag5; exec google-chrome-stable --app=http://127.0.0.1/OMPD; workspace $tag2'
 
 #colors
 # class                 border  backgr. text    indicator child_border
