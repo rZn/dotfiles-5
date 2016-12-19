@@ -95,10 +95,10 @@ $endif
 {"full_text":"  ${exec light -G | cut -d"." -f1}","color":"\#c5c5c5","separator":false,"separator_block_width":6},\
 
 #SEPARATOR
-{"full_text":" ","color":"\#2aa198","separator":false,"separator_block_width":15},\
 
 #WIRED
 ${if_match "${addr br0}" != "No Address" }\
+    {"full_text":" ","color":"\#2aa198","separator":false,"separator_block_width":15},\
     ${if_match "${exec ip a | grep -A 1 ' br0:' | grep ether | awk '{print $2}'}" == "${exec cat ~/.i3/mac_orig}" }\
     {"full_text":"ORIG       ${addr br0}","color":"\#c5c5c5","separator":false,"separator_block_width":6},\
     ${else}
@@ -108,6 +108,7 @@ $endif
 
 #WIFI
 ${if_match "${wireless_essid wlp2s0}" != "off/any" }\
+{"full_text":" ","color":"\#2aa198","separator":false,"separator_block_width":15},\
 {"full_text":" ","color":"\#c5c5c5","separator":false,"separator_block_width":6},\
     ${if_match ${wireless_link_qual_perc wlp2s0} >= 75 }\
     {"full_text":"${wireless_essid wlp2s0}","color":"\#2aa198","separator":false,"separator_block_width":6},\
@@ -175,6 +176,7 @@ ${else}
                     {"full_text":" ","color":"\#2aa198","separator":false,"separator_block_width":15},\
                     {"full_text":" ","color":"\#c5c5c5","separator":false,"separator_block_width":6},\
                     {"full_text":"${battery_time BAT0}","color":"\#dc322f","separator":false,"separator_block_width":6},\
+                    {"full_text":" ","color":"\#2aa198","separator":false,"separator_block_width":6},\
 
                     $endif
                 $endif
@@ -197,7 +199,6 @@ $endif
 #{"full_text":"  ","background":"\#073642","separator":false,"separator_block_width":6}\
 
 #DATE
-{"full_text":" ","color":"\#2aa198","separator":false,"separator_block_width":6},\
 {"full_text":"${time %d}","color":"\#c5c5c5","separator":false,"separator_block_width":0},\
 {"full_text":"/","color":"\#2aa198","separator":false,"separator_block_width":0},\
 {"full_text":"${time %m}","color":"\#c5c5c5","separator":false,"separator_block_width":0},\

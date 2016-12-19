@@ -26,12 +26,15 @@ alias upics="curl -F c=@- https://ptpb.pw <"
 alias vi="vim"
 alias sudo="sudo "
 alias installed="pacman -Qqen"
+alias chrome="google-chrome-stable"
 alias tmux="tmux -2"
+bak() { cp "$1" "$1.bak" }
 chromeapp() { google-chrome-stable --app=$1 }
 
 #exports
 export EDITOR='vim'
 export VISUAL='vim'
+export BROWSER='google-chrome-stable'
 export POWERLINE_CONFIG_COMMAND=/usr/bin/powerline-config
 #deactivate gaskpass
 unset SSH_ASKPASS

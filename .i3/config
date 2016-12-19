@@ -15,7 +15,8 @@ new_window pixel
 bindsym $mod+Return exec urxvtc
 
 # start dmenu
-bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -fn 'hack-10' -h 20 -nb '#202020' -nf '#FFFFFF' -sf '#dc322f' -sb '#202020' -p '>' -b -w 400 -q -o 0.9"
+#bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -fn 'hack-10' -h 20 -nb '#202020' -nf '#FFFFFF' -sf '#dc322f' -sb '#202020' -p '>' -b -w 400 -q -o 0.9"
+bindsym $mod+d exec --no-startup-id .i3/j4-dmenu.sh
 
 #############################################################################################################################
 
@@ -97,10 +98,10 @@ set $tag9 "9:"
 set $tag10 "10:"
 
 # exec startup apps
-exec --no-startup-id i3-msg 'workspace $tag1; exec firefox'
-exec --no-startup-id i3-msg 'workspace $tag2; exec urxvtc -e ~/dev/bash/sshaddmotd/motdprint.sh && urxvtc; workspace $tag1'
-exec --no-startup-id i3-msg 'workspace $tag3; exec thunderbird; workspace $tag1'
-exec --no-startup-id i3-msg 'workspace $tag4; exec urxvtc -e screen -rd weechat; workspace $tag1'
+exec --no-startup-id i3-msg 'workspace $tag1; exec google-chrome-stable'
+exec --no-startup-id i3-msg 'workspace $tag2; exec urxvtc -e ~/dev/bash/sshaddmotd/motdprint.sh && urxvtc'
+exec --no-startup-id i3-msg 'workspace $tag3; exec thunderbird'
+exec --no-startup-id i3-msg 'workspace $tag4; exec urxvtc -e screen -rd weechat'
 exec --no-startup-id i3-msg 'workspace $tag5; exec google-chrome-stable --app=http://127.0.0.1/OMPD; workspace $tag2'
 
 #colors
@@ -124,27 +125,13 @@ bindsym $mod+w exec ~/dev/git/dmenu2-web/launcher.sh
 
 # apps
 bindsym $mod+Control+t exec thunar
-bindsym $mod+Control+w exec wicd-client -n
+bindsym $mod+Control+w exec connman-gtk
 
 # by class
 ## floatings
 for_window [class="Cssh"] floating enable, border normal
 for_window [class="XTerm"] floating enable, border normal
 for_window [class="feh"] floating enable, border normal
-## workspace 5
-for_window [class="127.0.0.1__ompd"] move to workspace $tag5, layout tabbed
-for_window [class="Spotify"] move to workspace $tag5
-## workspace 6
-for_window [class="localhost__transmission_web"] move to workspace $tag6, layout tabbed
-for_window [class="nicotine.py"] move to workspace $tag6, layout tabbed
-## workspace 7
-for_window [class="www.netflix.com"] move to workspace $tag7, layout tabbed
-## workspace 8
-for_window [class="Hedgewars"] move to workspace $tag8, layout tabbed
-## workspace 10
-for_window [class="Pavucontrol"] move to workspace $tag10
-for_window [class="Cadence"] move to workspace $tag10
-for_window [class="wicd-client.py"] move to workspace $tag10
 
 #mpd controls
 bindsym $mod+Control+Left exec mpc prev
@@ -155,8 +142,8 @@ bindsym $mod+Control+Prior exec "cd ~/dev/git/interfaceliftdownloader/ ; ./inter
 bindsym $mod+Control+Next exec ~/dev/git/interfaceliftdownloader/interfacelift.sh -sc ~/dev/git/interfaceliftdownloader/wallpaper.conf
 
 #toggle workspace's display screen
-bindsym $mod+less move workspace to output left
-bindsym $mod+Shift+less move workspace to output right
+bindsym $mod+less move workspace to output right
+bindsym $mod+Shift+less move workspace to output up
 
 #assign workspace to screens
 workspace $tag1 output DP-1-1
@@ -164,11 +151,11 @@ workspace $tag2 output eDP-1
 workspace $tag3 output eDP-1
 workspace $tag4 output eDP-1
 workspace $tag5 output eDP-1
-#workspace $tag6 output DP-1-1
-#workspace $tag7 output DP-1-1
-#workspace $tag8 output DP-1-1
-#workspace $tag9 output eDP-1
-#workspace $tag10 output DP-1-2
+workspace $tag6 output eDP-1
+workspace $tag7 output eDP-1
+workspace $tag8 output eDP-1
+workspace $tag9 output eDP-1
+workspace $tag10 output eDP-1
 
 ###################################################################################
 
