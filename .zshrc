@@ -16,13 +16,11 @@ alias zshconfig="vi ~/.zshrc_node"
 alias zshconfig_global="vi ~/.zshrc"
 alias vimconfig="vi ~/.vimrc"
 alias sshconfig="vi ~/.ssh/config"
-alias lh="du -hs * | sort -h"
-alias lha="du -hs .* | sort -h"
-alias lhs="(lh;lha) | sort -h"
+alias lh="du -ahd1 | sort -h"
 #lhs() { for list in $(ls -a | sed 's/\ /\\ /g'); do du -hs $list; done | sort -hr }
 alias sprunge="curl -F 'sprunge=<-' http://sprunge.us"
 alias ix="curl -s -F 'f:1=<-' ix.io"
-alias upics="curl -F c=@- https://ptpb.pw <"
+up () { curl -F "c=@${1:--}" http://ptpb.pw/ }
 alias vi="vim"
 alias sudo="sudo "
 alias installed="pacman -Qqen"
@@ -30,6 +28,27 @@ alias chrome="google-chrome-stable"
 alias tmux="tmux -2"
 bak() { cp "$1" "$1.bak" }
 chromeapp() { google-chrome-stable --app=$1 }
+extract() {
+   if [ -f $1 ] ; then
+       case $1 in
+           *.tar.bz2)	tar xvjf $1    ;;
+           *.tar.gz)	tar xvzf $1    ;;
+	   *.tar.xz)	tar xJf $1     ;;
+           *.bz2)	bunzip2 $1     ;;
+           *.rar)	unrar x $1     ;;
+           *.gz)	gunzip $1      ;;
+           *.tar)	tar xvf $1     ;;
+           *.tbz2)	tar xvjf $1    ;;
+           *.tgz)	tar xvzf $1    ;;
+           *.zip)	unzip $1       ;;
+           *.Z)		uncompress $1  ;;
+           *.7z)	7z x $1        ;;
+           *)		echo "Unable to extract '$1'" ;;
+       esac
+   else
+       echo "'$1' is not a valid file"
+   fi
+}
 
 #exports
 export EDITOR='vim'

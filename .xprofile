@@ -11,6 +11,9 @@ feh --bg-scale ~/img/wallpaper/current_wp.jpg &
 #key mapping
 xbindkeys &
 
+#app launcher
+albert &
+
 #sound
 #cadence &
 #pavucontrol &

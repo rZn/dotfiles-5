@@ -112,6 +112,12 @@ client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
+#i3-gaps
+for_window [class="^.*"] border pixel 0
+gaps inner 3
+gaps outer 0
+smart_gaps on
+
 #############################################################################################################################
 
 #zmenu
@@ -137,9 +143,9 @@ for_window [class="feh"] floating enable, border normal
 bindsym $mod+Control+Left exec mpc prev
 bindsym $mod+Control+Down exec mpc toggle
 bindsym $mod+Control+Right exec mpc next
-bindsym $mod+Control+Up exec ~/dev/git/lyricsdownloader/graphicalrapgenius.sh
+bindsym $mod+Control+Up exec "~/dev/git/lyricsdownloader/graphicalrapgenius.sh"
 bindsym $mod+Control+Prior exec "cd ~/dev/git/interfaceliftdownloader/ ; ./interfacelift.sh -c ./wallpaper.conf"
-bindsym $mod+Control+Next exec ~/dev/git/interfaceliftdownloader/interfacelift.sh -sc ~/dev/git/interfaceliftdownloader/wallpaper.conf
+bindsym $mod+Control+Next exec "~/dev/git/interfaceliftdownloader/interfacelift.sh -sc ~/dev/git/interfaceliftdownloader/wallpaper.conf"
 
 #toggle workspace's display screen
 bindsym $mod+less move workspace to output right
@@ -209,23 +215,23 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# i3bars
-bar {
-        position top
-        strip_workspace_numbers yes
-        status_command $HOME/.i3/conky-top.sh
-        tray_output none
-        colors{
-            background #202020
-            focused_workspace #FFFFFF #A4A4A4 #000000
-        }
-}
-
-bar {
-        position bottom
-        status_command $HOME/.i3/conky-bottom.sh
-        workspace_buttons no
-        colors{
-            background #202020
-        }
-}
+exec always --no-startup-id $HOME/.config/polybar/launch.sh
+#bar {
+#        position top
+#        strip_workspace_numbers yes
+#        status_command $HOME/.i3/conky-top.sh
+#        tray_output none
+#        colors{
+#            background #202020
+#            focused_workspace #FFFFFF #A4A4A4 #000000
+#        }
+#}
+#
+#bar {
+#        position bottom
+#        status_command $HOME/.i3/conky-bottom.sh
+#        workspace_buttons no
+#        colors{
+#            background #202020
+#        }
+#}

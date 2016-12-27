@@ -185,6 +185,9 @@ ${else}
     $endif
 $endif
 
+#SEPARATOR
+{"full_text":" ","color":"\#2aa198","separator":false,"separator_block_width":15},\
+
 #DATE
 #{"full_text":"","color":"\#268bd2","separator":false,"separator_block_width":0},\
 #{"full_text":" ${time %d}","color":"\#073642","background":"\#268bd2","separator":false,"separator_block_width":0},\
