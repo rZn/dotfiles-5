@@ -8,7 +8,7 @@ Weechat
 
 ![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/weechat.png)
 
-O!MPD thunar gtk
+Chrome App mode with O!MPD, thunar gtk
 
 ![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/thunar.png)
 
@@ -24,7 +24,7 @@ Connman
 
 ![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/connman.png)
 
-# Env setup
+# Setup
     
     sudo pacman -S rxvt-unicode zsh git i3lock ttf-hack vim weechat compton xbindkeys powerline powerline-fonts powerline-vim xorg-xrdb xclip zsh-syntax-highlighting tmux
 
@@ -68,7 +68,11 @@ Connman
     systemctl --user enable ssh-agent.service
     systemctl --user enable interfacelift.timer
 
-# Subprojects used
+# Subprojects
+
+https://github.com/Airblader/i3
+
+https://github.com/jaagr/polybar
 
 https://github.com/guimeira/i3lock-fancy-multimonitor
 
