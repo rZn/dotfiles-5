@@ -1,30 +1,34 @@
-# Archlinux i3wm Dark Solarized
+# Archlinux i3-gaps Dark Solarized
 
-i3wm zsh conky
+i3-gaps zsh polybar
 
 ![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/i3wm.png)
 
-weechat
+Weechat
 
 ![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/weechat.png)
 
-thunar gtk dmenu2
+O!MPD thunar gtk
 
 ![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/thunar.png)
 
-firefox O!MPD
+Retroarch
 
-![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/web.png)
+![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/retroarch.png)
 
 i3lock
 
 ![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/i3lock.png)
 
+Connman
+
+![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/connman.png)
+
 # Env setup
     
-    sudo pacman -S i3-wm rxvt-unicode zsh git i3lock ttf-hack vim weechat compton conky xbindkeys powerline powerline-fonts powerline-vim xorg-xrdb xclip zsh-syntax-highlighting tmux
+    sudo pacman -S rxvt-unicode zsh git i3lock ttf-hack vim weechat compton xbindkeys powerline powerline-fonts powerline-vim xorg-xrdb xclip zsh-syntax-highlighting tmux
 
-    yaourt -S compton-git powerline ttf-font-awesome ttf-font-icons j4-dmenu-desktop
+    pacaur -S i3-gaps polybar albert compton-git powerline ttf-font-awesome ttf-unifont ttf-font-icons j4-dmenu-desktop siji-git
 
     cd ~/.i3
     git clone https://github.com/guimeira/i3lock-fancy-multimonitor
