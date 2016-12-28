@@ -6,7 +6,7 @@ i3-gaps zsh polybar
 
 Weechat
 
-![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/weechat.png)
+![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/irc.png)
 
 Chrome App mode with O!MPD, thunar gtk
 
