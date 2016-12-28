@@ -101,8 +101,7 @@ set $tag10 "10:"
 exec --no-startup-id i3-msg 'workspace $tag1; exec google-chrome-stable'
 exec --no-startup-id i3-msg 'workspace $tag2; exec urxvtc -e ~/dev/bash/sshaddmotd/motdprint.sh && urxvtc'
 exec --no-startup-id i3-msg 'workspace $tag3; exec thunderbird'
-exec --no-startup-id i3-msg 'workspace $tag4; exec urxvtc -e screen -rd weechat'
-exec --no-startup-id i3-msg 'workspace $tag5; exec google-chrome-stable --app=http://127.0.0.1/OMPD; workspace $tag2'
+exec --no-startup-id i3-msg 'workspace $tag4; exec urxvtc -e screen -rd weechat; workspace $tag2'
 
 #colors
 # class                 border  backgr. text    indicator child_border
@@ -115,7 +114,7 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 #i3-gaps
 for_window [class="^.*"] border pixel 0
 gaps inner 3
-gaps outer 0
+gaps outer 3
 smart_gaps on
 
 #############################################################################################################################

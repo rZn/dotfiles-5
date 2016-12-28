@@ -56,6 +56,10 @@ Connman
     /set weechat.color.chat_highlight_bg red
     /set weechat.color.chat_highlight black
     /script install colorize_nicks.py buffers.pl iset.pl highmon.pl
+    /bar toggle nicklist
+    /bar toggle title
+    /bar toggle status
+    /set weechat.bar.buffers.position right
 
 # Google-chrome hide toolbar
 

@@ -110,7 +110,7 @@ tray-padding = 2
 
 [module/xwindow]
 type = internal/xwindow
-label = "   %{F#5b5b5b}%{F-} %title:0:50:...%"
+label = "   %{F#5b5b5b}%{F-} %title:0:70:...%"
 
 [module/xkeyboard]
 type = internal/xkeyboard
