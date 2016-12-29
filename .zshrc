@@ -26,6 +26,7 @@ alias sudo="sudo "
 alias installed="pacman -Qqen"
 alias chrome="google-chrome-stable"
 alias tmux="tmux -2"
+alias neofetch="neofetch --crop_mode fit --image_size 33% --image ~/.config/neofetch/archlinux_clean2.png --colors 3 10 7 4 10 10"
 bak() { cp "$1" "$1.bak" }
 chromeapp() { google-chrome-stable --app=$1 }
 extract() {
