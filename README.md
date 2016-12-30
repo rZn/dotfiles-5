@@ -2,7 +2,7 @@
 
 i3-gaps zsh polybar
 
-![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/i3wm.png)
+![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/i3gaps.png)
 
 Weechat
 
