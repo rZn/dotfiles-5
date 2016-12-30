@@ -26,7 +26,7 @@ Connman
 
 # Setup
     
-    sudo pacman -S rxvt-unicode zsh git i3lock ttf-hack vim weechat compton xbindkeys powerline powerline-fonts powerline-vim xorg-xrdb xclip zsh-syntax-highlighting tmux
+    sudo pacman -S rxvt-unicode zsh git i3lock ttf-hack vim weechat compton xbindkeys powerline powerline-fonts powerline-vim xorg-xrdb xclip zsh-syntax-highlighting tmux xorg-xfd connman connman-gtk
 
     pacaur -S i3-gaps polybar albert compton-git powerline ttf-font-awesome ttf-unifont ttf-font-icons j4-dmenu-desktop siji-git
 
@@ -59,7 +59,21 @@ Connman
     /bar toggle nicklist
     /bar toggle title
     /bar toggle status
-    /set weechat.bar.buffers.position right
+    /set weechat.look.separator_horizontal " "
+    /set buffers.color.current_bg 240
+    /set buffers.color.current_fg white
+    /set buffers.look.show_number off
+    /set weechat.bar.buffers.position top
+    /set weechat.look.buffer_time_format ${color:252}%H${color:245}%M${color:240}%S
+    /set env TERM screen-256color
+    /upgrade
+    /set weechat.bar.input.items "            ,[input_search],[input_paste],input_text"
+    /set weechat.bar.input.color_delim 240
+    /set weechat.look.prefix_error "✘"
+    /set weechat.look.prefix_join ""
+    /set weechat.look.prefix_quit ""
+    /set weechat.look.prefix_suffix " "
+    /set weechat.look.read_marker none
 
 # Google-chrome hide toolbar
 
