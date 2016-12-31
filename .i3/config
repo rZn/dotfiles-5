@@ -135,6 +135,7 @@ bindsym $mod+Control+w exec connman-gtk
 
 # by class
 ## floatings
+for_window [class=”Terminator” instance=”dropdown”] floating enable move absolute position 1600 1080
 for_window [class="Cssh"] floating enable, border normal
 for_window [class="XTerm"] floating enable, border normal
 for_window [class="feh"] floating enable, border normal

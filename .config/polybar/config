@@ -208,6 +208,7 @@ type = internal/github
 token = ${env:GITHUB_API_TOKEN}
 
 label = "%{u#2aa198}%{F#5b} %{F-}%notifications%%{u-}"
+empty-notifications = true
 ;format-prefix = "%{F#5b}%{F-}"
 
 [module/mpd]
@@ -389,7 +390,7 @@ type = internal/battery
 battery = BAT0
 adapter = AC
 full-at = 98
-time-format = %H:%M
+time-format = "%H%{F#92}%M%{F-}"
 
 label-discharging = %percentage% %time%
 
