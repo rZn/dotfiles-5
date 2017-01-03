@@ -379,8 +379,8 @@ format-connected-underline = #9f78e1
 format-disconnected-underline = ${self.format-connected-underline}
 
 label-connected = "%{A1:connman-gtk:}%{F#5b5b5b}%{F-} %essid%%{A}"
-label-disconnected = %ifname%
-label-disconnected-foreground = ${colors.foreground-alt}
+label-disconnected = "%{A1:connman-gtk:} %ifname%%{A}"
+label-disconnected-foreground = #5b
 
 ramp-signal-0 = 
 ramp-signal-1 = 
@@ -529,7 +529,7 @@ type = custom/menu
 
 label-open = 
 label-open-foreground = #b63650
-label-close =  cancel
+label-close =  cancel
 label-close-foreground = ${colors.secondary}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}

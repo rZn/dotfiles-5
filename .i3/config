@@ -220,7 +220,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-exec always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #bar {
 #        position top
 #        strip_workspace_numbers yes
