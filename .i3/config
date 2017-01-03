@@ -159,7 +159,7 @@ workspace $tag3 output eDP-1
 workspace $tag4 output eDP-1
 workspace $tag5 output eDP-1
 workspace $tag6 output eDP-1
-workspace $tag7 output eDP-1
+workspace $tag7 output DP-1-2
 workspace $tag8 output eDP-1
 workspace $tag9 output eDP-1
 workspace $tag10 output eDP-1
