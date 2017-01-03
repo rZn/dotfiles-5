@@ -135,10 +135,14 @@ bindsym $mod+Control+w exec connman-gtk
 
 # by class
 ## floatings
-for_window [class=”Terminator” instance=”dropdown”] floating enable move absolute position 1600 1080
 for_window [class="Cssh"] floating enable, border normal
 for_window [class="XTerm"] floating enable, border normal
 for_window [class="feh"] floating enable, border normal
+
+# assigns focus
+assign [class="Connman-gtk"] $tag10
+#for_window [class="Connman-gtk"] move to workspace $tag10, focus
+for_window [class="Connman-gtk"] focus
 
 #mpd controls
 bindsym $mod+Control+Left exec mpc prev
@@ -157,12 +161,12 @@ workspace $tag1 output DP-1-1
 workspace $tag2 output eDP-1
 workspace $tag3 output eDP-1
 workspace $tag4 output eDP-1
-workspace $tag5 output eDP-1
-workspace $tag6 output eDP-1
-workspace $tag7 output DP-1-2
-workspace $tag8 output eDP-1
-workspace $tag9 output eDP-1
-workspace $tag10 output eDP-1
+#workspace $tag5 output eDP-1
+#workspace $tag6 output eDP-1
+#workspace $tag7 output DP-1-2
+#workspace $tag8 output eDP-1
+#workspace $tag9 output eDP-1
+#workspace $tag10 output eDP-1
 
 ###################################################################################
 
