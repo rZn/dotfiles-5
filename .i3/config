@@ -98,10 +98,10 @@ set $tag9 "9:"
 set $tag10 "10:"
 
 # exec startup apps
-exec --no-startup-id i3-msg 'workspace $tag1; exec google-chrome-stable'
-exec --no-startup-id i3-msg 'workspace $tag2; exec urxvtc -e ~/dev/bash/sshaddmotd/motdprint.sh && urxvtc'
-exec --no-startup-id i3-msg 'workspace $tag3; exec thunderbird'
-exec --no-startup-id i3-msg 'workspace $tag4; exec urxvtc -e screen -rd weechat; workspace $tag2'
+exec --no-startup-id i3-msg 'exec thunderbird'
+exec --no-startup-id i3-msg 'workspace $tag1; exec google-chrome-stable &'
+exec --no-startup-id i3-msg 'workspace $tag2; exec urxvtc -e ~/dev/bash/sshaddmotd/motdprint.sh && urxvtc &'
+exec --no-startup-id i3-msg 'workspace $tag4; exec urxvtc -e screen -rd weechat &; workspace $tag2'
 
 #colors
 # class                 border  backgr. text    indicator child_border
@@ -141,7 +141,7 @@ for_window [class="feh"] floating enable, border normal
 
 # assigns focus
 assign [class="Connman-gtk"] $tag10
-#for_window [class="Connman-gtk"] move to workspace $tag10, focus
+assign [class="Thunderbird"] $tag3
 for_window [class="Connman-gtk"] focus
 
 #mpd controls
