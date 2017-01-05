@@ -221,6 +221,8 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec --no-startup-id menutray -i
+
 #bar {
 #        position top
 #        strip_workspace_numbers yes

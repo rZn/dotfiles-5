@@ -20,6 +20,24 @@ alert = #bd2c40
 margin-top = 5
 margin-bottom = 5
 
+[settings]
+; The throttle settings lets the eventloop swallow up til X events
+; if they happen within Y millisecond after first event was received.
+; This is done to prevent flood of update event.
+;
+; For example if 5 modules emit an update event at the same time, we really
+; just care about the last one. But if we wait too long for events to swallow
+; the bar would appear sluggish so we continue if timeout
+; expires or limit is reached.
+throttle-output = 5
+throttle-output-for = 10
+
+; Time in milliseconds that the input handler will wait between processing events
+throttle-input-for = 30
+
+; Reload upon receiving XCB_RANDR_SCREEN_CHANGE_NOTIFY events
+screenchange-reload = true
+
 [bar/top]
 monitor = ${env:MONITOR:eDP-1}
 width = 100%
@@ -54,8 +72,8 @@ modules-left =  i3 xwindow
 modules-center =
 modules-right = backlight volume github pkg wlan battery date powermenu
 
-tray-position = right
-tray-padding = 2
+tray-position = left
+tray-padding = 4
 ;tray-transparent = true
 ;tray-background = #0063ff
 
@@ -105,7 +123,7 @@ modules-left = mpd
 modules-center = networkspeedup networkspeeddown
 modules-right = temperature filesystem-slash filesystem-home cpu memory
 
-tray-position = right
+tray-position =
 tray-padding = 2
 
 [bar/top-left]
@@ -142,7 +160,7 @@ modules-left =  i3 xwindow
 modules-center =
 modules-right =
 
-tray-position = right
+tray-position =
 tray-padding = 2
 
 [bar/top-up]
@@ -179,7 +197,7 @@ modules-left =  i3 xwindow
 modules-center =
 modules-right =
 
-tray-position = right
+tray-position =
 tray-padding = 2
 
 [module/xwindow]

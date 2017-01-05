@@ -26,9 +26,9 @@ Connman
 
 # Setup
     
-    sudo pacman -S rxvt-unicode zsh git ttf-hack vim weechat xbindkeys powerline powerline-fonts powerline-vim xorg-xrdb xclip zsh-syntax-highlighting tmux xorg-xfd connman connman-gtk
+    sudo pacman -S rxvt-unicode zsh git ttf-hack vim weechat xbindkeys powerline powerline-fonts powerline-vim xorg-xrdb xclip zsh-syntax-highlighting tmux xorg-xfd connman connman-gtk w3m
 
-    pacaur -S i3-gaps polybar-git albert compton-git powerline ttf-font-awesome ttf-unifont ttf-font-icons j4-dmenu-desktop siji-git
+    pacaur -S i3-gaps polybar-git albert compton-git powerline ttf-font-awesome ttf-unifont ttf-font-icons j4-dmenu-desktop siji-git menutray
 
     cd ~/.i3
     git clone https://github.com/guimeira/i3lock-fancy-multimonitor
