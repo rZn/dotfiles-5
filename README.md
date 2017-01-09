@@ -34,36 +34,26 @@ pacaur -S i3-gaps polybar-git albert compton-git powerline powerline-vim ttf-fon
 cd ~/.i3
 git clone https://github.com/guimeira/i3lock-fancy-multimonitor
 ```
-Change BLURTYPE="5x3" in lock file
+Change ``BLURTYPE="5x3"`` in ``i3lock-fancy-multimonitor/lock`` file.
 
 # Gtk+ and Qt
 
-Run lxappearance and apply "Vertex-Dark" theme.
+Run lxappearance and apply ``Vertex-Dark`` theme.
 
-To use GTK-like theme with Qt edit ~/.config/Trolltech.conf and set
+To use GTK-like theme with Qt edit ``~/.config/Trolltech.conf`` and set
 
 ```
 [Qt]
 style=GTK+
 ```   
 
-# update font cache
+# Update font cache and Xresources
 
 ``` 
 fc-cache -f
-```
-
-# link to .Xdefaults
-
-```
 ln -s ~/.Xresources ~/.Xdefaults
-```
-
-# reload Xresources
-
-```   
 xrdb ~/.Xresources
-```   
+```
 
 # Weechat solarized
 
@@ -103,7 +93,7 @@ Start google chrome and in a tab enabled
 chrome://flags/#overlay-scrollbars
 ```
 
-To set dark theme, go to graphical configuration and click "Use GTK+ Theme"
+To set dark theme, go to graphical configuration and click ``Use GTK+ Theme``
 
 
 # Enable services
@@ -111,17 +101,12 @@ To set dark theme, go to graphical configuration and click "Use GTK+ Theme"
 ```
 systemctl --user enable weechat.service
 systemctl --user enable ssh-agent.service
-systemctl --user enable interfacelift.timer
 ```
 
 # Subprojects
 
-https://github.com/Airblader/i3
-
-https://github.com/jaagr/polybar
-
-https://github.com/guimeira/i3lock-fancy-multimonitor
-
-https://github.com/chjj/compton
-
-https://github.com/altercation/solarized
+- https://github.com/Airblader/i3
+- https://github.com/jaagr/polybar
+- https://github.com/guimeira/i3lock-fancy-multimonitor
+- https://github.com/chjj/compton
+- https://github.com/altercation/solarized
