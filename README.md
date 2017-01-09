@@ -39,6 +39,7 @@ Change BLURTYPE="5x3" in lock file
 # Gtk+ and Qt
 
 Run lxappearance and apply "Vertex-Dark" theme.
+
 To use GTK-like theme with Qt edit ~/.config/Trolltech.conf and set
 
 ```
