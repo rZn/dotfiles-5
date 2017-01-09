@@ -97,10 +97,6 @@ In weechat
 /upgrade
 ```
 
-# Google-chrome
-
-
-
 # Enable services
 
 ```
