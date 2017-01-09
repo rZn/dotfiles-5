@@ -47,6 +47,16 @@ To use GTK-like theme with Qt edit ``~/.config/Trolltech.conf`` and set
 style=GTK+
 ```   
 
+**Google chrome**
+
+Open this link to set lighter scrollbar
+
+```
+chrome://flags/#overlay-scrollbars
+```
+
+To use dark theme, go to graphical configuration and click ``Use GTK+ Theme``
+
 # Update font cache and Xresources
 
 ``` 
@@ -56,6 +66,8 @@ xrdb ~/.Xresources
 ```
 
 # Weechat solarized
+
+In weechat
 
 ```   
 /set weechat.bar.status.color_bg 0
@@ -87,13 +99,6 @@ xrdb ~/.Xresources
 
 # Google-chrome
 
-Start google chrome and in a tab enabled
-
-```
-chrome://flags/#overlay-scrollbars
-```
-
-To set dark theme, go to graphical configuration and click ``Use GTK+ Theme``
 
 
 # Enable services
@@ -103,7 +108,7 @@ systemctl --user enable weechat.service
 systemctl --user enable ssh-agent.service
 ```
 
-# Subprojects
+**Subprojects**
 
 - https://github.com/Airblader/i3
 - https://github.com/jaagr/polybar
