@@ -27,12 +27,12 @@ Connman
 # Setup
 
 ```
-    sudo pacman -S rxvt-unicode zsh git ttf-hack vim weechat xbindkeys powerline powerline-fonts powerline-vim xorg-xrdb xclip zsh-syntax-highlighting tmux xorg-xfd connman connman-gtk w3m lxappearance
+sudo pacman -S rxvt-unicode zsh git ttf-hack vim weechat xbindkeys powerline powerline-fonts powerline-vim xorg-xrdb xclip zsh-syntax-highlighting tmux xorg-xfd connman connman-gtk w3m lxappearance
 
-    pacaur -S i3-gaps polybar-git albert compton-git powerline powerline-vim ttf-font-awesome ttf-unifont ttf-font-icons j4-dmenu-desktop siji-git menutray cower
+pacaur -S i3-gaps polybar-git albert compton-git powerline powerline-vim ttf-font-awesome ttf-unifont ttf-font-icons j4-dmenu-desktop siji-git menutray cower
 
-    cd ~/.i3
-    git clone https://github.com/guimeira/i3lock-fancy-multimonitor
+cd ~/.i3
+git clone https://github.com/guimeira/i3lock-fancy-multimonitor
 ```
 Change BLURTYPE="5x3" in lock file
 
