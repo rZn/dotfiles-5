@@ -1,12 +1,8 @@
-#motd
-cat ~/.config/motd
-
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 ZSH_THEME="agnoster"
-#DEFAULT_USER="user"
 
 #turn on comments with # in shell
 setopt interactivecomments
