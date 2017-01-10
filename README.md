@@ -36,6 +36,16 @@ git clone https://github.com/guimeira/i3lock-fancy-multimonitor
 ```
 Change ``BLURTYPE="5x3"`` in ``i3lock-fancy-multimonitor/lock`` file.
 
+# Zsh
+
+**zsh-autosuggestions**
+> https://github.com/zsh-users/zsh-autosuggestions
+
+```
+git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+```
+
+
 # Gtk+ and Qt
 
 Run lxappearance and apply ``Vertex-Dark`` theme.
