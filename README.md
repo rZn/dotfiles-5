@@ -116,3 +116,7 @@ In weechat
 - https://github.com/guimeira/i3lock-fancy-multimonitor
 - https://github.com/chjj/compton
 - https://github.com/altercation/solarized
+
+**IRC**
+
+eoli3n @ freenode #archlinux-fr
