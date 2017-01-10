@@ -1,30 +1,28 @@
 # Archlinux i3-gaps Dark Solarized
 
-i3-gaps zsh polybar
+**i3-gaps zsh polybar**
 
 ![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/i3gaps.png)
 
-Weechat
+**Weechat**
 
 ![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/weechat.png)
 
-Chrome App mode with O!MPD, thunar gtk
+**Chrome App mode with O!MPD, thunar gtk**
 
 ![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/thunar.png)
 
-Retroarch
-
-![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/retroarch.png)
-
-i3lock
+**i3lock**
 
 ![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/i3lock.png)
 
-Connman
+**Connman**
 
 ![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/connman.png)
 
 # Setup
+
+**Packages**
 
 ```
 sudo pacman -S rxvt-unicode zsh git ttf-hack vim weechat xbindkeys powerline powerline-fonts powerline-vim xorg-xrdb xclip zsh-syntax-highlighting tmux xorg-xfd connman connman-gtk w3m lxappearance maim slop
@@ -36,17 +34,14 @@ git clone https://github.com/guimeira/i3lock-fancy-multimonitor
 ```
 Change ``BLURTYPE="5x3"`` in ``i3lock-fancy-multimonitor/lock`` file.
 
-# Zsh
-
-**zsh-autosuggestions**
-> https://github.com/zsh-users/zsh-autosuggestions
+**Zsh deps**
 
 ```
 git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 ```
+Note: zshrc needs to be adapt at your fits
 
-
-# Gtk+ and Qt
+**Gtk+ and Qt**
 
 Run lxappearance and apply ``Vertex-Dark`` theme.
 
@@ -67,12 +62,19 @@ chrome://flags/#overlay-scrollbars
 
 To use dark theme, go to graphical configuration and click ``Use GTK+ Theme``
 
-# Update font cache and Xresources
+**Update font cache and Xresources**
 
 ``` 
 fc-cache -f
 ln -s ~/.Xresources ~/.Xdefaults
 xrdb ~/.Xresources
+```
+
+**Enable services**
+
+```
+systemctl --user enable weechat.service
+systemctl --user enable ssh-agent.service
 ```
 
 # Weechat solarized
@@ -107,14 +109,7 @@ In weechat
 /upgrade
 ```
 
-# Enable services
-
-```
-systemctl --user enable weechat.service
-systemctl --user enable ssh-agent.service
-```
-
-**Subprojects**
+# Subprojects
 
 - https://github.com/Airblader/i3
 - https://github.com/jaagr/polybar
