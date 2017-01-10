@@ -57,6 +57,11 @@
     m:0x0 + c:233
     XF86MonBrightnessUp
 
+"maim -s -d2"
+    m:0x10 + c:107
+    Mod2 + Print
+
+
 ##################################
 # End of xbindkeys configuration #
 ##################################
