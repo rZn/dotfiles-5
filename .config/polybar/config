@@ -70,7 +70,7 @@ font-3 = FontAwesome:pixelsize=14;0
 
 modules-left =  i3 xwindow
 modules-center =
-modules-right = backlight volume github pkg wlan battery date powermenu
+modules-right = backlight volume github pkg wlan vpncheck battery date powermenu
 
 tray-position = left
 tray-padding = 4
@@ -541,6 +541,15 @@ format = <label>
 label = "%output:0:100%"
 exec = ~/.config/polybar/pkg.sh
 ;exec = checkupdates
+
+[module/vpncheck]
+type = custom/script
+exec = pgrep openvpn
+interval = 5
+label = vpn
+format-underline = #268bd2
+format-prefix = " "
+format-prefix-foreground = #5b
 
 [module/powermenu]
 type = custom/menu

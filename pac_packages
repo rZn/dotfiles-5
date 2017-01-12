@@ -35,6 +35,7 @@ libretro-shaders
 libretro-yabause
 lm_sensors
 lxappearance
+maim
 mpc
 mpd
 mps-youtube
@@ -47,6 +48,7 @@ redshift
 rxvt-unicode
 screen
 scrot
+slop
 speedtest-cli
 thunar
 thunar-media-tags-plugin
