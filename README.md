@@ -75,7 +75,7 @@ systemctl --user enable weechat.service
 systemctl --user enable ssh-agent.service
 ```
 
-# Weechat solarized
+# Weechat Clean Acid
 
 In weechat
 
