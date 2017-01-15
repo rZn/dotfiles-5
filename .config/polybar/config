@@ -54,7 +54,7 @@ overline-color = #f00
 underline-size = 2
 underline-color = #00f
 
-border-bottom = 0
+border-bottom-size = 0
 border-bottom-color = ${colors.background}
 
 spacing = 1
@@ -71,6 +71,7 @@ font-3 = FontAwesome:pixelsize=14;0
 modules-left =  i3 xwindow
 modules-center =
 modules-right = backlight volume github pkg wlan vpncheck battery date powermenu
+;modules-right = backlight volume pkg wlan vpncheck battery date powermenu
 
 tray-position = left
 tray-padding = 4
@@ -105,7 +106,7 @@ overline-color = #f00
 underline-size = 0
 underline-color = #00f
 
-border-bottom = 0
+border-bottom-size = 0
 border-bottom-color = ${colors.background}
 
 spacing = 1
@@ -122,80 +123,6 @@ font-3 = FontAwesome:pixelsize=14;0
 modules-left = mpd
 modules-center = networkspeedup networkspeeddown
 modules-right = temperature filesystem-slash filesystem-home cpu memory
-
-tray-position =
-tray-padding = 2
-
-[bar/top-left]
-monitor = ${env:MONITOR:DP-1-1}
-width = 100%
-height = 20
-offset-x = 0
-offset-y = 0
-
-;background = ${xrdb:color9}
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-overline-size = 0
-overline-color = #f00
-underline-size = 2
-underline-color = #00f
-
-border-bottom = 0
-border-bottom-color = ${colors.background}
-
-spacing = 1
-padding-left = 0
-padding-right = 2
-module-margin-left = 1
-module-margin-right = 2
-
-font-0 = hack:pixelsize=12;1
-font-1 = unifont:size=6:heavy:fontformat=truetype;-2
-font-2 = siji:pixelsize=10;0
-font-3 = FontAwesome:pixelsize=14;0
-
-modules-left =  i3 xwindow
-modules-center =
-modules-right =
-
-tray-position =
-tray-padding = 2
-
-[bar/top-up]
-monitor = ${env:MONITOR:DP-1-2}
-width = 100%
-height = 20
-offset-x = 0
-offset-y = 0
-
-;background = ${xrdb:color9}
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-overline-size = 0
-overline-color = #f00
-underline-size = 2
-underline-color = #00f
-
-border-bottom = 0
-border-bottom-color = ${colors.background}
-
-spacing = 1
-padding-left = 0
-padding-right = 2
-module-margin-left = 1
-module-margin-right = 2
-
-font-0 = hack:pixelsize=12;1
-font-1 = unifont:size=6:heavy:fontformat=truetype;-2
-font-2 = siji:pixelsize=10;0
-font-3 = FontAwesome:pixelsize=14;0
-
-modules-left =  i3 xwindow
-modules-center =
-modules-right =
 
 tray-position =
 tray-padding = 2
@@ -297,11 +224,12 @@ ws-icon-9 = 10;
 
 [module/github]
 type = internal/github
-token = ${env:GITHUB_API_TOKEN}
+token = ${file:$HOME/.config/polybar/github_token}
 
-label = "%{u#2aa198}%{F#5b} %{F-}%notifications%%{u-}"
-empty-notifications = true
-;format-prefix = "%{F#5b}%{F-}"
+label = "%notifications%"
+format-underline = #2aa198
+format-prefix = " "
+format-prefix-foreground = #5b
 
 [module/mpd]
 type = internal/mpd
@@ -393,11 +321,14 @@ interface = wlp2s0
 interval = 3.0
 
 format-connected = <label-connected>
-format-connected-underline = #9f78e1
-format-disconnected-underline = ${self.format-connected-underline}
+format-connected-prefix = " "
+format-connected-prefix-foreground = #5b
 
-label-connected = "%{A1:connman-gtk:}%{F#5b5b5b}%{F-} %essid%%{A}"
-label-disconnected = "%{A1:connman-gtk:} %ifname%%{A}"
+format-connected-underline = #9f78e1
+;format-disconnected-underline = ${self.format-connected-underline}
+
+label-connected = "%{A1:connman-gtk &:}%essid%%{A}"
+label-disconnected = "%{A1:connman-gtk &:}%{A}"
 label-disconnected-foreground = #5b
 
 ramp-signal-0 = 
@@ -406,7 +337,6 @@ ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-foreground = ${colors.foreground-alt}
-;click-left = connman-gtk
 
 [module/eth]
 type = internal/network
@@ -425,12 +355,18 @@ label-disconnected-foreground = ${colors.foreground-alt}
 [module/networkspeedup]
 type = internal/network
 interface = wlp2s0
-label-connected = "%{u#dc322f +u}%{F#5b}%{F-}%upspeed:7%%{u-}"
+label-connected = "%upspeed:7%"
+format-connected = <label-connected>
+format-connected-prefix = " "
+format-connected-prefix-foreground = #5b
 
 [module/networkspeeddown]
 type = internal/network
 interface = wlp2s0
-label-connected = "%{u#2aa198 +u}%{F#5b}%{F-}%downspeed:7%%{u-}"
+label-connected = "%downspeed:7%"
+format-connected = <label-connected>
+format-connected-prefix = " "
+format-connected-prefix-foreground = #5b
 
 [module/date]
 type = internal/date
@@ -535,12 +471,10 @@ type = custom/script
 ;tail = true
 interval = 1200
 format = <label>
-;format-background = #999
-;format-foreground = #000
-;format-padding = 4
-label = "%output:0:100%"
-exec = ~/.config/polybar/pkg.sh
-;exec = checkupdates
+format-underline = #dc322f
+label = "%output:0:30%"
+exec = .config/polybar/pkg.sh
+exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
 
 [module/vpncheck]
 type = custom/script
@@ -555,7 +489,7 @@ format-prefix-foreground = #5b
 type = custom/menu
 
 label-open = 
-label-open-foreground = #b63650
+label-open-foreground = #ff5c56
 label-close =  cancel
 label-close-foreground = ${colors.secondary}
 label-separator = |
@@ -568,7 +502,7 @@ menu-0-1-exec = menu-open-2
 menu-0-2 = log out
 menu-0-2-exec = menu-open-3
 menu-0-3 = 
-menu-0-3-exec = ~/.i3/i3lock-fancy-multimonitor/lock
+menu-0-3-exec = "~/.i3/i3lock-fancy-multimonitor/lock &"
 
 menu-1-0 = cancel
 menu-1-0-exec = menu-open-0

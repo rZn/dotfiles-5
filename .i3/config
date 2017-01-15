@@ -14,9 +14,10 @@ new_window pixel
 # start a terminal
 bindsym $mod+Return exec urxvtc
 
-# start dmenu
-#bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -fn 'hack-10' -h 20 -nb '#202020' -nf '#FFFFFF' -sf '#dc322f' -sb '#202020' -p '>' -b -w 400 -q -o 0.9"
-bindsym $mod+d exec --no-startup-id .i3/j4-dmenu.sh
+# start drofi dmenu
+bindsym $mod+w exec --no-startup-id rofi -show window
+bindsym $mod+Shift+w exec --no-startup-id rofi -show run
+bindsym $mod+Shift+x exec --no-startup-id rofi -show drun
 
 #############################################################################################################################
 
@@ -120,14 +121,11 @@ smart_borders on
 
 #############################################################################################################################
 
-#zmenu
-bindsym $mod+Shift+q exec ~/.i3/zmenu.sh
+#rofi_power menu
+bindsym $mod+Shift+q exec ~/.i3/rofi_powermenu.sh
 
-#wappslocalmenu
-bindsym $mod+x exec ~/.i3/wappslocalmenu.sh
-
-#wappsmenu
-bindsym $mod+w exec ~/dev/git/dmenu2-web/launcher.sh
+#rofi_custom menu
+bindsym $mod+x exec ~/.i3/rofi_custom.sh
 
 # apps
 bindsym $mod+Control+t exec thunar
@@ -221,7 +219,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec --no-startup-id menutray -i
+#exec --no-startup-id menutray -i
 
 #bar {
 #        position top

@@ -1,6 +1,6 @@
-# Archlinux i3-gaps Dark Solarized
+# Archlinux i3-gaps Acid Dark 
 
-**i3-gaps zsh polybar**
+**i3-gaps zsh pureprompt polybar**
 
 ![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/i3gaps.png)
 
@@ -25,21 +25,23 @@
 **Packages**
 
 ```
-sudo pacman -S rxvt-unicode zsh git ttf-hack vim weechat xbindkeys powerline powerline-fonts powerline-vim xorg-xrdb xclip zsh-syntax-highlighting tmux xorg-xfd connman connman-gtk w3m lxappearance maim slop
+sudo pacman -S rxvt-unicode zsh zsh-syntax-highlighting git ttf-hack vim weechat xbindkeys powerline powerline-fonts powerline-vim xorg-xrdb xclip tmux xorg-xfd connman connman-gtk w3m lxappearance maim slop
 
-pacaur -S i3-gaps polybar-git albert compton-git powerline powerline-vim ttf-font-awesome ttf-unifont ttf-font-icons j4-dmenu-desktop siji-git menutray cower i3lock-color-git
+pacaur -S i3-gaps polybar-git rofi compton-git powerline powerline-vim ttf-font-awesome ttf-unifont ttf-font-icons siji-git menutray cower i3lock-color-git
 
 cd ~/.i3
 git clone https://github.com/guimeira/i3lock-fancy-multimonitor
 ```
 Change ``BLURTYPE="5x3"`` in ``i3lock-fancy-multimonitor/lock`` file.
 
-**Zsh deps**
+**ZSH pure prompt**
 
+1° Install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 ```
-git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
-Note: zshrc needs to be adapt at your fits
+
+2° Then install [pure prompt](https://github.com/sindresorhus/pure)
 
 **Gtk+ and Qt**
 
@@ -115,7 +117,11 @@ In weechat
 - https://github.com/jaagr/polybar
 - https://github.com/guimeira/i3lock-fancy-multimonitor
 - https://github.com/chjj/compton
-- https://github.com/altercation/solarized
+- [hyperterm-snazzy-Xresources](https://gist.github.com/zhy0/ffdab4b01f8cf6a6814261d4c4eed0be)
+
+## Previously
+
+* [i3-gaps Dark Solarized](https://github.com/eoli3n/dotfiles/tree/zsh-agnoster-solarized)
 
 **IRC**
 
