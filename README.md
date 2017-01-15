@@ -113,6 +113,7 @@ In weechat
 - https://github.com/jaagr/polybar
 - https://github.com/guimeira/i3lock-fancy-multimonitor
 - https://github.com/chjj/compton
+- https://github.com/lilydjwg/colorizer
 - [hyperterm-snazzy-Xresources](https://gist.github.com/zhy0/ffdab4b01f8cf6a6814261d4c4eed0be)
 
 ## Previously
