@@ -1,4 +1,2 @@
-#include ".Xresources.d/rxvt-unicode"
 #include ".Xresources.d/x11-ssh-askpass"
-#include ".Xresources.d/hyperterm-snazzy"
 #include ".Xresources.d/rofi"
