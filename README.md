@@ -2,23 +2,23 @@
 
 **i3-gaps zsh polybar**
 
-![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/i3gaps.png)
+![alt tag](https://github.com/eoli3n/dotfiles/blob/zsh-agnoster-solarized/screenshots/i3gaps.png)
 
 **Weechat**
 
-![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/weechat.png)
+![alt tag](https://github.com/eoli3n/dotfiles/blob/zsh-agnoster-solarized/screenshots/weechat.png)
 
 **Chrome App mode with O!MPD, thunar gtk**
 
-![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/thunar.png)
+![alt tag](https://github.com/eoli3n/dotfiles/blob/zsh-agnoster-solarized/screenshots/thunar.png)
 
 **i3lock**
 
-![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/i3lock.png)
+![alt tag](https://github.com/eoli3n/dotfiles/blob/zsh-agnoster-solarized/screenshots/i3lock.png)
 
 **Connman**
 
-![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/connman.png)
+![alt tag](https://github.com/eoli3n/dotfiles/blob/zsh-agnoster-solarized/screenshots/connman.png)
 
 # Setup
 
