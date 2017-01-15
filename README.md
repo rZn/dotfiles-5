@@ -23,7 +23,7 @@
 ```
 sudo pacman -S termite zsh zsh-syntax-highlighting git ttf-hack vim weechat xbindkeys powerline powerline-fonts powerline-vim xorg-xrdb xclip tmux xorg-xfd connman connman-gtk w3m lxappearance maim slop
 
-pacaur -S i3-gaps polybar-git rofi compton-git powerline powerline-vim ttf-font-awesome ttf-unifont ttf-font-icons siji-git menutray cower i3lock-color-git
+pacaur -S i3-gaps polybar-git rofi compton-git powerline powerline-vim ttf-font-awesome ttf-unifont ttf-font-icons siji-git menutray cower i3lock-color-git capitaine-cursors
 
 cd ~/.i3
 git clone https://github.com/guimeira/i3lock-fancy-multimonitor
