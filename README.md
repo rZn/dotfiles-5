@@ -8,17 +8,13 @@
 
 ![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/weechat.png)
 
-**Chrome App mode with O!MPD, thunar gtk**
+**Chrome Rofi Stylish**
 
-![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/thunar.png)
+![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/chrome-rofi.png)
 
-**i3lock**
+**Connman GTK Theme**
 
-![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/i3lock.png)
-
-**Connman**
-
-![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/connman.png)
+![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/connman-gtk.png)
 
 # Setup
 

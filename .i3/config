@@ -129,7 +129,7 @@ bindsym $mod+x exec ~/.i3/rofi_custom.sh
 
 # apps
 bindsym $mod+Control+t exec thunar
-bindsym $mod+Control+w exec connman-gtk
+bindsym $mod+Control+n exec connman-gtk
 
 # by class
 ## floatings
