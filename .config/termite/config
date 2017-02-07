@@ -1,5 +1,6 @@
 [options]
 font = hack 10
+scrollback_lines = 1000000
 
 ##
 clickable_url = true

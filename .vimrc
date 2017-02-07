@@ -6,9 +6,9 @@ set nu
 syntax on
 " choose colors
 set background=dark
-colorscheme solarized
+" colorscheme solarized
 hi Normal ctermbg=none
-let g:solarized_termtrans=1
+" let g:solarized_termtrans=1
 " highlight NonText ctermbg=none
 " no tab when pasting
 " set paste
@@ -16,6 +16,7 @@ let g:solarized_termtrans=1
 " mac : CMD+ALT+SELECTION
 " linux : SHIFT+SELECTION
 set mouse=r
+
 
 " no tilde files
 set nobackup
