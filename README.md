@@ -75,7 +75,7 @@ systemctl --user enable weechat.service
 systemctl --user enable ssh-agent.service
 ```
 
-# Vim pathogen plugins
+**Vim pathogen plugins**
 
 ```
 # colorizer
