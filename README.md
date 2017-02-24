@@ -75,6 +75,18 @@ systemctl --user enable weechat.service
 systemctl --user enable ssh-agent.service
 ```
 
+# Vim pathogen plugins
+
+```
+# colorizer
+cd ~/.vim/bundle
+git clone https://github.com/lilydjwg/colorizer
+
+# auto-pairs
+git clone git://github.com/jiangmiao/auto-pairs.git ~/.vim/bundle/auto-pairs
+
+```
+
 # Weechat Clean Acid
 
 In weechat

@@ -125,7 +125,7 @@ font-1 = unifont:size=10;2
 font-2 = siji:pixelsize=10;3
 font-3 = FontAwesome:pixelsize=14;2
 
-modules-left = mpd
+modules-left = 
 modules-center = networkspeedup networkspeeddown
 modules-right = temperature filesystem-slash filesystem-home cpu memory
 
