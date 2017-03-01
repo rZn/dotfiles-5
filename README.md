@@ -85,6 +85,9 @@ git clone https://github.com/lilydjwg/colorizer
 # auto-pairs
 git clone git://github.com/jiangmiao/auto-pairs.git ~/.vim/bundle/auto-pairs
 
+# detect indent
+cd ~/.vim/bundle; git clone git://github.com/tpope/vim-sleuth.git
+
 ```
 
 # Weechat Clean Acid
