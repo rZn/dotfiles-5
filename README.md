@@ -88,6 +88,14 @@ git clone git://github.com/jiangmiao/auto-pairs.git ~/.vim/bundle/auto-pairs
 # detect indent
 cd ~/.vim/bundle; git clone git://github.com/tpope/vim-sleuth.git
 
+# syntax corrector
+sudo pip3 install flake8
+cd ~/.vim/bundle; git clone --depth=1 https://github.com/vim-syntastic/syntastic.git
+
+# NERDtree
+
+git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
+
 ```
 
 # Weechat Clean Acid

@@ -15,9 +15,9 @@ new_window pixel
 bindsym $mod+Return exec termite
 
 # start drofi dmenu
-bindsym $mod+w exec --no-startup-id rofi -show window
-bindsym $mod+Shift+w exec --no-startup-id rofi -show run
-bindsym $mod+Shift+x exec --no-startup-id rofi -show drun
+bindsym $mod+Tab exec --no-startup-id rofi -show window
+bindsym $mod+Shift+d exec --no-startup-id rofi -show run
+bindsym $mod+d exec --no-startup-id rofi -show drun
 
 #############################################################################################################################
 
