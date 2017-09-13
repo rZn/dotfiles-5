@@ -25,3 +25,8 @@ rofi.yoffset:                        23
 rofi.padding:                        10
 rofi.fixed-num-lines:                false
 ! rofi.kb-cancel:                      Escape,Mod4+w
+rofi.terminal:             termite
+rofi.ssh-client:           ssh
+rofi.ssh-command:          {terminal} -e "{ssh-client} {host}"
+rofi.run-command:          {cmd}
+rofi.run-shell-command:    {terminal} -e {cmd}

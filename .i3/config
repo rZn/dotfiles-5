@@ -92,18 +92,19 @@ set $tag2 "2:"
 set $tag3 "3:"
 set $tag4 "4:"
 set $tag5 "5:"
-set $tag6 "6:"
+set $tag6 "6:"
 set $tag7 "7:"
-set $tag8 "8:"
-set $tag9 "9:"
+set $tag8 "8:"
+set $tag9 "9:"
 set $tag10 "10:"
 
 # exec startup apps
-exec --no-startup-id i3-msg 'exec thunderbird'
+# exec --no-startup-id i3-msg 'exec thunderbird'
+exec --no-startup-id i3-msg 'exec geary'
 exec --no-startup-id i3-msg 'workspace $tag1; exec google-chrome-stable &'
 exec --no-startup-id i3-msg 'workspace $tag2; exec termite'
 exec --no-startup-id i3-msg 'workspace $tag4; exec termite -e "screen -rd weechat &"; workspace $tag2'
-exec --no-startup-id i3-msg 'workspace $tag10; exec termite -e "glances"; workspace $tag2'
+# exec --no-startup-id i3-msg 'workspace $tag10; exec termite -e "glances"; workspace $tag2'
 
 #colors
 # class                 border  backgr. text    indicator child_border
@@ -139,9 +140,26 @@ for_window [class="XTerm"] floating enable, border normal
 for_window [class="feh"] floating enable, border normal
 
 # assigns focus
-assign [class="Connman-gtk"] $tag10
 assign [class="Thunderbird"] $tag3
+
+assign [class="Lollypop"] $tag5
+for_window [class="Lollypop"] focus
+
+assign [class="Code"] $tag6
+for_window [class="Code"] focus
+
+assign [class="WebTorrent"] $tag7
+for_window [class="WebTorrent"] focus
+
+assign [class="Nicotine"] $tag9
+for_window [class="Nicotine"] focus
+
+assign [class="Connman-gtk"] $tag10
 for_window [class="Connman-gtk"] focus
+
+#toggle workspace's display screen
+bindsym $mod+less move workspace to output right
+bindsym $mod+Shift+less move workspace to output up
 
 #lollypop controls
 bindsym $mod+Control+Left exec ~/dev/git/mpris-ctrl/mpris-ctrl.sh Lollypop prev
@@ -150,10 +168,6 @@ bindsym $mod+Control+Right exec ~/dev/git/mpris-ctrl/mpris-ctrl.sh Lollypop next
 bindsym $mod+Control+Up exec "~/dev/git/lyricsdownloader/graphicalrapgenius.sh"
 bindsym $mod+Control+Prior exec "cd ~/dev/git/interfaceliftdownloader/ ; ./interfacelift.sh -c ./wallpaper.conf"
 bindsym $mod+Control+Next exec "~/dev/git/interfaceliftdownloader/interfacelift.sh -sc ~/dev/git/interfaceliftdownloader/wallpaper.conf"
-
-#toggle workspace's display screen
-bindsym $mod+less move workspace to output right
-bindsym $mod+Shift+less move workspace to output up
 
 #assign workspace to screens
 workspace $tag1 output DP-1-1

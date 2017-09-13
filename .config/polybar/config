@@ -73,10 +73,11 @@ font-3 = FontAwesome:pixelsize=14;2
 
 modules-left =  i3 xwindow
 modules-center =
-modules-right = backlight volume github pkg wlan vpncheck battery date powermenu
+modules-right = backlight volume github pkg wlan pptpcheck battery date
+;modules-right = backlight volume github pkg wlan vpncheck pptpcheck battery date powermenu
 ;modules-right = backlight volume pkg wlan vpncheck battery date powermenu
 
-tray-position = left
+tray-position = right
 tray-padding = 4
 ;tray-transparent = true
 ;tray-background = #0063ff
@@ -129,7 +130,7 @@ modules-left =
 modules-center = networkspeedup networkspeeddown
 modules-right = temperature filesystem-slash filesystem-home cpu memory
 
-tray-position =
+tray-position = right
 tray-padding = 2
 
 [module/xwindow]
@@ -222,10 +223,10 @@ ws-icon-1 = 2;
 ws-icon-2 = 3;
 ws-icon-3 = 4;
 ws-icon-4 = 5;
-ws-icon-5 = 6;
+ws-icon-5 = 6;
 ws-icon-6 = 7;
-ws-icon-7 = 8;
-ws-icon-8 = 9;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
 ws-icon-9 = 10;
 
 [module/github]
@@ -487,6 +488,15 @@ type = custom/script
 exec = pgrep openvpn
 interval = 5
 label = vpn
+format-underline = #268bd2
+format-prefix = " "
+format-prefix-foreground = #5b
+
+[module/pptpcheck]
+type = custom/script
+exec = pgrep pppd
+interval = 5
+label = pptp
 format-underline = #268bd2
 format-prefix = " "
 format-prefix-foreground = #5b
