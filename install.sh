@@ -15,4 +15,10 @@ then
     exit 1
 fi
 
+echo "### DRYRUN #################################################################"
+
 ansible-playbook -i "localhost," -c local install.yml --ask-become-pass -CD -t $1
+
+echo "Do you want to install ?"
+
+ansible-playbook -i "localhost," -c local install.yml --ask-become-pass -t $1
