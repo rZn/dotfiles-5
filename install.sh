@@ -2,10 +2,10 @@
 
 cd "$( dirname "${BASH_SOURCE[0]}" )"
 
-# Install Ansible
 if [[ ! -f /usr/bin/ansible ]]
 then
-    pip install ansible
+    echo "Please install ansible"
+    exit 1
 fi
 
 if [[ -z ${1+x} ]]
