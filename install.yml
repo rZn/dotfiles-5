@@ -1,0 +1,244 @@
+---
+- hosts: all
+
+  tasks:
+
+    - name: Install stow
+      package: name=stow state=present
+      become: True
+
+    - name: Install Desktop/Laptop tools (generic)
+      package: name={{item}} state=present
+      with_items:
+        - lxappearance
+        - curl
+        - wget
+        - slop
+        - maim
+        - xclip
+        - xorg-xrdb
+        - xorg-xfd
+        - connman
+        - connman-gtk
+        - gnome-ssh-askpass2
+      become: True
+      tags:
+        - desktop
+        - laptop
+
+    - name: Install Desktop/Laptop tools (Archlinux)
+      package: name={{item}} state=present
+      with_items:
+        - cower
+      when: ansible_os_family == "Archlinux"
+      tags:
+        - desktop
+        - laptop
+
+    - name: Install CLI tools
+      package: name={{item}} state=present
+      with_items:
+        - pygmentize
+      tags:
+        - desktop
+        - laptop
+        - server
+    
+    - name: Install pacaur
+      shell: creates=/usr/bin/pacaur curl -o /tmp/PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=pacaur; makepkg PKGBUILD --install --needed
+      when: ansible_os_family == "Archlinux"
+  
+    - name: Install fonts
+      shell: creates=/usr/share/icons/capitaine-cursors/ pacaur -S --noconfirm {{item}}
+      with_items:
+        - ttf-font-awesome
+        - ttf-unifont
+        - ttf-font-icons
+      tags:
+        - desktop
+        - laptop
+
+    - name: Install and configure Cursor
+      block:
+        - shell: creates=/usr/share/icons/capitaine-cursors/ pacaur -S --noconfirm capitaine-cursors
+        - shell: creates=~/.Xresources.d/cursor stow cursor
+        - lineinfile: path=~/.Xresources create=yes state=present line='#include ".Xresources.d/cursor"'
+      tags:
+        - desktop
+        - laptop
+        - cursor
+
+    - name: Install and configure i3-wm
+      block:
+        - shell: creates=/usr/bin/i3 pacaur -S --noconfirm {{item}}
+          with_items:
+            - i3-gaps
+            - i3lock-color-git
+        - shell: creates=~/.i3 stow i3-wm
+      tags:
+        - desktop
+        - laptop
+        - i3-wm
+
+    - name: Install and configure compton
+      block:
+        - shell: creates=/usr/bin/compton pacaur -S --noconfirm compton-git
+        - shell: creates=~/.compton stow compton
+        - blockinfile:
+            path: ~/.xprofile
+            create: True
+            marker: "<!-- {mark} DOTFILES MANAGED BLOCK -->"
+            content: |
+              compton --backend glx --vsync opengl-swc -GCb --config ~/.compton &
+      tags:
+        - desktop
+        - laptop
+        - compton
+
+    - name: Install and configure polybar
+      block:
+        - shell: creates=/usr/bin/polybar pacaur -S --noconfirm polybar-git
+        - shell: creates=~/.config/polybar stow polybar
+        - debug:
+            msg: "Do not forget to edit MONITOR vars in ~/.config/polybar/launch.sh"
+        - lineinfile:
+            path: dotfiles/.i3/i3lock-fancy-multimonitor/lock
+            regexp: '^BLURTYPE="2x8"'
+            line: '#BLURTYPE="2x8"'
+        - lineinfile:
+            path: dotfiles/.i3/i3lock-fancy-multimonitor/lock
+            regexp: '^#BLURTYPE="5x3"'
+            line: 'BLURTYPE="5x3"'
+      tags:
+        - desktop
+        - laptop
+        - polybar
+
+    - name: Install and configure rofi
+      block:
+        - shell: creates=/usr/bin/rofi pacaur -S --noconfirm rofi
+        - shell: creates=~/.config/rofi stow polybar
+        - lineinfile: path=~/.Xresources create=yes state=present line='#include ".Xresources.d/rofi"'
+      tags:
+        - desktop
+        - laptop
+        - rofi
+    
+    - name: Install and configure xbindkeys
+      block:
+        - package: name=xbindkeys state=present
+          become: True
+        - shell: creates=~/.xbindkeys stow xbindkeys
+        - blockinfile:
+            path: ~/.xprofile
+            create: True
+            marker: "<!-- {mark} DOTFILES MANAGED BLOCK -->"
+            content: |
+              xbindkeys &
+      tags:
+        - laptop
+        - xbindkeys
+
+    - name: Install and configure neofetch
+      block:
+        - shell: creates=/usr/bin/neofetch pacaur -S --noconfirm {{item}}
+          with_items:
+            - neofetch
+            - w3m
+        - shell: creates=~/.config/neofetch stow neofetch
+      tags:
+        - desktop
+        - laptop
+        - neofetch
+
+    - name: Install and configure termite
+      block:
+        - package: name={{item}} state=present
+          with_items:
+            - termite
+            - ttf-hack
+          become: True
+        - shell: creates=~/.config/termite stow termite
+      tags:
+        - desktop
+        - laptop
+        - termite
+
+    - name: Install termite terminfo (Arch)
+      pacman: name=termite-terminfo state=present
+      when: ansible_os_family == "Archlinux"
+      become: True
+      tags:
+        - desktop
+        - laptop
+        - server
+        - termite
+
+    - name: Install termite terminfo (Others)
+      shell: tic -x termite/termite.terminfo
+      when: ansible_os_family != "Archlinux"
+      tags:
+        - desktop
+        - laptop
+        - server
+        - termite
+
+    - name: Install and configure screen
+      block:
+        - package: name=screen state=present
+        - shell: creates=~/.screenrc stow screen
+      tags:
+        - desktop
+        - laptop
+        - server
+        - screen
+
+    - name: Install and configure zsh (with pure prompt)
+      block:
+        - package: name={{item}} state=present
+          with_items:
+            - zsh
+            - most
+            - zsh-syntax-highlighting
+        - shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+        - shell: creates=~/.zshrc stow zsh 
+        - file: path=~/.zshrc_node state=touch
+          changed_when: False
+      tags:
+        - desktop
+        - laptop
+        - server
+        - zsh
+  
+    - name: Install and configure vim
+      block:
+        - package: name=vim state=present
+        - shell: creates=~/.vim stow vim
+      tags:
+        - desktop
+        - laptop
+        - server
+        - vim
+
+    - name: SSH-agent as a service
+      block:
+        - shell: creates=~/.config/systemd/user/ssh-agent.service stow ssh-agent
+        - systemd: name=ssh-agent state=started enabled=yes user=yes
+      tags:
+        - desktop
+        - laptop
+        - ssh-agent
+
+    - name: Weechat as a service
+      block:
+        - package: name={item} state=present
+          with_items:
+            - screen
+            - weechat
+          become: True
+        - shell: creates=~/.config/systemd/user/weechat.service stow weechat
+        - systemd: name=weechat state=started enabled=yes user=yes
+      tags:
+        - desktop
+        - laptop
+        - weechat

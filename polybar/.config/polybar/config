@@ -73,7 +73,7 @@ font-3 = FontAwesome:pixelsize=14;2
 
 modules-left =  i3 xwindow
 modules-center =
-modules-right = backlight volume github pkg wlan pptpcheck battery date
+modules-right = backlight volume pkg wlan vpncheck battery date
 ;modules-right = backlight volume github pkg wlan vpncheck pptpcheck battery date powermenu
 ;modules-right = backlight volume pkg wlan vpncheck battery date powermenu
 
@@ -479,7 +479,7 @@ type = custom/script
 interval = 1200
 format = <label>
 format-underline = #ff5c57
-label = "%output:0:30%"
+label = "%output:0:50%"
 exec = .config/polybar/pkg.sh
 exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
 
