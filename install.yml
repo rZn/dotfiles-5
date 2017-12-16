@@ -106,7 +106,7 @@
             regexp: '^BLURTYPE="2x8"'
             line: '#BLURTYPE="2x8"'
         - lineinfile:
-            path: dotfiles/.i3/i3lock-fancy-multimonitor/lock
+            path: i3-wm/.i3/i3lock-fancy-multimonitor/lock
             regexp: '^#BLURTYPE="5x3"'
             line: 'BLURTYPE="5x3"'
       tags:
