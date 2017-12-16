@@ -202,8 +202,8 @@
             - zsh-syntax-highlighting
         - shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
         - shell: creates=~/.zshrc stow zsh 
-        - file: src=zsh/.zsh/pure/pure.zsh dest=~/.zfunctions/prompt_pure_setup state=link
-        - file: src=zsh/.zsh/pure/async.zsh dest=~/.zfunctions/async state=link
+        - file: src=~/.zsh/pure/pure.zsh dest=~/.zfunctions/prompt_pure_setup state=link
+        - file: src=~/.zsh/pure/async.zsh dest=~/.zfunctions/async state=link
         - file: path=~/.zshrc_node state=touch
           changed_when: False
       tags:
