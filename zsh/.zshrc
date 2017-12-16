@@ -14,15 +14,15 @@ alias vimconfig="vi ~/.vimrc"
 alias sshconfig="vi ~/.ssh/config"
 alias lh="du -ahd1 | sort -h"
 #lhs() { for list in $(ls -a | sed 's/\ /\\ /g'); do du -hs $list; done | sort -hr }
-alias sprunge="curl -F 'sprunge=<-' http://sprunge.us"
+#alias sprunge="curl -F 'sprunge=<-' http://sprunge.us"
 alias ix="curl -s -F 'f:1=<-' ix.io"
-up () { curl -F "c=@${1:--}" http://ptpb.pw/ }
+up () {curl -F "c=@${1:--}" https://ptpb.pw/}
 alias vi="vim"
 alias sudo="sudo "
 alias installed="pacman -Qqen"
 alias chrome="google-chrome-stable"
 alias tmux="tmux -2"
-alias neofetch="neofetch --crop_mode fit --image_size 33% --image ~/.config/neofetch/archlinux.png --colors 0 7 7 7 7 7"
+#alias neofetch="neofetch --crop_mode fit --image_size 33% --image ~/.config/neofetch/archlinux.png --colors 0 7 7 7 7 7"
 bak() { cp "$1" "$1.bak" }
 chromeapp() { google-chrome-stable --app=$1 }
 extract() {
@@ -43,36 +43,35 @@ extract() {
            *)		echo "Unable to extract '$1'" ;;
        esac
    else
-       echo "'$1' is not a valid file"
+      echo "'$1' is not a valid file"
    fi
 }
-alias startx="ssh-add;startx"
+alias startx="ssh-add && startx"
+
+### System clean tools
+
+dupkg() { expac '%m\t%n' | sort -h | awk '{cmd = "numfmt --to=si "$1; cmd | getline n; close(cmd); print n, $2}' }
+dupkg_ex() { expac -H M "%011m\t%-20n\t%10d" $(comm -23 <(pacman -Qqen | sort) <(pacman -Qqg base base-devel | sort)) | sort -n }
 
 ### EXPORTS
 export EDITOR='vim'
 export VISUAL='vim'
 export BROWSER='google-chrome-stable'
 export POWERLINE_CONFIG_COMMAND=/usr/bin/powerline-config
-unset SSH_ASKPASS
-
-### MAN COLORS
-export LESS_TERMCAP_mb=$'\E[01;31m'
-export LESS_TERMCAP_md=$'\E[01;31m'
-export LESS_TERMCAP_me=$'\E[0m'
-export LESS_TERMCAP_se=$'\E[0m'
-export LESS_TERMCAP_so=$'\E[01;44;33m'
-export LESS_TERMCAP_ue=$'\E[0m'
-export LESS_TERMCAP_us=$'\E[01;32m'
-
-### SSH AGENT
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+export PAGER='most'
 
 ### ZSHRC NODE
 source ~/.zshrc_node
 
+### TERMITE
+if [[ $TERM == xterm-termite ]]; then
+    . /etc/profile.d/vte.sh
+    __vte_osc7
+fi
+
 ### ZSH CONF
 autoload -U zmv
-plugins=(git python)
+plugins=(git python colored-man-pages colorize sprunge web-search)
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
