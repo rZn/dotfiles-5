@@ -1,0 +1,12 @@
+[submodule "i3-wm/.i3/i3lock-fancy-multimonitor"]
+	path = i3-wm/.i3/i3lock-fancy-multimonitor
+	url = https://github.com/guimeira/i3lock-fancy-multimonitor
+[submodule "zsh/.zsh/pure"]
+	path = zsh/.zsh/pure
+	url = https://github.com/sindresorhus/pure
+[submodule "zsh/.zsh/zsh-autosuggestions"]
+	path = zsh/.zsh/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule "vim/.vim/bundle/colorizer"]
+	path = vim/.vim/bundle/colorizer
+	url = https://github.com/lilydjwg/colorizer
