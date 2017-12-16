@@ -203,7 +203,9 @@
         - shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
         - shell: creates=~/.zshrc stow zsh 
         - file: src=~/.zsh/pure/pure.zsh dest=~/.zfunctions/prompt_pure_setup state=link
+          ignore_errors: True
         - file: src=~/.zsh/pure/async.zsh dest=~/.zfunctions/async state=link
+          ignore_errors: True
         - file: path=~/.zshrc_node state=touch
           changed_when: False
       tags:
