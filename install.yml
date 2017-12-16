@@ -102,7 +102,7 @@
         - debug:
             msg: "Do not forget to edit MONITOR vars in ~/.config/polybar/launch.sh"
         - lineinfile:
-            path: dotfiles/i3-wm/.i3/i3lock-fancy-multimonitor/lock
+            path: i3-wm/.i3/i3lock-fancy-multimonitor/lock
             regexp: '^BLURTYPE="2x8"'
             line: '#BLURTYPE="2x8"'
         - lineinfile:
