@@ -49,11 +49,11 @@
       when: ansible_os_family == "Archlinux"
   
     - name: Install fonts
-      shell: creates=/usr/share/icons/capitaine-cursors/ pacaur -S --noconfirm {{item}}
+      shell: creates={{item.creates}} pacaur -S --noconfirm {{item.package}}
       with_items:
-        - ttf-font-awesome
-        - ttf-unifont
-        - ttf-font-icons
+        - { package: 'ttf-font-awesome', creates: '/usr/share/fonts/TTF/fontawesome-webfont.ttf' }
+        - { package: 'ttf-unifont', creates: '/usr/share/fonts/TTF/Unifont.ttf' }
+        - { package: 'ttf-font-icons', creates: '/usr/share/fonts/TTF/icons.ttf' }
       tags:
         - desktop
         - laptop
@@ -70,10 +70,10 @@
 
     - name: Install and configure i3-wm
       block:
-        - shell: creates=/usr/bin/i3 pacaur -S --noconfirm {{item}}
+        - shell: creates={{item.creates}} pacaur -S --noconfirm {{item.package}}
           with_items:
-            - i3-gaps
-            - i3lock-color-git
+            - { package: 'i3-gaps', creates: '/usr/bin/i3' }
+            - { package: 'i3lock-color-git', creates: '/usr/bin/i3lock' }
         - shell: creates=~/.i3 stow i3-wm
       tags:
         - desktop
@@ -141,10 +141,10 @@
 
     - name: Install and configure neofetch
       block:
-        - shell: creates=/usr/bin/neofetch pacaur -S --noconfirm {{item}}
+        - shell: creates={{item.creates}} pacaur -S --noconfirm {{item.package}}
           with_items:
-            - neofetch
-            - w3m
+            - { package: 'neofetch', creates: '/usr/bin/neofetch' }
+            - { package: 'w3m', creates: '/usr/bin/w3m' }
         - shell: creates=~/.config/neofetch stow neofetch
       tags:
         - desktop
