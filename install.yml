@@ -153,7 +153,7 @@
     - name: Install and configure rofi
       block:
         - shell: creates=/usr/bin/rofi pacaur -S --noconfirm rofi
-        - shell: creates=~/.config/rofi stow polybar
+        - shell: creates=~/.config/rofi stow rofi
         - lineinfile: path=~/.Xresources create=yes state=present line='#include ".Xresources.d/rofi"'
       tags:
         - desktop
