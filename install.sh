@@ -19,9 +19,11 @@ echo "### DRYRUN ###############################################################
 
 ansible-playbook -i "localhost," -c local install.yml --ask-become-pass -CD -t $1
 
-echo "Do you want to install ? (y/N)"
+echo "Do you want to install ? (Y/n)"
 read ok
-if [[ "$ok" == "y" ]]
+ok=${ok:-Y}
+
+if [[ "$ok" == "Y" ]]
 then
     echo "### RUN ####################################################################"
     ansible-playbook -i "localhost," -c local install.yml --ask-become-pass -t $1
