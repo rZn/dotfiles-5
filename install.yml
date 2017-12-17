@@ -7,6 +7,10 @@
       package: name=stow state=present
       become: True
 
+    - name: Install pacaur
+      shell: creates=/usr/bin/pacaur curl -o /tmp/PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=pacaur; makepkg PKGBUILD --install --needed
+      when: ansible_os_family == "Archlinux"
+  
     - name: Install Desktop/Laptop tools (generic)
       package: name={{item}} state=present
       with_items:
@@ -19,23 +23,22 @@
         - xorg-xrdb
         - xorg-xfd
         - connman
-        - connman-gtk
-        - gnome-ssh-askpass2
       become: True
       tags:
         - desktop
         - laptop
 
     - name: Install Desktop/Laptop tools (Archlinux)
-      package: name={{item}} state=present
+      shell: creates={{item.creates}} pacaur -S --noconfirm {{item.package}}
       with_items:
-        - cower
+        - { package: 'connman-gtk', creates: '/usr/bin/connman-gtk' }
+        - { package: 'gnome-ssh-askpass2', creates: '/usr/lib/ssh/gnome-ssh-askpass2' }
       when: ansible_os_family == "Archlinux"
       tags:
         - desktop
         - laptop
 
-    - name: Install CLI tools
+    - name: Install CLI tools (generic)
       package: name={{item}} state=present
       with_items:
         - pygmentize
@@ -44,10 +47,15 @@
         - laptop
         - server
     
-    - name: Install pacaur
-      shell: creates=/usr/bin/pacaur curl -o /tmp/PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=pacaur; makepkg PKGBUILD --install --needed
-      when: ansible_os_family == "Archlinux"
-  
+    - name: Install CLI tools (Archlinux)
+      package: name={{item}} state=present
+      with_items:
+        - cower
+      tags:
+        - desktop
+        - laptop
+        - server
+    
     - name: Install fonts
       shell: creates={{item.creates}} pacaur -S --noconfirm {{item.package}}
       with_items:
