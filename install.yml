@@ -255,7 +255,7 @@
     - name: SSH-agent as a service
       block:
         - shell: creates=~/.config/systemd/user/ssh-agent.service stow ssh-agent
-        - systemd: name=ssh-agent state=started enabled=yes user=yes
+        - systemd: name=ssh-agent state=started enabled=yes user=yes daemon_reload=yes
       tags:
         - desktop
         - laptop
@@ -269,7 +269,7 @@
             - weechat
           become: True
         - shell: creates=~/.config/systemd/user/weechat.service stow weechat
-        - systemd: name=weechat state=started enabled=yes user=yes
+        - systemd: name=weechat state=started enabled=yes user=yes daemon_reload=yes
       tags:
         - desktop
         - laptop
