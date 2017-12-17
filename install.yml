@@ -31,8 +31,8 @@
 
     - name: Install pacaur
       block:
-        - shell: creates=/usr/bin/cower curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=cower; makepkg PKGBUILD --skippgpcheck --install --needed
-        - shell: creates=/usr/bin/pacaur curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=pacaur; makepkg PKGBUILD --install --needed
+        - shell: creates=/usr/bin/cower curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=cower; makepkg PKGBUILD --skippgpcheck --install --needed --noconfirm
+        - shell: creates=/usr/bin/pacaur curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=pacaur; makepkg PKGBUILD --install --needed --noconfirm
       when: ansible_os_family == "Archlinux"
       tags:
         - desktop
