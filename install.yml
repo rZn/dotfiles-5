@@ -93,8 +93,8 @@
       block:
         - shell: creates={{item.creates}} pacaur -S --noconfirm {{item.package}}
           with_items:
-            - { package: 'i3-gaps', creates: '/usr/bin/i3' }
-            - { package: 'i3lock-color-git', creates: '/usr/bin/i3lock' }
+            - { package: 'i3-gaps', creates: '/usr/share/licenses/i3-gaps/' }
+            - { package: 'i3lock', creates: '/usr/bin/i3lock' }
         - shell: creates=~/.i3 stow i3-wm
       tags:
         - desktop
@@ -118,7 +118,6 @@
 
     - name: Install and configure polybar
       block:
-        - shell: creates=/usr/bin/polybar pacaur -S --noconfirm polybar
         - pacman: name={{item}} state=present
           with_items:
             - cmake
@@ -134,6 +133,7 @@
             - xcb-util-wm
             - xcb-util-xrm
           become: True
+        - shell: creates=/usr/bin/polybar pacaur -S --noconfirm polybar
         - shell: creates=~/.config/polybar stow polybar
         - debug:
             msg: "Do not forget to edit MONITOR vars in ~/.config/polybar/launch.sh"
