@@ -119,6 +119,21 @@
     - name: Install and configure polybar
       block:
         - shell: creates=/usr/bin/polybar pacaur -S --noconfirm polybar
+        - pacman: name={{item}} state=present
+          with_items:
+            - cmake
+            - clang
+            - cairo
+            - libxcb
+            - xcb-proto
+            - xcb-util
+            - xcb-util-cursor
+            - xcb-util-image
+            - xcb-util-keysyms
+            - xcb-util-renderutil
+            - xcb-util-wm
+            - xcb-util-xrm
+          become: True
         - shell: creates=~/.config/polybar stow polybar
         - debug:
             msg: "Do not forget to edit MONITOR vars in ~/.config/polybar/launch.sh"
