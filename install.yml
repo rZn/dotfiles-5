@@ -133,7 +133,7 @@
             - xcb-util-wm
             - xcb-util-xrm
           become: True
-        - shell: creates=/usr/bin/polybar pacaur -S --noconfirm polybar
+        - shell: creates=/usr/bin/polybar pacaur -S --noconfirm polybar-git
         - shell: creates=~/.config/polybar stow polybar
         - debug:
             msg: "Do not forget to edit MONITOR vars in ~/.config/polybar/launch.sh"
