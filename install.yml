@@ -12,7 +12,7 @@
         - server
 
     - name: Install pacaur
-      shell: creates=/usr/bin/pacaur curl -o /tmp/PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=pacaur; makepkg PKGBUILD --install --needed
+      shell: creates=/usr/bin/pacaur curl -o /tmp/PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=pacaur; makepkg /tmp/PKGBUILD --install --needed
       when: ansible_os_family == "Archlinux"
       tags:
         - desktop
