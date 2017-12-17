@@ -110,7 +110,7 @@
         - blockinfile:
             path: ~/.xprofile
             create: True
-            marker: "<!-- {mark} DOTFILES MANAGED BLOCK -->"
+            marker: "### {mark} DOTFILES MANAGED BLOCK ###"
             content: |
               compton --backend glx --vsync opengl-swc -GCb --config ~/.compton &
       tags:
@@ -156,7 +156,7 @@
         - blockinfile:
             path: ~/.xprofile
             create: True
-            marker: "<!-- {mark} DOTFILES MANAGED BLOCK -->"
+            marker: "### {mark} DOTFILES MANAGED BLOCK ###"
             content: |
               xbindkeys &
       tags:
