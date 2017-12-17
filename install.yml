@@ -113,7 +113,7 @@
         - blockinfile:
             path: ~/.xprofile
             create: True
-            marker: "### {mark} DOTFILES MANAGED BLOCK ###"
+            marker: "### {mark} DOTFILES compton ###"
             content: |
               compton --backend glx --vsync opengl-swc -GCb --config ~/.compton &
       tags:
@@ -159,7 +159,7 @@
         - blockinfile:
             path: ~/.xprofile
             create: True
-            marker: "### {mark} DOTFILES MANAGED BLOCK ###"
+            marker: "### {mark} DOTFILES xbindkeys###"
             content: |
               xbindkeys &
       tags:
@@ -279,3 +279,18 @@
         - desktop
         - laptop
         - weechat
+
+    - name: set wallpaper
+      block:
+        - file: path=~/img state=directory
+        - copy: ~/dotfiles/wallpaper/03976_theeleventhhour_1920x1080.jpg ~/img/wallpaper.jpg
+        - blockinfile:
+            path: ~/.xprofile
+            create: True
+            marker: "### {mark} DOTFILES wallpaper ###"
+            content: |
+              feh --bg-scale ~/img/wallpaper.jpg &
+      when: ansible_env.username == "vagrant"
+      tags:
+        - desktop
+        - wallpaper
