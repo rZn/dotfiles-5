@@ -222,6 +222,7 @@
             - zsh
             - most
             - zsh-syntax-highlighting
+          become: True
         - shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
         - shell: creates=~/.zshrc stow zsh 
         - file: src=~/.zsh/pure/pure.zsh dest=~/.zfunctions/prompt_pure_setup state=link
