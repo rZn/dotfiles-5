@@ -21,10 +21,12 @@
         - wget
         - slop
         - maim
+        - feh
         - xclip
         - xorg-xrdb
         - xorg-xfd
         - connman
+        - geary
         - expac
       become: True
       tags:
@@ -45,6 +47,7 @@
     - name: Install Desktop/Laptop tools (Archlinux)
       shell: creates={{item.creates}} pacaur -S --noconfirm {{item.package}}
       with_items:
+        - { package: 'google-chrome', creates: '/usr/bin/google-chrome-stable' }
         - { package: 'connman-gtk', creates: '/usr/bin/connman-gtk' }
         - { package: 'gnome-ssh-askpass2', creates: '/usr/lib/ssh/gnome-ssh-askpass2' }
       when: ansible_os_family == "Archlinux"
