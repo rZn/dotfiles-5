@@ -224,6 +224,9 @@
             - zsh-syntax-highlighting
           become: True
         - shell: creates=~/.oh-my-zsh sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" ; mv .zshrc .zshrc.old
+          ignore_errors: True
+        - debug:
+            msg: "Do not forget to 'chsh /usr/bin/zsh'"
         - shell: creates=~/.zshrc stow zsh 
         - file: src=~/.zsh/pure/pure.zsh dest=~/.zfunctions/prompt_pure_setup state=link
           ignore_errors: True
