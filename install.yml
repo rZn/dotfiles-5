@@ -11,15 +11,6 @@
         - laptop
         - server
 
-    - name: Install pacaur
-      shell: creates=/usr/bin/pacaur curl -o /tmp/PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=pacaur; makepkg /tmp/PKGBUILD --install --needed
-      when: ansible_os_family == "Archlinux"
-      tags:
-        - desktop
-        - laptop
-        - server
-        - pacaur
-  
     - name: Install Desktop/Laptop tools (generic)
       package: name={{item}} state=present
       with_items:
@@ -32,11 +23,23 @@
         - xorg-xrdb
         - xorg-xfd
         - connman
+        - expac
       become: True
       tags:
         - desktop
         - laptop
 
+    - name: Install pacaur
+      block:
+        - shell: creates=/usr/bin/cower curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=cower; makepkg PKGBUILD --skippgpcheck --install --needed
+        - shell: creates=/usr/bin/pacaur curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=pacaur; makepkg PKGBUILD --install --needed
+      when: ansible_os_family == "Archlinux"
+      tags:
+        - desktop
+        - laptop
+        - server
+        - pacaur
+  
     - name: Install Desktop/Laptop tools (Archlinux)
       shell: creates={{item.creates}} pacaur -S --noconfirm {{item.package}}
       with_items:
