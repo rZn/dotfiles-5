@@ -228,6 +228,7 @@
         - debug:
             msg: "Do not forget to 'chsh /usr/bin/zsh'"
         - shell: creates=~/.zshrc stow zsh 
+        - file: path=~/.zfunctions state=directory
         - file: src=~/.zsh/pure/pure.zsh dest=~/.zfunctions/prompt_pure_setup state=link
           ignore_errors: True
         - file: src=~/.zsh/pure/async.zsh dest=~/.zfunctions/async state=link
@@ -243,6 +244,7 @@
     - name: Install and configure vim
       block:
         - package: name=vim state=present
+          become: True
         - shell: creates=~/.vim stow vim
       tags:
         - desktop
