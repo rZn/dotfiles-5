@@ -1,0 +1,8 @@
+---
+- name: Install termite
+  package: name=termite state=present
+  become: True
+
+- name: Configure termite
+  synchronize: src=files/ dest=~/
+

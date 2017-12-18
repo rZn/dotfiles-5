@@ -1,0 +1,13 @@
+---
+- name: Install weechat
+  package: name={{item}} state=present
+  with_items:
+    - screen
+    - weechat
+  become: True
+
+- name: Configure weechat
+  synchronize: src=files/ dest=~/
+
+- name: Set weechat systemd user service
+  systemd: name=weechat state=started enabled=yes user=yes daemon_reload=yes

@@ -1,0 +1,34 @@
+---
+- name: Install zsh
+  package: name={{item}} state=present
+  with_items:
+    - zsh
+    - most
+    - zsh-syntax-highlighting
+  become: True
+
+- name: Install oh-my-zsh
+  shell: creates=~/.oh-my-zsh sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  ignore_errors: True
+
+- debug:
+    msg: "Do not forget to 'chsh /usr/bin/zsh'"
+
+- name: Configure zsh
+  synchronize: src=files/ dest=~/
+
+- name: Create zfunctions dir
+  file: path=~/.zfunctions state=directory
+
+- name: Configure Pure Prompt
+  file: src=~/.zsh/pure/pure.zsh dest=~/.zfunctions/prompt_pure_setup state=link
+  ignore_errors: True
+
+- name: Configure Pure Prompt bis
+  file: src=~/.zsh/pure/async.zsh dest=~/.zfunctions/async state=link
+  ignore_errors: True
+
+- name: Init zshrc_node
+  file: path=~/.zshrc_node state=touch
+  changed_when: False
+

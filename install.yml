@@ -1,296 +1,37 @@
 ---
 - hosts: all
 
-  tasks:
+  pre_tasks:
 
-    - name: Install stow
-      package: name=stow state=present
-      become: True
-      tags:
-        - desktop
-        - laptop
-        - server
-
-    - name: Install Desktop/Laptop tools (generic)
-      package: name={{item}} state=present
-      with_items:
-        - xorg-server
-        - xorg-xinit
-        - lxappearance
-        - curl
-        - wget
-        - slop
-        - maim
-        - feh
-        - xclip
-        - xorg-xrdb
-        - xorg-xfd
-        - connman
-        - geary
-        - expac
-      become: True
-      tags:
-        - desktop
-        - laptop
-
-    - name: Install pacaur
-      block:
-        - shell: creates=/usr/bin/cower curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=cower; makepkg PKGBUILD --skippgpcheck --install --needed --noconfirm
-        - shell: creates=/usr/bin/pacaur curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=pacaur; makepkg PKGBUILD --install --needed --noconfirm
+    - name: Install cower on Archlinux
+      shell: creates=/usr/bin/cower curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=cower; makepkg PKGBUILD --skippgpcheck --install --needed --noconfirm
       when: ansible_os_family == "Archlinux"
-      tags:
-        - desktop
-        - laptop
-        - server
-        - pacaur
-  
-    - name: Install Desktop/Laptop tools (Archlinux)
-      shell: creates={{item.creates}} pacaur -S --noconfirm {{item.package}}
-      with_items:
-        - { package: 'google-chrome', creates: '/usr/bin/google-chrome-stable' }
-        - { package: 'connman-gtk', creates: '/usr/bin/connman-gtk' }
-        - { package: 'gnome-ssh-askpass2', creates: '/usr/lib/ssh/gnome-ssh-askpass2' }
+      tags: [ 'pacaur', 'laptop', 'desktop', 'server' ]
+
+    - name: Install pacaur on Archlinux
+      #TODO replace with packer, and test packer module
+      shell: creates=/usr/bin/pacaur curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=pacaur; makepkg PKGBUILD --install --needed --noconfirm
       when: ansible_os_family == "Archlinux"
-      tags:
-        - desktop
-        - laptop
+      tags: [ 'pacaur', 'laptop', 'desktop', 'server' ]
 
-    - name: Install CLI tools (generic)
-      package: name={{item}} state=present
-      with_items:
-        - pygmentize
-      become: True
-      tags:
-        - desktop
-        - laptop
-        - server
-    
-    - name: Install CLI tools (Archlinux)
-      package: name={{item}} state=present
-      with_items:
-        - cower
-      tags:
-        - desktop
-        - laptop
-        - server
-    
-    - name: Install fonts
-      shell: creates={{item.creates}} pacaur -S --noconfirm {{item.package}}
-      with_items:
-        - { package: 'ttf-font-awesome', creates: '/usr/share/fonts/TTF/fontawesome-webfont.ttf' }
-        - { package: 'ttf-unifont', creates: '/usr/share/fonts/TTF/Unifont.ttf' }
-        - { package: 'ttf-font-icons', creates: '/usr/share/fonts/TTF/icons.ttf' }
-      tags:
-        - desktop
-        - laptop
-
-    - name: Install and configure Cursor
-      block:
-        - shell: creates=/usr/share/icons/capitaine-cursors/ pacaur -S --noconfirm capitaine-cursors
-        - shell: creates=~/.Xresources.d/cursor stow cursor
-        - lineinfile: path=~/.Xresources create=yes state=present line='#include ".Xresources.d/cursor"'
-      tags:
-        - desktop
-        - laptop
-        - cursor
-
-    - name: Install and configure i3-wm
-      block:
-        - shell: creates={{item.creates}} pacaur -S --noconfirm {{item.package}}
-          with_items:
-            - { package: 'i3-gaps', creates: '/usr/share/licenses/i3-gaps/' }
-            - { package: 'i3lock', creates: '/usr/bin/i3lock' }
-        - shell: creates=~/.i3 stow i3-wm
-      tags:
-        - desktop
-        - laptop
-        - i3-wm
-
-    - name: Install and configure compton
-      block:
-        - shell: creates=/usr/bin/compton pacaur -S --noconfirm compton-git
-        - shell: creates=~/.compton stow compton
-        - blockinfile:
-            path: ~/.xprofile
-            create: True
-            marker: "### {mark} DOTFILES compton ###"
-            content: |
-              compton --backend glx --vsync opengl-swc -GCb --config ~/.compton &
-      tags:
-        - desktop
-        - laptop
-        - compton
-
-    - name: Install and configure polybar
-      block:
-        - shell: creates=/usr/share/fonts/misc/siji.pcf pacaur -S --noconfirm siji-git
-        - shell: creates=/usr/bin/polybar pacaur -S --noconfirm polybar-git
-        - shell: creates=~/.config/polybar stow polybar
-        - debug:
-            msg: "Do not forget to edit MONITOR vars in ~/.config/polybar/launch.sh"
-        - lineinfile:
-            path: i3-wm/.i3/i3lock-fancy-multimonitor/lock
-            regexp: '^BLURTYPE="2x8"'
-            line: '#BLURTYPE="2x8"'
-        - lineinfile:
-            path: i3-wm/.i3/i3lock-fancy-multimonitor/lock
-            regexp: '^#BLURTYPE="5x3"'
-            line: 'BLURTYPE="5x3"'
-      tags:
-        - desktop
-        - laptop
-        - polybar
-
-    - name: Install and configure rofi
-      block:
-        - shell: creates=/usr/bin/rofi pacaur -S --noconfirm rofi
-        - shell: creates=~/.config/rofi stow rofi
-        - lineinfile: path=~/.Xresources create=yes state=present line='#include ".Xresources.d/rofi"'
-      tags:
-        - desktop
-        - laptop
-        - rofi
-    
-    - name: Install and configure xbindkeys
-      block:
-        - package: name=xbindkeys state=present
-          become: True
-        - shell: creates=~/.xbindkeys stow xbindkeys
-        - blockinfile:
-            path: ~/.xprofile
-            create: True
-            marker: "### {mark} DOTFILES xbindkeys###"
-            content: |
-              xbindkeys &
-      tags:
-        - laptop
-        - xbindkeys
-
-    - name: Install and configure neofetch
-      block:
-        - shell: creates={{item.creates}} pacaur -S --noconfirm {{item.package}}
-          with_items:
-            - { package: 'neofetch', creates: '/usr/bin/neofetch' }
-            - { package: 'w3m', creates: '/usr/bin/w3m' }
-        - shell: creates=~/.config/neofetch stow neofetch
-      tags:
-        - desktop
-        - laptop
-        - neofetch
-
-    - name: Install and configure termite
-      block:
-        - package: name={{item}} state=present
-          with_items:
-            - termite
-            - ttf-hack
-          become: True
-        - shell: creates=~/.config/termite stow termite
-      tags:
-        - desktop
-        - laptop
-        - termite
-
-    - name: Install termite terminfo (Arch)
-      pacman: name=termite-terminfo state=present
-      when: ansible_os_family == "Archlinux"
-      become: True
-      tags:
-        - desktop
-        - laptop
-        - server
-        - termite
-
-    - name: Install termite terminfo (Others)
-      shell: tic -x termite/termite.terminfo
-      when: ansible_os_family != "Archlinux"
-      tags:
-        - desktop
-        - laptop
-        - server
-        - termite
-
-    - name: Install and configure screen
-      block:
-        - package: name=screen state=present
-        - shell: creates=~/.screenrc stow screen
-      tags:
-        - desktop
-        - laptop
-        - server
-        - screen
-
-    - name: Install and configure zsh (with pure prompt)
-      block:
-        - package: name={{item}} state=present
-          with_items:
-            - zsh
-            - most
-            - zsh-syntax-highlighting
-          become: True
-        - shell: creates=~/.oh-my-zsh sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" ; mv .zshrc .zshrc.old
-          ignore_errors: True
-        - debug:
-            msg: "Do not forget to 'chsh /usr/bin/zsh'"
-        - shell: creates=~/.zshrc stow zsh 
-        - file: path=~/.zfunctions state=directory
-        - file: src=~/.zsh/pure/pure.zsh dest=~/.zfunctions/prompt_pure_setup state=link
-          ignore_errors: True
-        - file: src=~/.zsh/pure/async.zsh dest=~/.zfunctions/async state=link
-          ignore_errors: True
-        - file: path=~/.zshrc_node state=touch
-          changed_when: False
-      tags:
-        - desktop
-        - laptop
-        - server
-        - zsh
-  
-    - name: Install and configure vim
-      block:
-        - package: name=vim state=present
-          become: True
-        - shell: creates=~/.vim stow vim
-      tags:
-        - desktop
-        - laptop
-        - server
-        - vim
-
-    - name: SSH-agent as a service
-      block:
-        - shell: creates=~/.config/systemd/user/ssh-agent.service stow ssh-agent
-        - systemd: name=ssh-agent state=started enabled=yes user=yes daemon_reload=yes
-      tags:
-        - desktop
-        - laptop
-        - ssh-agent
-
-    - name: Weechat as a service
-      block:
-        - package: name={{item}} state=present
-          with_items:
-            - screen
-            - weechat
-          become: True
-        - shell: creates=~/.config/systemd/user/weechat.service stow weechat
-        - systemd: name=weechat state=started enabled=yes user=yes daemon_reload=yes
-      tags:
-        - desktop
-        - laptop
-        - weechat
-
-    - name: set wallpaper
-      block:
-        - file: path=~/img state=directory
-        - copy: ~/dotfiles/wallpaper/03976_theeleventhhour_1920x1080.jpg ~/img/wallpaper.jpg
-        - blockinfile:
-            path: ~/.xprofile
-            create: True
-            marker: "### {mark} DOTFILES wallpaper ###"
-            content: |
-              feh --bg-scale ~/img/wallpaper.jpg &
+  roles:
+    - { role: packages, tags: packages }
+    # Server roles
+    - { role: zsh, tags: [ 'zsh', 'laptop', 'desktop', 'server' ] }
+    - { role: vim, tags: [ 'vim', 'laptop', 'desktop', 'server' ] }
+    - { role: terminfo, tags: [ 'terminfo', 'laptop', 'desktop', 'server' ] }
+    - { role: screen, tags: [ 'screen', 'laptop', 'desktop', 'server' ] }
+    - { role: ssh-agent, tags: [ 'ssh-agent', 'laptop', 'desktop', 'server' ] }
+    # Desktop/Laptop roles
+    - { role: cursor, tags: [ 'cursor', 'laptop', 'desktop' ] }
+    - { role: i3-wm, tags: [ 'i3-wm', 'laptop', 'desktop' ] }
+    - { role: compton, tags: [ 'compton', 'laptop', 'desktop' ] }
+    - { role: polybar, tags: [ 'polybar', 'laptop', 'desktop' ] }
+    - { role: rofi, tags: [ 'rofi', 'laptop', 'desktop' ] }
+    - { role: neofetch, tags: [ 'neofetch', 'laptop', 'dekstop' ] }
+    - { role: xbindkeys, tags: [ 'xbindkeys', 'laptop' ] }
+    - { role: termite, tags: [ 'termite', 'laptop', 'desktop' ] }
+    - { role: weechat, tags: [ 'weechat', 'laptop', 'desktop' ] }
+    # Vagrant roles
+    - { role: weechat, tags: [ 'wallpaper', 'desktop' ] }
       when: ansible_env.username == "vagrant"
-      tags:
-        - desktop
-        - wallpaper

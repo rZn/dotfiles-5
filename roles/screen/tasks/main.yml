@@ -1,0 +1,6 @@
+---
+- name: Install screen
+  package: name=screen state=present
+
+- name: Configure screen
+  synchronize: src=files/ dest=~/

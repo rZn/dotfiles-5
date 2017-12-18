@@ -1,0 +1,9 @@
+---
+- name: Install rofi
+  shell: creates=/usr/bin/rofi pacaur -S --noconfirm rofi
+
+- name: Configure rofi
+  synchronize: src=files/ dest=~/
+
+- name: Init rofi in Xresources
+  lineinfile: path=~/.Xresources create=yes state=present line='#include ".Xresources.d/rofi"'

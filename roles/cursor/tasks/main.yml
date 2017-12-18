@@ -1,0 +1,10 @@
+---
+- name: Install Cursors
+  shell: creates=/usr/share/icons/capitaine-cursors/ pacaur -S --noconfirm capitaine-cursors
+
+- name: Configure Cursors
+  synchronize: src=files/ dest=~/
+
+- name: Init Cursors in .Xresources
+  lineinfile: path=~/.Xresources create=yes state=present line='#include ".Xresources.d/cursor"'
+

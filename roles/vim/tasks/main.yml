@@ -1,0 +1,7 @@
+---
+- name: Install vim
+  package: name=vim state=present
+  become: True
+
+- name: Configure vim
+  synchronize: src=files/ dest=~/

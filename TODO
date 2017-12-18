@@ -1,3 +1,4 @@
 - add borgbackup conf
-- use stow here
 - check missing deps
+- temp directory for dl
+

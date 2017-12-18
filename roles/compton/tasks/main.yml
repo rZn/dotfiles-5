@@ -1,0 +1,14 @@
+---
+- name: Install compton
+  shell: creates=/usr/bin/compton pacaur -S --noconfirm compton-git
+
+- name: Configure compton
+  synchronize: src=files/ dest=~/
+
+- name: Init compton in .xprofile
+  blockinfile:
+    path: ~/.xprofile
+    create: True
+    marker: "### {mark} DOTFILES compton ###"
+    content: |
+      compton --backend glx --vsync opengl-swc -GCb --config ~/.compton &

@@ -1,0 +1,29 @@
+---
+- name: Install Desktop packages
+  package: name={{item}} state=present
+  with_items:
+    - xorg-server
+    - xorg-xinit
+    - lxappearance
+    - slop
+    - maim
+    - feh
+    - xclip
+    - xorg-xrdb
+    - xorg-xfd
+    - connman
+    - geary
+    - ttf-hack
+  become: True
+
+- name: Install Desktop packages (Archlinux)
+  shell: creates={{item.creates}} pacaur -S --noconfirm {{item.package}}
+  with_items:
+    - { package: 'google-chrome', creates: '/usr/bin/google-chrome-stable' }
+    - { package: 'connman-gtk', creates: '/usr/bin/connman-gtk' }
+    - { package: 'gnome-ssh-askpass2', creates: '/usr/lib/ssh/gnome-ssh-askpass2' }
+    - { package: 'ttf-font-awesome', creates: '/usr/share/fonts/TTF/fontawesome-webfont.ttf' }
+    - { package: 'ttf-unifont', creates: '/usr/share/fonts/TTF/Unifont.ttf' }
+    - { package: 'ttf-font-icons', creates: '/usr/share/fonts/TTF/icons.ttf' }
+
+  when: ansible_os_family == "Archlinux"

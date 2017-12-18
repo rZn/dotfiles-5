@@ -1,0 +1,14 @@
+---
+- name: Install common packages
+  package: name={{item}} state=present
+  with_items:
+    - curl
+    - wget
+    - pygmentize
+  become: True
+
+- name: Install common packages (Archlinux)
+  pacman: name={{item}} state=present
+  with_items:
+    - expac
+  become: True
