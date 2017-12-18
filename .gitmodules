@@ -12,4 +12,4 @@
 	url = https://github.com/guimeira/i3lock-fancy-multimonitor
 [submodule "library"]
 	path = library
-	url = https://github.com/austinhyde/ansible-packer
+	url = https://github.com/eoli3n/ansible-packer
