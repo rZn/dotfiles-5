@@ -32,6 +32,9 @@
     - { role: xbindkeys, tags: [ 'xbindkeys', 'laptop' ] }
     - { role: termite, tags: [ 'termite', 'laptop', 'desktop' ] }
     - { role: weechat, tags: [ 'weechat', 'laptop', 'desktop' ] }
-    # Vagrant roles
-    - { role: weechat, tags: [ 'wallpaper', 'desktop' ] }
+
+  tasks:
+    - include_role:
+        name: weechat
       when: ansible_env.username == "vagrant"
+      tags: [ 'wallpaper', 'desktop' ]
