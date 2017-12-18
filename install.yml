@@ -1,27 +1,36 @@
 ---
 - hosts: all
+  tags: [ 'server', 'laptop', 'desktop' ]
 
   roles:
     - { role: packages, tags: packages }
-    # Server roles
-    - { role: zsh, tags: [ 'zsh', 'laptop', 'desktop', 'server' ] }
-    - { role: vim, tags: [ 'vim', 'laptop', 'desktop', 'server' ] }
-    - { role: terminfo, tags: [ 'terminfo', 'laptop', 'desktop', 'server' ] }
-    - { role: screen, tags: [ 'screen', 'laptop', 'desktop', 'server' ] }
-    - { role: ssh-agent, tags: [ 'ssh-agent', 'laptop', 'desktop', 'server' ] }
-    # Desktop/Laptop roles
-    - { role: cursor, tags: [ 'cursor', 'laptop', 'desktop' ] }
-    - { role: i3-wm, tags: [ 'i3-wm', 'laptop', 'desktop' ] }
-    - { role: compton, tags: [ 'compton', 'laptop', 'desktop' ] }
-    - { role: polybar, tags: [ 'polybar', 'laptop', 'desktop' ] }
-    - { role: rofi, tags: [ 'rofi', 'laptop', 'desktop' ] }
-    - { role: neofetch, tags: [ 'neofetch', 'laptop', 'dekstop' ] }
-    - { role: xbindkeys, tags: [ 'xbindkeys', 'laptop' ] }
-    - { role: termite, tags: [ 'termite', 'laptop', 'desktop' ] }
-    - { role: weechat, tags: [ 'weechat', 'laptop', 'desktop' ] }
+    - { role: zsh, tags: zsh }
+    - { role: vim, tags: vim }
+    - { role: terminfo, tags: terminfo }
+    - { role: screen, tags: screen }
+    - { role: ssh-agent, tags: ssh-agent }
+
+- hosts: all
+  tags: [ 'desktop', 'laptop' ]
+
+  roles:
+    - { role: cursor, tags: cursor }
+    - { role: i3-wm, tags: i3-wm }
+    - { role: compton, tags: compton }
+    - { role: polybar, tags: polybar }
+    - { role: rofi, tags: rofi }
+    - { role: neofetch, tags: neofetch }
+    - { role: termite, tags: termite }
+    - { role: weechat, tags: weechat }
 
   tasks:
     - include_role:
         name: weechat
       when: ansible_env.username == "vagrant"
-      tags: [ 'wallpaper', 'desktop' ]
+      tags: wallpaper
+
+- hosts: all
+  tags: laptop
+
+  roles:
+    - { role: xbindkeys, tags: xbindkeys }
