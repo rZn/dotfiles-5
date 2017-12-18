@@ -17,13 +17,12 @@
   become: True
 
 - name: Install Desktop packages (Archlinux)
-  shell: creates={{item.creates}} pacaur -S --noconfirm {{item.package}}
+  packer: name={{item}} state=present
   with_items:
-    - { package: 'google-chrome', creates: '/usr/bin/google-chrome-stable' }
-    - { package: 'connman-gtk', creates: '/usr/bin/connman-gtk' }
-    - { package: 'gnome-ssh-askpass2', creates: '/usr/lib/ssh/gnome-ssh-askpass2' }
-    - { package: 'ttf-font-awesome', creates: '/usr/share/fonts/TTF/fontawesome-webfont.ttf' }
-    - { package: 'ttf-unifont', creates: '/usr/share/fonts/TTF/Unifont.ttf' }
-    - { package: 'ttf-font-icons', creates: '/usr/share/fonts/TTF/icons.ttf' }
-
+    - google-chrome
+    - connman-gtk
+    - gnome-ssh-askpass2
+    - ttf-font-awesome
+    - ttf-unifont
+    - ttf-font-icons
   when: ansible_os_family == "Archlinux"
