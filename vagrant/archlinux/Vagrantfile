@@ -27,7 +27,7 @@ Vagrant.configure("2") do |config|
   cd dotfiles
   git checkout dev
   git submodule update --init --recursive
-  ./install.sh desktop
+  echo -e "vagrant\nY\nvagrant" | ./install.sh desktop
   SCRIPT
 
   config.vm.provision "shell", inline: $script, privileged: false
