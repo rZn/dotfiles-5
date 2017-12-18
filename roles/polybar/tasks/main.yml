@@ -1,9 +1,9 @@
 ---
-- name: Instal polyba dep siji font
-  shell: creates=/usr/share/fonts/misc/siji.pcf pacaur -S --noconfirm siji-git
-
 - name: Install polybar
-  shell: creates=/usr/bin/polybar pacaur -S --noconfirm polybar-git
+  packer: name={{item}} state=present
+  with_items:
+    - siji-git
+    - polybar-git
 
 - name: Configure polybar
   synchronize: src=files/ dest=~/

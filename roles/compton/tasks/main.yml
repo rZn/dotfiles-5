@@ -1,6 +1,6 @@
 ---
 - name: Install compton
-  shell: creates=/usr/bin/compton pacaur -S --noconfirm compton-git
+  packer: name=compton-git state=present
 
 - name: Configure compton
   synchronize: src=files/ dest=~/

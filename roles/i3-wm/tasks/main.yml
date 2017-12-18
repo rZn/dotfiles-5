@@ -1,9 +1,8 @@
 ---
 - name: Install i3-wm
-  shell: creates={{item.creates}} pacaur -S --noconfirm {{item.package}}
-  with_items:
-    - { package: 'i3-gaps', creates: '/usr/share/licenses/i3-gaps/' }
-    - { package: 'i3lock', creates: '/usr/bin/i3lock' }
+  packer: name={{item}} state=present
+    - i3-gaps
+    - i3lock
 
 - name: Configure i3-wm
   synchronize: src=files/ dest=~/

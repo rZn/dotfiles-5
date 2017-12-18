@@ -1,9 +1,9 @@
 ---
 - name: Install neofetch
-  shell: creates={{item.creates}} pacaur -S --noconfirm {{item.package}}
+  packer: name={{item}} state=present
   with_items:
-    - { package: 'neofetch', creates: '/usr/bin/neofetch' }
-    - { package: 'w3m', creates: '/usr/bin/w3m' }
+    - w3m
+    - neofetch
 
 - name: Configure neofetch
   synchronize: src=files/ dest=~/

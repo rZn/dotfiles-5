@@ -1,6 +1,6 @@
 ---
 - name: Install rofi
-  shell: creates=/usr/bin/rofi pacaur -S --noconfirm rofi
+  packer: name=rofi state=present
 
 - name: Configure rofi
   synchronize: src=files/ dest=~/

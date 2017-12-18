@@ -1,6 +1,6 @@
 ---
 - name: Install Cursors
-  shell: creates=/usr/share/icons/capitaine-cursors/ pacaur -S --noconfirm capitaine-cursors
+  packer: name=capitaine-cursors state=present
 
 - name: Configure Cursors
   synchronize: src=files/ dest=~/
