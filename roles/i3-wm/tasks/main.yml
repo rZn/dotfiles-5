@@ -1,6 +1,7 @@
 ---
 - name: Install i3-wm
   packer: name={{item}} state=present
+  with_items:
     - i3-gaps
     - i3lock
 
