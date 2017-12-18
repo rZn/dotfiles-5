@@ -1,19 +1,6 @@
 ---
 - hosts: all
 
-  pre_tasks:
-
-    - name: Install cower on Archlinux
-      shell: creates=/usr/bin/cower curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=cower; makepkg PKGBUILD --skippgpcheck --install --needed --noconfirm
-      when: ansible_os_family == "Archlinux"
-      tags: [ 'pacaur', 'laptop', 'desktop', 'server' ]
-
-    - name: Install pacaur on Archlinux
-      #TODO replace with packer, and test packer module
-      shell: creates=/usr/bin/pacaur curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=pacaur; makepkg PKGBUILD --install --needed --noconfirm
-      when: ansible_os_family == "Archlinux"
-      tags: [ 'pacaur', 'laptop', 'desktop', 'server' ]
-
   roles:
     - { role: packages, tags: packages }
     # Server roles
