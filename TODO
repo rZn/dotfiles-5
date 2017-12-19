@@ -2,6 +2,7 @@
 - add tmux
 - mv files to sync if synchronize, then reinit submodules
 - use maximum of copy + backup=yes
+- TOFIX: autolaunch i3 apps good order
 - TOFIX: startx blank screen in vm
 - TOFIX: ssh-agent ssh-add in zshrc startx
 - TOFIX: find a way to clean tmp dir while packer install
