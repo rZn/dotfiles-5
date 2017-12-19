@@ -2,7 +2,7 @@
 execute pathogen#infect()
 
 " lines numbers
-set nu
+" set nu
 syntax on
 filetype plugin indent on
 set background=dark
