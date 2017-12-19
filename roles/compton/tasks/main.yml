@@ -3,7 +3,7 @@
   packer: name=compton-git state=present
 
 - name: Configure compton
-  synchronize: src=files/ dest=~/
+  copy: src=files/.compton dest=~/.compton backup=yes
 
 - name: Init compton in .xprofile
   blockinfile:

@@ -1,3 +1,2 @@
----
-- name: clean packer tmp
+- name: clean tmp packer
   shell: rm -Rf /tmp/packer*

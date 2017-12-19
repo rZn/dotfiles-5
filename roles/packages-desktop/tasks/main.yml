@@ -26,5 +26,7 @@
     - ttf-unifont
     - ttf-font-icons
   when: ansible_os_family == "Archlinux"
-  notify: clean packer tmp
+  notify: clean tmp packer
 
+- name: Flush handlers to clean /tmp
+  meta: flush_handlers
