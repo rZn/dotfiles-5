@@ -27,7 +27,7 @@
 
   tasks:
     - include_role:
-        name: weechat
+        name: wallpaper
       when: ansible_user_id == "vagrant"
       tags: wallpaper
 
