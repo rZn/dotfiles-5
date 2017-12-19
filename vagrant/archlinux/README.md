@@ -22,13 +22,11 @@ vagrant up
 
 # Test
 
-Launch virtualbox GUI, open archlinux-dotfiles VM
-
-## Login TTY
-- Login : vagrant
-- Password : vagrant
-
-## Launch desktop
+- Launch virtualbox GUI, open ``archlinux-dotfiles`` VM
+- Login in TTY
+  - Login : ``vagrant``
+  - Password : ``vagrant``
+- Launch desktop
 ```
 startx
 ```
