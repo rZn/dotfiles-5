@@ -1,13 +1,7 @@
 - TODO: borgbackup conf
 - TODO: tmux and configure
-- TODO: mv files to sync if synchronize, then reinit submodules
-- TODO: use maximum of copy + backup=yes
 
 - TOFIX: autolaunch i3 apps good order
 - TOFIX: zsh termite -> https://github.com/thestinger/termite/issues/550
 
-- TOTEST: creates subdir for zsh, .Xresources.d in each roles
-- TOTEST: oh-my-zsh erase existing .zshrc ?
 - TOTEST: ssh-agent ssh-add in zshrc startx
-- TOTEST: vim install powerline
-- TOTEST: clean dotfiles after run
