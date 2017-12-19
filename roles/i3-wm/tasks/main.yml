@@ -7,3 +7,6 @@
 
 - name: Configure i3-wm
   synchronize: src=files/ dest=~/
+
+- name: Template config file
+  template: src=templates/config.j2 dest=~/.i3/config

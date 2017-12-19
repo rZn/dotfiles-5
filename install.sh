@@ -19,11 +19,11 @@ echo "### LIST TASKS ###########################################################
 
 ansible-playbook -i "localhost," -c local install.yml --list-tasks -t desktop | grep TAGS | egrep -v 'play|debug|include_role' | sed 's/\ *\(.*\)TAGS.*$/\1/'
 
-echo "Do you want to dryrun ? (Y/n)"
+echo "Do you want to dryrun ? (y/N)"
 read ok
-ok=${ok:-Y}
+ok=${ok:-N}
 
-if [[ "$ok" == "Y" ]]
+if [[ "$ok" == "y" ]]
 then
     echo "### DRYRUN ###################################################################"
     ansible-playbook -i "localhost," -c local install.yml --ask-become-pass -CD -t $1
