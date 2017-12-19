@@ -1,5 +1,5 @@
 https://asciinema.org/a/BHA2aFe0yq9vbBuEx5QCFPhKx?speed=5
-[![asciicast](https://asciinema.org/a/BHA2aFe0yq9vbBuEx5QCFPhKx.png)](https://asciinema.org/a/BHA2aFe0yq9vbBuEx5QCFPhKx?speed=5)]
+[![https://asciinema.org/a/BHA2aFe0yq9vbBuEx5QCFPhKx?speed=5](https://asciinema.org/a/BHA2aFe0yq9vbBuEx5QCFPhKx.png)]
 
 # Dependencies
 
