@@ -4,5 +4,5 @@
   become: True
 
 - name: Configure termite
-  synchronize: src=files/ dest=~/
+  copy: src=files/config dest=~/.config/termite/config backup=yes
 
