@@ -3,7 +3,7 @@
   file: path=~/img state=directory
 
 - name: Copy wallpaper
-  copy: src=files/wallpaper.jpg ~/img/wallpaper.jpg
+  copy: src=files/wallpaper.jpg dest=~/img/wallpaper.jpg
 
 - name: Init wallpaper in .xprofile
   blockinfile:
