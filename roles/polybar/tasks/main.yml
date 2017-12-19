@@ -15,7 +15,7 @@
   file: path=~/.config/polybar state=directory
 
 - name: Add pkg check script
-  copy: src=files/pkg.sh dest=~/.config/polybar/pkg.sh
+  copy: src=files/pkg.sh dest=~/.config/polybar/pkg.sh mode=0755
 
 - name: Template launch file
   template: src=templates/launch.j2 dest=~/.config/polybar/launch.sh mode=0755
