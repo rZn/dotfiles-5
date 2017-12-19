@@ -11,8 +11,5 @@
 - name: Update font cache
   shell: creates=.Xdefaults fc-cache -f
 
-- name: Init xressource
-  shell: creates=.Xdefaults xrdb ~/.Xresources
-
 - name: Link Xdefaults
   file: src=~/.Xresources dest=~/.Xdefaults state=link force=yes
