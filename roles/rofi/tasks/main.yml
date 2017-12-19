@@ -3,7 +3,7 @@
   packer: name=rofi state=present
 
 - name: Create rofi conf dir
-  files: path=~/.config/rofi state=directory
+  file: path=~/.config/rofi state=directory
 
 - name: Copy powermenu script
   copy: src=files/powermenu.sh dest=~/.config/rofi/powermenu.sh
