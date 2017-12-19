@@ -25,6 +25,7 @@ curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=packer-
 ```
 
 ## Installation
+[WARNING] Use carefully, backup your home before using !
 ```
 git clone --recursive https://github.com/eoli3n/dotfiles
 dotfiles/install.sh <desktop|laptop|server>
