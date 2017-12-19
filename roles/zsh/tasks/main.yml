@@ -7,6 +7,9 @@
     - zsh-syntax-highlighting
   become: True
 
+- name: Configure zshrc
+  copy: src=files/.zshrc dest=~/.zshrc backup=yes
+
 - name: Install oh-my-zsh
   shell: creates=~/.oh-my-zsh sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
   ignore_errors: True
@@ -14,11 +17,21 @@
 - debug:
     msg: "Do not forget to 'chsh /usr/bin/zsh'"
 
-- name: Configure zsh
-  synchronize: src=files/ dest=~/
+- name: Create zsh dirs
+  file: path={{item}} state=directory
+  with_items:
+    - ~/.zfunctions
+    - ~/.zsh
 
-- name: Create zfunctions dir
-  file: path=~/.zfunctions state=directory
+- name: Clone zsh-autosuggestions repo
+  git:
+    repo: https://github.com/zsh-users/zsh-autosuggestions
+    dest: ~/.zsh/zsh-autosuggestions
+
+- name: Clone pure repo
+  git:
+    repo: https://github.com/sindresorhus/pure
+    dest: ~/.zsh/pure
 
 - name: Configure Pure Prompt
   file: src=~/.zsh/pure/pure.zsh dest=~/.zfunctions/prompt_pure_setup state=link
