@@ -5,8 +5,15 @@
     - numix-themes-darkblue
     - vibrancy-colors
 
-- name: Configure GTK and Qt
-  synchronize: src=files/ dest=~/
+- name: Configure GTK
+  copy: src=files/settings.ini dest=~/.config/gtk-3.0/settings.ini backup=yes
+
+- name: Configure Qt as GTK theme
+  lineinfile:
+    path: ~/.config/Trolltech.conf
+    regexp: '^style='
+    line: 'style=GTK+'
+    state: present
 
 - name: Update font cache
   shell: creates=.Xdefaults fc-cache -f
