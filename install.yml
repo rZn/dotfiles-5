@@ -28,7 +28,7 @@
   tasks:
     - include_role:
         name: weechat
-      when: ansible_env.username == "vagrant"
+      when: ansible_user_id == "vagrant"
       tags: wallpaper
 
 - hosts: all

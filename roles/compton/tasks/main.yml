@@ -12,7 +12,7 @@
     marker: "### {mark} DOTFILES compton ###"
     content: |
       compton --backend glx --vsync opengl-swc -GCb --config ~/.compton &
-  when: ansible_env.username != "vagrant"
+  when: ansible_user_id != "vagrant"
 
 - name: Init compton in .xprofile (Vagrant)
   blockinfile:
@@ -21,4 +21,4 @@
     marker: "### {mark} DOTFILES compton ###"
     content: |
       compton -GCb --config ~/.compton &
-  when: ansible_env.username == "vagrant"
+  when: ansible_user_id == "vagrant"

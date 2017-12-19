@@ -28,6 +28,9 @@ Vagrant.configure("2") do |config|
     echo "fr_FR.UTF-8 UTF-8" > /etc/locale.gen
     locale-gen
     echo 'LANG="fr_FR.UTF-8"' > /etc/locale.conf
+    # KEYBOARD
+    echo 'KEYMAP=fr' > /etc/vconsole.conf
+    loadkeys fr
     # UPGRADE
     pacman -Syu --noconfirm
     # DEPS
