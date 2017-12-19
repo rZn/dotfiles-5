@@ -15,6 +15,7 @@ curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=packer-
 
 ## Installation
 [WARNING] Use carefully, backup your home before using !
+Ansible will backup any existing conf file before erasing it (.zshrc, .i3/config, etc...)
 ```
 git clone --recursive https://github.com/eoli3n/dotfiles
 # To list tags
