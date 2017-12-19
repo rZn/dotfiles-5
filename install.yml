@@ -3,7 +3,7 @@
   tags: [ 'server', 'laptop', 'desktop' ]
 
   roles:
-    - { role: packages, tags: packages }
+    - { role: packages-common, tags: packages-common }
     - { role: zsh, tags: zsh }
     - { role: vim, tags: vim }
     - { role: terminfo, tags: terminfo }
@@ -14,6 +14,7 @@
   tags: [ 'desktop', 'laptop' ]
 
   roles:
+    - { role: packages-desktop, tags: packages-desktop }
     - { role: cursor, tags: cursor }
     - { role: i3-wm, tags: i3-wm }
     - { role: compton, tags: compton }
