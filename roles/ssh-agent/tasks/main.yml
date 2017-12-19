@@ -1,6 +1,6 @@
 ---
 - name: SSH-agent as a service
-  shell: creates=~/.config/systemd/user/ssh-agent.service stow ssh-agent
+  synchronize: src=files/ dest=~/
 
 - name: Configure ssh-agent as a service
   systemd: name=ssh-agent state=started enabled=yes user=yes daemon_reload=yes
