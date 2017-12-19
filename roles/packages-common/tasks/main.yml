@@ -1,0 +1,28 @@
+---
+- name: Install common packages
+  package: name={{item}} state=present
+  with_items:
+    - curl
+    - wget
+    - pygmentize
+  become: True
+
+- name: Install common packages (Archlinux)
+  pacman: name={{item}} state=present
+  with_items:
+    - expac
+    - jshon
+  when: ansible_os_family == "Archlinux"
+  become: True
+
+- name: Install cower on Archlinux
+  shell: creates=/usr/bin/cower curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=cower; makepkg PKGBUILD --skippgpcheck --install --needed --noconfirm
+  when: ansible_os_family == "Archlinux"
+
+- name: Install pacaur on Archlinux
+  shell: creates=/usr/bin/pacaur curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=pacaur; makepkg PKGBUILD --install --needed --noconfirm
+  when: ansible_os_family == "Archlinux"
+
+- name: Install packer on Archlinux
+  shell: creates=/usr/bin/packer curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=packer-git; makepkg PKGBUILD --install --needed --noconfirm
+  when: ansible_os_family == "Archlinux"
