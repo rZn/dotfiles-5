@@ -26,8 +26,4 @@ vagrant up
 - Login in TTY
   - Login : ``vagrant``
   - Password : ``vagrant``
-- Launch desktop
-```
-startx
-```
-
+- ``startx``
