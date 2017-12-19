@@ -1,9 +1,11 @@
-- add borgbackup conf
-- add tmux and configure
-- mv files to sync if synchronize, then reinit submodules
-- use maximum of copy + backup=yes
+- TODO: borgbackup conf
+- TODO: tmux and configure
+- TODO: mv files to sync if synchronize, then reinit submodules
+- TODO: use maximum of copy + backup=yes
+
 - TOFIX: autolaunch i3 apps good order
-- TOFIX: find a way to clean tmp dir while packer install
 - TOFIX: zsh termite -> https://github.com/thestinger/termite/issues/550
+
 - TOTEST: ssh-agent ssh-add in zshrc startx
 - TOTEST: vim install powerline
+- TOTEST: clean dotfiles after run
