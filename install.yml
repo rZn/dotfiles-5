@@ -35,4 +35,5 @@
   tags: laptop
 
   roles:
+    - { role: packages-laptop, tags: packages-laptop }
     - { role: xbindkeys, tags: xbindkeys }
