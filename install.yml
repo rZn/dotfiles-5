@@ -27,9 +27,9 @@
 
   tasks:
     - include_role:
-        name: wallpaper
+        name: vagrant
       when: ansible_user_id == "vagrant"
-      tags: wallpaper
+      tags: vagrant
 
 - hosts: all
   tags: laptop
