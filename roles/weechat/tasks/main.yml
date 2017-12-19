@@ -7,7 +7,7 @@
   become: True
 
 - name: Configure weechat
-  synchronize: src=files/ dest=~/
+  copy: src=files/weechat.service dest=~/.config/systemd/user/weechat.service
 
 - name: Set weechat systemd user service
   systemd: name=weechat state=started enabled=yes user=yes daemon_reload=yes
