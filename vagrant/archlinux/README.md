@@ -8,7 +8,7 @@ https://asciinema.org/a/BHA2aFe0yq9vbBuEx5QCFPhKx?speed=5
 - 900M free on $HOME for Archlinux vagrant box ``~/.vagrant.d/boxes/terrywang-VAGRANTSLASH-archlinux``
 - \~6G free on $HOME for Archlinux virtualbox VM ``~/VirtualBox\ VMs/archlinux_dotfiles``
 
-# Test
+# Provision
 
 This is fully automatised
 
@@ -19,3 +19,17 @@ git checkout dev
 cd dotfiles/vagrant/archlinux
 vagrant up
 ```
+
+# Test
+
+Launch virtualbox GUI, open archlinux-dotfiles VM
+
+## Login TTY
+- Login : vagrant
+- Password : vagrant
+
+## Launch desktop
+```
+startx
+```
+
