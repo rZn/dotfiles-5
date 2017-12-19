@@ -60,14 +60,13 @@ export BROWSER='google-chrome-stable'
 export POWERLINE_CONFIG_COMMAND=/usr/bin/powerline-config
 export PAGER='most'
 
+if [[ $TERM == xterm-termite ]]; then
+  . /etc/profile.d/vte.sh
+  __vte_osc7
+fi
+
 ### ZSHRC NODE
 source ~/.zshrc_node
-
-### TERMITE
-if [[ $TERM == xterm-termite ]]; then
-    . /etc/profile.d/vte.sh
-    __vte_osc7
-fi
 
 ### ZSH CONF
 autoload -U zmv
