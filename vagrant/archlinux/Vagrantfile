@@ -24,6 +24,10 @@ Vagrant.configure("2") do |config|
     echo "/swapfile none swap defaults 0 0" >> /etc/fstab
     # TMP
     mount -o remount,size=1G /tmp
+    # LOCALE
+    echo "fr_FR.UTF-8 UTF-8" > /etc/locale.gen
+    locale-gen
+    echo 'LANG="fr_FR.UTF-8"' > /etc/locale.conf
     # UPGRADE
     pacman -Syu --noconfirm
     # DEPS
