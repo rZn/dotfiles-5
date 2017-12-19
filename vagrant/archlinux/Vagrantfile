@@ -27,6 +27,7 @@ Vagrant.configure("2") do |config|
   cd dotfiles
   git checkout dev
   git submodule update --init --recursive
+  curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=packer-git; makepkg PKGBUILD --install --needed --noconfirm
   ./install.sh desktop
   SCRIPT
 
