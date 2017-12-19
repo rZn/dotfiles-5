@@ -11,8 +11,8 @@
     - siji-git
     - polybar-git
 
-- name: Configure polybar
-  synchronize: src=files/ dest=~/
+- name: Add pkg check script
+  copy: src=files/pkg.sh dest=~/.config/polybar/pkg.sh
 
 - name: Template launch file
   template: src=templates/launch.j2 dest=~/.config/polybar/launch.sh mode=0755
