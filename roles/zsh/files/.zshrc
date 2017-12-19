@@ -60,7 +60,7 @@ export BROWSER='google-chrome-stable'
 export POWERLINE_CONFIG_COMMAND=/usr/bin/powerline-config
 export PAGER='most'
 
-if [[ $TERM == xterm-termite ]]; then
+if [[ $TERM == xterm-termite ]] && [[ -z "$SSH_CLIENT" ]] || [[ -z "$SSH_TTY" ]]; then
   . /etc/profile.d/vte.sh
   __vte_osc7
 fi

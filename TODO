@@ -1,7 +1,4 @@
 - TODO: borgbackup conf
 - TODO: tmux and configure
-
 - TOFIX: autolaunch i3 apps good order
-- TOFIX: zsh termite -> https://github.com/thestinger/termite/issues/550
-
 - TOTEST: ssh-agent ssh-add in zshrc startx
