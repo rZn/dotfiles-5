@@ -39,8 +39,14 @@ throttle-input-for = 30
 screenchange-reload = true
 
 [bar/top]
+{% set template = ansible_hostname + '/launch.j2' %}
+{% if template|exists %}
 monitor = ${env:MONITOR}
 monitor-strict = true
+{% else %}
+;monitor = ${env:MONITOR}
+;monitor-strict = true
+{% endif %}
 dpi = 72
 bottom = false
 width = 100%
@@ -94,8 +100,14 @@ tray-padding = 4
 ;scroll-down = i3wm-wsprev
 
 [bar/bottom]
+{% set template = ansible_hostname + '/launch.j2' %}
+{% if template|exists %}
 monitor = ${env:MONITOR}
 monitor-strict = true
+{% else %}
+;monitor = ${env:MONITOR}
+;monitor-strict = true
+{% endif %}
 dpi = 72
 bottom = true
 width = 100%
