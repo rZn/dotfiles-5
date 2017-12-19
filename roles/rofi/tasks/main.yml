@@ -5,6 +5,9 @@
 - name: Copy powermenu script
   copy: src=files/powermenu.sh dest=~/.config/rofi/powermenu.sh
 
+- name: Create .Xresources.d dir
+  file: path=~/.Xresources.d state=directory
+
 - name: Copy Xresources.d rofi file
   copy: src=files/rofi dest=~/.Xresources.d/rofi
 
