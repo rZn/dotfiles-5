@@ -13,3 +13,6 @@
 [submodule "library"]
 	path = library
 	url = https://github.com/eoli3n/ansible-packer
+[submodule "roles/vim/files/.vim/bundle/vim-sleuth"]
+	path = roles/vim/files/.vim/bundle/vim-sleuth
+	url = https://github.com/tpope/vim-sleuth

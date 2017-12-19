@@ -1,0 +1,18 @@
+---
+- name: Install Numix Theme
+  packer: name={{item}} state=present
+  with_items:
+    - numix-themes-darkblue
+    - vibrancy-colors
+
+- name: Configure GTK and Qt
+  synchronize: src=files/ dest=~/
+
+- name: Update font cache
+  shell: creates=.Xdefaults fc-cache -f
+
+- name: Init xressource
+  shell: creates=.Xdefaults xrdb ~/.Xresources
+
+- name: Link Xdefaults
+  file: src=~/.Xresources dest=~/.Xdefaults state=link
