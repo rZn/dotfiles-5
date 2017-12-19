@@ -26,3 +26,5 @@
     - ttf-unifont
     - ttf-font-icons
   when: ansible_os_family == "Archlinux"
+  notify: clean packer tmp
+
