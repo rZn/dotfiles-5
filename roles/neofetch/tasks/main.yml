@@ -6,4 +6,7 @@
     - neofetch
 
 - name: Configure neofetch
-  synchronize: src=files/ dest=~/
+  copy: src=files/config.conf dest=~/.config/neofetch/config.conf
+
+- name: Copy neofetch archlinux img
+  copy: src=files/archlinux.png dest=~/.config/neofetch/archlinux.png
