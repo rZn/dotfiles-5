@@ -1,4 +1,10 @@
 ---
+- name: Install polybar deps
+  package: name={{item}} state=present
+  with_items:
+    - wireless_tools
+  become: True
+
 - name: Install polybar
   packer: name={{item}} state=present
   with_items:

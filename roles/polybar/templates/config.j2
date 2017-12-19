@@ -77,11 +77,14 @@ font-1 = unifont:size=10;2
 font-2 = siji:pixelsize=10;3
 font-3 = FontAwesome:pixelsize=14;2
 
+{% set template = ansible_hostname + '/modules-top.j2' %}
+{% if template|exists %}
+{% include template %}
+{% else %}
 modules-left =  i3 xwindow
 modules-center =
-modules-right = backlight volume pkg wlan vpncheck battery date
-;modules-right = backlight volume github pkg wlan vpncheck pptpcheck battery date powermenu
-;modules-right = backlight volume pkg wlan vpncheck battery date powermenu
+modules-right = backlight volume pkg wlan battery date powermenu
+{% endif %}
 
 tray-position = right
 tray-padding = 4
@@ -138,9 +141,14 @@ font-1 = unifont:size=10;2
 font-2 = siji:pixelsize=10;3
 font-3 = FontAwesome:pixelsize=14;2
 
+{% set template = ansible_hostname + '/modules-bottom.j2' %}
+{% if template|exists %}
+{% include template %}
+{% else %}
 modules-left = 
 modules-center = networkspeedup networkspeeddown
-modules-right = temperature filesystem-slash filesystem-home cpu memory
+modules-right = filesystem-slash cpu memory
+{% endif %}
 
 tray-position = right
 tray-padding = 2
