@@ -1,7 +1,8 @@
 ---
-- name: SSH-agent as a service
-  synchronize: src=files/ dest=~/
-
-- name: Configure ssh-agent as a service
-  systemd: name=ssh-agent state=started enabled=yes user=yes daemon_reload=yes
-
+- name: Configure ssh-agent
+  blockinfile:
+  path: ~/.xprofile
+  create: True
+  marker: "### {mark} DOTFILES ssh-add ###"
+  content: |
+    ssh-add &

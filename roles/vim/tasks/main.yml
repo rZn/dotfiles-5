@@ -1,6 +1,11 @@
 ---
 - name: Install vim
-  package: name=vim state=present
+  package: name={{item}} state=present
+  with_items:
+    - vim
+    - powerline
+    - powerline-fonts
+    - powerline-vim
   become: True
 
 - name: Configure vim

@@ -46,7 +46,7 @@ extract() {
       echo "'$1' is not a valid file"
    fi
 }
-alias startx="ssh-add && startx"
+alias startx="ssh-agent startx"
 
 ### System clean tools
 

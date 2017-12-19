@@ -4,6 +4,6 @@
 - use maximum of copy + backup=yes
 - vim install powerline
 - TOFIX: autolaunch i3 apps good order
-- TOFIX: ssh-agent ssh-add in zshrc startx
 - TOFIX: find a way to clean tmp dir while packer install
 - TOFIX: zsh termite -> https://github.com/thestinger/termite/issues/550
+- TOTEST: ssh-agent ssh-add in zshrc startx
