@@ -2,3 +2,4 @@
 - add tmux
 - use group_vars to select hosts conf in jinja2
 - debug startx
+- ssh-agent ssh-add in zshrc startx : TOFIX
