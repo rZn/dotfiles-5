@@ -5,6 +5,11 @@
     - i3-gaps
     - i3lock
 
+- name: Clone i3lock-fancy-multimonitor
+  git:
+    repo: https://github.com/guimeira/i3lock-fancy-multimonitor
+    dest: ~/.i3/i3lock-fancy-multimonitor
+
 - name: Configure i3-wm
   synchronize: src=files/ dest=~/
 
