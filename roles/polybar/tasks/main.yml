@@ -11,6 +11,9 @@
     - siji-git
     - polybar-git
 
+- name: Create polybar conf dir
+  file: path=~/.config/polybar state=directory
+
 - name: Add pkg check script
   copy: src=files/pkg.sh dest=~/.config/polybar/pkg.sh
 
