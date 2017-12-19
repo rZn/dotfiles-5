@@ -12,11 +12,7 @@
   copy: src=files/settings.ini dest=~/.config/gtk-3.0/settings.ini backup=yes
 
 - name: Configure Qt as GTK theme
-  lineinfile:
-    path: ~/.config/Trolltech.conf
-    regexp: '^style='
-    line: 'style=GTK+'
-    state: present
+  copy: src=files/Trolltech.conf dest=~/.config/Trolltech.conf backup=yes
 
 - name: Update font cache
   shell: creates=.Xdefaults fc-cache -f
