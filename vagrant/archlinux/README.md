@@ -16,7 +16,7 @@ This is fully automatised
 git clone --recursive https://github.com/eoli3n/dotfiles
 cd dotfiles
 git checkout dev
-cd dotfiles/vagrant/archlinux
+cd vagrant/archlinux
 vagrant up
 ```
 
