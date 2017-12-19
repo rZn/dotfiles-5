@@ -16,9 +16,3 @@ git checkout dev
 cd dotfiles/vagrant/archlinux
 vagrant up
 ```
-
-# Manual configurations after install
-
-```
-echo -e 'vagrant\n/usr/bin/zsh' | chsh
-```
