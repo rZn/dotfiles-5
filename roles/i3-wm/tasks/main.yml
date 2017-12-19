@@ -10,8 +10,8 @@
     repo: https://github.com/guimeira/i3lock-fancy-multimonitor
     dest: ~/.i3/i3lock-fancy-multimonitor
 
-- name: Configure i3-wm
-  synchronize: src=files/ dest=~/
+- name: Configure xinitrc
+  copy: src=files/.xinitrc dest=~/.xinitrc backup=yes
 
 - name: Template config file
   template: src=templates/config.j2 dest=~/.i3/config
