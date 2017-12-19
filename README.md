@@ -28,9 +28,11 @@ curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=packer-
 [WARNING] Use carefully, backup your home before using !
 ```
 git clone --recursive https://github.com/eoli3n/dotfiles
-dotfiles/install.sh <desktop|laptop|server>
+# To list tags
+ansible-playbook -i "localhost," -c local install.yml --list-tags
+# To list tasks, dryrun then install
+dotfiles/install.sh <desktop|laptop|server|[any tag]>
 ```
-Installer will print target tasks, and dryrun before apply.
 
 ## Manual configurations
 
