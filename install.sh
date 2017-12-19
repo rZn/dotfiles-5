@@ -17,7 +17,7 @@ fi
 
 echo "### LIST TASKS #################################################################"
 
-ansible-playbook -i "localhost," -c local install.yml --list-tasks -t desktop | grep TAGS | egrep -v 'play|debug|include_role' | sed 's/\ *\(.*\)TAGS.*$/\1/'
+ansible-playbook -i "localhost," -c local install.yml --list-tasks -t $1 | grep TAGS | egrep -v 'play|debug|include_role' | sed 's/\ *\(.*\)TAGS.*$/\1/'
 
 echo "Do you want to dryrun ? (y/N)"
 read ok
