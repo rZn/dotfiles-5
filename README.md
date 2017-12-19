@@ -1,20 +1,9 @@
 # Archlinux i3-gaps Acid Dark 
 
-**i3-gaps zsh pureprompt polybar**
+## How to use
 
-![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/i3gaps.png)
-
-**Weechat**
-
-![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/weechat.png)
-
-**Chrome Rofi Stylish**
-
-![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/chrome-rofi.png)
-
-**Connman GTK Theme**
-
-![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/connman-gtk.png)
+Ansible allows to duplicate this desktop environment over multiple hosts with specific configuration (dualscreen, packages...).
+Fork Me! Please look at ``roles/*/README.md`` if exists for specific hosts configuration.
 
 ## Dependencies
 
@@ -75,6 +64,23 @@ To use dark theme, go to graphical configuration and click ``Use GTK+ Theme``
 /set weechat.look.read_marker none
 /upgrade
 ```
+
+**i3-gaps zsh pureprompt polybar**
+
+![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/i3gaps.png)
+
+**Weechat**
+
+![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/weechat.png)
+
+**Chrome Rofi Stylish**
+
+![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/chrome-rofi.png)
+
+**Connman GTK Theme**
+
+![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/connman-gtk.png)
+
 
 # Previously
 
