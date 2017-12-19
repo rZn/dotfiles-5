@@ -1,23 +1,17 @@
 #assign osz
-
 assign [class="Lollypop"] $tag5
 for_window [class="Lollypop"] focus
-
 assign [class="Code"] $tag6
 for_window [class="Code"] focus
-
 assign [class="WebTorrent"] $tag7
 for_window [class="WebTorrent"] focus
-
 assign [class="Nicotine"] $tag9
 for_window [class="Nicotine"] focus
 
 #bindsym osz
-
 bindsym $mod+Control+Left exec ~/dev/git/mpris-ctrl/mpris-ctrl.sh Lollypop prev
 bindsym $mod+Control+Down exec ~/dev/git/mpris-ctrl/mpris-ctrl.sh Lollypop play-pause
 bindsym $mod+Control+Right exec ~/dev/git/mpris-ctrl/mpris-ctrl.sh Lollypop next
-bindsym $mod+Control+Up exec "~/dev/git/lyricsdownloader/graphicalrapgenius.sh"
 bindsym $mod+Control+Prior exec "cd ~/dev/git/interfaceliftdownloader/ ; ./interfacelift.sh -c ./wallpaper.conf"
 bindsym $mod+Control+Next exec "~/dev/git/interfaceliftdownloader/interfacelift.sh -sc ~/dev/git/interfaceliftdownloader/wallpaper.conf"
 
