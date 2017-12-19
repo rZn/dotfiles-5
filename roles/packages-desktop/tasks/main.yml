@@ -31,8 +31,7 @@
   stat: path={{ playbook_dir }}roles/packages-desktop/tasks/{{ ansible_hostname }}.yml
   register: hostname_packages_file
 
-- name: Run hostname specific tasks
-  import_tasks: {{ playbook_dir }}roles/packages-desktop/tasks/{{ ansible_hostname }}.yml
+- include_tasks: "{{ playbook_dir }}roles/packages-desktop/tasks/{{ ansible_hostname }}.yml"
   when: hostname_packages_file.stat.exists
 
 - name: Flush handlers to clean /tmp
