@@ -15,4 +15,4 @@
   shell: creates=.Xdefaults xrdb ~/.Xresources
 
 - name: Link Xdefaults
-  file: src=~/.Xresources dest=~/.Xdefaults state=link
+  file: src=~/.Xresources dest=~/.Xdefaults state=link force=yes
