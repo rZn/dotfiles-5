@@ -5,6 +5,9 @@
     - numix-themes-darkblue
     - vibrancy-colors
 
+- name: Create gtk conf dir
+  file: path=~/.config/gtk-3.0/ state=directory
+
 - name: Configure GTK
   copy: src=files/settings.ini dest=~/.config/gtk-3.0/settings.ini backup=yes
 
