@@ -1,4 +1,6 @@
 #assign osz
+assign [class="Google-chrome"] $tag1
+assign [class="Geary"] $tag3
 assign [class="Lollypop"] $tag5
 for_window [class="Lollypop"] focus
 assign [class="Code"] $tag6
@@ -29,6 +31,6 @@ workspace $tag10 output eDP-1
 
 # exec startup apps
 exec --no-startup-id i3-msg 'exec geary'
-exec --no-startup-id i3-msg 'workspace $tag1; exec google-chrome-stable &'
+exec --no-startup-id i3-msg 'exec google-chrome-stable'
+exec --no-startup-id i3-msg 'workspace $tag4; exec termite -e "screen -rd weechat &"'
 exec --no-startup-id i3-msg 'workspace $tag2; exec termite'
-exec --no-startup-id i3-msg 'workspace $tag4; exec termite -e "screen -rd weechat &"; workspace $tag2'
