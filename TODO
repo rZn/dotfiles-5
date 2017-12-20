@@ -3,4 +3,4 @@
 - TOTEST: vagrant debian box, with ./install.sh server
 - TOTEST: vagrant centos box, with ./install.sh server
 - TOTEST: debian and centos root and user
-- TOTEST: ansible provisionner vagrant
+- TOTEST: ansible provisionner vagrant : https://github.com/hashicorp/vagrant/issues/7890
