@@ -5,6 +5,10 @@
 Ansible allows to duplicate this Desktop Environment over multiple hosts with specific configuration (dualscreen, packages...).
 Fork Me! Please look at ``roles/*/README.md`` if exists for specific hosts configuration.
 
+## Try it in a VM
+
+Please check ``vagrant/*/README.md``
+
 ## Dependencies
 
 **Packer**
