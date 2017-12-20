@@ -27,6 +27,7 @@
     - '*/bar toggle title'
     - '*/bar toggle status'
     - '*/set weechat.look.separator_horizontal " "'
+    - '*/set weechat.look.prefix_suffix " "'
     - '*/set buffers.color.hotlist_message_fg 7'
     - '*/set buffers.color.current_bg 240'
     - '*/set buffers.color.current_fg white'
