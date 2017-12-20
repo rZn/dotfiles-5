@@ -21,14 +21,13 @@
     - '*/set weechat.bar.status.color_bg 0'
     - '*/set weechat.bar.title.color_bg 0'
     - '*/set weechat.color.chat_nick_colors 1,2,3,4,5,6'
-    - '*/set buffers.color.hotlist_message_fg 7'
     - '*/set weechat.color.chat_highlight_bg red'
     - '*/set weechat.color.chat_highlight black'
-    - '*/script install colorize_nicks.py buffers.pl iset.pl highmon.pl'
     - '*/bar toggle nicklist'
     - '*/bar toggle title'
     - '*/bar toggle status'
     - '*/set weechat.look.separator_horizontal " "'
+    - '*/set buffers.color.hotlist_message_fg 7'
     - '*/set buffers.color.current_bg 240'
     - '*/set buffers.color.current_fg white'
     - '*/set buffers.look.show_number off'
@@ -42,6 +41,7 @@
     - '*/set weechat.look.prefix_quit ""'
     - '*/set weechat.look.prefix_suffix " "'
     - '*/set weechat.look.read_marker none'
+    - '*/script install colorize_nicks.py highmon.pl'
     - '*/upgrade'
 
 - name: Create themed file
