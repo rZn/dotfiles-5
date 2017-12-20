@@ -76,13 +76,12 @@ font-1 = unifont:size=10;2
 font-2 = siji:pixelsize=10;3
 font-3 = FontAwesome:pixelsize=14;2
 
-{% set template = ansible_hostname + '/modules-top.j2' %}
-{% if template|exists %}
-{% include template %}
+{% if polybar_top_file.stat.exists %}
+{% include ansible_hostname + '/modules-top.j2' %}
 {% else %}
 modules-left =  i3 xwindow
 modules-center =
-modules-right = backlight volume pkg wlan battery date powermenu
+modules-right = pkg battery date powermenu
 {% endif %}
 
 tray-position = right
@@ -139,9 +138,8 @@ font-1 = unifont:size=10;2
 font-2 = siji:pixelsize=10;3
 font-3 = FontAwesome:pixelsize=14;2
 
-{% set template = ansible_hostname + '/modules-bottom.j2' %}
-{% if template|exists %}
-{% include template %}
+{% if polybar_bottom_file.stat.exists %}
+{% include ansible_hostname + '/modules-bottom.j2' %}
 {% else %}
 modules-left = 
 modules-center = networkspeedup networkspeeddown

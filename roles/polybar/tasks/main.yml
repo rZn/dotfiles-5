@@ -21,6 +21,14 @@
   stat: path="{{ playbook_dir }}/roles/polybar/templates/{{ ansible_hostname }}/launch.j2"
   register: launch_file
 
+- name: Test if node specific template exists for modules top
+  stat: path="{{ playbook_dir }}/roles/polybar/templates/{{ ansible_hostname }}/modules-top.j2"
+  register: polybar_top_file
+
+- name: Test if node specific template exists for modules bottom
+  stat: path="{{ playbook_dir }}/roles/polybar/templates/{{ ansible_hostname }}/modules-bottom.j2"
+  register: polybar_bottom_file
+
 - name: Template launch file
   template: src=templates/launch.j2 dest=~/.config/polybar/launch.sh mode=0755
 
