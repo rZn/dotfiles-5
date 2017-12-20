@@ -26,3 +26,15 @@ vagrant up
   - Login : ``vagrant``
   - Password : ``vagrant``
 - ``startx``
+
+# Clean after test
+
+- Suppress Virtualbox VM
+```
+cd ~/dotfiles/vagrant/archlinux
+vagrant destroy
+```
+- Suppress Vagrant box
+```
+vagrant box remove terrywang/archlinux
+```
