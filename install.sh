@@ -26,7 +26,7 @@ ok=${ok:-N}
 if [[ "$ok" == "y" ]]
 then
     echo "### DRYRUN ###################################################################"
-    ansible-playbook -i "localhost," -c local install.yml --ask-become-pass -CD -t $1
+    ansible-playbook -i "localhost," -c local install.yml --ask-become-pass -CD -t $1 || exit 1
 fi
 
 echo "Do you want to install ? (Y/n)"

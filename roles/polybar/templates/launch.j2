@@ -7,10 +7,9 @@ killall -q polybar
 while pgrep -x polybar >/dev/null; do sleep 1; done
 
 # Launch top and bottom
-{% set template = ansible_hostname + '/launch.j2' %}
-{% if template|exists %}
-{% include template %}
-{% else %} 
+{% if launch_file.stat.exists %}
+{% include ansible_hostname + '/launch.j2' %}
+{% else %}
 polybar top &
 polybar bottom &
 {% endif %}
