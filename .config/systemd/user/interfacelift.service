@@ -1,9 +1,0 @@
-[Unit]
-Description=Download new wallpaper
-
-[Service]
-Type=forking
-ExecStart=/home/user/dev/git/interfaceliftdownloader/interfacelift.sh -c /home/user/dev/git/interfaceliftdownloader/wallpaper.conf
-
-[Install]
-WantedBy=default.target

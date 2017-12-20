@@ -1,0 +1,16 @@
+---
+- name: Install weechat
+  package: name={{item}} state=present
+  with_items:
+    - screen
+    - weechat
+  become: True
+
+- name: create systemd user dir
+  file: path=~/.config/systemd/user/ state=directory
+
+- name: Configure weechat
+  copy: src=files/weechat.service dest=~/.config/systemd/user/weechat.service
+
+- name: Set weechat systemd user service
+  systemd: name=weechat state=started enabled=yes user=yes daemon_reload=yes

@@ -1,0 +1,37 @@
+---
+- name: Install vim
+  package: name={{item}} state=present
+  with_items:
+    - vim
+    - powerline
+    - powerline-fonts
+    - powerline-vim
+  become: True
+
+- name: Create .vim dirs
+  file: path={{item}} state=directory
+  with_items:
+    - ~/.vim
+    - ~/.vim/bundle
+    - ~/.vim/autoload
+
+- name: Configure vim
+  copy: src=files/.vimrc dest=~/.vimrc backup=yes
+
+- name: Configure pathogen autoload
+  copy: src=files/pathogen.vim dest=~/.vim/autoload/pathogen.vim
+
+- name: Clone colorizer
+  git:
+    repo: https://github.com/lilydjwg/colorizer
+    dest: ~/.vim/bundle/colorizer
+
+- name: Clone vim-sleught
+  git:
+    repo: https://github.com/tpope/vim-sleuth
+    dest: ~/.vim/bundle/vim-sleuth
+
+- name: Clone auto-pairs
+  git:
+    repo: https://github.com/jiangmiao/auto-pairs
+    dest: ~/.vim/bundle/auto-pairs

@@ -1,0 +1,9 @@
+---
+- name: Install termite terminfo (Common)
+  shell: tic -x termite/termite.terminfo
+  when: ansible_os_family != "Archlinux"
+
+- name: Install termite terminfo (Archlinux)
+  pacman: name=termite-terminfo state=present
+  when: ansible_os_family == "Archlinux"
+  become: True

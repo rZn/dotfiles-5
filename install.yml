@@ -1,0 +1,39 @@
+---
+- hosts: all
+  tags: [ 'server', 'laptop', 'desktop' ]
+
+  roles:
+    - { role: packages-common, tags: packages-common }
+    - { role: zsh, tags: zsh }
+    - { role: vim, tags: vim }
+    - { role: terminfo, tags: terminfo }
+    - { role: screen, tags: screen }
+    - { role: ssh-agent, tags: ssh-agent }
+
+- hosts: all
+  tags: [ 'desktop', 'laptop' ]
+
+  roles:
+    - { role: packages-desktop, tags: packages-desktop }
+    - { role: cursor, tags: cursor }
+    - { role: gtk, tags: gtk }
+    - { role: i3-wm, tags: i3-wm }
+    - { role: compton, tags: compton }
+    - { role: polybar, tags: polybar }
+    - { role: rofi, tags: rofi }
+    - { role: neofetch, tags: neofetch }
+    - { role: termite, tags: termite }
+    - { role: weechat, tags: weechat }
+
+  tasks:
+    - include_role:
+        name: vagrant
+      when: ansible_user_id == "vagrant"
+      tags: vagrant
+
+- hosts: all
+  tags: laptop
+
+  roles:
+    - { role: packages-laptop, tags: packages-laptop }
+    - { role: xbindkeys, tags: xbindkeys }

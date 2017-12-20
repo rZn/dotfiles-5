@@ -1,54 +1,30 @@
 # Archlinux i3-gaps Acid Dark 
 
-**i3-gaps zsh pureprompt polybar**
+## How to use
 
-![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/i3gaps.png)
+Ansible allows to duplicate this Desktop Environment over multiple hosts with specific configuration (dualscreen, packages...).
+Fork Me! Please look at ``roles/*/README.md`` if exists for specific hosts configuration.
 
-**Weechat**
+## Dependencies
 
-![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/weechat.png)
-
-**Chrome Rofi Stylish**
-
-![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/chrome-rofi.png)
-
-**Connman GTK Theme**
-
-![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/connman-gtk.png)
-
-# Setup
-
-**Packages**
+**Packer**
 
 ```
-sudo pacman -S termite zsh zsh-syntax-highlighting git ttf-hack vim weechat xbindkeys powerline powerline-fonts powerline-vim xorg-xrdb xclip tmux xorg-xfd connman w3m lxappearance maim slop pygmentize
-
-pacaur -S i3-gaps polybar-git rofi compton-git powerline powerline-vim ttf-font-awesome ttf-unifont ttf-font-icons siji-git menutray cower i3lock-color-git capitaine-cursors gnome-ssh-askpass2 connman-gtk
-
-cd ~/.i3
-git clone https://github.com/guimeira/i3lock-fancy-multimonitor
-```
-Change ``BLURTYPE="5x3"`` in ``i3lock-fancy-multimonitor/lock`` file.
-
-**ZSH pure prompt**
-
-1° Install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
-```
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=packer-git; makepkg PKGBUILD --install --needed --noconfirm
 ```
 
-2° Then install [pure prompt](https://github.com/sindresorhus/pure)
-
-**Gtk+ and Qt**
-
-Run lxappearance and apply ``Vertex-Dark`` theme.
-
-To use GTK-like theme with Qt edit ``~/.config/Trolltech.conf`` and set
-
+## Installation
+[WARNING] Use carefully, backup your home before using !
+Ansible will backup any existing conf file before erasing it (.zshrc, .i3/config, etc...)
 ```
-[Qt]
-style=GTK+
-```   
+git clone --recursive https://github.com/eoli3n/dotfiles
+# To list tags
+ansible-playbook -i "localhost," -c local install.yml --list-tags
+# To list tasks, dryrun then install
+dotfiles/install.sh <desktop|laptop|server|[any tag]>
+```
+
+## Manual configurations
 
 **Google chrome**
 
@@ -60,47 +36,7 @@ chrome://flags/#overlay-scrollbars
 
 To use dark theme, go to graphical configuration and click ``Use GTK+ Theme``
 
-**Update font cache and Xresources**
-
-``` 
-fc-cache -f
-ln -s ~/.Xresources ~/.Xdefaults
-xrdb ~/.Xresources
-```
-
-**Enable services**
-
-```
-systemctl --user enable weechat.service
-systemctl --user enable ssh-agent.service
-```
-
-**Vim pathogen plugins**
-
-```
-# colorizer
-cd ~/.vim/bundle
-git clone https://github.com/lilydjwg/colorizer
-
-# auto-pairs
-git clone git://github.com/jiangmiao/auto-pairs.git ~/.vim/bundle/auto-pairs
-
-# detect indent
-cd ~/.vim/bundle; git clone git://github.com/tpope/vim-sleuth.git
-
-# syntax corrector
-sudo pip3 install flake8
-cd ~/.vim/bundle; git clone --depth=1 https://github.com/vim-syntastic/syntastic.git
-
-# NERDtree
-
-git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
-
-```
-
-# Weechat Clean Acid
-
-In weechat
+**Weechat**
 
 ```   
 /set weechat.bar.status.color_bg 0
@@ -130,16 +66,24 @@ In weechat
 /upgrade
 ```
 
-# Subprojects
+**i3-gaps zsh pureprompt polybar**
 
-- https://github.com/Airblader/i3
-- https://github.com/jaagr/polybar
-- https://github.com/guimeira/i3lock-fancy-multimonitor
-- https://github.com/chjj/compton
-- https://github.com/lilydjwg/colorizer
-- [hyperterm-snazzy-Xresources](https://gist.github.com/zhy0/ffdab4b01f8cf6a6814261d4c4eed0be)
+![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/i3gaps.png)
 
-## Previously
+**Weechat**
+
+![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/weechat.png)
+
+**Chrome Rofi Stylish**
+
+![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/chrome-rofi.png)
+
+**Connman GTK Theme**
+
+![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/connman-gtk.png)
+
+
+# Previously
 
 * [i3-gaps Dark Solarized](https://github.com/eoli3n/dotfiles/tree/zsh-agnoster-solarized)
 
