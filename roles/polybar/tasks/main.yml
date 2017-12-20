@@ -30,7 +30,7 @@
   register: polybar_bottom_file
 
 - name: Template launch file
-  template: src=templates/launch.j2 dest=~/.config/polybar/launch.sh mode=0755
+  template: src=templates/launch.j2 dest=~/.config/polybar/launch.sh mode=0755 backup=yes
 
 - name: Template config file
-  template: src=templates/config.j2 dest=~/.config/polybar/config
+  template: src=templates/config.j2 dest=~/.config/polybar/config backup=yes

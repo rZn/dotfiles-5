@@ -1,3 +1,7 @@
+# Managed files
+- \~/.i3/config
+- \~/.xinitrc
+
 # Hostname specific configuration for config file
 Add a dir named as hostname to include specific host configuration in config file
 ```
