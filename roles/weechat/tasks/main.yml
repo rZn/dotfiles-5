@@ -28,10 +28,6 @@
     - '*/bar toggle status'
     - '*/set weechat.look.separator_horizontal " "'
     - '*/set weechat.look.prefix_suffix " "'
-    - '*/set buffers.color.hotlist_message_fg 7'
-    - '*/set buffers.color.current_bg 240'
-    - '*/set buffers.color.current_fg white'
-    - '*/set buffers.look.show_number off'
     - '*/set weechat.bar.buffers.position top'
     - '*/set weechat.bar.input.items "            ,[input_search],[input_paste],input_text"'
     - '*/set weechat.bar.input.color_delim 240'
@@ -42,7 +38,7 @@
     - '*/script install colorize_nicks.py highmon.pl'
     - '*/set env TERM screen-256color'
     - '*/upgrade'
-    - '*/set weechat.look.buffer_time_format ${color:252}%H${color:245}%M${color:240}%S'
+    - '*/set weechat.look.buffer_time_format \${color:252}%H\${color:245}%M\${color:240}%S'
 
 - name: Create themed file
   file: path=~/.weechat/themed state=touch
