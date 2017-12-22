@@ -73,6 +73,7 @@ autoload -U zmv
 plugins=(git python colored-man-pages colorize sprunge web-search)
 source $ZSH/oh-my-zsh.sh
 source {{ zsh_syntax_highlighting_dir.stdout }}
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 
 ### PURE PROMPT
