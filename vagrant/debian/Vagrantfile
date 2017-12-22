@@ -21,6 +21,7 @@ Vagrant.configure("2") do |config|
     apt install git ansible -y
     # HOSTNAME
     echo "debian" > /etc/hostname
+    echo "127.0.0.1       localhost localhost.localdomain debian" > /etc/hosts
     hostname debian
   SHELL
 
