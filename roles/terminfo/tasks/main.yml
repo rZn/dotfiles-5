@@ -1,4 +1,9 @@
 ---
+- name: Install ncurses [FreeBSD]
+  package: name=ncurses state=present
+  become: True
+  when: ansible_os_family == "FreeBSD"
+
 - name: Install termite terminfo (Common)
   shell: tic -x termite/termite.terminfo
   when: ansible_os_family != "Archlinux"
