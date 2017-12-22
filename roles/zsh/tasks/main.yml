@@ -2,6 +2,7 @@
 - name: Configure zsh-syntax-highlighting repo [CentOS]
   shell: creates=/etc/yum.repos.d/shells:zsh-users:zsh-syntax-highlighting.repo cd /etc/yum.repos.d/; wget https://download.opensuse.org/repositories/shells:zsh-users:zsh-syntax-highlighting/CentOS_7/shells:zsh-users:zsh-syntax-highlighting.repo
   become: True
+  when: ansible_distribution == "CentOS"
 
 - name: Install zsh
   package: name={{item}} state=present
