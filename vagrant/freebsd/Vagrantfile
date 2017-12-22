@@ -14,6 +14,8 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: <<-SHELL
   env ASSUME_ALWAYS_YES=YES pkg install ansible git
   ln -s /usr/local/bin/python2 /usr/bin/python
+  echo 'hostname="freebsd"' >> /etc/rc.conf
+  hostname freebsd
   SHELL
 
   $script = <<-SCRIPT
