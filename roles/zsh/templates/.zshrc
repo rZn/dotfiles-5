@@ -72,14 +72,8 @@ source ~/.zshrc_node
 autoload -U zmv
 plugins=(git python colored-man-pages colorize sprunge web-search)
 source $ZSH/oh-my-zsh.sh
-{% if ansible_os_family == "FreeBSD" %}
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-{% elif ansible_distribution == "CentOS" %}
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-{% else %}
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-{% endif %}
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+zsh-syntax-highlighting-dir=$(find /usr -name zsh-syntax-highlighting.zsh 2>/dev/null)
+source $zsh-syntax-highlighting-dir
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 
 ### PURE PROMPT
