@@ -6,6 +6,10 @@
     - wget
   become: True
 
+- name: Include CentOS packages [if CentOS]
+  include_tasks: centos.yml
+  when: ansible_os_family == "CentOS"
+
 - name: Include Archlinux packages [if Archlinux]
   include_tasks: archlinux.yml
   when: ansible_os_family == "Archlinux"
