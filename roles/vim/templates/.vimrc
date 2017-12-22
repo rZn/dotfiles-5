@@ -24,3 +24,6 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 set laststatus=2
 set t_Co=256
 let g:powerline_pycmd="py3"
+{% if ansible_os_family == "FreeBSD" %}
+set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim/
+{% endif %}
