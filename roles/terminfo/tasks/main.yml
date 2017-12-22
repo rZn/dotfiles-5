@@ -16,5 +16,9 @@
   when: ansible_os_family == "Archlinux"
 
 - name: Install termite terminfo (Common)
-  shell: "tic -x {{ playbook_dir }}/roles/terminfo/files/termite.terminfo"
+  shell: creates=/root/termite.terminfo {{item}}
+  with_items:
+    - 'wget "https://github.com/thestinger/termite/blob/master/termite.terminfo" -O /root/termite.terminfo'
+    - 'tic -x /root/termite.terminfo'
+  become: True
   when: ansible_os_family != "Archlinux" and ansible_os_family != "FreeBSD"
