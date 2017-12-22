@@ -3,6 +3,7 @@
   apt_repository:
     repo: 'deb http://download.opensuse.org/repositories/shells:/zsh-users:/zsh-syntax-highlighting/Debian_8.0/ /'
     state: present
+    update_cache: yes
   become: True
   when: ansible_distribution == "Debian"
 
