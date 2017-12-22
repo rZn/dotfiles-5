@@ -5,7 +5,7 @@
   when: ansible_os_family == "FreeBSD"
 
 - name: Install termite terminfo (Common)
-  shell: tic -x termite/termite.terminfo
+  shell: "tic -x {{ playbook_dir }}/roles/terminfo/files/termite.terminfo"
   when: ansible_os_family != "Archlinux"
 
 - name: Install termite terminfo (Archlinux)
