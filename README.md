@@ -67,6 +67,7 @@ To use dark theme, go to graphical configuration and click ``Use GTK+ Theme``
 ## Supported OS
 
 - Archlinux
+- Debian
 - Centos
 - FreeBSD : need to ``sudo ln -s /usr/local/bin/python2 /usr/bin/python``
 

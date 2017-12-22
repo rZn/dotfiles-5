@@ -41,6 +41,10 @@
   shell: creates=~/.oh-my-zsh sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
   ignore_errors: True
 
+- name: Search for zsh-syntax-highlighting
+  shell: find /usr -name zsh-syntax-highlighting.zsh 2>/dev/null
+  register: zsh-syntax-highlighting-dir
+
 - name: Configure zshrc
   template: src=templates/.zshrc dest=~/.zshrc backup=yes
 
