@@ -11,12 +11,12 @@
     - zsh-syntax-highlighting
   become: True
 
-- name: Configure zshrc
-  template: src=templates/.zshrc dest=~/.zshrc backup=yes
-
 - name: Install oh-my-zsh
   shell: creates=~/.oh-my-zsh sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
   ignore_errors: True
+
+- name: Configure zshrc
+  template: src=templates/.zshrc dest=~/.zshrc backup=yes
 
 - debug:
     msg: "Do not forget to 'chsh /usr/bin/zsh'"
