@@ -1,8 +1,7 @@
 - TODO: borgbackup conf
 - TODO: tmux and configure
-- TOTEST: vagrant debian box, with ./install.sh server
-- TOTEST: vagrant centos box, with ./install.sh server
-- TOTEST: debian and centos root and user
 - TOTEST: ansible provisionner vagrant : https://github.com/hashicorp/vagrant/issues/7890
 - TODO: change includes in import tasks to be able to resolv with list-tasks
 - TOFIX: chsh in vagrant config file for FreeBSD
+- TOTEST : centos full working ?
+- TOFIX : debian hangs install 2.4 ansible

@@ -1,7 +1,8 @@
 ---
 - name: Add EPEL repository
-  yum: name={{item}} state=present
-  with_items:
-    - epel-release
-    - python-pip
+  yum: name=epel-release state=present
+  become: True
+
+- name: Install pip package
+  yum: name=python-pip state=present
   become: True
