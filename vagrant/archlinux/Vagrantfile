@@ -37,7 +37,7 @@ Vagrant.configure("2") do |config|
     pacman -Syu --noconfirm
     # DEPS
     pacman -S ansible jshon --noconfirm
-    pacman -R cowsay --noconfirm || exit 0
+    pacman -R cowsay --noconfirm || :
   SHELL
 
   $script = <<-SCRIPT
