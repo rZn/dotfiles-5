@@ -14,7 +14,7 @@
       compton --backend glx --vsync opengl-swc -GCb --config ~/.compton &
   when: ansible_user_id != "vagrant"
 
-- name: Init compton in .xprofile (Vagrant)
+- name: Init compton in .xprofile [Vagrant]
   blockinfile:
     path: ~/.xprofile
     create: True

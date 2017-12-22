@@ -4,3 +4,4 @@
 - TOTEST: vagrant centos box, with ./install.sh server
 - TOTEST: debian and centos root and user
 - TOTEST: ansible provisionner vagrant : https://github.com/hashicorp/vagrant/issues/7890
+- TODO: change includes in import tasks to be able to resolv with list-tasks
