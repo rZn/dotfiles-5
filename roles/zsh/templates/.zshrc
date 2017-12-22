@@ -57,7 +57,7 @@ dupkg_ex() { expac -H M "%011m\t%-20n\t%10d" $(comm -23 <(pacman -Qqen | sort) <
 export EDITOR='vim'
 export VISUAL='vim'
 export BROWSER='google-chrome-stable'
-export POWERLINE_CONFIG_COMMAND=/usr/bin/powerline-config
+export POWERLINE_CONFIG_COMMAND='powerline-config'
 export PAGER='most'
 
 if [[ $TERM == xterm-termite ]] && [[ -z "$SSH_CLIENT" ]] || [[ -z "$SSH_TTY" ]]; then
@@ -72,7 +72,11 @@ source ~/.zshrc_node
 autoload -U zmv
 plugins=(git python colored-man-pages colorize sprunge web-search)
 source $ZSH/oh-my-zsh.sh
+{% if ansible_os_family == "FreeBSD" %}
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+{% else %}
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+{% endif %}
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 
