@@ -59,9 +59,16 @@ To use dark theme, go to graphical configuration and click ``Use GTK+ Theme``
 
 # Server Environment
 
-Supported OS :
+## Deps
+
+- git
+- ansible
+
+## Supported OS
 
 - Archlinux
+
+## Installation
 
 ```
 git clone --recursive https://github.com/eoli3n/dotfiles
