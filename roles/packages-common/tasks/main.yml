@@ -8,5 +8,5 @@
   become: True
 
 - name: Include Archlinux packages [if Archlinux]
-  import_tasks: archlinux.yml
+  include_tasks: archlinux.yml
   when: ansible_os_family == "Archlinux"
