@@ -15,12 +15,14 @@
     - ttf-hack
   become: True
 
-- import_tasks: archlinux.yml
+- name: Include Archlinux tasks [if Archlinux] 
+  include_tasks: archlinux.yml
   when: ansible_os_family == "Archlinux"
 
 - name: Test if hostname specific tasks exists
   stat: path={{ playbook_dir }}roles/packages-desktop/tasks/{{ ansible_hostname }}.yml
   register: hostname_packages_file
 
-- include_tasks: "{{ playbook_dir }}roles/packages-desktop/tasks/{{ ansible_hostname }}.yml"
+- name: Include node tasks [if exists] 
+  include_tasks: "{{ playbook_dir }}roles/packages-desktop/tasks/{{ ansible_hostname }}.yml"
   when: hostname_packages_file.stat.exists
