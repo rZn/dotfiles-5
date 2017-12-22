@@ -1,4 +1,16 @@
 ---
+- name: Configure zsh-syntax-highlighting repo [Debian]
+  apt_repository:
+    repo: 'deb http://download.opensuse.org/repositories/shells:/zsh-users:/zsh-syntax-highlighting/Debian_8.0/ /'
+    state: present
+  when: {{ ansible_distribution }} == "Debian"
+
+- name: Add zsh-syntax-highlighting repo key [Debian]
+  apt_key:
+    url: https://download.opensuse.org/repositories/shells:zsh-users:zsh-syntax-highlighting/Debian_8.0/Release.key
+    state: present
+  when: {{ ansible_distribution }} == "Debian"
+
 - name: Configure zsh-syntax-highlighting repo [CentOS]
   shell: creates=/etc/yum.repos.d/shells:zsh-users:zsh-syntax-highlighting.repo cd /etc/yum.repos.d/; wget https://download.opensuse.org/repositories/shells:zsh-users:zsh-syntax-highlighting/CentOS_7/shells:zsh-users:zsh-syntax-highlighting.repo
   become: True
