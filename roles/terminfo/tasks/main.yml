@@ -10,11 +10,11 @@
   become: True
   when: ansible_os_family == "FreeBSD"
 
+- name: Install termite terminfo [Archlinux]
+  pacman: name=termite-terminfo state=present
+  become: True
+  when: ansible_os_family == "Archlinux"
+
 - name: Install termite terminfo (Common)
   shell: "tic -x {{ playbook_dir }}/roles/terminfo/files/termite.terminfo"
-  when: ansible_os_family != "Archlinux"
-
-- name: Install termite terminfo (Archlinux)
-  pacman: name=termite-terminfo state=present
-  when: ansible_os_family == "Archlinux"
-  become: True
+  when: ansible_os_family != "Archlinux" and ansible_os_family != "FreeBSD"
