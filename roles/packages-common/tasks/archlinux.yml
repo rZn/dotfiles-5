@@ -4,6 +4,7 @@
   with_items:
     - expac
     - jshon
+    - pygmentize
   become: True
 
 - name: Install cower on [Archlinux]

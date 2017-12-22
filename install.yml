@@ -1,9 +1,5 @@
 ---
 - hosts: all
-  tasks:
-    - include_vars: "{{ ansible_distribution }}.yml"
-
-- hosts: all
   tags: [ 'server', 'laptop', 'desktop' ]
 
   roles:
