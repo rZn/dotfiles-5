@@ -1,6 +1,12 @@
 ---
-- name: Install ncurses [FreeBSD]
-  package: name=ncurses state=present
+- name: Install termite termcap [FreeBSD]
+  # See: https://unix.stackexchange.com/questions/291412/how-can-i-use-terminfo-entries-on-freebsd
+  shell: creates=~/.termcap {{item}}
+  with_items:
+    - 'chmod 755 /usr/share/misc/termcap'
+    - 'echo {{ playbook_dir }}/roles/terminfo/files/termite.termcap >> /usr/share/misc/termcap'
+    - 'cap_mkdb /usr/share/misc/termcap'
+    - 'touch ~/.termcap'
   become: True
   when: ansible_os_family == "FreeBSD"
 
