@@ -17,8 +17,8 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provision "shell", inline: <<-SHELL
-    apt install git python-pip -y
-    pip install ansible -U
+    apt install git python3-pip -y
+    pip3 install ansible -U
   SHELL
 
   $script = <<-SCRIPT

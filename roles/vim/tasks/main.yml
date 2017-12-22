@@ -3,14 +3,21 @@
   package: name={{item}} state=present
   with_items:
     - vim
-    - powerline-fonts
   become: True
 
+- name : Install powerline [Centos]
+  pip: name={{item}} state=present
+  with_items:
+    - powerline-status
+  become: True
+
+  when: ansible_os_family == "Archlinux"
 - name : Install powerline [Archlinux]
   pacman: name={{item}} state=present
   with_items:
     - powerline
     - powerline-vim
+    - powerline-fonts
   become: True
   when: ansible_os_family == "Archlinux"
 
