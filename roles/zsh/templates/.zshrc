@@ -72,7 +72,7 @@ source ~/.zshrc_node
 autoload -U zmv
 plugins=(git python colored-man-pages colorize sprunge web-search)
 source $ZSH/oh-my-zsh.sh
-source {{ zsh-syntax-highlighting-dir.stdout }}
+source {{ zsh_syntax_highlighting_dir.stdout }}
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 
 ### PURE PROMPT
