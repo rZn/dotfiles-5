@@ -29,7 +29,7 @@
   when: ansible_distribution == "CentOS"
 
 - name: Install zsh
-  package: name={{item}} state=present
+  package: name={{item}} state=present force=yes update_cache=yes
   with_items:
     - zsh
     - most

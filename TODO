@@ -5,3 +5,4 @@
 - TOFIX: chsh in vagrant config file for FreeBSD
 - TOTEST : powerlines
 - TOFIX : debian hangs install 2.4 ansible
+- TODO: check best install method all distrib powerline
