@@ -6,7 +6,8 @@
 - TOTEST : powerlines
 - TODO: check best install method all distrib powerline
 - TODO: clean zshrc
-- TODO: Ubuntu compat and vagrant
+- TODO: Ubuntu compat and vagrant for server tag
+- TODO: Debian/Ubuntu/CentOS/FreeBSD compat and vagrant for desktop/laptop tag
 - TODO: Add a tag "dotfiles", and pass every copy/templates/file with dest={{ dotsroot }}
   then : ansible-playbook localhost install.yml -t dotfiles -e 'dotsroot: tmp'
   to compile only dotfiles in an example dir ~/tmp ? what about lineinfile module ?

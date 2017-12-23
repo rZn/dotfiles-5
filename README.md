@@ -1,4 +1,4 @@
-# Archlinux i3-gaps Acid Dark 
+# i3-gaps Acid Dark 
 
 **i3-gaps zsh pureprompt polybar**
 
@@ -15,38 +15,59 @@
 **Connman GTK Theme**
 
 ![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/connman-gtk.png)
+
 ## How to
 Ansible allows to duplicate this Desktop Environment over multiple hosts with specific configuration (dualscreen, packages...).
 Fork Me! Please look at ``roles/*/README.md`` if exists for specific hosts configuration.
 
-## Try it
+## Test VMs
 Please check ``vagrant/*/README.md``
 
-# Desktop/Laptop Environment
+## Desktop/Laptop Environment
 
-## Supported OS
+### Supported OS
 
 - Archlinux
 
 ### Dependencies
 
-- Ansible
-- Packer
+- ansible >= 2.4
+- packer
 
 ```
-sudo pacman -S jshon
+sudo pacman -S jshon ansible
 curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=packer-git; makepkg PKGBUILD --install --needed --noconfirm
 ```
+
+### Role list
+
+- package-common
+- screen
+- ssh-agent
+- terminfo
+- vim
+- zsh
+- package-desktop
+- compton
+- cursor
+- gtk
+- i3-wm
+- neofetch
+- polybar
+- rofi
+- termite
+- weechat
+- packages-laptop [only laptop tag]
+- xbindkeys [only laptop tag]
 
 ### Installation
 [WARNING] Use carefully, backup your home before using !
 Ansible will backup any existing conf file before erasing it (.zshrc, .i3/config, etc...)
 ```
 git clone --recursive https://github.com/eoli3n/dotfiles
-# To list tags
-ansible-playbook -i "localhost," -c local install.yml --list-tags
+cd dotfiles
 # To list tasks, dryrun then install
-dotfiles/install.sh <desktop|laptop|[any package tag]>
+./install.sh <desktop|laptop|[any package tag]>
 ```
 
 ### Manual configurations
@@ -59,27 +80,35 @@ chrome://flags/#overlay-scrollbars
 ```
 To use dark theme, go to graphical configuration and click ``Use GTK+ Theme``
 
-# Server Environment
+## Server Environment
 
-## Deps
+``server`` tag limits to install/configure cli tools.
 
-- git
-- ansible
-
-## Supported OS
+### Supported OS
 
 - Archlinux
 - Debian
 - Centos
 - FreeBSD : need to ``sudo ln -s /usr/local/bin/python2 /usr/bin/python``
 
+### Dependencies
+
+- ansible >= 2.4
+
+### Role list
+
+- package-common
+- screen
+- ssh-agent
+- terminfo
+- vim
+- zsh
+
 ## Installation
 
 ```
 git clone --recursive https://github.com/eoli3n/dotfiles
-# To list tags
 cd dotfiles
-ansible-playbook -i "localhost," -c local install.yml --list-tags -t server
 # To list tasks, dryrun then install
 ./install.sh <server|[any package tag]>
 
