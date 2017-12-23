@@ -10,3 +10,4 @@
 - TODO: Add a tag "dotfiles", and pass every copy/templates/file with dest={{ dotsroot }}
   then : ansible-playbook localhost install.yml -t dotfiles -e 'dotsroot: tmp'
   to compile only dotfiles in an example dir ~/tmp ? what about lineinfile module ?
+- TODO: Add {{ tag }} to fail module to limit to distrib
