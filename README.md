@@ -76,9 +76,10 @@ To use dark theme, go to graphical configuration and click ``Use GTK+ Theme``
 ```
 git clone --recursive https://github.com/eoli3n/dotfiles
 # To list tags
+cd dotfiles
 ansible-playbook -i "localhost," -c local install.yml --list-tags -t server
 # To list tasks, dryrun then install
-dotfiles/install.sh <server|[any package tag]>
+./install.sh <server|[any package tag]>
 
 ```
 
