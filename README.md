@@ -24,7 +24,9 @@ Please check ``vagrant/*/README.md``
 
 # Desktop/Laptop Environment
 
-## Archlinux
+## Supported OS
+
+- Archlinux
 
 ### Dependencies
 
