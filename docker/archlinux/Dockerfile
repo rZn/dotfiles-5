@@ -1,8 +1,6 @@
 FROM archlinux/base AS build
-RUN pacman -Syu --noconfirm && pacman -S --noconfirm \ 
-      ansible \
-      jshon \
-      git \
+# Archlinux Deps
+RUN pacman -Syu --noconfirm \ 
       sudo \
       binutils \
       util-linux \
@@ -17,11 +15,21 @@ RUN pacman -Syu --noconfirm && pacman -S --noconfirm \
       perl \
       automake \
       autoconf \
-      xorg-server-xephyr
+      gettext \
+      patch \
+      xorg-server-xephyr || df -h
 ENV PATH="${PATH}:/usr/bin/core_perl"
+# Project deps
+RUN pacman -S --noconfirm \ 
+      ansible \
+      jshon \
+      git
+# Create test user
 RUN useradd -m test 2> /dev/null
 RUN echo "test ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers 
+# Fix tmp dir perms
 RUN chmod 1777 /tmp
+# User run
 USER test
 WORKDIR /home/test/
 RUN git clone --recursive https://github.com/eoli3n/dotfiles
