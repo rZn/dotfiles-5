@@ -5,7 +5,7 @@
     - w3m
     - neofetch
 
-- name: Create neofetch dir
+- name: creates neofetch conf dir
   file: path=~/.config/neofetch state=directory
 
 - name: Configure neofetch

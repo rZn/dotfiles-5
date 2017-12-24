@@ -38,8 +38,7 @@
   when: ansible_distribution != "Debian"
 
 - name: Install oh-my-zsh
-  shell: creates=~/.oh-my-zsh sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-  ignore_errors: True
+  shell: creates=~/.oh-my-zsh sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh) ||:"
 
 - name: Search for zsh-syntax-highlighting
   shell: find /usr -name zsh-syntax-highlighting.zsh 2>/dev/null
