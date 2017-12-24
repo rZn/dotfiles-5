@@ -15,3 +15,4 @@
 - TODO: Using travis+docker
   http://csicar.github.io/docker/window-manger/2016/05/24/docker-wm.html
   https://docs.travis-ci.com/user/docker/
+- TOFIX: get current branch to checkout in Dockerfile var
