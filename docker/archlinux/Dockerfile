@@ -25,6 +25,6 @@ USER test
 WORKDIR /home/test/
 RUN git clone --recursive https://github.com/eoli3n/dotfiles
 RUN cd /tmp; curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=packer-git
-RUN makepkg PKGBUILD --install --needed --noconfirm
+RUN cd /tmp; makepkg PKGBUILD --install --needed --noconfirm
 RUN cd /home/test/dotfiles; ./install.sh desktop
 RUN echo -e "vagrant\n/usr/bin/zsh" | chsh
