@@ -5,6 +5,9 @@
     - w3m
     - neofetch
 
+- name: Create neofetch dir
+  file: path=~/.config/neofetch state=directory
+
 - name: Configure neofetch
   copy: src=files/config.conf dest=~/.config/neofetch/config.conf
 
