@@ -16,6 +16,7 @@ RUN pacman -Syu --noconfirm && pacman -S --noconfirm \
       which \
       perl \
       automake \
+      autoconf \
       xorg-server-xephyr
 ENV PATH="${PATH}:/usr/bin/core_perl"
 RUN useradd -m test 2> /dev/null
