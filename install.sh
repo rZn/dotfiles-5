@@ -2,11 +2,7 @@
 
 cd "$( dirname "${BASH_SOURCE[0]}" )"
 
-if [[ ! -f /usr/bin/ansible ]]
-then
-    echo "Please install ansible"
-    exit 1
-fi
+command -v ansible-playbook >/dev/null 2>&1 || { echo >&2 "I require ansible but it's not installed.  Aborting."; exit 1; }
 
 if [[ -z ${1+x} ]]
 then

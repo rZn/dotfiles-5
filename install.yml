@@ -1,6 +1,15 @@
 ---
 - hosts: all
   tags: [ 'server', 'laptop', 'desktop' ]
+  
+  pre_tasks:
+    - name: Limit to Archlinux/Debian/Centos/FreeBSD
+      fail:
+        msg: "{{ ansible_distribution }} is not supported with this tag."
+      when: (ansible_distribution != "CentOS") and
+            (ansible_distribution != "Debian") and
+            (ansible_distribution != "Archlinux") and
+            (ansible_distribution != "FreeBSD")
 
   roles:
     - { role: packages-common, tags: packages-common }
@@ -12,6 +21,12 @@
 
 - hosts: all
   tags: [ 'desktop', 'laptop' ]
+
+  pre_tasks:
+    - name: Limit to Archlinux
+      fail:
+        msg: "{{ ansible_distribution }} is not supported with this tag."
+      when: ansible_distribution != "Archlinux"
 
   roles:
     - { role: packages-desktop, tags: packages-desktop }

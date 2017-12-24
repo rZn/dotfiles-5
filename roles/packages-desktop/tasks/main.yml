@@ -15,24 +15,14 @@
     - ttf-hack
   become: True
 
-- name: Install Desktop packages (Archlinux)
-  packer: name={{item}} state=present
-  with_items:
-    - google-chrome
-    - connman-gtk
-    - gnome-ssh-askpass2
-    - ttf-font-awesome
-    - ttf-unifont
-    - ttf-font-icons
+- name: Include Archlinux tasks [if Archlinux] 
+  include_tasks: archlinux.yml
   when: ansible_os_family == "Archlinux"
-  notify: clean tmp packer
 
 - name: Test if hostname specific tasks exists
   stat: path={{ playbook_dir }}roles/packages-desktop/tasks/{{ ansible_hostname }}.yml
   register: hostname_packages_file
 
-- include_tasks: "{{ playbook_dir }}roles/packages-desktop/tasks/{{ ansible_hostname }}.yml"
+- name: Include node tasks [if exists] 
+  include_tasks: "{{ playbook_dir }}roles/packages-desktop/tasks/{{ ansible_hostname }}.yml"
   when: hostname_packages_file.stat.exists
-
-- name: Flush handlers to clean /tmp
-  meta: flush_handlers

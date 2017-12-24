@@ -15,7 +15,6 @@ This is fully automatised
 ```
 git clone --recursive https://github.com/eoli3n/dotfiles
 cd dotfiles
-git checkout dev
 cd vagrant/archlinux
 vagrant up
 ```
@@ -27,3 +26,15 @@ vagrant up
   - Login : ``vagrant``
   - Password : ``vagrant``
 - ``startx``
+
+# Clean after test
+
+- Suppress Virtualbox VM
+```
+cd ~/dotfiles/vagrant/archlinux
+vagrant destroy
+```
+- Suppress Vagrant box
+```
+vagrant box remove terrywang/archlinux
+```
