@@ -14,7 +14,9 @@ RUN pacman -Syu --noconfirm && pacman -S --noconfirm \
       gcc \
       pkg-config \
       which \
-      perl
+      perl \
+      automake \
+      xorg-server-xephyr
 ENV PATH="${PATH}:/usr/bin/core_perl"
 RUN useradd -m test 2> /dev/null
 RUN echo "test ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers 
