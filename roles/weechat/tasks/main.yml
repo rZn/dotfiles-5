@@ -15,6 +15,10 @@
       screen -DmS weechat /usr/bin/weechat &
   when: ansible_user_id != "vagrant"
 
+- name: Start weechat
+  shell: screen -DmS weechat /usr/bin/weechat &
+  changed_when: False
+
 - name: Test if weechat fifo is enable
   stat: path='~/.weechat/weechat_fifo'
   register: stat_fifo
