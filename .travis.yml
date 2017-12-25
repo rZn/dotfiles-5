@@ -1,0 +1,15 @@
+sudo: required
+
+services:
+  - docker
+
+branches:
+  only:
+    - master
+    - dev
+
+install:
+  - docker build -t archlinux/dotfiles - < docker/archlinux/Dockerfile
+
+script:
+  - docker run archlinux/dotfiles test.sh
