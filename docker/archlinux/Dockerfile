@@ -1,4 +1,4 @@
-FROM base/archlinux
+FROM base/archlinux:latest
 # Locales keyboard
 RUN echo "fr_FR.UTF-8 UTF-8" > /etc/locale.gen \
  && locale-gen \
@@ -40,8 +40,6 @@ RUN echo "test ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 USER test
 WORKDIR /home/test/
 ENV LANG="fr_FR.UTF-8"
-RUN git clone --recursive https://github.com/eoli3n/dotfiles
 RUN cd /tmp; curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=packer-git
 RUN cd /tmp; makepkg PKGBUILD --install --needed --noconfirm
-RUN cd /home/test/dotfiles; ./install.sh desktop ||:
-RUN echo -e "test" | chsh -s '/usr/bin/zsh'
+ENTRYPOINT git clone --recursive https://github.com/eoli3n/dotfiles && cd /home/test/dotfiles; ./install.sh desktop && echo -e "test" | chsh -s '/usr/bin/zsh'
