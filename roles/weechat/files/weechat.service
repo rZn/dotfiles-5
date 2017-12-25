@@ -1,9 +1,0 @@
-[Unit]
-Description=Weechat in screen
-
-[Service]
-ExecStart=/usr/bin/screen -DmS weechat /usr/bin/weechat
-ExecStop=/usr/bin/screen -S weechat -X quit
-
-[Install]
-WantedBy=default.target

@@ -6,14 +6,14 @@
     - weechat
   become: True
 
-- name: create systemd user dir
-  file: path=~/.config/systemd/user/ state=directory
-
-- name: Configure weechat systemd service
-  copy: src=files/weechat.service dest=~/.config/systemd/user/weechat.service
-
-- name: Set weechat systemd user service
-  systemd: name=weechat state=started enabled=yes user=yes daemon_reload=yes
+- name: Init weechat in .xprofile
+  blockinfile:
+    path: ~/.xprofile
+    create: True
+    marker: "### {mark} DOTFILES weechat ###"
+    content: |
+      screen -DmS weechat /usr/bin/weechat &
+  when: ansible_user_id != "vagrant"
 
 - name: Test if weechat fifo is enable
   stat: path='~/.weechat/weechat_fifo'
