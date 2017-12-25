@@ -9,7 +9,7 @@ branches:
     - dev
 
 install:
-  - docker build -t archlinux/dotfiles docker/archlinux/Dockerfile
+  - docker build -t archlinux/dotfiles - < docker/archlinux/Dockerfile
 
 script:
-  - docker run archlinux/dotfiles
+  - docker run archlinux/dotfiles test.sh

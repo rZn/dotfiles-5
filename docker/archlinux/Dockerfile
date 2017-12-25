@@ -42,4 +42,8 @@ WORKDIR /home/test/
 ENV LANG="fr_FR.UTF-8"
 RUN cd /tmp; curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=packer-git
 RUN cd /tmp; makepkg PKGBUILD --install --needed --noconfirm
-ENTRYPOINT git clone --recursive https://github.com/eoli3n/dotfiles && cd /home/test/dotfiles; ./install.sh desktop && echo -e "test" | chsh -s '/usr/bin/zsh'
+RUN git clone --recursive https://github.com/eoli3n/dotfiles
+RUN cd /home/test/dotfiles; ./install.sh desktop | tee ansible.log
+RUN echo -e "test" | chsh -s '/usr/bin/zsh'
+ADD test.sh .
+ENTRYPOINT /usr/bin/zsh
