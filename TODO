@@ -14,3 +14,5 @@
 - TODO: Add {{ tag }} to fail module to limit to distrib
 - TOFIX: get current branch to checkout in Dockerfile var
 - TODO: docker compose pour build toutes les distros ?
+- TODO: update all vagrant specific task to match docker tasks
+- TODO: install virtual display xephyr
