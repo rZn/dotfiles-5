@@ -12,9 +12,7 @@
   then : ansible-playbook localhost install.yml -t dotfiles -e 'dotsroot: tmp'
   to compile only dotfiles in an example dir ~/tmp ? what about lineinfile module ?
 - TODO: Add {{ tag }} to fail module to limit to distrib
-- TODO: Using travis+docker
-  http://csicar.github.io/docker/window-manger/2016/05/24/docker-wm.html
-  https://github.com/rogaha/docker-desktop/blob/master/Dockerfile
-  https://docs.travis-ci.com/user/docker/
 - TOFIX: get current branch to checkout in Dockerfile var
-- TOFIX: get chown in dockerfile working...
+- TODO: docker compose pour build toutes les distros ?
+- TODO: update all vagrant specific task to match docker tasks
+- TODO: install virtual display xephyr

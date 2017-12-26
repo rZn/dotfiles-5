@@ -1,4 +1,9 @@
-FROM base/archlinux
+FROM base/archlinux:latest
+# Locales keyboard
+RUN echo "fr_FR.UTF-8 UTF-8" > /etc/locale.gen \
+ && locale-gen \
+ && echo 'LANG="fr_FR.UTF-8"' > /etc/locale.conf
+ENV LANG="fr_FR.UTF-8"
 # Archlinux Deps
 RUN pacman -Syu --noconfirm \ 
       sudo \
@@ -34,8 +39,11 @@ RUN echo "test ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 # User run
 USER test
 WORKDIR /home/test/
-RUN git clone --recursive https://github.com/eoli3n/dotfiles
+ENV LANG="fr_FR.UTF-8"
 RUN cd /tmp; curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=packer-git
 RUN cd /tmp; makepkg PKGBUILD --install --needed --noconfirm
-RUN cd /home/test/dotfiles; ./install.sh desktop ||:
+RUN git clone --recursive https://github.com/eoli3n/dotfiles
+RUN cd /home/test/dotfiles; ./install.sh desktop | tee ansible.log
 RUN echo -e "test" | chsh -s '/usr/bin/zsh'
+ADD test.sh .
+ENTRYPOINT /usr/bin/zsh
