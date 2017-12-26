@@ -1,2 +1,2 @@
 #!/bin/bash
-cat ~/ansible.log | grep 'failed=0'
+grep 'failed=0' ~/ansible.log
