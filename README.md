@@ -1,9 +1,9 @@
 # i3-gaps Acid Dark 
 
-#### master
-[![Build Status](https://travis-ci.org/eoli3n/dotfiles.svg?branch=master)](https://travis-ci.org/eoli3n/dotfiles)
-#### dev
-[![Build Status](https://travis-ci.org/eoli3n/dotfiles.svg?branch=master)](https://travis-ci.org/eoli3n/dotfiles)
+|   Build   |     Status    |
+|-----------|:-------------:|
+| Master | [![Build Status](https://travis-ci.org/eoli3n/dotfiles.svg?branch=master)](https://travis-ci.org/eoli3n/dotfiles) |
+|  Dev   | [![Build Status](https://travis-ci.org/eoli3n/dotfiles.svg?branch=dev)](https://travis-ci.org/eoli3n/dotfiles) |
 
 **i3-gaps zsh pureprompt polybar**
 
