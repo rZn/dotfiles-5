@@ -13,7 +13,10 @@ install:
   - docker build -t archlinux/dotfiles .
   - cd ../debian
   - docker build -t debian/dotfiles .
+  - cd ../centos
+  - docker build -t centos/dotfiles .
 
 script:
   - docker run archlinux/dotfiles test.sh
   - docker run debian/dotfiles test.sh
+  - docker run centos/dotfiles test.sh
