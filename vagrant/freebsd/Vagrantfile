@@ -16,16 +16,18 @@ Vagrant.configure("2") do |config|
   ln -s /usr/local/bin/python2 /usr/bin/python
   echo 'hostname="freebsd"' >> /etc/rc.conf
   hostname freebsd
+  # DOTFILES DIR
+  mkdir -p /home/vagrant/dotfiles
   SHELL
+
+  config.vm.synced_folder "../../", "/home/vagrant/dotfiles/", type: "rsync", rsync__exclude: [".git/", ".vagrant.d/"]
 
   $script = <<-SCRIPT
   # PREP
   touch ~/.viminfo; rm ~/.viminfo
   touch ~/.vimrc; rm ~/.vimrc
   # EXEC
-  git clone --recursive https://github.com/eoli3n/dotfiles
   cd dotfiles
-  git submodule update --init --recursive
   ./install.sh server
   #CHANGE SH LINE : chsh -s /usr/local/bin/zsh -p ?? how to use crypt
   SCRIPT

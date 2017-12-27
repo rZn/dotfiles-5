@@ -1,23 +1,31 @@
-- TODO: borgbackup conf
-- TODO: tmux and configure
-- TOTEST: ansible provisionner vagrant : https://github.com/hashicorp/vagrant/issues/7890
-- TODO: change includes in import tasks to be able to resolv with list-tasks
-- TOFIX: chsh in vagrant config file for FreeBSD
-- TOTEST: powerlines
-- TOTEST: vagrant centos locales fr ?
-- TOTEST: configure root account ?
-- TODO: check best install method all distrib powerline
-- TODO: clean zshrc
-- TODO: Ubuntu compat and vagrant for server tag
-- TODO: Debian/Ubuntu/CentOS/FreeBSD compat and vagrant for desktop/laptop tag
-- TODO: Add a tag "dotfiles", and pass every copy/templates/file with dest={{ dotsroot }}
+# TODO
+
+- borgbackup: install and configure role
+- tmux: install and configure role
+- playbook: change includes in import tasks to be able to resolv with list-tasks
+- powerline: check best install method all distrib
+- zsh: check neon specific alias and others
+- playbook: update all vagrant specific task to match docker hosts
+
+# TOFIX
+
+- vagrant: chsh in vagrant config file for FreeBSD
+- powerline: not working with centos|debian|freebsd
+- zsh: clean zshrc template
+- playbook: add {{ tag }} to fail module to print in "limit to distrib" task
+- vagrant: tty in qwerty for debian keyboard
+
+# TOTEST
+
+- playbook: as root working ?
+
+# FEATURE IDEA
+
+- playbook: Add a tag "dotfiles", and pass every copy/templates/file with dest={{ dotsroot }}
   then : ansible-playbook localhost install.yml -t dotfiles -e 'dotsroot: tmp'
   to compile only dotfiles in an example dir ~/tmp ? what about lineinfile module ?
-- TODO: Add {{ tag }} to fail module to limit to distrib
-- TOFIX: get current branch to checkout in Dockerfile var
-  https://superuser.com/questions/701735/run-script-on-host-machine-during-vagrant-up
-  git symbolic-ref --short -q HEAD
-- TODO: update all vagrant specific task to match docker tasks
-- TODO: install virtual display xephyr
-- TODO: docker autobuild to docker run directly, edit README.md
-- TODO: grep -ri 'git clone', dynamic git branch ?
+- vagrant: ansible provisionner -> https://github.com/hashicorp/vagrant/issues/7890
+- all: Ubuntu compat|docker|vagrant for server tag
+- all: Debian|Ubuntu|CentOS|FreeBSD compat|docker|vagrant for desktop/laptop tag
+- docker: install virtual display xephyr to use docker as vagrant
+- docker: autobuild to docker run directly without building locally
