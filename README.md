@@ -1,9 +1,9 @@
 # i3-gaps Acid Dark 
 
-|   Build   |     Status    |
+|           |               |
 |-----------|:-------------:|
-| Master | [![Build Status](https://travis-ci.org/eoli3n/dotfiles.svg?branch=master)](https://travis-ci.org/eoli3n/dotfiles) |
-|  Dev   | [![Build Status](https://travis-ci.org/eoli3n/dotfiles.svg?branch=dev)](https://travis-ci.org/eoli3n/dotfiles) |
+|   Master  | [![Build Status](https://travis-ci.org/eoli3n/dotfiles.svg?branch=master)](https://travis-ci.org/eoli3n/dotfiles) |
+|    Dev    | [![Build Status](https://travis-ci.org/eoli3n/dotfiles.svg?branch=dev)](https://travis-ci.org/eoli3n/dotfiles) |
 
 **i3-gaps zsh pureprompt polybar**
 
@@ -25,8 +25,8 @@
 Ansible allows to duplicate this Desktop Environment over multiple hosts with specific configuration (dualscreen, packages...).
 Fork Me! Please look at ``roles/*/README.md`` if exists for specific hosts configuration.
 
-## Test VMs
-Please check ``vagrant/*/README.md``
+## Test VMs|Containers
+Please check ``vagrant/*/README.md`` and ``docker/*/README.md``
 
 ## Desktop/Laptop Environment
 

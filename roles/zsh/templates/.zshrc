@@ -54,16 +54,12 @@ dupkg() { expac '%m\t%n' | sort -h | awk '{cmd = "numfmt --to=si "$1; cmd | getl
 dupkg_ex() { expac -H M "%011m\t%-20n\t%10d" $(comm -23 <(pacman -Qqen | sort) <(pacman -Qqg base base-devel | sort)) | sort -n }
 
 ### EXPORTS
+export LANG='fr_FR.UTF-8'
 export EDITOR='vim'
 export VISUAL='vim'
 export BROWSER='google-chrome-stable'
 export POWERLINE_CONFIG_COMMAND='powerline-config'
 export PAGER='most'
-
-if [[ $TERM == xterm-termite ]] && [[ -z "$SSH_CLIENT" ]] || [[ -z "$SSH_TTY" ]]; then
-  . /etc/profile.d/vte.sh
-  __vte_osc7
-fi
 
 ### ZSHRC NODE
 source ~/.zshrc_node

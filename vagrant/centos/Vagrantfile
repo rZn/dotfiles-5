@@ -1,10 +1,9 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-
-
 Vagrant.configure("2") do |config|
   config.vm.box = "centos/7"
+  config.vm.hostname = "centos"
 
   config.vm.provider "virtualbox" do |vb|
     # Display the VirtualBox GUI when booting the machine
@@ -17,21 +16,30 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provision "shell", inline: <<-SHELL
+    # LOCALES
+    sed -i 's/^\(override_install_langs.*\)$/#\1/' /etc/yum.conf
+    yum -y -q reinstall glibc-common
+    echo 'LANG="fr_FR.UTF-8"' > /etc/locale.conf
+    source /etc/locale.conf
+    # KEYBOARD
+    loadkeys fr
+    localectl set-keymap fr
+    localectl set-x11-keymap fr
+    # DEPS
     yum install ansible git -y
-    echo "centos" > /etc/hostname
-    hostname centos
+    # DOTFILES DIR
+    mkdir -p /home/vagrant/dotfiles
   SHELL
+
+  config.vm.synced_folder "../../", "/home/vagrant/dotfiles/", type: "rsync", rsync__exclude: [".git/", ".vagrant.d/"]
 
   $script = <<-SCRIPT
   # PREP
   touch ~/.viminfo; rm ~/.viminfo
   touch ~/.vimrc; rm ~/.vimrc
   # EXEC
-  git clone --recursive https://github.com/eoli3n/dotfiles
   cd dotfiles
-  git submodule update --init --recursive
-  ./install.sh server
-  echo -e "vagrant" | chsh -s /bin/zsh
+  ./install.sh server && echo -e "vagrant" | chsh -s /bin/zsh
   SCRIPT
 
   config.vm.provision "shell", inline: $script, privileged: false
