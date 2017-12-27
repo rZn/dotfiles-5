@@ -1,4 +1,22 @@
 ---
+- name: Add zsh-syntax-highlighting repo key [Debian jessie]
+  apt_key:
+    url: https://download.opensuse.org/repositories/shells:zsh-users:zsh-syntax-highlighting/Debian_8.0/Release.key
+    state: present
+  become: True
+  when:
+    - ansible_distribution == "Debian"
+    - ansible_distribution_release == "jessie"
+
+- name: Add zsh-syntax-highlighting repo key [Debian stretch]
+  apt_key:
+    url: https://download.opensuse.org/repositories/shells:zsh-users:zsh-syntax-highlighting/Debian_9.0/Release.key
+    state: present
+  become: True
+  when:
+    - ansible_distribution == "Debian"
+    - ansible_distribution_release == "stretch"
+
 - name: Configure zsh-syntax-highlighting repo [Debian jessie]
   apt_repository:
     repo: 'deb http://download.opensuse.org/repositories/shells:/zsh-users:/zsh-syntax-highlighting/Debian_8.0/ /'
@@ -14,24 +32,6 @@
     repo: 'deb http://download.opensuse.org/repositories/shells:/zsh-users:/zsh-syntax-highlighting/Debian_9.0/ /'
     state: present
     update_cache: yes
-  become: True
-  when:
-    - ansible_distribution == "Debian"
-    - ansible_distribution_release == "stretch"
-
-- name: Add zsh-syntax-highlighting repo key [Debian jessie]
-  apt_key:
-    url: https://download.opensuse.org/repositories/shells:zsh-users:zsh-syntax-highlighting/Debian_8.0/Release.key
-    state: present
-  become: True
-  when:
-    - ansible_distribution == "Debian"
-    - ansible_distribution_release == "jessie"
-
-- name: Add zsh-syntax-highlighting repo key [Debian stretch]
-  apt_key:
-    url: https://download.opensuse.org/repositories/shells:zsh-users:zsh-syntax-highlighting/Debian_9.0/Release.key
-    state: present
   become: True
   when:
     - ansible_distribution == "Debian"

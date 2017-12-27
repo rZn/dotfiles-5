@@ -17,3 +17,4 @@
 - TODO: update all vagrant specific task to match docker tasks
 - TODO: install virtual display xephyr
 - TODO: docker autobuild to docker run directly, edit README.md
+- TODO: grep -ri 'git clone', dynamic git branch ?
