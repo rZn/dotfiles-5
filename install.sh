@@ -32,5 +32,5 @@ ok=${ok:-Y}
 if [[ "$ok" == "Y" ]]
 then
     echo "### RUN ####################################################################"
-    ansible-playbook -i "localhost," -c local install.yml --ask-become-pass -t $1
+    ansible-playbook -i "localhost," -c local install.yml --ask-become-pass -t $1 || exit 1
 fi

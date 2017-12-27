@@ -20,7 +20,7 @@ ENV PATH="${PATH}:/usr/bin/core_perl"
 # Project deps
 RUN echo 'deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main' >> /etc/apt/sources.list \
  && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
-RUN apt-get install -y \ 
+RUN apt-get update && apt-get install -y \ 
       ansible \
       git
 # Create test user
