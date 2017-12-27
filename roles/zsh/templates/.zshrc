@@ -60,6 +60,7 @@ export VISUAL='vim'
 export BROWSER='google-chrome-stable'
 export POWERLINE_CONFIG_COMMAND='powerline-config'
 export PAGER='most'
+export PATH=${PATH}:~/.gem/ruby/2.4.0/bin
 
 ### ZSHRC NODE
 source ~/.zshrc_node
