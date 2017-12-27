@@ -1,2 +1,2 @@
 #!/bin/bash
-grep 'failed=0' ~/ansible.log
+grep 'failed=0' ~/dotfiles/ansible.log

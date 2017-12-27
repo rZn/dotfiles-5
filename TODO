@@ -3,7 +3,9 @@
 - TOTEST: ansible provisionner vagrant : https://github.com/hashicorp/vagrant/issues/7890
 - TODO: change includes in import tasks to be able to resolv with list-tasks
 - TOFIX: chsh in vagrant config file for FreeBSD
-- TOTEST : powerlines
+- TOTEST: powerlines
+- TOTEST: vagrant centos locales fr ?
+- TOTEST: configure root account ?
 - TODO: check best install method all distrib powerline
 - TODO: clean zshrc
 - TODO: Ubuntu compat and vagrant for server tag
@@ -13,7 +15,8 @@
   to compile only dotfiles in an example dir ~/tmp ? what about lineinfile module ?
 - TODO: Add {{ tag }} to fail module to limit to distrib
 - TOFIX: get current branch to checkout in Dockerfile var
-- TODO: docker compose pour build toutes les distros ?
+  https://superuser.com/questions/701735/run-script-on-host-machine-during-vagrant-up
+  git symbolic-ref --short -q HEAD
 - TODO: update all vagrant specific task to match docker tasks
 - TODO: install virtual display xephyr
 - TODO: docker autobuild to docker run directly, edit README.md

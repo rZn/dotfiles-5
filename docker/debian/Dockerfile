@@ -32,8 +32,9 @@ RUN echo "test ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 USER test
 WORKDIR /home/test/
 ENV LANG="fr_FR.UTF-8"
-RUN git clone --recursive https://github.com/eoli3n/dotfiles
-RUN cd /home/test/dotfiles; ./install.sh server | tee ansible.log
+RUN mkdir dotfiles
+COPY . dotfiles/
+RUN chown -R test:test dotfiles
+RUN cd dotfiles; ./install.sh server | tee ansible.log
 RUN sudo chsh -s '/usr/bin/zsh' test
-ADD test.sh .
 ENTRYPOINT /usr/bin/zsh

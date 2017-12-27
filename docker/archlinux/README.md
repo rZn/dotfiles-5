@@ -1,16 +1,15 @@
-## Store Docker files in /home
+## Build and run Locally
 ```
-sudo cp -R /var/lib/docker /home/
-sudo rm -Rf /var/lib/docker
-sudo ln -s /home/docker /var/lib/docker
-```
-
-## Clean Docker files
-```
-sudo docker system prune
+git clone https://github.com/eoli3n/dotfiles
+cd dotfiles
+git checkout <master|dev>
+sudo docker build -t archlinux/dotfiles -f docker/archlinux/Dockerfile .
+sudo docker run -t archlinux/dotfiles
 ```
 
-## Start Docker
-```
-sudo docker build -t archlinux-dotfiles .
-```
+## User
+Login : ``test``
+Password : ``test``
+
+## Use automated online builds
+Soon
