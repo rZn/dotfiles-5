@@ -16,3 +16,4 @@
 - TODO: docker compose pour build toutes les distros ?
 - TODO: update all vagrant specific task to match docker tasks
 - TODO: install virtual display xephyr
+- TODO: docker autobuild to docker run directly, edit README.md
