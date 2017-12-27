@@ -11,6 +11,9 @@ branches:
 install:
   - cd docker/archlinux
   - docker build -t archlinux/dotfiles .
+  - cd ../debian
+  - docker build -t debian/dotfiles .
 
 script:
   - docker run archlinux/dotfiles test.sh
+  - docker run debian/dotfiles test.sh
