@@ -49,7 +49,7 @@ Vagrant.configure("2") do |config|
   # EXEC
   cd /tmp
   curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=packer-git; makepkg PKGBUILD --install --needed --noconfirm
-  cd dotfiles
+  cd $HOME/dotfiles
   ./install.sh desktop && echo -e "vagrant\n/usr/bin/zsh" | chsh
   SCRIPT
 
