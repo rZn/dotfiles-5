@@ -36,7 +36,7 @@
     - ~/.vim/autoload
 
 - name: Configure vim
-  template: src=templates/.vimrc dest=~/.vimrc backup=yes
+  template: src=templates/vimrc dest=~/.vimrc backup=yes
 
 - name: Configure pathogen autoload
   copy: src=files/pathogen.vim dest=~/.vim/autoload/pathogen.vim

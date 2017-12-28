@@ -4,4 +4,4 @@
   become: True
 
 - name: Configure screen
-  copy: src=files/.screenrc dest=~/.screenrc backup=yes
+  copy: src=files/screenrc dest=~/.screenrc backup=yes

@@ -26,7 +26,7 @@
   ignore_errors: True
 
 - name: Configure xinitrc
-  copy: src=files/.xinitrc dest=~/.xinitrc backup=yes
+  copy: src=files/xinitrc dest=~/.xinitrc backup=yes
 
 - name: Template config file
   template: src=templates/config.j2 dest=~/.i3/config backup=yes

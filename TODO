@@ -11,7 +11,6 @@
 
 - vagrant: chsh in vagrant config file for FreeBSD
 - powerline: not working with centos|debian|freebsd
-- zsh: clean zshrc template
 - playbook: add {{ tag }} to fail module to print in "limit to distrib" task
 - vagrant: tty in qwerty for debian keyboard
 

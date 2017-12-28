@@ -153,10 +153,9 @@ bindsym $mod+Shift+underscore move container to workspace $tag8
 bindsym $mod+Shift+ccedilla move container to workspace $tag9
 bindsym $mod+Shift+agrave move container to workspace $tag10
 
-### BEGIN includes
-{% include ansible_hostname + '/config.j2' ignore missing %}
+{% include 'by_host/' + ansible_hostname + '/config.j2' ignore missing %}
 
-### END includes
+{% include 'by_os/' + ansible_distribution|lower + '/config.j2' ignore missing %}
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
