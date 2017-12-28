@@ -33,7 +33,7 @@
     - '*/bar hide nicklist'
     - '*/bar show title'
     - '*/bar hide status'
-    - '*/bar del buflist'
+    - '*/bar hide buflist'
     - '*/script install colorize_nicks.py highmon.pl buffers.pl'
     - '*/set weechat.look.separator_horizontal " "'
     - '*/set weechat.look.prefix_suffix " "'
