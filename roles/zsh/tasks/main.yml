@@ -69,7 +69,7 @@
   register: zsh_syntax_highlighting_dir
 
 - name: Configure zshrc
-  template: src=templates/.zshrc dest=~/.zshrc backup=yes
+  template: src=templates/zshrc.j2 dest=~/.zshrc backup=yes
 
 - debug:
     msg: "Do not forget to 'chsh /usr/bin/zsh'"

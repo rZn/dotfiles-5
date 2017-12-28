@@ -16,9 +16,9 @@ EOF
 
 It will uncomment monitor values in config.j2 too
 
-# Modules configuration
+# Modules configuration by host
 ```
-mkdir templates/$(hostname)
+mkdir templates/by_host/$(hostname)
 # Top modules configuration
 echo <<\EOF > templates/$(hostname)/modules-top.j2
 modules-left =  i3 xwindow
@@ -27,21 +27,32 @@ modules-right = backlight volume pkg wlan vpncheck battery date
 EOF
 
 # Bottom modules configuration
-echo <<\EOF > templates/$(hostname)/modules-bottom.j2
+echo <<\EOF > templates/by_host/$(hostname)/modules-bottom.j2
 modules-left =
 modules-center = networkspeedup networkspeeddown
 modules-right = temperature filesystem-slash filesystem-home cpu memory
 EOF
+```
 
-# Include some modules
-echo <<\EOF > templates/$(hostname)/modules-def.j2
+# Modules definition
+
+## By host
+
+```
+echo <<\EOF > templates/by_host/$(hostname)/modules-def.j2
 [module/example]
 type = custom/script
 interval = 1200
 format = <label>
 label = "%output:0:100%%"
 exec = uname -a
+EOF
+```
 
+## By OS
+
+```
+echo  <<\EOF > templates/by_os/<archlinux|debian|centos>/modules-def.j2
 [module/example2]
 type = custom/script
 interval = 1200

@@ -8,7 +8,7 @@ while pgrep -x polybar >/dev/null; do sleep 1; done
 
 # Launch top and bottom
 {% if launch_file.stat.exists %}
-{% include ansible_hostname + '/launch.j2' %}
+{% include 'by_host/' + ansible_hostname + '/launch.j2' %}
 {% else %}
 polybar top &
 polybar bottom &

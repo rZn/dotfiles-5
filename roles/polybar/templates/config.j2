@@ -77,7 +77,7 @@ font-2 = siji:pixelsize=10;3
 font-3 = FontAwesome:pixelsize=14;2
 
 {% if polybar_top_file.stat.exists %}
-{% include ansible_hostname + '/modules-top.j2' %}
+{% include 'by_host/' + ansible_hostname + '/modules-top.j2' %}
 {% else %}
 modules-left =  i3 xwindow
 modules-center =
@@ -139,7 +139,7 @@ font-2 = siji:pixelsize=10;3
 font-3 = FontAwesome:pixelsize=14;2
 
 {% if polybar_bottom_file.stat.exists %}
-{% include ansible_hostname + '/modules-bottom.j2' %}
+{% include 'by_host/' + ansible_hostname + '/modules-bottom.j2' %}
 {% else %}
 modules-left = 
 modules-center = networkspeedup networkspeeddown
@@ -551,5 +551,8 @@ menu-3-0-exec = i3-msg exit
 menu-3-1 = cancel
 menu-3-1-exec = menu-open-0
 
-{% include ansible_hostname + '/modules-def.j2' ignore missing %}
+{% include 'by_host/' + ansible_hostname + '/modules-def.j2' ignore missing %}
+
+{% include 'by_os/' + ansible_distribution|lower + '/modules-def.j2' ignore missing %}
+
 ; vim:ft=dosini
