@@ -39,7 +39,7 @@ Vagrant.configure("2") do |config|
   touch ~/.viminfo; rm ~/.viminfo
   touch ~/.vimrc; rm ~/.vimrc
   # EXEC
-  cd dotfiles
+  cd $HOME/dotfiles
   ./install.sh server && echo -e "vagrant\n/usr/bin/zsh" | chsh
   SCRIPT
 
