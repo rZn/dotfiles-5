@@ -23,12 +23,23 @@
 
 ## How to
 Ansible allows to duplicate this Desktop Environment over multiple hosts with specific configuration (dualscreen, packages...).
-Fork Me! Please look at ``roles/*/README.md`` if exists for specific hosts configuration.
+
+**Fork Me!** Please look at ``roles/*/README.md`` if exists for specific hosts configuration.
+
+**!!! Use as is, you will add my SSH key in your authorized_keys !!!**
+
+To disable that role, please run :
+```
+cd dotfiles
+sed -i 's/^\(.*authorized_keys.*\)$/#\1/' install.yml
+```
 
 ## Test VMs|Containers
 Please check ``vagrant/*/README.md`` and ``docker/*/README.md``
 
 ## Desktop/Laptop Environment
+
+Don't run as ``root``.
 
 ### Supported OS
 
@@ -49,6 +60,7 @@ curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=packer-
 - package-common
 - screen
 - ssh-agent
+- authorized_keys
 - terminfo
 - vim
 - zsh
@@ -87,7 +99,7 @@ To use dark theme, go to graphical configuration and click ``Use GTK+ Theme``
 
 ## Server Environment
 
-``server`` tag limits to install/configure cli tools.
+``server`` tag limits to install/configure cli tools. It could be run as ``root``.
 
 ### Supported OS
 
@@ -104,10 +116,10 @@ To use dark theme, go to graphical configuration and click ``Use GTK+ Theme``
 
 - package-common
 - screen
-- ssh-agent
 - terminfo
 - vim
 - zsh
+- authorized_keys
 
 ## Installation
 
