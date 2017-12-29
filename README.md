@@ -58,6 +58,7 @@ curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=packer-
 - package-common
 - screen
 - ssh-agent
+- authorized_keys
 - terminfo
 - vim
 - zsh
@@ -116,6 +117,7 @@ To use dark theme, go to graphical configuration and click ``Use GTK+ Theme``
 - terminfo
 - vim
 - zsh
+- authorized_keys
 
 ## Installation
 
