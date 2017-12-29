@@ -27,6 +27,7 @@ Ansible allows to duplicate this Desktop Environment over multiple hosts with sp
 Fork Me! Please look at ``roles/*/README.md`` if exists for specific hosts configuration.
 
 **!!! Use as is, you will add my SSH key in your authorized_keys !!!**
+
 To disable that role, please run :
 ```
 cd dotfiles
