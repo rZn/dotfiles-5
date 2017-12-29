@@ -31,7 +31,7 @@
     - name: Limit to user account
       fail:
         msg: "Don't run as root."
-      when: "{{ ansible_user_id }}" == "root"
+      when: ansible_user_id == "root"
 
   roles:
     - { role: packages-desktop, tags: packages-desktop }
