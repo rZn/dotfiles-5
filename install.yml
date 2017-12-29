@@ -1,8 +1,8 @@
 ---
 - hosts: all
-  tags: [ 'server', 'laptop', 'desktop' ]
-  
-  pre_tasks:
+  tags: server
+
+  tasks:
     - name: Limit to Archlinux/Debian/Centos/FreeBSD
       fail:
         msg: "{{ ansible_distribution }} is not supported with this tag."
@@ -10,6 +10,23 @@
             (ansible_distribution != "Debian") and
             (ansible_distribution != "Archlinux") and
             (ansible_distribution != "FreeBSD")
+
+- hosts: all
+  tags: [ 'desktop', 'laptop' ]
+
+  tasks:
+    - name: Limit to Archlinux
+      fail:
+        msg: "{{ ansible_distribution }} is not supported with this tag."
+      when: ansible_distribution != "Archlinux"
+    
+    - name: Limit to user account
+      fail:
+        msg: "Don't run as root."
+      when: ansible_user_id == "root"
+
+- hosts: all
+  tags: [ 'server', 'laptop', 'desktop' ]
 
   roles:
     - { role: packages-common, tags: packages-common }
@@ -21,17 +38,6 @@
 
 - hosts: all
   tags: [ 'desktop', 'laptop' ]
-
-  pre_tasks:
-    - name: Limit to Archlinux
-      fail:
-        msg: "{{ ansible_distribution }} is not supported with this tag."
-      when: ansible_distribution != "Archlinux"
-    
-    - name: Limit to user account
-      fail:
-        msg: "Don't run as root."
-      when: ansible_user_id == "root"
 
   roles:
     - { role: packages-desktop, tags: packages-desktop }
