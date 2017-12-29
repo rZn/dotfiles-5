@@ -57,14 +57,14 @@ curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=packer-
 
 ### Role list
 
-- package-common
+- packages-common
 - screen
 - ssh-agent
 - authorized_keys
 - terminfo
 - vim
 - zsh
-- package-desktop
+- packages-desktop
 - compton
 - cursor
 - gtk
@@ -114,7 +114,7 @@ To use dark theme, go to graphical configuration and click ``Use GTK+ Theme``
 
 ### Role list
 
-- package-common
+- packages-common
 - screen
 - terminfo
 - vim

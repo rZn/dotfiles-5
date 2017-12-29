@@ -12,7 +12,7 @@ EOF
 ```
 
 # Specific hosts packages
-Add a tasks file named with hostname of target 
+Add a tasks file named with hostname of target
 ```
 mkdir tasks/by_host/$(hostname)
 echo <<\EOF > tasks/by_host/$(hostname)/main.yml

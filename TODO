@@ -6,6 +6,8 @@
 - powerline: check best install method all distrib
 - zsh: check neon specific alias and others
 - playbook: update all vagrant specific task to match docker hosts
+- playbook: test if tag limit exists
+- playbook: for vim and zsh-syntax, change [distribution] tasks to test|include_tasks in by_os
 
 # TOFIX
 
@@ -13,6 +15,7 @@
 - powerline: not working with centos|debian|freebsd
 - playbook: add {{ tag }} to fail module to print in "limit to distrib" task
 - vagrant: tty in qwerty for debian keyboard
+- playbook: {{playbook_dir}} -> {{role_path}}
 
 # TOTEST
 
