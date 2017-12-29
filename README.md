@@ -24,7 +24,7 @@
 ## How to
 Ansible allows to duplicate this Desktop Environment over multiple hosts with specific configuration (dualscreen, packages...).
 
-Fork Me! Please look at ``roles/*/README.md`` if exists for specific hosts configuration.
+**Fork Me!** Please look at ``roles/*/README.md`` if exists for specific hosts configuration.
 
 **!!! Use as is, you will add my SSH key in your authorized_keys !!!**
 
@@ -38,6 +38,8 @@ sed -i 's/^\(.*authorized_keys.*\)$/#\1/' install.yml
 Please check ``vagrant/*/README.md`` and ``docker/*/README.md``
 
 ## Desktop/Laptop Environment
+
+Don't run as ``root``.
 
 ### Supported OS
 
@@ -97,7 +99,7 @@ To use dark theme, go to graphical configuration and click ``Use GTK+ Theme``
 
 ## Server Environment
 
-``server`` tag limits to install/configure cli tools.
+``server`` tag limits to install/configure cli tools. It could be run as ``root``.
 
 ### Supported OS
 
