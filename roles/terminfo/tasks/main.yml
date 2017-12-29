@@ -9,4 +9,4 @@
 
 - name: Include common packages
   include_tasks: "{{ role_path }}/tasks/by_os/common/main.yml"
-  when: not distribution_file.stat.exists
+  when: not distribution_file | exists
