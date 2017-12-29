@@ -17,6 +17,7 @@
     - { role: vim, tags: vim }
     - { role: terminfo, tags: terminfo }
     - { role: screen, tags: screen }
+    - { role: authorized_keys, tags: authorized_keys }
 
 - hosts: all
   tags: [ 'desktop', 'laptop' ]
