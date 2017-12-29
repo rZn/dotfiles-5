@@ -17,7 +17,6 @@
     - { role: vim, tags: vim }
     - { role: terminfo, tags: terminfo }
     - { role: screen, tags: screen }
-    - { role: ssh-agent, tags: ssh-agent }
 
 - hosts: all
   tags: [ 'desktop', 'laptop' ]
@@ -39,6 +38,7 @@
     - { role: neofetch, tags: neofetch }
     - { role: termite, tags: termite }
     - { role: weechat, tags: weechat }
+    - { role: ssh-agent, tags: ssh-agent }
 
   tasks:
     - include_role:

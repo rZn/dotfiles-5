@@ -104,7 +104,6 @@ To use dark theme, go to graphical configuration and click ``Use GTK+ Theme``
 
 - package-common
 - screen
-- ssh-agent
 - terminfo
 - vim
 - zsh
