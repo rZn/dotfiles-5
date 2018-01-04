@@ -44,6 +44,7 @@ RUN cd /tmp; curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBU
 RUN cd /tmp; makepkg PKGBUILD --install --needed --noconfirm
 RUN mkdir dotfiles
 COPY . dotfiles/
-RUN cd dotfiles; ./install.sh desktop | tee ansible.log
+RUN cd dotfiles; echo "[desktop]\nlocalhost ansible_connection=local" > hosts
+RUN cd dotfiles; ansible-playbook install.yml | tee ansible.log
 RUN echo -e "test" | chsh -s '/usr/bin/zsh'
 ENTRYPOINT /usr/bin/zsh

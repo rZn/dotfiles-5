@@ -33,6 +33,7 @@ WORKDIR /home/test/
 ENV LANG="fr_FR.UTF-8"
 RUN mkdir dotfiles
 COPY . dotfiles/
-RUN cd dotfiles; ./install.sh server | tee ansible.log
+RUN cd dotfiles; echo "[server]\nlocalhost ansible_connection=local" > hosts
+RUN cd dotfiles; ansible-playbook install.yml | tee ansible.log
 RUN echo -e "dockerpass" | chsh -s /bin/zsh
 ENTRYPOINT /usr/bin/zsh

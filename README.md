@@ -39,7 +39,7 @@ Please check ``vagrant/*/README.md`` and ``docker/*/README.md``
 
 ## Desktop/Laptop Environment
 
-Don't run as ``root``.
+Don't use as ``root``.
 
 ### Supported OS
 
@@ -83,8 +83,31 @@ Ansible will backup any existing conf file before erasing it (.zshrc, .i3/config
 ```
 git clone --recursive https://github.com/eoli3n/dotfiles
 cd dotfiles
-# To list tasks, dryrun then install
-./install.sh <desktop|laptop|[any package tag]>
+
+# edit hosts, then add your hostnames in right section <server|desktop|laptop>
+# test connectivity
+ansible all -m ping
+
+# To list tasks and tags
+ansible-playbook install.yml --list-tasks
+
+# To dry-run and print files diff on all declared hosts
+ansible-playbook install.yml -CDK
+
+# To run the whole playbook for all hosts
+ansible-playbook install.yml -K
+
+# To install 1 tag on 1 host
+ansible-playbook install.yml -K -l <hostname> -t <tag>
+
+# To run only locally, add your hostname in right hosts file section
+# you can replace server with <desktop|laptop>
+echo << EOF > hosts
+[server]
+localhost ansible_connection=local
+EOF
+# then
+ansible-playbook install.yml
 ```
 
 ### Manual configurations
@@ -126,9 +149,31 @@ To use dark theme, go to graphical configuration and click ``Use GTK+ Theme``
 ```
 git clone --recursive https://github.com/eoli3n/dotfiles
 cd dotfiles
-# To list tasks, dryrun then install
-./install.sh <server|[any package tag]>
 
+# edit hosts, then add your hostnames in right section <server|desktop|laptop>
+# test connectivity
+ansible all -m ping
+
+# To list tasks and tags
+ansible-playbook install.yml --list-tasks
+
+# To dry-run and print files diff on all declared hosts
+ansible-playbook install.yml -CDK
+
+# To run the whole playbook for all hosts
+ansible-playbook install.yml -K
+
+# To install 1 tag on 1 host
+ansible-playbook install.yml -K -l <hostname> -t <tag>
+
+# To run only locally, add your hostname in right hosts file section
+# you can replace server with <desktop|laptop>
+echo << EOF > hosts
+[server]
+localhost ansible_connection=local
+EOF
+# then
+ansible-playbook install.yml
 ```
 
 # Previously

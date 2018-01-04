@@ -1,0 +1,7 @@
+[server]
+cesium ansible_user=root
+neon ansible_user=root
+
+[laptop]
+osz ansible_user=user
+work ansible_user=userarch

@@ -20,10 +20,12 @@ autocmd VimEnter,Colorscheme * :hi MatchParen cterm=none ctermbg=white ctermfg=b
 " remember last cursor place
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
-" powerline
-set laststatus=2
-set t_Co=256
-let g:powerline_pycmd="py3"
-{% if ansible_os_family == "FreeBSD" %}
-set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim/
-{% endif %}
+" airline
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+      let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#show_buffers = 0
+let g:airline_theme = 'minimalist'

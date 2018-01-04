@@ -40,7 +40,8 @@ Vagrant.configure("2") do |config|
   touch ~/.vimrc; rm ~/.vimrc
   # EXEC
   cd $HOME/dotfiles
-  ./install.sh server && echo -e "vagrant\n/usr/bin/zsh" | chsh
+  echo "[server]\nlocalhost ansible_connection=local" > hosts
+  ansible-playbook install.yml && echo -e "vagrant\n/usr/bin/zsh" | chsh
   SCRIPT
 
   config.vm.provision "shell", inline: $script, privileged: false

@@ -45,6 +45,7 @@
     - zsh-syntax-highlighting
   become: True
   when: ansible_distribution == "Debian"
+  ignore_errors: True
 
 - name: Configure zsh-syntax-highlighting repo [CentOS]
   shell: creates=/etc/yum.repos.d/shells:zsh-users:zsh-syntax-highlighting.repo cd /etc/yum.repos.d/; wget https://download.opensuse.org/repositories/shells:zsh-users:zsh-syntax-highlighting/CentOS_7/shells:zsh-users:zsh-syntax-highlighting.repo
@@ -59,6 +60,7 @@
     - zsh-syntax-highlighting
   become: True
   when: ansible_distribution != "Debian"
+  ignore_errors: True
 
 - name: Install oh-my-zsh
   shell: creates=~/.oh-my-zsh sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh) ||:"
