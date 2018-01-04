@@ -15,7 +15,7 @@
 - name : Install powerline [Archlinux]
   pacman: name={{item}} state=present
   with_items:
-    - powerline
+    - powerline2
     - powerline-vim
     - powerline-fonts
   become: True
