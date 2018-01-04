@@ -100,6 +100,9 @@ ansible-playbook install.yml -K
 # To install 1 tag on 1 host
 ansible-playbook install.yml -K -l <hostname> -t <tag>
 
+# To install for a specific user on 1 host
+ansible-playbook install.yml -u user -K -l <hostname>
+
 # To run only locally, add your hostname in right hosts file section
 # you can replace server with <desktop|laptop>
 echo << EOF > hosts
