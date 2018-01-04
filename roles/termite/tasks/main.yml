@@ -9,3 +9,5 @@
 - name: Configure termite
   copy: src=files/config dest=~/.config/termite/config backup=yes
 
+- name: add termite padding
+  copy: src=files/gtk.css dest=~/.config/gtk-3.0/gtk.css
