@@ -23,6 +23,7 @@ alias ix="curl -s -F 'f:1=<-' ix.io"
 up () {curl -F "c=@${1:--}" https://ptpb.pw/}
 
 alias vi="vim"
+vissh () {vim scp://"$1"/}
 alias sudo="sudo "
 alias chrome="google-chrome-stable"
 chromeapp() { google-chrome-stable --app=$1 }
