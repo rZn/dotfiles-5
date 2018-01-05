@@ -22,6 +22,11 @@
     repo: https://github.com/vim-airline/vim-airline-themes
     dest: ~/.vim/bundle/vim-airline-thmes
 
+- name: Ansible vim
+  git:
+    repo: https://github.com/pearofducks/ansible-vim
+    dest: ~/.vim/bundle/ansible-vim
+
 - name: Configure vim
   template: src=templates/vimrc dest=~/.vimrc backup=yes
 
