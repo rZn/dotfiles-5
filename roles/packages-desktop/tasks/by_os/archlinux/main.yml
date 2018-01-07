@@ -5,7 +5,7 @@
     - google-chrome
     - connman-gtk
     - gnome-ssh-askpass2
-    - ttf-font-awesome
+    - ttf-font-awesome-4
     - ttf-unifont
     - ttf-font-icons
   notify: clean tmp packer
