@@ -69,6 +69,7 @@
   shell: find /usr -name zsh-syntax-highlighting.zsh 2>/dev/null
   become: True
   check_mode: no
+  changed_when: False
   register: zsh_syntax_highlighting_dir
 
 - name: Configure zshrc
