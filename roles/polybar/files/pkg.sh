@@ -1,9 +1,9 @@
 #!/bin/bash
-pac=$(checkupdates | wc -l) 2>/dev/null
-aur=$(cower -u | wc -l) 2>/dev/null
+pac=$(checkupdates 2>/dev/null | wc -l)
+aur=$(cower -u 2>/dev/null | wc -l)
 kernel=$(vercmp "$(uname -r | cut -f-2 -d-)"  "$(pacman --nodeps -Sp --print-format %v linux)")
 
-if [ $pac -eq "0" ] && [ $aur -eq "0" ]
+if [[ $pac -eq "0" ]] && [[ $aur -eq "0" ]] || [[ ! $pac =~ [0-9]+ ]] || [[ ! $aur =~ [0-9]+ ]]
 then
     exit 0
 fi
