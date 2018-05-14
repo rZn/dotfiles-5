@@ -1,2 +1,5 @@
 #!/bin/bash
-grep 'failed=0' ~/dotfiles/ansible.log
+if grep 'failed=1' ~/dotfiles/ansible.log
+then
+    exit 1
+fi
