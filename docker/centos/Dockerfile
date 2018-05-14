@@ -1,8 +1,6 @@
 FROM centos:7
 # Locales keyboard
-RUN sed -i 's/^\(override_install_langs.*\)$/#\1/' /etc/yum.conf \
- && yum -y -q reinstall glibc-common \
- && echo 'LANG="fr_FR.UTF-8"' > /etc/locale.conf
+RUN echo 'LANG="fr_FR.UTF-8"' > /etc/locale.conf
 ENV LANG fr_FR.UTF-8
 # Debian Deps
 RUN yum update -y && yum install -y \ 
