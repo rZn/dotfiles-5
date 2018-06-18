@@ -40,8 +40,8 @@ RUN echo "test ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 USER test
 WORKDIR /home/test/
 ENV LANG="fr_FR.UTF-8"
-RUN cd /tmp; curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=packer-git
-RUN cd /tmp; makepkg PKGBUILD --install --needed --noconfirm
+RUN curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=packer-git
+RUN makepkg PKGBUILD --install --needed --noconfirm
 RUN mkdir dotfiles
 COPY . dotfiles/
 RUN cd dotfiles; ansible-playbook -i docker/archlinux/hosts install.yml | tee ansible.log
