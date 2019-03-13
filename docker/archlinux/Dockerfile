@@ -1,4 +1,4 @@
-FROM base/archlinux:latest
+FROM archlinux/base:latest
 # Locales keyboard
 RUN echo "fr_FR.UTF-8 UTF-8" > /etc/locale.gen \
  && locale-gen \
