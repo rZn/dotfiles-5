@@ -28,8 +28,7 @@ ENV PATH="${PATH}:/usr/bin/core_perl"
 RUN pacman -S --noconfirm \ 
       ansible \
       jshon \
-      git \
-      go
+      git
 # Fix tmp dir perms
 RUN chmod 1777 /tmp
 # Create test user
@@ -41,7 +40,7 @@ RUN echo "test ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 USER test
 WORKDIR /home/test/
 ENV LANG="fr_FR.UTF-8"
-RUN curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=packer-git
+RUN curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=trizen
 RUN makepkg PKGBUILD --install --needed --noconfirm
 RUN mkdir dotfiles
 COPY . dotfiles/

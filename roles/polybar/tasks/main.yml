@@ -6,7 +6,7 @@
   become: True
 
 - name: Install polybar
-  packer: name={{item}} state=present
+  aur: name={{item}} use=trizen
   with_items:
     - siji-git
     - polybar-git
