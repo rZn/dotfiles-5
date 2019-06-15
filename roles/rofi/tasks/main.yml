@@ -1,6 +1,6 @@
 ---
 - name: Install rofi
-  packer: name=rofi state=present
+  aur: name=rofi use=makepkg
 
 - name: Create rofi conf dir
   file: path=~/.config/rofi state=directory

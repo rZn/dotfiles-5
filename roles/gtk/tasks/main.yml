@@ -1,6 +1,6 @@
 ---
 - name: Install Numix Theme
-  packer: name={{item}} state=present
+  aur: name={{item}} use=makepkg
   with_items:
     - numix-themes-darkblue
     - vibrancy-colors

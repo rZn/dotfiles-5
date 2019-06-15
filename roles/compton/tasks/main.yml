@@ -1,6 +1,6 @@
 ---
 - name: Install compton
-  packer: name=compton-git state=present
+  aur: name=compton-git use=makepkg
 
 - name: Configure compton
   copy: src=files/compton dest=~/.compton backup=yes

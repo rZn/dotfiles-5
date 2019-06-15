@@ -1,6 +1,6 @@
 ---
 - name: Install Cursors
-  packer: name=capitaine-cursors state=present
+  aur: name=capitaine-cursors use=makepkg
 
 - name: Create .Xresources.d dir
   file: path=~/.Xresources.d state=directory

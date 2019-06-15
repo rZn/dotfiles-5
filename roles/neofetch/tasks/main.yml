@@ -1,6 +1,6 @@
 ---
 - name: Install neofetch
-  packer: name={{item}} state=present
+  aur: name={{item}} use=makepkg
   with_items:
     - w3m
     - neofetch
