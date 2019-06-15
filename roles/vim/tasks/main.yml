@@ -13,11 +13,12 @@
   when: ansible_distribution == "CentOS"
 
 - name : Install powerline [Archlinux]
-  pacman: name={{item}} state=present
-  with_items:
-    - powerline
-    - powerline-vim
-    - powerline-fonts
+  pacman:
+    state: present
+    name:
+      - powerline
+      - powerline-vim
+      - powerline-fonts
   become: True
   when: ansible_os_family == "Archlinux"
 
