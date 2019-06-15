@@ -1,4 +1,7 @@
 ---
+- name: add unifont gpg missing key
+  shell: gpg --recv-keys 1A09227B1F435A33
+
 - name: Install Desktop packages [Archlinux]
   aur: name={{item}} use=makepkg
   with_items:
