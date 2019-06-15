@@ -28,7 +28,8 @@ ENV PATH="${PATH}:/usr/bin/core_perl"
 RUN pacman -S --noconfirm \ 
       ansible \
       jshon \
-      git
+      git \
+      go
 # Fix tmp dir perms
 RUN chmod 1777 /tmp
 # Create test user
