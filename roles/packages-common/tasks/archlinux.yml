@@ -1,7 +1,7 @@
 ---
 - name: Install common packages [Archlinux]
   pacman:
-    state: presetn
+    state: present
     name:
       - expac
       - jshon
