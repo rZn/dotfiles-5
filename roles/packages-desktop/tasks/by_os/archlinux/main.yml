@@ -1,6 +1,6 @@
 ---
 - name: Install Desktop packages [Archlinux]
-  aur: name={{item}} use=trizen
+  aur: name={{item}} use=makepkg
   with_items:
     - google-chrome
     - connman-gtk

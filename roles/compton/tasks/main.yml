@@ -1,6 +1,6 @@
 ---
 - name: Install compton
-  aur: name=compton-git use=trizen
+  aur: name=compton-git use=makepkg
 
 - name: Configure compton
   copy: src=files/compton dest=~/.compton backup=yes

@@ -1,6 +1,6 @@
 ---
 - name: Install neofetch
-  aur: name={{item}} use=trizen
+  aur: name={{item}} use=makepkg
   with_items:
     - w3m
     - neofetch

@@ -1,6 +1,6 @@
 ---
 - name: Install Numix Theme
-  aur: name={{item}} use=trizen
+  aur: name={{item}} use=makepkg
   with_items:
     - numix-themes-darkblue
     - vibrancy-colors

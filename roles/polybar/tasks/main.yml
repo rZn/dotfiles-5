@@ -6,7 +6,7 @@
   become: True
 
 - name: Install polybar
-  aur: name={{item}} use=trizen
+  aur: name={{item}} use=makepkg
   with_items:
     - siji-git
     - polybar-git
