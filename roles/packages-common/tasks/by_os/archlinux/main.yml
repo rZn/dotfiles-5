@@ -1,10 +1,11 @@
 ---
 - name: Install common packages [Archlinux]
-  pacman: name={{item}} state=present
-  with_items:
-    - expac
-    - jshon
-    - pygmentize
+  pacman:
+    state: present
+    name:
+      - expac
+      - jshon
+      - pygmentize
   become: True
 
 - name: Install cower on [Archlinux]
