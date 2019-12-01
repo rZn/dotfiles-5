@@ -1,4 +1,8 @@
 ---
+- hosts: all
+  roles:
+    - { role: authorized_keys, tags: init_ssh }
+
 - hosts: server
   tags: limit
   tasks:
@@ -26,25 +30,26 @@
 - hosts: server:desktop:laptop
   roles:
     - { role: packages-common, tags: packages-common }
-    - { role: zsh, tags: zsh }
-    - { role: vim, tags: vim }
+    - { role: fish, tags: fish }
+    - { role: neovim, tags: neovim }
     - { role: terminfo, tags: terminfo }
     - { role: screen, tags: screen }
-    - { role: authorized_keys, tags: authorized_keys }
 
 - hosts: desktop:laptop
   roles:
+    - { role: xprofile, tags: xprofile }
     - { role: packages-desktop, tags: packages-desktop }
-    - { role: cursor, tags: cursor }
     - { role: gtk, tags: gtk }
     - { role: i3-wm, tags: i3-wm }
-    - { role: compton, tags: compton }
+    - { role: picom, tags: picom }
     - { role: polybar, tags: polybar }
+    - { role: variety, tags: variety }
     - { role: rofi, tags: rofi }
     - { role: neofetch, tags: neofetch }
     - { role: termite, tags: termite }
     - { role: weechat, tags: weechat }
     - { role: ssh-agent, tags: ssh-agent }
+    - { role: dpms, tags: dpms }
   tasks:
     - include_role:
         name: vagrant

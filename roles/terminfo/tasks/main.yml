@@ -1,6 +1,7 @@
 ---
 - name: Test distribution packages file
-  stat: path="{{ role_path }}/tasks/by_os/{{ ansible_distribution|lower }}/main.yml"
+  stat:
+    path: "{{ role_path }}/tasks/by_os/{{ ansible_distribution|lower }}/main.yml"
   register: distribution_file
 
 - name: Include distribution packages

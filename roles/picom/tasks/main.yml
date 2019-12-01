@@ -1,0 +1,22 @@
+---
+- name: Install compton
+  package:
+    name: picom
+
+- name: Configure picom
+  copy:
+    src: picom
+    dest: ~/.picom
+    backup: yes
+
+- name: Init compton in .xprofile
+  copy:
+    src: picom.sh
+    dest: ~/.xprofile.d/
+  when: ansible_user_id != "vagrant"
+
+- name: Init compton in .xprofile [Vagrant]
+  copy:
+    src: picom.vagrant.sh
+    dest: ~/.xprofile.d/
+  when: ansible_user_id == "vagrant"

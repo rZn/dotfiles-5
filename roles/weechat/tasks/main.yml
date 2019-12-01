@@ -1,18 +1,16 @@
 ---
 - name: Install weechat
-  package: name={{item}} state=present
-  with_items:
-    - screen
-    - weechat
+  package:
+    name:
+      - screen
+      - weechat
+    state: present
   become: True
 
-- name: Init weechat in .xprofile
-  blockinfile:
-    path: ~/.xprofile
-    create: True
-    marker: "### {mark} DOTFILES weechat ###"
-    content: |
-      screen -DmS weechat /usr/bin/weechat &
+- name: Weechat in xprofile
+  copy:
+    src: weechat.sh
+    dest: ~/.xprofile.d/
   when: ansible_user_id != "vagrant"
 
 - name: Start weechat
@@ -28,8 +26,10 @@
   when: not stat_fifo.stat.exists
 
 - name: Theme weechat
-  shell: creates=~/.weechat/themed echo {{item}} >~/.weechat/weechat_fifo
-  with_items:
+  shell: echo {{item}} >~/.weechat/weechat_fifo
+  args:
+    creates: ~/.weechat/themed 
+  loop:
     - '*/bar hide nicklist'
     - '*/bar show title'
     - '*/bar hide status'
@@ -59,4 +59,7 @@
     - '*/reload'
 
 - name: Create themed file
-  file: path=~/.weechat/themed state=touch
+  file:
+    path: ~/.weechat/themed
+    state: touch
+  changed_when: false

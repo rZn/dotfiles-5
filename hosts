@@ -1,7 +1,10 @@
 [server]
-cesium ansible_user=root
-neon ansible_user=root
+prodpeda-cesium
+tspeda-kvm
 
 [laptop]
-osz ansible_user=user
-work ansible_user=userarch
+osz become_user=user
+localhost ansible_connection=local ansible_user=user
+
+[desktop]
+work become_user=user

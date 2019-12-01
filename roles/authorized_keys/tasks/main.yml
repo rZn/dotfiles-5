@@ -1,5 +1,5 @@
 ---
-- name: authorize eoli3n key
+- name: authorize keys
   authorized_key:
     user: "{{ ansible_user_id }}"
     state: present

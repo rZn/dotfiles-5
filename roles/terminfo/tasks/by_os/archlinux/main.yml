@@ -1,4 +1,0 @@
----
-- name: Install termite terminfo [Archlinux]
-  pacman: name=termite-terminfo state=present
-  become: True

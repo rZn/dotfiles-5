@@ -10,8 +10,8 @@ while pgrep -x polybar >/dev/null; do sleep 1; done
 {% if launch_file.stat.exists %}
 {% include 'by_host/' + ansible_hostname + '/launch.j2' %}
 {% else %}
-polybar top &
-polybar bottom &
+MONITOR=$(xrandr | grep '\ connected' | head -n1 | awk '{print $1}') polybar top &
+MONITOR=$(xrandr | grep '\ connected' | head -n1 | awk '{print $1}') polybar bottom &
 {% endif %}
 
 echo "Bars launched..."
