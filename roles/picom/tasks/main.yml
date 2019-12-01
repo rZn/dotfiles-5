@@ -2,6 +2,7 @@
 - name: Install compton
   package:
     name: picom
+  become: yes
 
 - name: Configure picom
   copy:
