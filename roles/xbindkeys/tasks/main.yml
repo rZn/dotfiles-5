@@ -1,15 +1,17 @@
 ---
 - name: Install xbindkeys
-  package: name=xbindkeys state=present
+  package:
+    name: xbindkeys
+    state: present
   become: True
 
 - name: Configure xbindkeys
-  copy: src=files/xbindkeysrc dest=~/.xbindkeysrc backup=yes
+  copy:
+    src: xbindkeysrc
+    dest: ~/.xbindkeysrc
+    backup: yes
 
 - name: Init xbindkeys in .xprofile
-  blockinfile:
-    path: ~/.xprofile
-    create: True
-    marker: "### {mark} DOTFILES xbindkeys###"
-    content: |
-      xbindkeys &
+  copy:
+    src: xbindkeys.sh
+    dest: ~/.xprofile.d/

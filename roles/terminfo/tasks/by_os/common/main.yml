@@ -1,0 +1,8 @@
+---
+- name: Install termite terminfo
+  shell: |
+    wget "https://raw.githubusercontent.com/thestinger/termite/master/termite.terminfo" -O /root/termite.terminfo
+    tic -x /root/termite.terminfo
+  args:
+    creates: /root/termite.terminfo
+  become: True

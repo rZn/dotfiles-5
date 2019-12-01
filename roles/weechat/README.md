@@ -1,11 +1,6 @@
 # Weechat Theme
 
-To let ansible rerun cmd in weechat fifo, please
+To trigger configuration again, you need to remove lock file
 ```
 rm ~/.weechat/themed
-```
-Then you can re run configuration
-```
-cd ~/dotfiles
-./install.sh weechat
 ```

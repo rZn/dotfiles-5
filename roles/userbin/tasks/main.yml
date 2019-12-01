@@ -1,0 +1,12 @@
+---
+- name: create home/bin dir
+  file:
+    path: ~/bin
+    state: directory
+
+- name: install ix.io up in in home/bin
+  shell: |
+    curl ix.io/client > ~/bin/up
+    chmod +x ~/bin/up
+  args:
+    creates: ~/bin/up

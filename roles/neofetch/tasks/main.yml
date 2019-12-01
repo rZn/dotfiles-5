@@ -1,15 +1,22 @@
 ---
 - name: Install neofetch
-  aur: name={{item}} use=makepkg
-  with_items:
-    - w3m
-    - neofetch
+  aur:
+    name:
+      - w3m
+      - neofetch
+    skip_installed: yes
 
 - name: creates neofetch conf dir
-  file: path=~/.config/neofetch state=directory
+  file:
+    path: ~/.config/neofetch
+    state: directory
 
 - name: Configure neofetch
-  copy: src=files/config.conf dest=~/.config/neofetch/config.conf
+  copy:
+    src: config.conf
+    dest: ~/.config/neofetch/
 
 - name: Copy neofetch archlinux img
-  copy: src=files/archlinux.png dest=~/.config/neofetch/archlinux.png
+  copy:
+    src: archlinux.png
+    dest: ~/.config/neofetch/

@@ -1,25 +1,13 @@
 ---
-- name: Install termite termcap [FreeBSD]
-  # See: https://unix.stackexchange.com/questions/291412/how-can-i-use-terminfo-entries-on-freebsd
-  shell: creates=~/.termcap {{item}}
-  with_items:
-    - 'chmod 755 /usr/share/misc/termcap'
-    - 'cat {{ playbook_dir }}/roles/terminfo/files/termite.termcap >> /usr/share/misc/termcap'
-    - 'cap_mkdb /usr/share/misc/termcap'
-    - 'touch ~/.termcap'
-  become: True
-  when: ansible_os_family == "FreeBSD"
+- name: Test distribution packages file
+  stat:
+    path: "{{ role_path }}/tasks/by_os/{{ ansible_distribution|lower }}/main.yml"
+  register: distribution_file
 
-- name: Install termite terminfo [Archlinux]
-  pacman: name=termite-terminfo state=present
-  become: True
-  when: ansible_os_family == "Archlinux"
+- name: Include distribution packages
+  include_tasks: "{{ role_path }}/tasks/by_os/{{ ansible_distribution|lower }}/main.yml"
+  when: distribution_file.stat.exists
 
-- name: Install termite terminfo [Common]
-  shell: creates={{ item.creates }} {{ item.cmd }}
-  with_items:
-    - { creates: '/root/termite.terminfo', cmd: 'wget "https://raw.githubusercontent.com/thestinger/termite/master/termite.terminfo" -O /root/termite.terminfo' }
-    - { creates: '/root/.termite.terminfo', cmd: 'tic -x /root/termite.terminfo' }
-    - { creates: '/root/.termite.terminfo', cmd: 'touch /root/.termite.terminfo' }
-  become: True
-  when: ansible_os_family != "Archlinux" and ansible_os_family != "FreeBSD"
+- name: Include common packages
+  include_tasks: "{{ role_path }}/tasks/by_os/common/main.yml"
+  when: not distribution_file.stat.exists

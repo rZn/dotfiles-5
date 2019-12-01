@@ -1,7 +1,10 @@
 ---
 - hosts: all
-  tags: server
+  roles:
+    - { role: authorized_keys, tags: init_ssh }
 
+- hosts: server
+  tags: limit
   tasks:
     - name: Limit to Archlinux/Debian/Centos/FreeBSD
       fail:
@@ -11,56 +14,49 @@
             (ansible_distribution != "Archlinux") and
             (ansible_distribution != "FreeBSD")
 
-- hosts: all
-  tags: [ 'desktop', 'laptop' ]
-
+- hosts: desktop:laptop
+  tags: limit
   tasks:
     - name: Limit to Archlinux
       fail:
         msg: "{{ ansible_distribution }} is not supported with this tag."
       when: ansible_distribution != "Archlinux"
     
-    - name: Limit to user account
+    - name: Limit to user accounts
       fail:
         msg: "Don't run as root."
       when: ansible_user_id == "root"
 
-- hosts: all
-  tags: [ 'server', 'laptop', 'desktop' ]
-
+- hosts: server:desktop:laptop
   roles:
     - { role: packages-common, tags: packages-common }
-    - { role: zsh, tags: zsh }
-    - { role: vim, tags: vim }
+    - { role: fish, tags: fish }
+    - { role: neovim, tags: neovim }
     - { role: terminfo, tags: terminfo }
     - { role: screen, tags: screen }
-    - { role: authorized_keys, tags: authorized_keys }
 
-- hosts: all
-  tags: [ 'desktop', 'laptop' ]
-
+- hosts: desktop:laptop
   roles:
+    - { role: xprofile, tags: xprofile }
     - { role: packages-desktop, tags: packages-desktop }
-    - { role: cursor, tags: cursor }
     - { role: gtk, tags: gtk }
     - { role: i3-wm, tags: i3-wm }
-    - { role: compton, tags: compton }
+    - { role: picom, tags: picom }
     - { role: polybar, tags: polybar }
+    - { role: variety, tags: variety }
     - { role: rofi, tags: rofi }
     - { role: neofetch, tags: neofetch }
     - { role: termite, tags: termite }
     - { role: weechat, tags: weechat }
     - { role: ssh-agent, tags: ssh-agent }
-
+    - { role: dpms, tags: dpms }
   tasks:
     - include_role:
         name: vagrant
       when: ansible_user_id == "vagrant"
       tags: vagrant
 
-- hosts: all
-  tags: laptop
-
+- hosts: laptop
   roles:
     - { role: packages-laptop, tags: packages-laptop }
     - { role: xbindkeys, tags: xbindkeys }

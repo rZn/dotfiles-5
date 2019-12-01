@@ -1,15 +1,31 @@
 ---
 - name: Install common packages
-  package: name={{item}} state=present
-  with_items:
-    - curl
-    - wget
-  become: True
+  package:
+    name:
+      - curl
+      - wget
+      - jq
+      - most
+      - fzf
+      - rsync
+    state: present
+  become: yes
+  ignore_errors: yes
 
-- name: Include CentOS packages [if CentOS]
-  include_tasks: centos.yml
-  when: ansible_distribution == "CentOS"
+- name: Test host packages file
+  stat:
+    path: "{{ role_path }}/tasks/by_host/{{ ansible_hostname }}/main.yml"
+  register: host_file
 
-- name: Include Archlinux packages [if Archlinux]
-  include_tasks: archlinux.yml
-  when: ansible_os_family == "Archlinux"
+- name: Include host packages
+  include_tasks: "{{ role_path }}/tasks/by_host/{{ ansible_hostname }}/main.yml"
+  when: host_file.stat.exists
+
+- name: Test distribution packages file
+  stat:
+    path: "{{ role_path }}/tasks/by_os/{{ ansible_distribution|lower }}/main.yml"
+  register: distribution_file
+
+- name: Include distribution packages
+  include_tasks: "{{ role_path }}/tasks/by_os/{{ ansible_distribution|lower }}/main.yml"
+  when: distribution_file.stat.exists

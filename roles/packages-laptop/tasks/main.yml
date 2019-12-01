@@ -1,4 +1,6 @@
 ---
 - name: Install backlight controller package
-  aur: name=light-git use=makepkg
+  aur:
+    name: light-git
+    skip_installed: yes
   when: ansible_os_family == "Archlinux"

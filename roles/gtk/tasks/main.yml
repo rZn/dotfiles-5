@@ -1,21 +1,54 @@
 ---
-- name: Install Numix Theme
-  aur: name={{item}} use=makepkg
-  with_items:
-    - numix-themes-darkblue
-    - vibrancy-colors
+- name: Install Themes and Icons
+  aur:
+    name:
+      - equilux-theme
+      - paper-icon-theme
+    skip_installed: yes
 
 - name: Create gtk conf dir
-  file: path=~/.config/gtk-3.0/ state=directory
+  file:
+    path: ~/.config/gtk-3.0/
+    state: directory
 
 - name: Configure GTK
-  copy: src=files/settings.ini dest=~/.config/gtk-3.0/settings.ini backup=yes
+  copy:
+    src: settings.ini
+    dest: ~/.config/gtk-3.0/
+    backup: yes
 
 - name: Configure Qt as GTK theme
-  copy: src=files/Trolltech.conf dest=~/.config/Trolltech.conf backup=yes
+  copy:
+    src: Trolltech.conf
+    dest: ~/.config/
+    backup: yes
 
 - name: Update font cache
-  shell: creates=.Xdefaults fc-cache -f
+  shell: fc-cache -f
+  args:
+    creates: .Xdefaults
+  changed_when: false
 
 - name: Link Xdefaults
-  file: src=~/.Xresources dest=~/.Xdefaults state=link force=yes
+  file:
+    src: ~/.Xresources
+    dest: ~/.Xdefaults
+    state: link
+    force: yes
+
+- name: Create .Xresources.d dir
+  file:
+    path: ~/.Xresources.d
+    state: directory
+
+- name: Configure Cursors
+  copy:
+    src: cursor
+    dest: ~/.Xresources.d/
+
+- name: Init Cursors in .Xresources
+  lineinfile:
+    path: ~/.Xresources
+    create: yes
+    state: present
+    line: '#include ".Xresources.d/cursor"'

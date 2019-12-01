@@ -1,0 +1,5 @@
+[module/filesystem-home]
+type = internal/fs
+interval = 25
+mount-0 = /home
+label-mounted = "%{F#5b5b5b}%{F-} %percentage_used%%"

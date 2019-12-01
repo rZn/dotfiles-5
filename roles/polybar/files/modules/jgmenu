@@ -1,0 +1,5 @@
+[module/jgmenu]
+type = custom/text
+content-padding = 2
+content = menu
+click-left = "jgmenu_run >/dev/null 2>&1 &"

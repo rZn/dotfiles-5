@@ -1,4 +1,0 @@
----
-- name: Install arch-itect packages
-  pacman: name=thunderbird state=present
-  become: True

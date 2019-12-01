@@ -42,6 +42,6 @@ WORKDIR /home/test/
 ENV LANG="fr_FR.UTF-8"
 RUN mkdir dotfiles
 COPY . dotfiles/
-RUN cd dotfiles; ./install.sh desktop | tee ansible.log
+RUN cd dotfiles; ansible-playbook -i docker/archlinux/hosts install.yml | tee ansible.log
 RUN echo -e "test" | chsh -s '/usr/bin/zsh'
 ENTRYPOINT /usr/bin/zsh

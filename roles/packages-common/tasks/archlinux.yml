@@ -1,9 +1,0 @@
----
-- name: Install common packages [Archlinux]
-  pacman:
-    state: present
-    name:
-      - expac
-      - jshon
-      - pygmentize
-  become: True

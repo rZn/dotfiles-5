@@ -17,7 +17,7 @@ bindsym $mod+Return exec termite
 # start drofi dmenu
 bindsym $mod+Tab exec --no-startup-id rofi -show window
 bindsym $mod+Shift+d exec --no-startup-id rofi -show run
-bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -96,9 +96,9 @@ set $tag10 "10:"
 
 #colors
 # class                 border  backgr. text    indicator child_border
-client.focused          #FFFFFF #FFFFFF #000000 #000000   #000000
-client.focused_inactive #333333 #5f676a #ffffff #484e50   #000000
-client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.focused          #222222 #5A5A5A #E1E1E1 #000000   #000000
+client.focused_inactive #222222 #5A5A5A #E1E1E1 #484e50   #000000
+client.unfocused        #222222 #323232 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
@@ -115,15 +115,7 @@ bindsym $mod+Shift+q exec ~/.config/rofi/powermenu.sh
 # apps
 bindsym $mod+Control+t exec thunar
 bindsym $mod+Control+n exec connman-gtk
-
-# by class
-## floatings
-for_window [class="XTerm"] floating enable, border normal
-for_window [class="feh"] floating enable, border normal
-
-# assigns focus
-assign [class="Connman-gtk"] $tag10
-for_window [class="Connman-gtk"] focus
+bindsym $mod+Control+p exec pavucontrol
 
 #toggle workspace's display screen
 bindsym $mod+less move workspace to output right
@@ -152,6 +144,28 @@ bindsym $mod+Shift+egrave move container to workspace $tag7
 bindsym $mod+Shift+underscore move container to workspace $tag8
 bindsym $mod+Shift+ccedilla move container to workspace $tag9
 bindsym $mod+Shift+agrave move container to workspace $tag10
+
+# floatings
+for_window [class="XTerm"] floating enable, border normal
+for_window [class="feh"] floating enable, border normal
+for_window [class="Gpick"] floating enable, border pixel 1
+for_window [title="Images de Variety"] floating enable, border pixel 1, move left 647px
+
+# assigns focus
+assign [class="Connman-gtk"] $tag10
+for_window [class="Connman-gtk"] focus
+assign [class="Transmission-gtk"] $tag9
+assign [title=".*mail.*"] $tag3
+assign [class="Google-chrome"] $tag1
+assign [class="spotify"] $tag5
+for_window [class="spotify"] focus
+assign [class="Code"] $tag6
+for_window [class="Code"] focus
+
+#bindsym spotify
+bindsym $mod+Control+Left exec ~/dev/git/mpris-ctrl/mpris-ctrl.sh spotify prev
+bindsym $mod+Control+Down exec ~/dev/git/mpris-ctrl/mpris-ctrl.sh spotify play-pause
+bindsym $mod+Control+Right exec ~/dev/git/mpris-ctrl/mpris-ctrl.sh spotify next
 
 {% include 'by_host/' + ansible_hostname + '/config.j2' ignore missing %}
 

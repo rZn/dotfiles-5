@@ -23,6 +23,7 @@ alias ix="curl -s -F 'f:1=<-' ix.io"
 up () {curl -F "c=@${1:--}" https://ptpb.pw/}
 
 alias vi="vim"
+vissh () {vim scp://"$1"/}
 alias sudo="sudo "
 alias chrome="google-chrome-stable"
 chromeapp() { google-chrome-stable --app=$1 }
@@ -63,12 +64,16 @@ export PATH=${PATH}:~/.gem/ruby/2.4.0/bin
 
 {% include 'by_os/' + ansible_distribution|lower + '/zshrc.j2' ignore missing %}
 
+### FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 ### ZSHRC NODE
 source ~/.zshrc_node
 
 ### ZSH PURE
 autoload -U zmv
 plugins=(git python colored-man-pages colorize sprunge web-search)
+export ZSH_COMPDUMP=/tmp/zcompdump-$USER
 source $ZSH/oh-my-zsh.sh
 source {{ zsh_syntax_highlighting_dir.stdout }}
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh

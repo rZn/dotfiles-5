@@ -1,0 +1,13 @@
+---
+- name: Install Desktop aur packages [Archlinux]
+  aur:
+    name:
+      - trizen
+      - google-chrome
+      - connman-gtk
+      - gnome-ssh-askpass2
+      - ttf-font-awesome-4
+      - ttf-unifont
+      - ttf-font-icons
+      - spotify
+    skip_installed: yes

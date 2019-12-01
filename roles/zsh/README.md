@@ -1,3 +1,5 @@
+# Deprecated, i use fish
+
 # By hostname specific configuration in zshrc
 Add a dir named as hostname in by_host dir to include specific host configuration in config file
 ```
