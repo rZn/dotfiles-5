@@ -8,6 +8,7 @@
       - most
       - fzf
     state: present
+  become: yes
 
 - name: Test host packages file
   stat:
