@@ -7,6 +7,7 @@
       - jq
       - most
       - fzf
+      - rsync
     state: present
   become: yes
   ignore_errors: yes
