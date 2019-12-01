@@ -1,2 +1,2 @@
-- name: Trigger plug install
+- name: trigger plug install
   shell: nvim +PlugInstall +qall > /dev/null
