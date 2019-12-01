@@ -45,5 +45,10 @@
     backup: yes
   when: "'laptop' in {{ group_names }}"
 
+- name: copy aliases
+  synchronize:
+    src: files/functions/
+    dest: ~/.config/fish/
+
 - debug:
     msg: "Do not forget to 'chsh /usr/bin/fish'"
