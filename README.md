@@ -29,13 +29,76 @@ You should be able to edit and push from/to any managed hosts.
 ## Test VMs|Containers
 Please check ``vagrant/*/README.md`` and ``docker/*/README.md``
 
+## Docs
+Please look at ``roles/*/README.md`` if exists for specific hosts configuration.
+
+## Desktop/Laptop Environment
+
+Should not be used as ``root``.
+
+#### Supported OS
+
+- Archlinux
+
+#### Dependencies
+
+- ansible >= 2.4
+
+#### Role list
+
+- packages-common
+- fish
+- neovim
+- terminfo
+- screen
+- authorized_keys
+- packages-desktop
+- gtk
+- i3-wm
+- picom
+- polybar
+- variety
+- rofi
+- neofetch
+- termite
+- weechat
+- ssh-agent
+- dpms
+- packages-laptop [only laptop tag]
+- xbindkeys [only laptop tag]
+
+## Server Environment
+
+Only cli tools
+It could be run as ``root``.
+
+#### Supported OS
+
+- Archlinux
+- Debian
+- Centos
+- FreeBSD : need to ``sudo ln -s /usr/local/bin/python2 /usr/bin/python``
+
+#### Dependencies
+
+- ansible >= 2.4
+
+#### Role list
+
+- packages-common
+- fish
+- neovim
+- terminfo
+- screen
+- authorized_keys
+
 ## How to
 
 ** Use carefully** backup your home before using ! Ansible will backup any existing conf file before overriding.
 
 #### 1° Fork Me!
 
-#### 2° Clone your repo on a personnal host
+#### 2° Clone your repo on a personal host
 ```
 git clone --recursive https://github.com/[your_repo]/dotfiles
 cd dotfiles
@@ -45,7 +108,7 @@ cd dotfiles
 ssh-keygen -t rsa
 ```
 #### 4° Replace your ssh key in ``authorized_keys`` role
-**!!! Use as is, you will add my SSH key in your authorized_keys !!!**
+!!! Use as is, you will add my SSH key in your authorized_keys !!!
 ```
 cp ~/.ssh/id_rsa.pub dotfiles/roles/authorized_keys/id_rsa.pub
 ```
@@ -58,7 +121,7 @@ mv hosts.template hosts
 Add your hosts in right sections
 - server : install only cli tools
 - desktop : install graphic environment
-- laptop: install desktop + some extra packages
+- laptop : install desktop + some extra packages
 
 Please explicitly define an ``ansible_user`` which will receive configurations
 ```
@@ -71,8 +134,9 @@ host2 ansible_user=user2
 ```
 Remove useless groups and hosts
 
-#### 6° Copy your SSH keys on all nodes : node per node if password differ between users
-It add your public ssh keys on hosts
+#### 6° Deploy SSH keys on nodes
+Node per node if password differ between users.
+It adds your public ssh keys on hosts
 ```
 ansible-playbook install.yml -t init_ssh -l host1 -K
 ansible-playbook install.yml -t init_ssh -l host2 -K
@@ -118,68 +182,6 @@ localhost ansible_connection=local ansible_user=user
 ```
 ansible-playbook install.yml -l localhost -K
 ```
-
-Please look at ``roles/*/README.md`` if exists for specific hosts configuration.
-
-## Desktop/Laptop Environment
-
-Should not be used as ``root``.
-
-### Supported OS
-
-- Archlinux
-
-### Dependencies
-
-- ansible >= 2.4
-
-### Role list
-
-- packages-common
-- fish
-- neovim
-- terminfo
-- screen
-- authorized_keys
-- packages-desktop
-- gtk
-- i3-wm
-- picom
-- polybar
-- variety
-- rofi
-- neofetch
-- termite
-- weechat
-- ssh-agent
-- dpms
-- packages-laptop [only laptop tag]
-- xbindkeys [only laptop tag]
-
-## Server Environment
-
-Only cli tools
-It could be run as ``root``.
-
-### Supported OS
-
-- Archlinux
-- Debian
-- Centos
-- FreeBSD : need to ``sudo ln -s /usr/local/bin/python2 /usr/bin/python``
-
-### Dependencies
-
-- ansible >= 2.4
-
-### Role list
-
-- packages-common
-- fish
-- neovim
-- terminfo
-- screen
-- authorized_keys
 
 ## Previously
 
