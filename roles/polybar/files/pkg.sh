@@ -13,6 +13,4 @@ then
     echo "$pac %{F#ff5c57}%{F-} $aur"
 else
     echo "$pac %{F#5b5b5b}%{F-} $aur"
-else
-    echo "$pac %{F#ff5c57}%{F-} $aur"
 fi
