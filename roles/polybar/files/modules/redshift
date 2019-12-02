@@ -1,6 +1,6 @@
 [module/redshift]
 type = custom/script
-click-left = bash -x ~/.config/polybar/redshift.sh toggle
+click-left = bash -x ~/.config/polybar/modules/redshift.sh toggle
 exec = cat ~/.config/polybar/.redshift
 label = "%output:0:10%"
 interval = 1
