@@ -1,0 +1,23 @@
+---
+- name: Gather facts
+  gather_facts:
+
+- name: Upgrade to Debian 10
+  block:
+    - name: Install https source support
+      apt:
+        name:
+          - apt-transport-https
+          - ca-certificates
+    - name: Define apt sources to buster
+      copy:
+        src: sources.list
+        dest: /etc/apt/
+    - name: Apt update and upgrade
+      apt:
+        update_cache: yes
+        upgrade: yes
+    - name: Apt dist upgrade
+      apt:
+        upgrade: dist
+  when: ansible_distribution_release == 'stretch'

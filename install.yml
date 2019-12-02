@@ -28,6 +28,13 @@
       when: ansible_user_id == "root"
 
 - hosts: server:desktop:laptop
+  tasks:
+    - name: update package list if apt
+      apt:
+        update_cache: yes
+      when: ansible_distribution == "Debian" 
+
+- hosts: server:desktop:laptop
   roles:
     - { role: packages-common, tags: packages-common }
     - { role: fish, tags: fish }
