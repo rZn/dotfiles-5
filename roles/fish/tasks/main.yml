@@ -1,4 +1,9 @@
 ---
+- name: Upgrade git
+  package:
+    name: git
+    state: latest
+
 - name: Install fish
   package:
     name: fish
@@ -6,9 +11,16 @@
   ignore_errors: True
   become: yes
 
+- name: Get oh-my-fish installer
+  get_url:
+    url: https://get.oh-my.fish
+    dest: /tmp/oh-my.fish
+    mode: '7550'
+
 - name: Install oh-my-fish
-  shell: curl -L https://get.oh-my.fish | fish
+  shell: /tmp/oh-my.fish --noninteractive -y
   args:
+    executable: /usr/bin/fish
     creates: ~/.config/fish/conf.d/omf.fish
 
 - name: Install pureprompt plugin
