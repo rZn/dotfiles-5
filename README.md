@@ -138,9 +138,9 @@ Remove useless groups and hosts
 Node per node if password differ between users.
 It adds your public ssh keys on hosts
 ```
-ansible-playbook install.yml -t init_ssh -l host1 -K
-ansible-playbook install.yml -t init_ssh -l host2 -K
-ansible-playbook install.yml -t init_ssh -l host3 -K
+ansible-playbook install.yml -t init_ssh -l host1 -k
+ansible-playbook install.yml -t init_ssh -l host2 -k
+ansible-playbook install.yml -t init_ssh -l host3 -k
 ```
 
 #### 7° Run ansible-playbook
