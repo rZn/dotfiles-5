@@ -10,8 +10,8 @@
     state: directory
 
 - name: Copy powermenu script
-  copy:
-    src: powermenu.sh
+  template:
+    src: powermenu.j2
     dest: ~/.config/rofi/powermenu.sh
     mode: 0755
 

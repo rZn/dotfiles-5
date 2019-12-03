@@ -1,5 +1,10 @@
 #!/bin/bash
+
+{% if ansible_hostname == "work" %}
+action=$(echo -e "lock\nhibernate\nlogout\nshutdown\nreboot" | rofi -dmenu -p "power:")
+{% else %}
 action=$(echo -e "suspend\nlock\nhibernate\nlogout\nshutdown\nreboot" | rofi -dmenu -p "power:")
+{% endif %}
 
 if [[ "$action" == "lock" ]]
 then
