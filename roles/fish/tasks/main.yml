@@ -16,6 +16,7 @@
     url: https://get.oh-my.fish
     dest: /tmp/oh-my.fish
     mode: '7550'
+  changed_when: false
 
 - name: Install oh-my-fish
   shell: /tmp/oh-my.fish --noninteractive -y
@@ -23,10 +24,11 @@
     executable: /usr/bin/fish
     creates: ~/.config/fish/conf.d/omf.fish
 
-- name: Remove oh-my-fish
+- name: Remove oh-my-fish installer
   file:
     path: /tmp/oh-my.fish
     state: absent
+  changed_when: false
 
 - name: Install pureprompt plugin
   shell: |
@@ -64,7 +66,7 @@
 
 - name: copy aliases
   synchronize:
-    src: files/functions/
+    src: files/functions
     dest: ~/.config/fish/
 
 - debug:
