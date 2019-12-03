@@ -3,6 +3,7 @@
   get_url:
     url: https://raw.githubusercontent.com/thestinger/termite/master/termite.terminfo
     dest: /root/termite.terminfo
+  become: True
 
 - name: Install termite terminfo
   shell: tic -x /tmp/termite.terminfo

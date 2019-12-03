@@ -23,6 +23,11 @@
     executable: /usr/bin/fish
     creates: ~/.config/fish/conf.d/omf.fish
 
+- name: Remove oh-my-fish
+  file:
+    path: /tmp/oh-my.fish
+    state: absent
+
 - name: Install pureprompt plugin
   shell: |
     omf install pure

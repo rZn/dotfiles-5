@@ -10,3 +10,13 @@
     src: init.vim
     dest: ~/.config/nvim/
   notify: trigger plug install
+
+- name: Create autoload vim dir
+  file:
+    path: ~/.local/share/nvim/site/autoload/
+    state: directory
+
+- name: Install vim plug
+  get_url:
+    url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    dest: ~/.local/share/nvim/site/autoload/
