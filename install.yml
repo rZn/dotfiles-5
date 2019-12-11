@@ -47,9 +47,7 @@
     - { role: xprofile, tags: xprofile }
     - { role: packages-desktop, tags: packages-desktop }
     - { role: gtk, tags: gtk }
-    - { role: i3-wm, tags: i3-wm }
-    - { role: picom, tags: picom }
-    - { role: polybar, tags: polybar }
+    - { role: sway, tags: sway }
     - { role: variety, tags: variety }
     - { role: rofi, tags: rofi }
     - { role: neofetch, tags: neofetch }

@@ -1,0 +1,21 @@
+---
+- name: install wayland and sway
+  pacman:
+    name:
+      - wayland
+      - xorg-server-xwayland
+      - sway
+      - swaylock
+      - waybar
+      - grim # screenshots
+  become: true
+
+- name: create sway config dir
+  file:
+    path: ~/.config/sway/
+    state: directory
+
+- name: copy configuration file
+  template:
+    src: config.j2
+    dest: ~/.config/sway/config
