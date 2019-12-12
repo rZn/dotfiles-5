@@ -42,7 +42,7 @@ Should not be used as ``root``.
 
 #### Dependencies
 
-- ansible >= 2.4
+- ansible >= 2.7
 
 #### Role list
 
@@ -81,7 +81,7 @@ It could be run as ``root``.
 
 #### Dependencies
 
-- ansible >= 2.4
+- ansible >= 2.7
 
 #### Role list
 
