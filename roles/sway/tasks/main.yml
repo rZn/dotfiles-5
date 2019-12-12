@@ -33,6 +33,7 @@
     dest: ~/.bash_profile
 
 - name: copy waybar configuration
+  tags: waybar
   synchronize:
     src: waybar
     dest: ~/.config/
