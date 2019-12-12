@@ -76,7 +76,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+#bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+q focus parent
@@ -119,10 +119,6 @@ bindsym $mod+Control+t exec thunar
 bindsym $mod+Control+n exec connman-gtk
 bindsym $mod+Control+p exec pavucontrol
 
-#toggle workspace's display screen
-bindsym $mod+less move workspace to output right
-bindsym $mod+Shift+less move workspace to output up
-
 # switch to workspace
 bindsym $mod+ampersand workspace $tag1
 bindsym $mod+eacute workspace $tag2
@@ -164,19 +160,21 @@ for_window [class="spotify"] focus
 assign [class="Code"] $tag6
 for_window [class="Code"] focus
 
-#bindsym spotify
-bindsym $mod+Control+Left exec ~/dev/git/mpris-ctrl/mpris-ctrl.sh spotify prev
-bindsym $mod+Control+Down exec ~/dev/git/mpris-ctrl/mpris-ctrl.sh spotify play-pause
-bindsym $mod+Control+Right exec ~/dev/git/mpris-ctrl/mpris-ctrl.sh spotify next
+# bindsym spotify
+bindsym $mod+less exec playerctl previous
+bindsym $mod+Shift+less exec playerctl next
+bindsym $mod+space exec playerctl play-pause
+
+# move workspace between screens
+bindsym $mod+Prior move workspace to output left
+bindsym $mod+Next move workspace to output right
 
 {% include 'by_host/' + ansible_hostname + '/config.j2' ignore missing %}
 
 {% include 'by_os/' + ansible_distribution|lower + '/config.j2' ignore missing %}
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+r reload
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

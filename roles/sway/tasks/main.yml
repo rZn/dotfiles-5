@@ -15,7 +15,7 @@
 - name: install aur sway deps
   aur:
     name:
-      - swaylock-fancy
+      - swaylock-fancy-git
 
 - name: create sway config dir
   file:
@@ -24,7 +24,7 @@
 
 - name: copy configuration file
   template:
-    src: config.j2
+    src: sway/config.j2
     dest: ~/.config/sway/config
 
 - name: autostart sway
@@ -35,8 +35,7 @@
 - name: copy waybar configuration
   synchronize:
     src: waybar
-    dest: ~/.config/waybar/
-    mode: 0755
+    dest: ~/.config/
 
 - name: create swaylock dir config
   file:
