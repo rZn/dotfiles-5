@@ -7,6 +7,7 @@
       - sway
       - waybar
       - grim # screenshots
+      - slurp # select region
       - wl-clipboard # clipboard
       - playerctl # spotify
       - ttf-font-awesome
