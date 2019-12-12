@@ -5,11 +5,17 @@
       - wayland
       - xorg-server-xwayland
       - sway
-      - swaylock
       - waybar
       - grim # screenshots
       - wl-clipboard # clipboard
+      - playerctl # spotify
+      - ttf-font-awesome
   become: true
+
+- name: install aur sway deps
+  aur:
+    name:
+      - swaylock-fancy
 
 - name: create sway config dir
   file:
@@ -25,3 +31,19 @@
   copy:
     src: bash_profile
     dest: ~/.bash_profile
+
+- name: copy waybar configuration
+  synchronize:
+    src: waybar
+    dest: ~/.config/waybar/
+    mode: 0755
+
+- name: create swaylock dir config
+  file:
+    path: ~/.config/swaylock/
+    state: directory
+
+- name: copy swaylock config
+  copy:
+    src: swaylock.config
+    dest: ~/.config/swaylock/config
