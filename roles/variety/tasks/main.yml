@@ -10,8 +10,3 @@
     src: variety.conf
     dest: ~/.config/variety
     backup: yes
-
-- name: configure variety xprofile
-  copy:
-    src: variety.sh
-    dest: ~/.xprofile.d/

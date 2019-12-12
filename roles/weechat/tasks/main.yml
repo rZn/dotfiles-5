@@ -7,12 +7,6 @@
     state: present
   become: True
 
-- name: Weechat in xprofile
-  copy:
-    src: weechat.sh
-    dest: ~/.xprofile.d/
-  when: ansible_user_id != "vagrant"
-
 - name: Start weechat
   shell: screen -DmS weechat /usr/bin/weechat &
   changed_when: False

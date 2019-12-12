@@ -44,7 +44,6 @@
 
 - hosts: desktop:laptop
   roles:
-    - { role: xprofile, tags: xprofile }
     - { role: packages-desktop, tags: packages-desktop }
     - { role: gtk, tags: gtk }
     - { role: sway, tags: sway }
@@ -54,7 +53,6 @@
     - { role: termite, tags: termite }
     - { role: weechat, tags: weechat }
     - { role: ssh-agent, tags: ssh-agent }
-    - { role: dpms, tags: dpms }
   tasks:
     - include_role:
         name: vagrant

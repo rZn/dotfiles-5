@@ -20,3 +20,8 @@
   template:
     src: config.j2
     dest: ~/.config/sway/config
+
+- name: autostart sway
+  copy:
+    src: bash_profile
+    dest: ~/.bash_profile

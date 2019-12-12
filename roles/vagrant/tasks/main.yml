@@ -8,8 +8,3 @@
   copy:
     src: wallpaper.jpg
     dest: ~/img/
-
-- name: Init wallpaper in .xprofile
-  copy:
-    src: wallpaper.sh
-    dest: ~/.xprofile.d/

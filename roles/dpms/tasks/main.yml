@@ -1,5 +1,0 @@
----
-- name: configure dpms in xprofile
-  copy:
-    src: dpms.sh
-    dest: ~/.xprofile.d/
