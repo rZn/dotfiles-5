@@ -8,6 +8,7 @@
       - swaylock
       - waybar
       - grim # screenshots
+      - wl-clipboard # clipboard
   become: true
 
 - name: create sway config dir

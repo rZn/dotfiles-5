@@ -6,16 +6,20 @@ input * xkb_variant "oss"
 input * xkb_options "grp:win_space_toggle"
 input "MANUFACTURER1 Keyboard" xkb_model "pc101"
 
-# output configuration
-output DP-4 pos 0 0 res 1920x1080
-output DP-3 pos 0 1080 res 1920x1080
-output eDP-1 pos 1920 1330 res 1920x1080 scale 1.3
-
 # mod key
 set $mod Mod4
 
 # fonts
 font pango: hack, Awesome 10
+
+# gaps
+default_border none
+hide_edge_borders --i3 both
+smart_borders off
+smart_gaps on
+gaps inner 4
+gaps outer -4
+
 
 # start a terminal
 bindsym $mod+Return exec termite
@@ -107,13 +111,6 @@ client.focused_inactive #222222 #5A5A5A #E1E1E1 #484e50   #000000
 client.unfocused        #222222 #323232 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
-
-#i3-gaps
-for_window [class="^.*"] border pixel 0
-gaps inner 4
-gaps outer -4
-smart_gaps on
-smart_borders on
 
 #rofi_power menu
 bindsym $mod+Shift+q exec ~/.config/rofi/powermenu.sh
