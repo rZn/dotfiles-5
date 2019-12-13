@@ -17,6 +17,7 @@
   aur:
     name:
       - swaylock-fancy-git
+      - gtk-theme-minwaita #https://github.com/Alexays/Waybar/issues/515
 
 - name: create sway config dir
   file:
