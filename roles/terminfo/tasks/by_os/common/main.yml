@@ -1,12 +1,4 @@
 ---
-- name: Download termite terminfo
-  get_url:
-    url: https://raw.githubusercontent.com/thestinger/termite/master/termite.terminfo
-    dest: /root/termite.terminfo
-  become: True
-
 - name: Install termite terminfo
-  shell: tic -x /tmp/termite.terminfo
-  args:
-    creates: /root/termite.terminfo
+  shell: curl -s https://raw.githubusercontent.com/thestinger/termite/master/termite.terminfo | tic -x -
   become: True
