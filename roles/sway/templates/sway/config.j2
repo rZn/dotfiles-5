@@ -99,7 +99,7 @@ set $tag4 "4:"
 set $tag5 "5:"
 set $tag6 "6:"
 set $tag7 "7:"
-set $tag8 "8:"
+set $tag8 "8:"
 set $tag9 "9:"
 set $tag10 "10:"
 
@@ -159,6 +159,7 @@ assign [class="spotify"] $tag5
 for_window [class="spotify"] focus
 assign [class="Code"] $tag6
 for_window [class="Code"] focus
+for_window [title=".*mail.*"] fullscreen disable, border none
 
 # bindsym spotify
 bindsym $mod+less exec playerctl previous

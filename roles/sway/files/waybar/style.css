@@ -55,7 +55,6 @@ window {
 
 #mode, #battery, #cpu, #memory, #network, #pulseaudio, #backlight, #custom-storage, #custom-spotify, #custom-weather {
     margin:     0px 6px 0px 10px;
-    min-width:  25px;
 }
 
 #clock {
