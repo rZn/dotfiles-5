@@ -10,4 +10,5 @@
       - ttf-font-icons
       - ttf-font-awesome
       - spotify
+      - nautilus
     skip_installed: yes
