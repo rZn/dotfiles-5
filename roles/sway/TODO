@@ -6,7 +6,7 @@
 - move to screen bug : https://github.com/swaywm/sway/issues/4792
 - look des apps Qt : https://www.reddit.com/r/archlinux/comments/do8vde/uniform_look_for_qt_and_gtk_applications_on_sway/
 - autostart sway at login tty1
-- Wofi focusing on current screen
+- Wofi focusing on current screen and no blur
 - Mako : notifications : https://github.com/emersion/mako
      - https://github.com/Robinhuett/dotfiles/blob/master/.config/mako/config
 

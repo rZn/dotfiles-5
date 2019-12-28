@@ -10,7 +10,6 @@
       - slurp # select region
       - wl-clipboard # clipboard
       - playerctl # spotify
-      - ttf-font-awesome
   become: true
 
 - name: install aur sway deps
@@ -49,3 +48,9 @@
   copy:
     src: swaylock.config
     dest: ~/.config/swaylock/config
+
+- name: copy gsettings importer
+  copy:
+    src: import-gsettings
+    dest: ~/.config/sway/
+    mode: 0755

@@ -6,8 +6,6 @@
       - google-chrome
       - connman-gtk
       - gnome-ssh-askpass2
-      - ttf-font-awesome-4
-      - ttf-unifont
-      - ttf-font-icons
+      - otf-font-awesome
       - spotify
     skip_installed: yes
