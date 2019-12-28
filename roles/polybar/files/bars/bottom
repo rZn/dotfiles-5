@@ -31,8 +31,8 @@ font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=12;2"
 font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=12;2"
 font-3 = "Font Awesome 5 Brands:pixelsize=12;2"
 
-modules-left = jgmenu
-modules-center = networkspeedup networkspeeddown
+modules-left = jgmenu playerctl
+modules-center = networkspeedup-wired networkspeeddown-wired networkspeedup-wireless networkspeedup-wired
 modules-right = temperature filesystem-slash filesystem-home cpu memory
 tray-position = right
 tray-padding = 2

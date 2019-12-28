@@ -1,7 +1,7 @@
-[module/networkspeedup]
+[module/networkspeedup-wireless]
 type = internal/network
-interface = eno1
+interface = wlp2s0
 label-connected = "%upspeed:7%"
 format-connected = <label-connected>
-format-connected-prefix = " "
+format-connected-prefix = " "
 format-connected-prefix-foreground = #5b

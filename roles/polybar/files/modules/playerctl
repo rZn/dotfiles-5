@@ -1,0 +1,8 @@
+[module/playerctl]
+type = custom/script
+exec = playerctl metadata --format "{{ artist }} - {{ title }}"
+exec-if = pgrep spotify
+label = "%output:0:60%"
+interval = 1
+format-prefix = " "
+format-prefix-foreground = #5b
