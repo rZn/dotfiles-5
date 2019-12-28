@@ -16,16 +16,19 @@
     src: pkg.sh
     dest: ~/.config/polybar/
     mode: 0755
+  notify: restart polybar
 
 - name: Sync bars
   synchronize:
     src: files/bars
     dest: ~/.config/polybar/
+  notify: restart polybar
 
 - name: Sync modules
   synchronize:
     src: files/modules
     dest: ~/.config/polybar/
+  notify: restart polybar
 
 - name: Test if node specific template exists for launch.sh
   stat:
@@ -38,9 +41,11 @@
     dest: ~/.config/polybar/launch.sh
     mode: 0755
     backup: yes
+  notify: restart polybar
 
 - name: Template config file
   copy:
     src: config
     dest: ~/.config/polybar/
     backup: yes
+  notify: restart polybar
