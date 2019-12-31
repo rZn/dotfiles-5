@@ -17,10 +17,11 @@
 - hosts: desktop:laptop
   tags: limit
   tasks:
-    - name: Limit to Archlinux
+    - name: Limit to Archlinux and NixOS
       fail:
         msg: "{{ ansible_distribution }} is not supported with this tag."
-      when: ansible_distribution != "Archlinux"
+      when: (ansible_distribution != "Archlinux") and
+            (ansible_distribution != "NixOS")
     
     - name: Limit to user accounts
       fail:
@@ -36,7 +37,11 @@
 
 - hosts: server:desktop:laptop
   roles:
-    - { role: packages-common, tags: packages-common }
+    - role: packages
+      tags: packages
+      vars:
+        meta: 'common'
+      when: ansible_distribution == "Archlinux"
     - { role: fish, tags: fish }
     - { role: neovim, tags: neovim }
     - { role: terminfo, tags: terminfo }
@@ -44,7 +49,11 @@
 
 - hosts: desktop:laptop
   roles:
-    - { role: packages-desktop, tags: packages-desktop }
+    - role: packages
+      tags: packages
+      vars:
+        meta: 'desktop'
+      when: ansible_distribution == "Archlinux"
     - { role: gtk, tags: gtk }
     - { role: sway, tags: sway }
     - { role: variety, tags: variety }
@@ -61,5 +70,9 @@
 
 - hosts: laptop
   roles:
-    - { role: packages-laptop, tags: packages-laptop }
+    - role: packages
+      tags: packages
+      vars:
+        meta: 'laptop'
+      when: ansible_distribution == "Archlinux"
     - { role: xbindkeys, tags: xbindkeys }

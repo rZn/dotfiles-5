@@ -1,12 +1,4 @@
 ---
-- name: Install weechat
-  package:
-    name:
-      - screen
-      - weechat
-    state: present
-  become: True
-
 - name: Start weechat
   shell: screen -DmS weechat /usr/bin/weechat &
   changed_when: False

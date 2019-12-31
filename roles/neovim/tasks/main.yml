@@ -1,10 +1,4 @@
 ---
-- name: Install neovim
-  package:
-    name: neovim
-    state: present
-  become: True
-
 - name: Copy neovim conf file
   copy:
     src: init.vim

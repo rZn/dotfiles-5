@@ -1,25 +1,28 @@
 ---
-- name: Install Desktop packages
+- name: Install common packages
   package:
     name:
-      - xorg-server
-      - xorg-xinit
-      - lxappearance
-      - feh
-      - xclip
-      - xorg-xrdb
-      - xorg-xfd
-      - connman
-      - ttf-hack
+      - curl
+      - wget
+      - jq
+      - most
+      - fzf
+      - rsync
+      - git
+      - fish
+      - neovim
+      - screen
     state: present
-  become: True
+  become: yes
+  ignore_errors: yes
+  when: meta == "common"
 
 - name: Test host packages file
   stat:
     path: "{{ role_path }}/tasks/by_host/{{ ansible_hostname }}/main.yml"
   register: host_file
 
-- name: Include distribution packages
+- name: Include host packages
   include_tasks: "{{ role_path }}/tasks/by_host/{{ ansible_hostname }}/main.yml"
   when: host_file.stat.exists
 

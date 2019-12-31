@@ -1,9 +1,4 @@
 ---
-- name: Install rofi
-  aur:
-    name: rofi
-    skip_installed: yes
-
 - name: Create rofi conf dir
   file:
     path: ~/.config/rofi

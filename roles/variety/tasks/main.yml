@@ -1,10 +1,4 @@
 ---
-- name: install variety
-  package:
-    name: variety
-    state: present
-  become: yes
-
 - name: configure variety
   copy:
     src: variety.conf

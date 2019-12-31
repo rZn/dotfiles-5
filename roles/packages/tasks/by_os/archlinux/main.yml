@@ -1,0 +1,56 @@
+---
+- name: Install Desktop packages [Archlinux]
+  pacman:
+    name:
+      - wayland
+      - xorg-server-xwayland
+      - sway
+      - waybar
+      - grim # screenshots
+      - slurp # select region
+      - wl-clipboard # clipboard
+      - playerctl # spotify
+      - lxappearance
+      - connman
+      - ttf-hack
+      - termite
+      - variety
+      - weechat
+      - xbindkeys #laptop only ?
+    state: present
+  become: True
+  when: meta == "desktop"
+
+- name: Install Laptop packages [Archlinux]
+  pacman:
+    name:
+      - xbindkeys
+    state: present
+  become: True
+  when: meta == "laptop"
+
+- name: AUR Desktop packages [Archlinux]
+  aur:
+    name:
+      - kernel-modules-hook
+      - trizen
+      - google-chrome
+      - connman-gtk
+      - gnome-ssh-askpass2
+      - otf-font-awesome
+      - spotify
+      - light-git #laptop only ?
+      - equilux-theme
+      - paper-icon-theme
+      - rofi
+      - swaylock-fancy-git
+      - gtk-theme-minwaita #https://github.com/Alexays/Waybar/issues/515
+    skip_installed: yes
+  when: meta == "desktop"
+
+- name: AUR Laptop packages [Archlinux]
+  aur:
+    name:
+      - light-git #laptop only ?
+    skip_installed: yes
+  when: meta == "laptop"

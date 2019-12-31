@@ -1,10 +1,4 @@
 ---
-- name: Install xbindkeys
-  package:
-    name: xbindkeys
-    state: present
-  become: True
-
 - name: Configure xbindkeys
   copy:
     src: xbindkeysrc

@@ -1,23 +1,4 @@
 ---
-- name: install wayland and sway
-  pacman:
-    name:
-      - wayland
-      - xorg-server-xwayland
-      - sway
-      - waybar
-      - grim # screenshots
-      - slurp # select region
-      - wl-clipboard # clipboard
-      - playerctl # spotify
-  become: true
-
-- name: install aur sway deps
-  aur:
-    name:
-      - swaylock-fancy-git
-      - gtk-theme-minwaita #https://github.com/Alexays/Waybar/issues/515
-
 - name: create sway config dir
   file:
     path: ~/.config/sway/

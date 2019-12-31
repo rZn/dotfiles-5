@@ -1,5 +1,0 @@
----
-- name: AUR packages install [Archlinux]
-  aur:
-    name: kernel-modules-hook
-    skip_installed: yes

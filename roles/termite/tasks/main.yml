@@ -1,10 +1,4 @@
 ---
-- name: Install termite
-  package:
-    name: termite
-    state: present
-  become: True
-
 - name: Create termite conf dir
   file:
     path: ~/.config/termite

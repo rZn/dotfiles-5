@@ -1,16 +1,4 @@
 ---
-- name: Upgrade git
-  package:
-    name: git
-    state: latest
-
-- name: Install fish
-  package:
-    name: fish
-    state: present
-  ignore_errors: True
-  become: yes
-
 - name: Get oh-my-fish installer
   get_url:
     url: https://get.oh-my.fish

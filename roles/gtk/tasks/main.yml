@@ -1,11 +1,4 @@
 ---
-- name: Install Themes and Icons
-  aur:
-    name:
-      - equilux-theme
-      - paper-icon-theme
-    skip_installed: yes
-
 - name: Create gtk conf dir
   file:
     path: ~/.config/gtk-3.0/
