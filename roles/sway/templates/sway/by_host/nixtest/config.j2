@@ -1,0 +1,16 @@
+#INCLUDE####################################################
+# output configuration
+set $screen "DP-3"
+output $screen pos 1920 0 res 1920x1080
+
+# dpms
+output * dpms on
+
+# exec startup apps
+exec --no-startup-id swaymsg 'exec xbindkeys &'
+exec --no-startup-id swaymsg 'exec variety &'
+exec --no-startup-id swaymsg 'exec firefox'
+exec --no-startup-id swaymsg 'exec firefox -no-remote -P "kiosk" -kiosk "www.gmail.com"'
+exec --no-startup-id swaymsg 'workspace $tag4; exec termite -e "screen -rd weechat &"'
+exec --no-startup-id swaymsg 'workspace $tag2; exec termite -e "ssh-add" && termite'
+#INCLUDE####################################################
