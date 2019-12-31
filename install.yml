@@ -58,7 +58,6 @@
     - { role: sway, tags: sway }
     - { role: variety, tags: variety }
     - { role: rofi, tags: rofi }
-    - { role: neofetch, tags: neofetch }
     - { role: termite, tags: termite }
     - { role: weechat, tags: weechat }
     - { role: ssh-agent, tags: ssh-agent }
