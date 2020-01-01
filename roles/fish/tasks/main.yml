@@ -7,9 +7,8 @@
   changed_when: false
 
 - name: Install oh-my-fish
-  shell: /tmp/oh-my.fish --noninteractive -y
+  shell: fish /tmp/oh-my.fish --noninteractive -y
   args:
-    executable: /usr/bin/fish
     creates: ~/.config/fish/conf.d/omf.fish
 
 - name: Remove oh-my-fish installer

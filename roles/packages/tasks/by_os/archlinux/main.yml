@@ -16,7 +16,6 @@
       - termite
       - variety
       - weechat
-      - xbindkeys #laptop only ?
     state: present
   become: True
   when: meta == "desktop"
@@ -39,7 +38,6 @@
       - gnome-ssh-askpass2
       - otf-font-awesome
       - spotify
-      - light-git #laptop only ?
       - equilux-theme
       - paper-icon-theme
       - rofi
