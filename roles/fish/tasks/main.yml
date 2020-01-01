@@ -7,7 +7,7 @@
   changed_when: false
 
 - name: Install oh-my-fish
-  shell: fish /tmp/oh-my.fish --noninteractive -y
+  shell: fish -c "/tmp/oh-my.fish --noninteractive -y"
   args:
     creates: ~/.config/fish/conf.d/omf.fish
 
