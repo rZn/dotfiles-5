@@ -1,4 +1,9 @@
 ---
+- name: create variety config dir
+  file:
+    path: ~/.config/variety
+    state: directory 
+
 - name: configure variety
   copy:
     src: variety.conf
