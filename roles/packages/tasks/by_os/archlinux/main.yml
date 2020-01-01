@@ -15,7 +15,8 @@
       - ttf-hack
       - termite
       - variety
-      - weechat
+      #- weechat
+      - tiny
     state: present
   become: True
   when: meta == "desktop"
