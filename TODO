@@ -1,2 +1,3 @@
-tiny role
-split sway and waybar roles
+- tiny role
+- split sway and waybar roles
+- automatically create firefox profil kiosk cmd in sway config
