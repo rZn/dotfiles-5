@@ -56,6 +56,7 @@
       when: ansible_distribution == "Archlinux"
     - { role: gtk, tags: gtk }
     - { role: sway, tags: sway }
+    - { role: waybar, tags: waybar }
     - { role: variety, tags: variety }
     - { role: rofi, tags: rofi }
     - { role: termite, tags: termite }

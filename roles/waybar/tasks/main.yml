@@ -1,0 +1,6 @@
+---
+- name: copy waybar configuration
+  tags: waybar
+  synchronize:
+    src: waybar
+    dest: ~/.config/
