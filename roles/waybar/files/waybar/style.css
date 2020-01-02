@@ -54,7 +54,7 @@ window {
     color:      @alert;
 }
 
-#mode, #battery, #cpu, #memory, #network, #pulseaudio, #backlight, #custom-storage, #custom-spotify, #custom-weather {
+#mode, #battery, #cpu, #memory, #network, #pulseaudio, #backlight, #custom-storageslash, #custom-storagehome, #custom-spotify, #custom-weather {
     margin:     0px 6px 0px 10px;
 }
 
@@ -87,10 +87,18 @@ window {
     color:      rgba(217, 216, 216, 1);
 }
 
-#custom-storage.warning {
+#custom-storageslash.warning {
     color: @warning;
 }
 
-#custom-storage.critical {
+#custom-storageslash.critical {
+    color: @alert;
+} 
+
+#custom-storagehome.warning {
+    color: @warning;
+}
+
+#custom-storagehome.critical {
     color: @alert;
 } 
