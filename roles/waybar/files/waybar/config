@@ -44,8 +44,8 @@
         "format": "{icon} {volume}%",
         "format-muted": "<span foreground='#929292'></span>",
         "format-icons": {
-            "default": [""],
-            "headphones": [""]
+            "default": ["<span foreground='#929292'></span>"],
+            "headphones": ["<span foreground='#929292'></span>"]
         },
         "scroll-step": 5,
         "tooltip": false
@@ -58,13 +58,13 @@
         "escape": true
     },
     "custom/storageslash": {
-        "format": " {}%",
+        "format": "<span foreground='#929292'></span> {}%",
         "return-type": "json",
         "interval": 60,
         "exec": "~/.config/waybar/modules/storage.sh /"
     },
     "custom/storagehome": {
-        "format": " {}%",
+        "format": "<span foreground='#929292'></span> {}%",
         "return-type": "json",
         "interval": 60,
         "exec": "~/.config/waybar/modules/storage.sh /home"
