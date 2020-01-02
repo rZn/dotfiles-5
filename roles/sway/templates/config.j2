@@ -197,8 +197,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # waybar exec
-# https://github.com/Alexays/Waybar/issues/515
-exec_always env GTK_THEME=Minwaita ~/.config/waybar/waybar.sh
+exec_always ~/.config/waybar/waybar.sh
 
 # set gtk theme
 exec_always ~/.config/sway/import-gsettings \
