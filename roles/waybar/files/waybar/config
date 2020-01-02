@@ -36,7 +36,7 @@
     },
     "network": {
         "format-wifi": "<span foreground='#929292'></span> {essid} <span foreground='#929292'>{signalStrength}%</span>",
-        "format-ethernet": "<span foreground='#929292'></span>",
+        "format-ethernet": "<span foreground='#929292'></span> {interface}",
         "format-disconnected": ""
         },
         "tooltip": false
