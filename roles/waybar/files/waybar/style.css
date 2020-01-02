@@ -67,6 +67,10 @@ window {
     border-bottom: 2px solid @purple;
 }
 
+#pulseaudio {
+    border-bottom: 2px solid @alert;
+}
+
 #battery {
     border-bottom: 2px solid @yellow;
 }
