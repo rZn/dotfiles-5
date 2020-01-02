@@ -42,8 +42,8 @@
         "tooltip": false
     },
     "pulseaudio": {
-        "format": " {volume}% {icon}",
-        "format-muted": "<span foreground='#929292'>muted</span>",
+        "format": "{icon} {volume}%",
+        "format-muted": "<span foreground='#929292'></span>",
         "format-icons": {
             "default": [""],
             "headphones": [" "]
