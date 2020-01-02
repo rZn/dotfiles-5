@@ -46,6 +46,7 @@
     - { role: neovim, tags: neovim }
     - { role: terminfo, tags: terminfo }
     - { role: screen, tags: screen }
+    - { role: git, tags: git }
 
 - hosts: desktop:laptop
   roles:
