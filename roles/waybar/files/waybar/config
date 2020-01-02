@@ -4,7 +4,7 @@
 
     "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
     "modules-center": [],
-    "modules-right": ["tray", "custom/spotify", "custom/storage-slash", "custom/storage-home", "backlight", "pulseaudio", "network", "battery", "clock"],
+    "modules-right": ["tray", "custom/spotify", "custom/storage-slash", "custom/storage-home", "backlight", "network", "battery", "clock"],
     "sway/mode": {
         "format": " {}"
     },
@@ -46,7 +46,7 @@
         "format-muted": "<span foreground='#929292'></span>",
         "format-icons": {
             "default": [""],
-            "headphones": [" "]
+            "headphones": [""]
         },
         "scroll-step": 5,
         "tooltip": false
@@ -59,13 +59,13 @@
         "escape": true
     },
     "custom/storage-slash": {
-        "format": " {percentage}%",
+        "format": " {}%",
         "return-type": "json",
         "interval": 60,
         "exec": "~/.config/waybar/modules/storage.sh /"
     },
     "custom/storage-home": {
-        "format": " {percentage}%",
+        "format": " {}%",
         "return-type": "json",
         "interval": 60,
         "exec": "~/.config/waybar/modules/storage.sh /home"
