@@ -56,6 +56,9 @@
       vars:
         meta: 'desktop'
       when: ansible_distribution == "Archlinux"
+    - role: ssh-agent
+      tags: ssh-agent
+      when: ansible_distribution == "Archlinux"
     - { role: gtk, tags: gtk }
     - { role: sway, tags: sway }
     - { role: waybar, tags: waybar }
@@ -63,7 +66,6 @@
     - { role: rofi, tags: rofi }
     - { role: termite, tags: termite }
     - { role: weechat, tags: weechat }
-    - { role: ssh-agent, tags: ssh-agent }
     - { role: openvpn, tags: openvpn }
   tasks:
     - include_role:
