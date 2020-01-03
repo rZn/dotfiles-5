@@ -1,0 +1,20 @@
+---
+- name: create openvpn dir
+  file:
+    path: /root/openvpn
+    state: directory
+  become: yes
+
+- name: copy openvpn config
+  copy:
+    src: client.conf.secret
+    dest: /root/openvpn/client.conf
+    mode: 0600
+  become: yes
+
+- name: copy openvpn auth config
+  copy:
+    src: auth.conf.secret
+    dest: /root/openvpn/auth.conf
+    mode: 0600
+  become: yes

@@ -47,6 +47,7 @@
     - { role: terminfo, tags: terminfo }
     - { role: screen, tags: screen }
     - { role: git, tags: git }
+    - { role: tiny, tags: tiny }
 
 - hosts: desktop:laptop
   roles:
@@ -63,6 +64,7 @@
     - { role: termite, tags: termite }
     - { role: weechat, tags: weechat }
     - { role: ssh-agent, tags: ssh-agent }
+    - { role: openvpn, tags: openvpn }
   tasks:
     - include_role:
         name: vagrant
