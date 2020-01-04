@@ -18,13 +18,12 @@
 
 ![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/connman-gtk.png)
 
-## Why using Ansible ?
-Ansible allows to duplicate this Desktop Environment over multiple hosts with specific configuration (dualscreen, packages...).
-All your nodes will have access to all configurations if
-- your git repo is accessible from every nodes
-- your current node ssh keys is authorized on all nodes
+## Why dotfiles with Ansible ?
 
-You should be able to edit and push from/to any managed hosts.
+- Config files derivation by host or by OS with jinja2 templating
+- It manage packages too
+- Secrets with Ansible-vault
+- Multiple hosts and ability to update a config on all hosts from a single command
 
 ## Test VMs|Containers
 Please check ``vagrant/*/README.md`` and ``docker/*/README.md``
