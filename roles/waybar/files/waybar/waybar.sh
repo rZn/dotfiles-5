@@ -8,4 +8,4 @@ while pgrep -x waybar >/dev/null; do sleep 1; done
 
 # Launch main
 # https://github.com/Alexays/Waybar/issues/515
-GTK_THEME=Vertex waybar
+GTK_THEME=Adapta waybar
