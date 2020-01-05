@@ -21,7 +21,7 @@
 
 - name: copy openvpn updatedomain script
   copy:
-    src: updatedomain.sh
+    src: update-resolv-conf.sh
     dest: /root/openvpn/
     mode: 0750
   become: yes
