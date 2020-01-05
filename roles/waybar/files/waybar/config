@@ -70,7 +70,7 @@
         "exec": "~/.config/waybar/modules/storage.sh /home"
     },
     "custom/vpn": {
-        "format": "<span foreground='#929292'></span> vpn",
+        "format": "<span foreground='#929292'></span>vpn",
         "interval": 5,
         "exec" : "pgrep openvpn"
     },
