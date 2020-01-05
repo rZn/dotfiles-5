@@ -6,7 +6,7 @@ SERVER=root@neon
 ROOT=/home
 REPOSITORY=$SERVER:$DIR
 
-if [[ ! $(ssh $SERVER BORG_PASSPHRASE=$BORG_PASSPHRASE borg list $DIR >/dev/null 2>&1) ]]
+if [[ ! $(ssh $SERVER BORG_PASSPHRASE=$BORG_PASSPHRASE borg list $DIR) ]]
 then
     ssh $SERVER mkdir -p $DIR 
     borg init --encryption=repokey-blake2 $REPOSITORY
