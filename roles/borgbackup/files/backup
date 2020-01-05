@@ -6,7 +6,7 @@ SERVER=root@neon
 ROOT=/home
 REPOSITORY=$SERVER:$DIR
 
-if [[ ! $(ssh SERVER) ]]
+if [[ ! $(ssh $SERVER) ]]
 then
     echo "Can't connect to server"
     exit
