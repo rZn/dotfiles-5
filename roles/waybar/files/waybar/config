@@ -40,6 +40,10 @@
         "format-disconnected": "",
         "tooltip": false
     },
+    "network-speed": {
+        "format-wifi": "<span foreground='#929292'></span> {bandwidthDownOctets} <span foreground='#929292'></span> {bandwidthUpOctets}",
+        "format-ethernet": "<span foreground='#929292'></span> {bandwidthDownOctets} <span foreground='#929292'></span> {bandwidthUpOctets}",
+    },
     "pulseaudio": {
         "format": "{icon} {volume}%",
         "format-muted": "<span foreground='#929292'></span>",
