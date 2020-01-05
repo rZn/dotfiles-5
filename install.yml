@@ -67,6 +67,7 @@
     - { role: termite, tags: termite }
     - { role: weechat, tags: weechat }
     - { role: openvpn, tags: openvpn }
+    - { role: userbin, tags: userbin }
     - { role: borgbackup, tags: borgbackup }
   tasks:
     - include_role:
