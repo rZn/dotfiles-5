@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+DIR=/mnt/sdb/backups/$HOST
+HOST=root@neon
+ROOT=/home
+REPOSITORY=$HOST:$DIR
+
+if [[ ! $(ssh $HOST BORG_PASSPHRASE=$BORG_PASSPHRASE borg list $DIR >/dev/null 2>&1) ]]
+then
+    ssh $HOST mkdir -p $DIR 
+    borg init --encryption=repokey-blake2 $REPOSITORY
+fi
+
+borg create -v --stats --progress                   \
+    --compression lz4                               \
+    $REPOSITORY::'{now:%Y-%m-%d}' $ROOT             \
+    --exclude '*.iso'                               \
+    --exclude '*.mkv'                               \
+    --exclude '/home/user/downloads/torrents/*'
+
+borg prune -v $REPOSITORY                           \
+    --keep-daily=7 --keep-weekly=4 --keep-monthly=6
