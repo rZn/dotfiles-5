@@ -4,7 +4,7 @@
 
     "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
     "modules-center": [],
-    "modules-right": ["tray", "custom/spotify", "custom/storageslash", "custom/storagehome", "pulseaudio", "backlight", "network", "battery", "clock"],
+    "modules-right": ["tray", "custom/spotify", "custom/storageslash", "custom/storagehome", "pulseaudio", "backlight", "network", "vpn", "battery", "clock"],
     "sway/mode": {
         "format": " {}"
     },
@@ -68,6 +68,11 @@
         "return-type": "json",
         "interval": 60,
         "exec": "~/.config/waybar/modules/storage.sh /home"
+    },
+    "custom/vpn": {
+        "format": "<span foreground='#929292'> vpn</span> {}%",
+        "interval": 5,
+        "exec" : "pgrep openvpn"
     },
     "backlight": {
         "format": "{icon}",

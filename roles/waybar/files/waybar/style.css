@@ -54,7 +54,7 @@ window {
     color:      @alert;
 }
 
-#mode, #battery, #cpu, #memory, #network, #pulseaudio, #backlight, #custom-storageslash, #custom-storagehome, #custom-spotify, #custom-weather {
+#mode, #battery, #cpu, #memory, #network, #pulseaudio, #backlight, #custom-storageslash, #custom-storagehome, #custom-spotify, #custom-weather #vpn {
     margin:     0px 6px 0px 10px;
 }
 
@@ -73,6 +73,10 @@ window {
 
 #battery {
     border-bottom: 2px solid @yellow;
+}
+
+#vpn {
+    border-bottom: 2px solid @blue;
 }
 
 #battery.warning {
