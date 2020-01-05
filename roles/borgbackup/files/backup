@@ -14,7 +14,7 @@ fi
 
 borg create -v --stats --progress                   \
     --compression lz4                               \
-    $REPOSITORY::'{now:%Y-%m-%d}' $ROOT             \
+    $REPOSITORY::'{now:%Y-%m-%dT%H:%M:%S}' $ROOT    \
     --exclude '*.iso'                               \
     --exclude '*.mkv'                               \
     --exclude '/home/user/downloads/torrents/*'
