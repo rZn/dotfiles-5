@@ -74,6 +74,12 @@
         "interval": 5,
         "exec" : "pgrep openvpn"
     },
+    "custom/nixos-pkg": {
+        "format": "<span foreground='#ff5c57'></span> {}",
+        "return-type": "string",
+        "interval": 1,
+        "exec" : "~/.config/waybar/modules/nixos-kernel.sh"
+    },
     "backlight": {
         "format": "{icon}",
         "format-alt": "{percent}% {icon}",
