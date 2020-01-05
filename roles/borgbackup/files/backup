@@ -6,6 +6,17 @@ SERVER=root@neon
 ROOT=/home
 REPOSITORY=$SERVER:$DIR
 
+if [[ ! $(ssh SERVER) ]]
+then
+    echo "Can't connect to server"
+    exit
+fi
+
+if [[ $1 == "list" ]]
+then
+    ssh $SERVER BORG_PASSPHRASE=$BORG_PASSPHRASE borg list $DIR
+fi
+
 if [[ ! $(ssh $SERVER BORG_PASSPHRASE=$BORG_PASSPHRASE borg list $DIR) ]]
 then
     ssh $SERVER mkdir -p $DIR 
