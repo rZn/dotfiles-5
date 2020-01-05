@@ -6,7 +6,7 @@ SERVER=root@neon
 ROOT=/home
 REPOSITORY=$SERVER:$DIR
 
-if [[ ! $(ssh $SERVER exit) ]]
+if ! ssh $SERVER exit
 then
     echo "Can't connect to server"
     exit
@@ -15,9 +15,10 @@ fi
 if [[ $1 == "list" ]]
 then
     ssh $SERVER BORG_PASSPHRASE=$BORG_PASSPHRASE borg list $DIR
+    exit
 fi
 
-if [[ ! $(ssh $SERVER BORG_PASSPHRASE=$BORG_PASSPHRASE borg list $DIR) ]]
+if ! ssh $SERVER BORG_PASSPHRASE=$BORG_PASSPHRASE borg list $DIR
 then
     ssh $SERVER mkdir -p $DIR 
     borg init --encryption=repokey-blake2 $REPOSITORY
