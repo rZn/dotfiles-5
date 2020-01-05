@@ -18,3 +18,10 @@
     dest: /root/openvpn/auth.conf
     mode: 0600
   become: yes
+
+- name: copy openvpn updatedomain script
+  copy:
+    src: updatedomain.sh
+    dest: /root/openvpn/
+    mode: 0750
+  become: yes
