@@ -62,7 +62,7 @@
         "escape": true
     },
     "custom/zfs": {
-        "format": "<span foreground='#929292'>༐</span> {}%",
+        "format": "<span foreground='#929292'></span> {}%",
         "return-type": "json",
         "interval": 60,
         "exec": "~/.config/waybar/modules/zfs.sh zroot"
