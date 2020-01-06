@@ -55,14 +55,12 @@
         "tooltip": false
     },
     "cpu": {
-        "interval": 1,
-        "format": "<span foreground='#929292'></span> {usage}%",
-        "max-length": 12
+        "interval": 3,
+        "format": "<span foreground='#929292'></span> {usage}%"
     },
     "memory": {
-        "interval": 5,
-        "format": "<span foreground='#929292'></span> {percentage}%",
-        "max-length": 12
+        "interval": 3,
+        "format": "<span foreground='#929292'></span> {percentage}%"
     },
     "custom/spotify": {
         "interval": 1,
