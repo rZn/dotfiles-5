@@ -57,12 +57,12 @@
     "cpu": {
         "interval": 1,
         "format": "<span foreground='#929292'></span> {usage}%",
-        "max-length": 10
+        "max-length": 12
     },
     "memory": {
         "interval": 5,
         "format": "<span foreground='#929292'></span> {percentage}%",
-        "max-length": 10
+        "max-length": 12
     },
     "custom/spotify": {
         "interval": 1,
