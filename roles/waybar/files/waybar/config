@@ -4,7 +4,7 @@
 
     "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
     "modules-center": [],
-    "modules-right": ["tray", "custom/spotify", "custom/storageslash", "custom/storagehome", "pulseaudio", "backlight", "network", "custom/vpn", "battery", "clock"],
+    "modules-right": ["tray", "custom/spotify", "network#speed", "custom/storageslash", "custom/storagehome", "pulseaudio", "backlight", "network", "custom/vpn", "battery", "clock"],
     "sway/mode": {
         "format": " {}"
     },
@@ -40,7 +40,7 @@
         "format-disconnected": "",
         "tooltip": false
     },
-    "network-speed": {
+    "network#speed": {
         "format-wifi": "<span foreground='#929292'></span> {bandwidthDownOctets} <span foreground='#929292'></span> {bandwidthUpOctets}",
         "format-ethernet": "<span foreground='#929292'></span> {bandwidthDownOctets} <span foreground='#929292'></span> {bandwidthUpOctets}",
     },

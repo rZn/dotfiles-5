@@ -67,6 +67,10 @@ window {
     border-bottom: 2px solid @purple;
 }
 
+#network#speed {
+    border-bottom: 2px solid @red;
+}
+
 #pulseaudio {
     border-bottom: 2px solid @alert;
 }
