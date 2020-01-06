@@ -4,7 +4,7 @@
 
     "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
     "modules-center": [],
-    "modules-right": ["tray", "custom/spotify", "network#speed", "custom/zfs", "pulseaudio", "backlight", "network", "custom/vpn", "battery", "clock"],
+    "modules-right": ["tray", "custom/spotify", "cpu", "memory", "network#speed", "custom/zfs", "pulseaudio", "backlight", "network", "custom/vpn", "battery", "clock"],
     "sway/mode": {
         "format": " {}"
     },
@@ -53,6 +53,16 @@
         },
         "scroll-step": 5,
         "tooltip": false
+    },
+    "cpu": {
+        "interval": 1,
+        "format": "<span foreground='#929292'></span> {usage}%",
+        "max-length": 10
+    },
+    "memory": {
+        "interval": 5,
+        "format": "<span foreground='#929292'></span> {percentage}%",
+        "max-length": 10
     },
     "custom/spotify": {
         "interval": 1,
