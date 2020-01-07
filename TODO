@@ -1,2 +1,4 @@
 - find a wayland native app for gmail kiosk
 - waybar temperature module
+- waybar tray dependencies for libindicator
+- sway autostartup on tty1
