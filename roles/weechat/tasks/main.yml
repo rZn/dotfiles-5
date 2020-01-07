@@ -60,6 +60,7 @@
     - '*/set irc.server.freenode.ssl on'
     - '*/set irc.server.freenode.sasl_username "{{ nickname.user_input }}"'
     - '*/set irc.server.freenode.sasl_password "{{ password.user_input }}"'
+    - '*/set irc.server.freenode.autojoin "#archlinux-fr,#nixos-fr,#nixos,#ansible"'
     - '*/save'
     - '*/reload'
   when: stat_fifo.stat.exists
