@@ -4,7 +4,7 @@ scrollback_lines = 1000000
 
 ##
 clickable_url = true
-browser = /usr/bin/google-chrome-stable
+browser = firefox
 urgent_on_bell = true
 audible_bell = false
 
