@@ -20,8 +20,8 @@
 - name: Install pureprompt plugin
   shell: |
     fish -c "omf install pure"
-    fish -c "ln -s \$OMF_PATH/themes/pure/conf.d/pure.fish ~/.config/fish/conf.d/pure.fish"
-    fish -c "ln -s \$OMF_PATH/themes/pure/conf.d/_pure_init.fish ~/.config/fish/conf.d/pure_init.fish"
+    fish -lc "ln -s $OMF_PATH/themes/pure/conf.d/pure.fish ~/.config/fish/conf.d/pure.fish"
+    fish -lc "ln -s $OMF_PATH/themes/pure/conf.d/_pure_init.fish ~/.config/fish/conf.d/pure_init.fish"
   args:
     creates: ~/.config/fish/conf.d/pure.fish
 
