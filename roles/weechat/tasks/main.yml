@@ -43,9 +43,11 @@
     - '*/set weechat.look.buffer_time_format \${color:252}%H\${color:245}%M\${color:240}%S'
     - '*/save'
     - '*/reload'
+  when: stat_fifo.stat.exists
 
 - name: Create themed file
   file:
     path: ~/.weechat/themed
     state: touch
   changed_when: false
+  when: stat_fifo.stat.exists
