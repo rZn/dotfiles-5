@@ -58,6 +58,10 @@ window {
     margin:     0px 6px 0px 10px;
 }
 
+#tray {
+    margin:     0px 16px 0px 10px;
+}
+
 #clock {
     margin:     0px 16px 0px 10px;
     border-bottom: 2px solid @blue;
