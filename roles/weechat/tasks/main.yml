@@ -11,6 +11,18 @@
     msg: "Please active fifo with '/fifo' in weechat"
   when: not stat_fifo.stat.exists
 
+- name: Register nickname
+  pause:
+    prompt: "Enter your IRC nickname:"
+    echo: no
+  register: nickname
+
+- name: Register password
+  pause:
+    prompt: "Enter your IRC password:"
+    echo: no
+  register: password
+
 - name: Theme weechat
   shell: echo {{item}} >~/.weechat/weechat_fifo
   args:
@@ -41,6 +53,14 @@
     - '*/set weechat.look.read_marker none'
     - '*/set env TERM screen-256color'
     - '*/set weechat.look.buffer_time_format \${color:252}%H\${color:245}%M\${color:240}%S'
+    - '*/server add freenode chat.freenode.net'
+    - '*/server add freenode irc.oftc.net'
+    - '*/set irc.server.freenode.nicks "{{ nickname }}"'
+    - '*/set irc.server.freenode.autoconnect on'
+    - '*/set irc.server.freenode.addresses "chat.freenode.net/7000"'
+    - '*/set irc.server.freenode.ssl on'
+    - '*/set irc.server.freenode.sasl_username "{{ nickname }}"'
+    - '*/set irc.server.freenode.sasl_password "{{ password }}"'
     - '*/save'
     - '*/reload'
   when: stat_fifo.stat.exists
