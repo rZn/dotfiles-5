@@ -79,6 +79,10 @@ window {
     border-bottom: 2px solid @green;
 }
 
+#backlight {
+    border-bottom: 2px solid @alert;
+}
+
 #custom-vpn {
     border-bottom: 2px solid @cyan;
 }
