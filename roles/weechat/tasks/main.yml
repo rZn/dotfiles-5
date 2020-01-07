@@ -14,7 +14,6 @@
 - name: Register nickname
   pause:
     prompt: "Enter your IRC nickname:"
-    echo: no
   register: nickname
 
 - name: Register password
@@ -22,6 +21,10 @@
     prompt: "Enter your IRC password:"
     echo: no
   register: password
+
+- name: debug
+  debug:
+    msg: "VALUE IS {{ nickname }}"
 
 - name: Theme weechat
   shell: echo {{item}} >~/.weechat/weechat_fifo
