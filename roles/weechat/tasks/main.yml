@@ -1,6 +1,6 @@
 ---
 - name: Start weechat
-  shell: screen -DmS weechat /usr/bin/weechat &
+  shell: screen -DmS weechat weechat &
   changed_when: False
 
 - name: Test if weechat fifo is enable
@@ -8,8 +8,19 @@
   register: stat_fifo
 
 - debug:
-    msg: "Please active fifo with '/fifo enable' in weechat"
+    msg: "Please active fifo with '/fifo' in weechat"
   when: not stat_fifo.stat.exists
+
+- name: Register nickname
+  pause:
+    prompt: "Enter your IRC nickname:"
+  register: nickname
+
+- name: Register password
+  pause:
+    prompt: "Enter your IRC password:"
+    echo: no
+  register: password
 
 - name: Theme weechat
   shell: echo {{item}} >~/.weechat/weechat_fifo
@@ -41,11 +52,22 @@
     - '*/set weechat.look.read_marker none'
     - '*/set env TERM screen-256color'
     - '*/set weechat.look.buffer_time_format \${color:252}%H\${color:245}%M\${color:240}%S'
+    - '*/server add freenode chat.freenode.net'
+    - '*/server add freenode irc.oftc.net'
+    - '*/set irc.server.freenode.nicks "{{ nickname.user_input }}"'
+    - '*/set irc.server.freenode.autoconnect on'
+    - '*/set irc.server.freenode.addresses "chat.freenode.net/7000"'
+    - '*/set irc.server.freenode.ssl on'
+    - '*/set irc.server.freenode.sasl_username "{{ nickname.user_input }}"'
+    - '*/set irc.server.freenode.sasl_password "{{ password.user_input }}"'
+    - '*/set irc.server.freenode.autojoin "#archlinux-fr,#nixos-fr,#nixos,#ansible"'
     - '*/save'
     - '*/reload'
+  when: stat_fifo.stat.exists
 
 - name: Create themed file
   file:
     path: ~/.weechat/themed
     state: touch
   changed_when: false
+  when: stat_fifo.stat.exists

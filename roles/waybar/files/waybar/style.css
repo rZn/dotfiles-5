@@ -9,10 +9,10 @@
 
 @define-color red rgba(34, 34, 34, 0.4);
 @define-color yellow rgba(243, 249, 157, 1);
-@define-color green rgba(34, 34, 34, 0.4);
 @define-color blue rgba(10, 108, 245, 1);
 @define-color purple rgba(159, 120, 255, 1);
-@define-color cyan rgba(34, 34, 34, 0.4);
+@define-color green rgba(90, 247, 142, 1);
+@define-color cyan rgba(154, 237, 254, 1);
 
 * {
     border:        none;
@@ -54,8 +54,12 @@ window {
     color:      @alert;
 }
 
-#mode, #battery, #cpu, #memory, #network, #pulseaudio, #backlight, #custom-zfs, #custom-spotify, #custom-weather, #custom-vpn, #custom-nixos-kernel {
+#mode, #battery, #cpu, #memory, #network, #pulseaudio, #backlight, #custom-zfs, #custom-spotify, #custom-weather, #custom-vpn, #custom-nixos-kernel, #temperature {
     margin:     0px 6px 0px 10px;
+}
+
+#tray {
+    margin:     0px 16px 0px 10px;
 }
 
 #clock {
@@ -67,20 +71,24 @@ window {
     border-bottom: 2px solid @purple;
 }
 
-#network#speed {
-    border-bottom: 2px solid @red;
-}
-
-#pulseaudio {
-    border-bottom: 2px solid @alert;
+#network.speed {
+    border-bottom: 0px;
 }
 
 #battery {
     border-bottom: 2px solid @yellow;
 }
 
+#pulseaudio {
+    border-bottom: 2px solid @green;
+}
+
+#backlight {
+    border-bottom: 2px solid @alert;
+}
+
 #custom-vpn {
-    border-bottom: 2px solid @blue;
+    border-bottom: 2px solid @cyan;
 }
 
 #custom-nixos-kernel {

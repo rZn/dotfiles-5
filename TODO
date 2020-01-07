@@ -1,3 +1,4 @@
 - find a wayland native app for gmail kiosk
-- weechat config not working in nixos
 - waybar temperature module
+- waybar tray dependencies for libindicator
+- sway autostartup on tty1

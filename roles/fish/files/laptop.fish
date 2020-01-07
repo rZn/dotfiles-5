@@ -1,4 +1,5 @@
-set -gx PATH $HOME/bin $PATH $HOME/go/bin
-set -x BROWSER 'google-chrome-stable'
+set -Ua fish_user_paths $HOME/bin
+set -Ua fish_user_paths $HOME/go/bin
+set -x BROWSER 'firefox'
 set -x VAGRANT_DEFAULT_PROVIDER 'libvirt'
-set -x XDG_CURRENT_DESKTOP 'i3-gaps'
+set -x XDG_CURRENT_DESKTOP 'Unity' # waybar workaround for tray

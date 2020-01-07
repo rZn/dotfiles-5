@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 {% if ansible_hostname == "work" %}
 action=$(echo -e "lock\nhibernate\nlogout\nshutdown\nreboot" | rofi -dmenu -p "power:")
