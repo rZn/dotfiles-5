@@ -9,10 +9,8 @@
 
 @define-color red rgba(34, 34, 34, 0.4);
 @define-color yellow rgba(243, 249, 157, 1);
-@define-color green rgba(34, 34, 34, 0.4);
 @define-color blue rgba(10, 108, 245, 1);
 @define-color purple rgba(159, 120, 255, 1);
-@define-color cyan rgba(34, 34, 34, 0.4);
 
 * {
     border:        none;
@@ -65,14 +63,6 @@ window {
 
 #network {
     border-bottom: 2px solid @purple;
-}
-
-#network#speed {
-    border-bottom: 2px solid @red;
-}
-
-#pulseaudio {
-    border-bottom: 2px solid @alert;
 }
 
 #battery {

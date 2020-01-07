@@ -4,7 +4,7 @@
 
     "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
     "modules-center": [],
-    "modules-right": ["tray", "custom/spotify", "cpu", "memory", "network#speed", "custom/zfs", "pulseaudio", "backlight", "network", "custom/vpn", "battery", "clock"],
+    "modules-right": ["custom/spotify", "cpu", "memory", "custom/zfs", "network#speed", "pulseaudio", "backlight", "network", "custom/vpn", "battery", "clock", "tray"],
     "sway/mode": {
         "format": " {}"
     },
@@ -87,9 +87,7 @@
         "exec" : "~/.config/waybar/modules/nixos-kernel.sh"
     },
     "backlight": {
-        "format": "{icon}",
-        "format-alt": "{percent}% {icon}",
-        "format-alt-click": "click-right",
+        "format": "{icon} {percent}%",
         "format-icons": [""],
         "on-scroll-down": "light -A 5",
         "on-scroll-up": "light -U 5"
