@@ -8,7 +8,7 @@
   register: stat_fifo
 
 - debug:
-    msg: "Please active fifo with '/fifo enable' in weechat"
+    msg: "Please active fifo with '/fifo' in weechat"
   when: not stat_fifo.stat.exists
 
 - name: Theme weechat
