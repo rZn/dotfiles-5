@@ -65,6 +65,10 @@ window {
     border-bottom: 2px solid @purple;
 }
 
+#network.speed {
+    border-bottom: 0px;
+}
+
 #battery {
     border-bottom: 2px solid @yellow;
 }
