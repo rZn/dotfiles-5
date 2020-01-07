@@ -1,6 +1,6 @@
 ---
 - name: Start weechat
-  shell: screen -DmS weechat /usr/bin/weechat &
+  shell: screen -DmS weechat weechat &
   changed_when: False
 
 - name: Test if weechat fifo is enable
