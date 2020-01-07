@@ -4,10 +4,16 @@
     path: ~/.config/gtk-3.0/
     state: directory
 
-- name: Configure GTK
+- name: Configure GTK3
   copy:
     src: settings.ini
     dest: ~/.config/gtk-3.0/
+    backup: yes
+
+- name: Configure GTK2
+  copy:
+    src: gtkrc-2.0
+    dest: ~/.config/.gtkrc-2.0
     backup: yes
 
 - name: Configure Qt as GTK theme
@@ -15,12 +21,6 @@
     src: Trolltech.conf
     dest: ~/.config/
     backup: yes
-
-- name: Update font cache
-  shell: fc-cache -f
-  args:
-    creates: .Xdefaults
-  changed_when: false
 
 - name: Link Xdefaults
   file:
