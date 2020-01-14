@@ -2,3 +2,4 @@
 - waybar temperature module
 - waybar tray dependencies for libindicator
 - sway autostartup on tty1
+- xbindkeys to sway : https://wiki.archlinux.org/index.php/Sway#Custom_keybindings
