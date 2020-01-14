@@ -1,7 +1,12 @@
 #INCLUDE####################################################
 # output configuration
-set $screen "DP-3"
-output $screen pos 1920 0 res 1920x1080
+set $laptop "eDP-1"
+output $laptop pos 1920 0 res 1920x1080
+output $laptop scale 1.4
+
+# lid
+bindswitch --reload lid:on output $laptop disable
+bindswitch --reload lid:off output $laptop enable
 
 # dpms
 output * dpms on
