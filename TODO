@@ -3,3 +3,4 @@
 - waybar tray dependencies for libindicator
 - sway autostartup on tty1
 - xbindkeys to sway : https://wiki.archlinux.org/index.php/Sway#Custom_keybindings
+- swaylock-fancy not working : https://github.com/NixOS/nixpkgs/issues/77284
