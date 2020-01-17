@@ -8,12 +8,12 @@ action=$(echo -e "suspend\nlock\nhibernate\nlogout\nshutdown\nreboot" | rofi -dm
 
 if [[ "$action" == "lock" ]]
 then
-    ~/.i3/i3lock-fancy-multimonitor/lock
+    swaylock-fancy
 fi
 
 if [[ "$action" == "suspend" ]]
 then
-    ~/.i3/i3lock-fancy-multimonitor/lock && systemctl suspend-then-hibernate && echo '*/reconnect' >~/.weechat/weechat_fifo
+    swaylock-fancy && systemctl suspend-then-hibernate && echo '*/reconnect' >~/.weechat/weechat_fifo
 fi
 
 if [[ "$action" == "hibernate" ]]
