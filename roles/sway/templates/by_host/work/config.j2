@@ -1,15 +1,21 @@
 #INCLUDE####################################################
-#assign workspace to screens
-workspace $tag1 output HDMI2 HDMI3
-workspace $tag2 output HDMI3
-workspace $tag3 output HDMI1
-workspace $tag4 output HDMI1
-workspace $tag5 output HDMI3
+# output configuration
+set $left "HDMI-A-2"
+set $center "HDMI-A-3"
+set $right "HDMI-A-1"
+
+output $left pos 0 0 res 1920*1200
+output $center pos 0 1920 res 1920*1200
+output $right pos 120 3840 res 1920*1080
+
+# dpms
+output * dpms on
 
 # exec startup apps
-exec --no-startup-id i3-msg 'exec google-chrome-stable --app=http://mail.umontpellier.fr &'
-exec --no-startup-id i3-msg 'exec google-chrome-stable --app=https://gmail.com &'
-exec --no-startup-id i3-msg 'exec google-chrome-stable &'
-exec --no-startup-id i3-msg 'workspace $tag4; exec termite -e "screen -rd weechat &"'
-exec --no-startup-id i3-msg 'workspace $tag2; exec termite'
+exec --no-startup-id swaymsg 'exec xbindkeys &'
+exec --no-startup-id swaymsg 'exec variety &'
+exec --no-startup-id swaymsg 'exec firefox'
+#exec --no-startup-id swaymsg 'exec firefox -private -kiosk "www.gmail.com"'
+exec --no-startup-id swaymsg 'workspace $tag4; exec termite -e "screen -rd weechat &"'
+exec --no-startup-id swaymsg 'workspace $tag2; exec termite -e "ssh-add" && termite'
 #INCLUDE####################################################
