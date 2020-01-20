@@ -15,7 +15,7 @@ output * dpms on
 exec --no-startup-id swaymsg 'exec xbindkeys &'
 exec --no-startup-id swaymsg 'exec variety &'
 exec --no-startup-id swaymsg 'exec firefox'
-#exec --no-startup-id swaymsg 'exec firefox -private -kiosk "www.gmail.com"'
+exec --no-startup-id swaymsg 'exec firefox -new-window https://gmail.com https://mail.umontpellier.fr'
 exec --no-startup-id swaymsg 'workspace $tag4; exec termite -e "screen -rd weechat &"'
 exec --no-startup-id swaymsg 'workspace $tag2; exec termite -e "ssh-add" && termite'
 #INCLUDE####################################################
