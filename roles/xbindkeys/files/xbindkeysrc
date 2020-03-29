@@ -65,6 +65,10 @@
     m:0x10 + c:135
     Mod2 + Menu
 
+"amixer set Capture toggle"
+    m:0x10 + c:198
+    Mod2 + XF86AudioMicMute
+
 ##################################
 # End of xbindkeys configuration #
 ##################################
