@@ -29,34 +29,16 @@
       when: ansible_user_id == "root"
 
 - hosts: server:desktop:laptop
-  tasks:
-    - name: update package list if apt
-      apt:
-        update_cache: yes
-      when: ansible_distribution == "Debian" 
-
-- hosts: server:desktop:laptop
   roles:
-    - role: packages
-      tags: packages
-      vars:
-        meta: 'common'
-      when: ansible_distribution == "Archlinux"
     - { role: fish, tags: fish }
     - { role: neovim, tags: neovim }
-    - { role: terminfo, tags: terminfo }
+    #- { role: terminfo, tags: terminfo }
     - { role: screen, tags: screen }
     - { role: git, tags: git }
-    - { role: tiny, tags: tiny }
     - { role: userbin, tags: userbin }
 
 - hosts: desktop:laptop
   roles:
-    - role: packages
-      tags: packages
-      vars:
-        meta: 'desktop'
-      when: ansible_distribution == "Archlinux"
     - role: ssh-agent
       tags: ssh-agent
       when: ansible_distribution == "Archlinux"
@@ -65,10 +47,12 @@
     - { role: waybar, tags: waybar }
     - { role: variety, tags: variety }
     - { role: rofi, tags: rofi }
-    - { role: termite, tags: termite }
-    - { role: weechat, tags: weechat }
+    #- { role: termite, tags: termite }
+    - { role: alacritty, tags: alacritty }
     - { role: openvpn, tags: openvpn }
     - { role: borgbackup, tags: borgbackup }
+    - { role: weechat, tags: weechat }
+    #- { role: tiny, tags: tiny }
   tasks:
     - include_role:
         name: vagrant
@@ -77,9 +61,4 @@
 
 - hosts: laptop
   roles:
-    - role: packages
-      tags: packages
-      vars:
-        meta: 'laptop'
-      when: ansible_distribution == "Archlinux"
     - { role: xbindkeys, tags: xbindkeys }

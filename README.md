@@ -1,8 +1,8 @@
-# i3-gaps Acid Dark 
+# Sway Acid Dark 
 
 [![Build Status](https://travis-ci.org/eoli3n/dotfiles.svg?branch=master)](https://travis-ci.org/eoli3n/dotfiles)
 
-**i3-gaps zsh pureprompt polybar**
+**sway fish pureprompt waybar**
 
 ![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/i3gaps.png)
 
@@ -10,7 +10,7 @@
 
 ![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/weechat.png)
 
-**Chrome Rofi Stylish**
+**Firefox Wofi**
 
 ![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/chrome-rofi.png)
 
@@ -21,7 +21,7 @@
 ## Why dotfiles with Ansible ?
 
 - Config files derivation by host or by OS with jinja2 templating
-- It manage packages too
+- It can manage packages too
 - Secrets with Ansible-vault
 - Multiple hosts and ability to update a config on all hosts from a single command
 
@@ -30,66 +30,6 @@ Please check ``vagrant/*/README.md`` and ``docker/*/README.md``
 
 ## Docs
 Please look at ``roles/*/README.md`` if exists for specific hosts configuration.
-
-## Desktop/Laptop Environment
-
-Should not be used as ``root``.
-
-#### Supported OS
-
-- Archlinux
-
-#### Dependencies
-
-- ansible >= 2.7
-
-#### Role list
-
-- packages-common
-- fish
-- neovim
-- terminfo
-- screen
-- authorized_keys
-- packages-desktop
-- gtk
-- i3-wm
-- picom
-- polybar
-- variety
-- rofi
-- neofetch
-- termite
-- weechat
-- ssh-agent
-- dpms
-- packages-laptop [only laptop tag]
-- xbindkeys [only laptop tag]
-
-## Server Environment
-
-Only cli tools
-It could be run as ``root``.
-
-#### Supported OS
-
-- Archlinux
-- Debian
-- Centos
-- FreeBSD : need to ``sudo ln -s /usr/local/bin/python2 /usr/bin/python``
-
-#### Dependencies
-
-- ansible >= 2.7
-
-#### Role list
-
-- packages-common
-- fish
-- neovim
-- terminfo
-- screen
-- authorized_keys
 
 ## How to
 
@@ -185,6 +125,7 @@ ansible-playbook install.yml -l localhost -K
 ## Previously
 
 * [i3-gaps Dark Solarized](https://github.com/eoli3n/dotfiles/tree/zsh-agnoster-solarized)
+* [i3-gaps Acid Dark](https://github.com/eoli3n/dotfiles/tree/zsh-agnoster-solarized)
 
 **IRC**
 

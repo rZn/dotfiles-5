@@ -1,0 +1,10 @@
+---
+- name: create alacritty conf dir
+  file:
+    path: ~/.config/alacritty/
+    state: directory
+
+- name: copy alacritty conf file
+  copy:
+    src: alacritty.yml
+    dest: ~/.config/alacritty/alacritty.yml
