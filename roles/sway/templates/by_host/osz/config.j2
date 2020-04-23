@@ -38,6 +38,6 @@ exec --no-startup-id swaymsg 'exec xbindkeys &'
 exec --no-startup-id swaymsg 'exec variety &'
 exec --no-startup-id swaymsg 'exec firefox'
 exec --no-startup-id swaymsg 'exec firefox -no-remote -P "kiosk" -kiosk "www.gmail.com"'
-exec --no-startup-id swaymsg 'workspace $tag4; exec termite -e "screen -rd weechat &"'
-exec --no-startup-id swaymsg 'workspace $tag2; exec termite -e "ssh-add" && termite'
+exec --no-startup-id swaymsg 'workspace $tag4; exec alacritty -e "screen -rd weechat &"'
+exec --no-startup-id swaymsg 'workspace $tag2; exec alacritty -e "ssh-add" && alacritty'
 #INCLUDE####################################################
