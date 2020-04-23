@@ -93,7 +93,7 @@ For hosts configured with non-root user
 User needs to be in sudoers.
 You need to use -K to ask sudo password, and -l <host> to limit to that host
 ```
-ansible-playbook install.yml -l host1 -K
+ansible-playbook install.yml -l host1 -K --ask-vault-pass
 ```
 
 #### Extra commands
@@ -119,7 +119,7 @@ localhost ansible_connection=local ansible_user=user
 [desktop]
 ```
 ```
-ansible-playbook install.yml -l localhost -K
+ansible-playbook install.yml -l localhost -K --ask-vault-pass
 ```
 
 ## Previously
