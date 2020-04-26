@@ -1,3 +1,4 @@
+- wofi config
 - waybar temperature module
 - waybar tray dependencies for libindicator
 - waybar BTRFS module
