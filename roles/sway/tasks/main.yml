@@ -11,8 +11,8 @@
 
 - name: autostart sway
   copy:
-    src: fish_profile
-    dest: ~/.fish_profile
+    src: sway.fish
+    dest: ~/.config/fish/conf.d/
 
 - name: create swaylock dir config
   file:
