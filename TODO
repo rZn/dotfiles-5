@@ -6,7 +6,8 @@
 - swaylock-fancy disable keyboard layout print and theme
 - run weechat as a service
 - userbin or fish functions ?
-- up to wrap ix and upfile
+- up to wrap ix and upfile and auto paste
+- grim wrapper with slurp and autopaste
 - hardware acceleration : firefox, alacritty, mpv
 
 - repair travis runs
