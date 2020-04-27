@@ -1,4 +1,8 @@
 ---
+###
+# https://github.com/swaywm/sway/issues/3814
+###
+
 - name: create sway config dir
   file:
     path: ~/.config/sway/
