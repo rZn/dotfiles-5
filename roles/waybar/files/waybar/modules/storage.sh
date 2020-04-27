@@ -3,7 +3,21 @@
 warning=85
 critical=95
 
-pcent=$(df "$1" --output="pcent" 2>/dev/null | sed 1d | tr -d ' ' | tr -d '%')
+# Detect slash FSType
+fstype=$(df -l "$1" --output=fstype | sed 1d)
+
+# Set query cmd
+if [[ -z "$fstype" ]]
+then
+  exit
+elif [[ "$fstype" == zfs ]]
+then
+  zfsroot=$(echo $1 | sed 's:/.*::')
+  pcent=$(zpool list -o cap -H $zfsroot | tr -d '%')
+else
+  pcent=$(df "$1" --output="pcent" 2>/dev/null | sed 1d | tr -d ' ' | tr -d '%')
+fi
+
 json_fmt='{"text": "%s" , "class": "%s" }\n'
 
 if [[ -z $pcent ]]

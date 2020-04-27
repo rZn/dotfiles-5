@@ -73,7 +73,7 @@
 
     "modules-left": ["custom/spotify"],
     "modules-center": ["network#speed"],
-    "modules-right": ["temperature", "custom/zfs", "cpu", "memory", "tray"],
+    "modules-right": ["temperature", "custom/storage", "cpu", "memory", "tray"],
     "custom/spotify": {
         "interval": 1,
         "return-type": "json",
@@ -91,11 +91,11 @@
         "critical-threshold": 60,
 	    "format-critical": "<span foreground='#ff5c57'></span> {temperatureC}°C"
     },
-    "custom/zfs": {
+    "custom/storage": {
         "format": "<span foreground='#929292'></span> {}%",
         "return-type": "json",
         "interval": 60,
-        "exec": "~/.config/waybar/modules/zfs.sh zroot"
+        "exec": "~/.config/waybar/modules/storage.sh /"
     },
     "cpu": {
         "interval": 3,
