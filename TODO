@@ -9,5 +9,6 @@
 - up to wrap ix and upfile and auto paste
 - grim wrapper with slurp and autopaste
 - hardware acceleration : firefox, alacritty, mpv
+- sway : attach virt-manager and qemu to workspace 8
 
 - repair travis runs
