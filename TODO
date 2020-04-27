@@ -7,5 +7,6 @@
 - run weechat as a service
 - userbin or fish functions ?
 - up to wrap ix and upfile
+- hardware acceleration : firefox, alacritty, mpv
 
 - repair travis runs
