@@ -3,17 +3,6 @@
   roles:
     - { role: authorized_keys, tags: init_ssh }
 
-- hosts: server
-  tags: limit
-  tasks:
-    - name: Limit to Archlinux/Debian/Centos/FreeBSD
-      fail:
-        msg: "{{ ansible_distribution }} is not supported with this tag."
-      when: (ansible_distribution != "CentOS") and
-            (ansible_distribution != "Debian") and
-            (ansible_distribution != "Archlinux") and
-            (ansible_distribution != "FreeBSD")
-
 - hosts: desktop:laptop
   tags: limit
   tasks:
@@ -32,7 +21,6 @@
   roles:
     - { role: fish, tags: fish }
     - { role: neovim, tags: neovim }
-    #- { role: terminfo, tags: terminfo }
     - { role: screen, tags: screen }
     - { role: git, tags: git }
     - { role: userbin, tags: userbin }
@@ -47,7 +35,6 @@
     - { role: waybar, tags: waybar }
     - { role: variety, tags: variety }
     - { role: rofi, tags: rofi }
-    #- { role: termite, tags: termite }
     - { role: alacritty, tags: alacritty }
     - { role: openvpn, tags: openvpn }
     - { role: borgbackup, tags: borgbackup }
