@@ -10,5 +10,6 @@
 - grim wrapper with slurp and autopaste
 - hardware acceleration : firefox, alacritty, mpv
 - sway : attach virt-manager and qemu to workspace 8
+- add oftc to weechat configuration
 
 - repair travis runs
