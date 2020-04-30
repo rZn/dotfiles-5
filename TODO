@@ -1,7 +1,9 @@
+- waybar storage module : query btrfs usage with btrfs fi usage -T / ?
+    not possible as btrfs and compsize need root perms
 - wofi config
 - waybar temperature module
+- waybar upgrade module
 - waybar tray dependencies for libindicator
-- waybar BTRFS module
 - xbindkeys to sway : https://wiki.archlinux.org/index.php/Sway#Custom_keybindings
 - swaylock-fancy disable keyboard layout print and theme
 - run weechat as a service
@@ -11,7 +13,6 @@
 - hardware acceleration : firefox, alacritty, mpv
 - sway : attach virt-manager and qemu to workspace 8
 - add oftc to weechat configuration
-- query btrfs usage with btrfs filesystem usage /
 - fix alacritty scroll up after clear
 - QRCODE vpn
 
