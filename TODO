@@ -12,5 +12,7 @@
 - sway : attach virt-manager and qemu to workspace 8
 - add oftc to weechat configuration
 - query btrfs usage with btrfs filesystem usage /
+- fix alacritty scroll up after clear
+- QRCODE vpn
 
 - repair travis runs
