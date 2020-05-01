@@ -15,5 +15,6 @@
 - add oftc to weechat configuration
 - fix alacritty scroll up after clear
 - QRCODE vpn
+- add "git config --global submodule.recurse true" to git config
 
 - repair travis runs
