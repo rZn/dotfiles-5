@@ -8,3 +8,8 @@
   copy:
     src: alacritty.yml
     dest: ~/.config/alacritty/alacritty.yml
+
+- name: alias clear to clear -x to keep history scrolling
+  copy:
+    src: clear.fish
+    dest: ~/.config/fish/functions
