@@ -1,3 +1,3 @@
 function clear
-	clear -x
+	command clear -x $argv
 end
