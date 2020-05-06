@@ -7,6 +7,8 @@
 - xbindkeys to sway : https://wiki.archlinux.org/index.php/Sway#Custom_keybindings
 - swaylock-fancy disable keyboard layout print and theme
 - run weechat as a service
+- run VPN as a service
+- why needs to sudo to get prompt for password for services ?
 - userbin or fish functions ?
 - up to wrap ix and upfile and auto paste
 - grim wrapper with slurp and autopaste
@@ -16,5 +18,6 @@
 - fix alacritty scroll up after clear
 - QRCODE vpn
 - add "git config --global submodule.recurse true" to git config
+- try a GTK theme with some transparency
 
 - repair travis runs
