@@ -37,13 +37,13 @@
 
 - name: Globale fish configuration
   copy:
-    src: 01-config.fish
+    src: config.fish
     dest: ~/.config/fish/
     backup: yes
 
 - name: Laptops fish configuration
   copy:
-    src: 02-laptop.fish
+    src: laptop.fish
     dest: ~/.config/fish/conf.d/
     backup: yes
   when: "'laptop' in {{ group_names }}"
