@@ -21,3 +21,7 @@
 - try a GTK theme with some transparency
 
 - repair travis runs
+
+tests :
+- wob
+- wf-recorder
