@@ -54,7 +54,7 @@ window {
     color:      @alert;
 }
 
-#mode, #battery, #cpu, #memory, #network, #pulseaudio, #backlight, #custom-zfs, #custom-spotify, #custom-weather, #custom-vpn, #custom-nixos-kernel, #temperature {
+#mode, #battery, #cpu, #memory, #network, #pulseaudio, #backlight, #custom-storage, #custom-spotify, #custom-weather, #custom-vpn, #custom-nixos-kernel, #temperature {
     margin:     0px 6px 0px 10px;
 }
 
