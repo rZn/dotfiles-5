@@ -80,11 +80,11 @@ window {
 }
 
 #pulseaudio {
-    border-bottom: 2px solid @green;
+    /*border-bottom: 2px solid @green;*/
 }
 
 #backlight {
-    border-bottom: 2px solid @alert;
+    /*border-bottom: 2px solid @alert;*/
 }
 
 #custom-vpn {
