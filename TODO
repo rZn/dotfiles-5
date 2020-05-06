@@ -1,13 +1,12 @@
-- waybar storage module : query btrfs usage with btrfs fi usage -T / ?
-    not possible as btrfs and compsize need root perms
 - wofi config
 - waybar temperature module
 - waybar upgrade module
 - waybar tray dependencies for libindicator
 - xbindkeys to sway : https://wiki.archlinux.org/index.php/Sway#Custom_keybindings
-- swaylock-fancy disable keyboard layout print and theme
+
 - run weechat as a service
 - run VPN as a service
+
 - why needs to sudo to get prompt for password for services ?
 - userbin or fish functions ?
 - up to wrap ix and upfile and auto paste
@@ -21,6 +20,9 @@
 - try a GTK theme with some transparency
 
 - repair travis runs
+
+- weechat doesnt start at sway startup , ssh-add too ?
+
 
 tests :
 - wob

@@ -64,8 +64,8 @@
     "backlight": {
         "format": "{icon} {percent}%",
         "format-icons": [""],
-        "on-scroll-down": "light -A 5",
-        "on-scroll-up": "light -U 5"
+        "on-scroll-up": "light -A 5",
+        "on-scroll-down": "light -U 5"
     }
 }, {
     "layer": "bottom",
