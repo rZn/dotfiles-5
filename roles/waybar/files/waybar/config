@@ -18,7 +18,7 @@
     },
     "clock": {
         "interval": 1,
-        "format": "{:%d<span foreground='#929292'>%m</span><span foreground='#494949'>%y</span> %H<span foreground='#929292'>%M</span><span foreground='#494949'>%S</span>}",
+        "format": "{:%d<span foreground='#929292'>%m</span><span foreground='#606060'>%y</span> %H<span foreground='#929292'>%M</span><span foreground='#606060'>%S</span>}",
         "tooltip": false
     },
     "battery": {
