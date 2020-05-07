@@ -34,6 +34,11 @@
         },
         "tooltip": false
     },
+    "custom/pkg": {
+        "format": "{}",
+        "interval": 3600,
+        "exec": "~/.config/waybar/modules/pkg.sh",
+    },
     "network": {
         "format-wifi": "<span foreground='#929292'></span> {essid} <span foreground='#929292'>{signalStrength}%</span>",
         "format-ethernet": "<span foreground='#929292'></span> {ifname}",
@@ -54,12 +59,6 @@
         "format": "<span foreground='#929292'></span> vpn",
         "interval": 5,
         "exec" : "pgrep openvpn"
-    },
-    "custom/nixos-pkg": {
-        "format": "<span foreground='#ff5c57'></span> {}",
-        "return-type": "string",
-        "interval": 1,
-        "exec" : "~/.config/waybar/modules/nixos-kernel.sh"
     },
     "backlight": {
         "format": "{icon} {percent}%",

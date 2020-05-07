@@ -54,7 +54,7 @@ window {
     color:      @alert;
 }
 
-#mode, #battery, #cpu, #memory, #network, #pulseaudio, #backlight, #custom-storage, #custom-spotify, #custom-weather, #custom-vpn, #custom-nixos-kernel, #temperature {
+#mode, #battery, #cpu, #memory, #network, #pulseaudio, #backlight, #custom-pkg, #custom-storage, #custom-spotify, #custom-weather, #custom-vpn, #temperature {
     margin:     0px 6px 0px 10px;
 }
 
@@ -79,6 +79,10 @@ window {
     border-bottom: 2px solid @yellow;
 }
 
+#custom-pkg {
+    border-bottom: 2px solid @red;
+}
+
 #pulseaudio {
     /*border-bottom: 2px solid @green;*/
 }
@@ -89,10 +93,6 @@ window {
 
 #custom-vpn {
     border-bottom: 2px solid @cyan;
-}
-
-#custom-nixos-kernel {
-    border-bottom: 2px solid @alert;
 }
 
 #battery.warning {
@@ -107,10 +107,10 @@ window {
     color:      rgba(217, 216, 216, 1);
 }
 
-#custom-zfs.warning {
+#custom-storage.warning {
     color: @warning;
 }
 
-#custom-zfs.critical {
+#custom-storage.critical {
     color: @alert;
 } 
