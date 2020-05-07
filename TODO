@@ -23,6 +23,8 @@
 
 - weechat doesnt start at sway startup , ssh-add too ?
 
+- fish : bug set var path
+
 
 tests :
 - wob
