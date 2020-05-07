@@ -53,6 +53,8 @@
             "headphones": ["<span foreground='#929292'></span>"]
         },
         "scroll-step": 5,
+        "on-scroll-up": "pamixer -ui 2 && pamixer --get-volume > $SWAYSOCK.wob",
+        "on-scroll-down": "pamixer -ud 2 && pamixer --get-volume > $SWAYSOCK.wob",
         "tooltip": false
     },
     "custom/vpn": {
