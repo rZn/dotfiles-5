@@ -1,31 +1,26 @@
 - wofi config
 - waybar tray dependencies for libindicator
+- waybar network indicator bug
 - xbindkeys to sway : https://wiki.archlinux.org/index.php/Sway#Custom_keybindings
 
 - Xressources ??
 
 - run weechat as a service
+- weechat doesnt start at sway startup , ssh-add too ?
 - run VPN as a service
-
-- why needs to sudo to get prompt for password for services ?
+- why needs to sudo to get prompt for password for services : no need as scripting openvpn
+- QRCODE vpn
 - userbin or fish functions ?
 - up to wrap ix and upfile and auto paste
-- grim wrapper with slurp and autopaste : see grimshot
 - hardware acceleration : firefox, alacritty, mpv
-- sway : attach virt-manager and qemu to workspace 8
 - add oftc to weechat configuration
+
 - fix alacritty scroll up after clear
-- QRCODE vpn
 - add "git config --global submodule.recurse true" to git config
 - try a GTK theme with some transparency
-
 - repair travis runs
-
-- weechat doesnt start at sway startup , ssh-add too ?
-
 - fish : bug set var path
 
 
 tests :
-- wob
 - wf-recorder
