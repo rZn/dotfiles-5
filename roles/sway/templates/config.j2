@@ -149,17 +149,17 @@ for_window [class="feh"] floating enable, border normal
 for_window [class="Gpick"] floating enable, border pixel 1
 for_window [title="Images de Variety"] floating enable, border pixel 1, move left 647px
 
-# assigns focus
-assign [class="Connman-gtk"] $tag10
-for_window [class="Connman-gtk"] focus
-assign [class="Transmission-gtk"] $tag9
-assign [title=".*mail.*"] $tag3
-assign [class="Google-chrome"] $tag1
+# assign and focus
 assign [class="spotify"] $tag5
 for_window [class="spotify"] focus
 assign [class="Code"] $tag6
 for_window [class="Code"] focus
-for_window [title=".*mail.*"] fullscreen disable, border none
+assign [class="virt-manager"] $tag6
+for_window [class="virt-manager"] focus
+assign [class="Transmission-gtk"] $tag9
+for_window [class="Transmission-gtk"] focus
+assign [class="Connman-gtk"] $tag10
+for_window [class="Connman-gtk"] focus
 
 # bindsym spotify
 bindsym $mod+less exec playerctl previous
