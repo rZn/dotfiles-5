@@ -45,7 +45,7 @@
     - { role: sway, tags: sway }
     - { role: waybar, tags: waybar }
     - { role: variety, tags: variety }
-    - { role: rofi, tags: rofi }
+    - { role: wofi, tags: wofi }
     - { role: alacritty, tags: alacritty }
     - { role: openvpn, tags: openvpn }
     - { role: borgbackup, tags: borgbackup }
