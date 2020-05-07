@@ -1,0 +1,10 @@
+---
+- name: create wofi config dir
+  file:
+    path: ~/.config/wofi
+    state: directory
+
+- name: copy wofi style
+  copy:
+    src: styles.css
+    dest: ~/.config/wofi/

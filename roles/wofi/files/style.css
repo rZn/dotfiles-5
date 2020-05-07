@@ -1,0 +1,43 @@
+@define-color grey rgba(32, 32, 32, 0.7);
+@define-color yellow rgba(243, 249, 157, 1);
+@define-color transparent rgba(0, 0, 0, 0);
+
+window {
+  border: 10px solid @grey;
+  background-color: @grey;
+  font-size: 1.2em;
+}
+
+#input {
+  border-bottom: 2px solid @yellow;
+  border-radius: 0px;
+  background-color: @transparent;
+}
+
+#inner-box {
+  border-top: 2px solid @transparent;
+  color: white;
+  background-color: @transparent;
+}
+
+#outer-box {
+  margin: 10px;
+  border: 0px solid @transparent;
+  background-color: @transparent;
+}
+
+#entry{
+  padding: 2px;
+  margin: 0px;
+}
+
+#img{
+
+}
+
+#entry:selected{
+  background-color: @yellow;
+  outline: 0px;
+  color: @grey;
+  border-radius: 0px;
+}
