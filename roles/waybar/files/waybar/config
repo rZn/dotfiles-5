@@ -4,7 +4,7 @@
 
     "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
     "modules-center": [],
-    "modules-right": ["pulseaudio", "backlight", "network", "custom/vpn", "battery", "clock", "tray"],
+    "modules-right": ["pulseaudio", "backlight", "network", "custom/vpn", "custom/pkg", "battery", "clock", "tray"],
     "sway/mode": {
         "format": " {}"
     },
