@@ -23,10 +23,9 @@ gaps outer -4
 # start a terminal
 bindsym $mod+Return exec alacritty
 
-# start drofi dmenu
-bindsym $mod+Tab exec --no-startup-id rofi -show window
-bindsym $mod+Shift+d exec --no-startup-id rofi -show run
-bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun
+# start wofi
+bindsym $mod+Shift+d exec --no-startup-id wofi -S run
+bindsym $mod+d exec --no-startup-id wofi -S drun
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
