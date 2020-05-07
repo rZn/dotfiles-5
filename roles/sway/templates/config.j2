@@ -199,6 +199,9 @@ bindsym $mod+r mode "resize"
 # waybar exec
 exec_always ~/.config/waybar/waybar.sh &
 
+# wob exec
+exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
+
 # set gtk theme
 exec_always ~/.config/sway/import-gsettings \
     gtk-theme:gtk-theme-name \
