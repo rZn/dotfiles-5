@@ -20,6 +20,7 @@
 - hosts: server:desktop:laptop
   roles:
     - { role: fish, tags: fish }
+    - { role: fish, become: yes, tags: fish }
     - { role: neovim, tags: neovim }
     - { role: screen, tags: screen }
     - { role: git, tags: git }
