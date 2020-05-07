@@ -1,6 +1,4 @@
 - wofi config
-- waybar temperature module
-- waybar upgrade module
 - waybar tray dependencies for libindicator
 - xbindkeys to sway : https://wiki.archlinux.org/index.php/Sway#Custom_keybindings
 

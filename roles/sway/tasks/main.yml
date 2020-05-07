@@ -33,3 +33,8 @@
     src: import-gsettings
     dest: ~/.config/sway/
     mode: 0755
+
+- name: copy config user.dirs
+  copy:
+    src: user-dirs.dirs
+    dest: ~/.config/
