@@ -6,7 +6,7 @@
 
 - name: copy wofi style
   copy:
-    src: styles.css
+    src: style.css
     dest: ~/.config/wofi/
 
 - name: copy wofi powermenu
