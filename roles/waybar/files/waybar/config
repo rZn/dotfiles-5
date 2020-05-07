@@ -61,7 +61,7 @@
         "exec" : "pgrep openvpn"
     },
     "backlight": {
-        "format": "{icon} {percent}%",
+        "format": "<span foreground='#929292'>{icon}</span> {percent}%",
         "format-icons": [""],
         "on-scroll-up": "light -A 5",
         "on-scroll-down": "light -U 5"
