@@ -63,8 +63,8 @@
     "backlight": {
         "format": "<span foreground='#929292'>{icon}</span> {percent}%",
         "format-icons": [""],
-        "on-scroll-up": "light -A 5",
-        "on-scroll-down": "light -U 5"
+        "on-scroll-up": "light -A 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob",
+        "on-scroll-down": "light -U 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob"
     }
 }, {
     "layer": "bottom",
