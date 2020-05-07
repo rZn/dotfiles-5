@@ -17,10 +17,20 @@
         msg: "Don't run as root."
       when: ansible_user_id == "root"
 
+# Configure user cli
 - hosts: server:desktop:laptop
   roles:
     - { role: fish, tags: fish }
-    - { role: fish, become: yes, tags: fish }
+    - { role: neovim, tags: neovim }
+    - { role: screen, tags: screen }
+    - { role: git, tags: git }
+    - { role: userbin, tags: userbin }
+
+# Configure root cli
+- hosts: server:desktop:laptop
+  become: yes
+  roles:
+    - { role: fish, tags: fish }
     - { role: neovim, tags: neovim }
     - { role: screen, tags: screen }
     - { role: git, tags: git }
