@@ -8,3 +8,8 @@
   copy:
     src: styles.css
     dest: ~/.config/wofi/
+
+- name: copy wofi powermenu
+  copy:
+    src: powermenu.sh
+    dest: ~/.config/wofi/
