@@ -1,4 +1,4 @@
-- wofi config
+- wofi issues : https://github.com/petabyteboy/wofi/issues
 - waybar tray dependencies for libindicator
 - waybar network indicator bug
 - xbindkeys to sway : https://wiki.archlinux.org/index.php/Sway#Custom_keybindings
@@ -20,6 +20,10 @@
 - try a GTK theme with some transparency
 - repair travis runs
 - fish : bug set var path
+
+- update powermenu
+
+
 
 
 tests :
