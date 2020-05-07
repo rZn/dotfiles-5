@@ -85,7 +85,7 @@
         "format-ethernet": "<span foreground='#929292'></span> {bandwidthDownOctets} <span foreground='#929292'></span> {bandwidthUpOctets}"
     },
     "temperature": {
-        "format": " {temperatureC}°C",
+        "format": "<span foreground='#ff5c57'></span> {temperatureC}°C",
         "thermal-zone": 1,
         "critical-threshold": 60,
 	    "format-critical": "<span foreground='#ff5c57'></span> {temperatureC}°C"
