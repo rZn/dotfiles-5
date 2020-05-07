@@ -150,18 +150,18 @@ for_window [class="Gpick"] floating enable, border pixel 1
 for_window [title="Images de Variety"] floating enable, border pixel 1, move left 647px
 
 # assign and focus
-assign [class="spotify"] $tag5
-for_window [class="spotify"] focus
-assign [class="Code"] $tag8
-for_window [class="Code"] focus
-assign [class="virt-manager"] $tag6
-for_window [class="virt-manager"] focus
-assign [class="Transmission-gtk"] $tag9
-for_window [class="Transmission-gtk"] focus
-assign [class="Connman-gtk"] $tag10
-for_window [class="Connman-gtk"] focus
-assign [class="pavucontrol"] $tag10
-for_window [class="pavucontrol"] focus
+assign [app_id="Spotify"] $tag5
+for_window [aap_id="Spotify"] focus
+assign [class="code-oss"] $tag8
+for_window [class="code-oss"] focus
+assign [app_id="virt-manager"] $tag6
+for_window [app_id="virt-manager"] focus
+assign [app_id="transmission-gtk"] $tag9
+for_window [app_id="transmission-gtk"] focus
+assign [app_id="connman-gtk"] $tag10
+for_window [app_id="connman-gtk"] focus
+assign [app_id="pavucontrol"] $tag10
+for_window [app_id="pavucontrol"] focus
 
 # bindsym spotify
 bindsym $mod+less exec playerctl previous
