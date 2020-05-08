@@ -27,6 +27,14 @@ window {
   background-color: @transparent;
 }
 
+expander .entry {
+  margin-left: -15px;
+}
+
+#img {
+  margin-right: 6px;
+}
+
 #outer-box {
   margin: 0px;
   border: 0px solid;
@@ -40,6 +48,7 @@ window {
 }
 
 #entry{
+  padding: 1px;
   padding-left: 4px;
   padding-right: 4px;
   margin: 0px;
