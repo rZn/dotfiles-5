@@ -83,7 +83,8 @@
     },
     "network#speed": {
         "format-wifi": "<span foreground='#929292'></span> {bandwidthDownOctets} <span foreground='#929292'></span> {bandwidthUpOctets}",
-        "format-ethernet": "<span foreground='#929292'></span> {bandwidthDownOctets} <span foreground='#929292'></span> {bandwidthUpOctets}"
+        "format-ethernet": "<span foreground='#929292'></span> {bandwidthDownOctets} <span foreground='#929292'></span> {bandwidthUpOctets}",
+        "interval": 1
     },
     "temperature": {
         "format": "<span foreground='#929292'></span> {temperatureC}°C",
