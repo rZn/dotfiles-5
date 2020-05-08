@@ -20,6 +20,7 @@
 - add oftc to weechat configuration
 - up wrapper : 'ix' and 'upfile' = auto-copy
 - fix alacritty scroll up after clear : not any solution really... needs to CTRL+L
+- silent weechat role
 
 # SERVICES
 - run weechat as a service
