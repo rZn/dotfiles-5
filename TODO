@@ -18,6 +18,7 @@
 - up wrapper : 'ix' and 'upfile' = auto-copy
 - fix alacritty scroll up after clear : not any solution really... needs to CTRL+L
 - silent weechat role
+- pureprompt root mark
 
 # SERVICES
 - run weechat as a service
