@@ -4,7 +4,7 @@
 
     "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
     "modules-center": [],
-    "modules-right": ["pulseaudio", "backlight", "network", "custom/vpn", "custom/pkg", "battery", "clock", "tray"],
+    "modules-right": ["pulseaudio", "backlight", "network", "custom/vpn", "custom/pkg", "battery", "clock"],
     "sway/mode": {
         "format": " {}"
     },
@@ -71,9 +71,9 @@
     "layer": "bottom",
     "position": "bottom",
 
-    "modules-left": ["custom/spotify"],
+    "modules-left": ["tray", "custom/spotify"],
     "modules-center": ["network#speed"],
-    "modules-right": ["temperature", "custom/storage", "cpu", "memory", "tray"],
+    "modules-right": ["temperature", "custom/storage", "cpu", "memory" ],
     "custom/spotify": {
         "interval": 1,
         "return-type": "json",
