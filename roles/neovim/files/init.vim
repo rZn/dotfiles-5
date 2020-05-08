@@ -27,7 +27,7 @@ let g:airline#extensions#tabline#show_buffers = 0
 let g:airline_theme = 'minimalist'
 
 " Configure hexokinase colorizer
-let g:Hexokinase_highlighters = [ 'sign_column' ]
+let g:Hexokinase_highlighters = [ 'virtual' ]
 
 " Default term cursor
 set guicursor=
