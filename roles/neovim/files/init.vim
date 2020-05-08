@@ -31,5 +31,9 @@ let g:airline_theme = 'minimalist'
 :set termguicolors
 let g:Hexokinase_highlighters = [ 'virtual' ]
 
+" Set colorscheme
+let g:SnazzyTransparent = 1
+colorscheme snazzy
+
 " Default term cursor
 set guicursor=
