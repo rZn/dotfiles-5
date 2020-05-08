@@ -6,6 +6,7 @@ Plug 'tpope/vim-sensible'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+Plug 'connorholyday/vim-snazzy'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
