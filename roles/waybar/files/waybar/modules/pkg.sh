@@ -12,5 +12,5 @@ then
     echo "$pac <span foreground='#ff5c57'></span> $aur"
 else
     #echo "$pac %{F#5b5b5b}%{F-} $aur"
-    echo "$pac <span foreground='#5b5b5b'></span> $aur"
+    echo "$pac <span foreground='#929292'></span> $aur"
 fi
