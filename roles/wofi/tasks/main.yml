@@ -9,6 +9,11 @@
     src: style.css
     dest: ~/.config/wofi/
 
+- name: copy wofi config
+  copy:
+    src: config
+    dest: ~/.config/wofi/
+
 - name: copy wofi powermenu
   copy:
     src: powermenu.sh
