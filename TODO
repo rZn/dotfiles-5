@@ -16,9 +16,7 @@
 - userbin or fish functions ?
 - add oftc to weechat configuration
 - up wrapper : 'ix' and 'upfile' = auto-copy
-- fish : bug set var path
 - fix alacritty scroll up after clear : not any solution really... needs to CTRL+L
-- add "git config --global submodule.recurse true" to git config
 
 # SERVICES
 - run weechat as a service
