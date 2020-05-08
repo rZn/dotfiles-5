@@ -1,36 +1,32 @@
-- wofi issues : https://github.com/petabyteboy/wofi/issues
+# DISPLAY
+- hardware acceleration : firefox, alacritty, mpv
+- configure kanshi auto output
+
+# DE
+- try a GTK theme with some transparency
 - tray menu theme and over window
+- wofi issues : https://todo.sr.ht/~scoopta/wofi
 - waybar network indicator bug
-- xbindkeys to sway : https://wiki.archlinux.org/index.php/Sway#Custom_keybindings
+- firefox menu size when scaling
+- waybar urgent styling issue : https://github.com/Alexays/Waybar/issues/704
 
-- Xressources ??
+# CLI
+- sway keybind screens output
+- vim colorizer not working : https://github.com/RRethy/vim-hexokinase/issues/59
+- userbin or fish functions ?
+- add oftc to weechat configuration
+- up wrapper : 'ix' and 'upfile' = auto-copy
+- fish : bug set var path
+- fix alacritty scroll up after clear : not any solution really... needs to CTRL+L
+- add "git config --global submodule.recurse true" to git config
 
+# SERVICES
 - run weechat as a service
-- weechat doesnt start at sway startup , ssh-add too ?
 - run VPN as a service
 - why needs to sudo to get prompt for password for services : no need as scripting openvpn
 - QRCODE vpn
-- userbin or fish functions ?
-- up to wrap ix and upfile and auto paste
-- hardware acceleration : firefox, alacritty, mpv
-- add oftc to weechat configuration
 
-- fix alacritty scroll up after clear
-- add "git config --global submodule.recurse true" to git config
-- try a GTK theme with some transparency
+#TEST
 - repair travis runs
-- fish : bug set var path
-
-- waybar/sway : no alert tab
-
-- update powermenu
-
-- firefox menu size when scaling
-
-- grimshot blur issue
-
-- nvim colors #080808
-
-
-tests :
 - wf-recorder
+- weechat doesnt start at sway startup , ssh-add too ?
