@@ -21,6 +21,8 @@
 - repair travis runs
 - fish : bug set var path
 
+- waybar/sway : no alert tab
+
 - update powermenu
 
 - firefox menu size when scaling
