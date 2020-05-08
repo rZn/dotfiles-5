@@ -31,7 +31,7 @@
     - '*/bar show title'
     - '*/bar hide status'
     - '*/set weechat.bar.buflist.position top'
-    - '*/set weechat.bar.buflist.format.number ""'
+    - '*/set buflist.format.number ""'
     - '*/script install colorize_nicks.py highmon.pl'
     - '*/set weechat.look.separator_horizontal " "'
     - '*/set weechat.look.prefix_suffix " "'
