@@ -30,6 +30,7 @@
     - '*/bar hide nicklist'
     - '*/bar show title'
     - '*/bar hide status'
+    - '*/set irc.look.server_buffer independent'
     - '*/set weechat.bar.buflist.position top'
     - '*/script install colorize_nicks.py highmon.pl'
     - '*/set weechat.look.separator_horizontal " "'
