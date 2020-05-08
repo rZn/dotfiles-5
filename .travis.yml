@@ -6,7 +6,6 @@ services:
 branches:
   only:
     - master
-    - dev
 
 install:
   - docker build -t archlinux/dotfiles -f docker/archlinux/Dockerfile .

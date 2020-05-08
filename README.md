@@ -35,23 +35,23 @@ Please look at ``roles/*/README.md`` if exists for specific hosts configuration.
 
 ** Use carefully** backup your home before using ! Ansible will backup any existing conf file before overriding.
 
-#### 1° Fork Me!
+#### 1. Fork Me!
 
-#### 2° Clone your repo on a personal host
+#### 2. Clone your repo on a personal host
 ```
 git clone --recursive https://github.com/[your_repo]/dotfiles
 cd dotfiles
 ```
-#### 3° Generate ssh keys
+#### 3. Generate ssh keys
 ```
 ssh-keygen -t rsa
 ```
-#### 4° Replace your ssh key in ``authorized_keys`` role
+#### 4. Replace your ssh key in ``authorized_keys`` role
 !!! Use as is, you will add my SSH key in your authorized_keys !!!
 ```
 cp ~/.ssh/id_rsa.pub dotfiles/roles/authorized_keys/id_rsa.pub
 ```
-#### 5° Generate hosts file with your managed hosts
+#### 5. Generate hosts file with your managed hosts
 ``hosts`` file is defaultly gitignored.
 ```
 cd dotfiles
@@ -73,7 +73,7 @@ host2 ansible_user=user2
 ```
 Remove useless groups and hosts
 
-#### 6° Deploy SSH keys on nodes
+#### 6. Deploy SSH keys on nodes
 Node per node if password differ between users.
 It adds your public ssh keys on hosts
 ```
@@ -82,7 +82,7 @@ ansible-playbook install.yml -t init_ssh -l host2 -k
 ansible-playbook install.yml -t init_ssh -l host3 -k
 ```
 
-#### 7° Run ansible-playbook
+#### 7. Run ansible-playbook
 
 For runs on hosts configured with root user
 You can use without providing extra passwords
