@@ -1,6 +1,7 @@
 # DISPLAY
 - hardware acceleration : firefox, alacritty, mpv
 - configure kanshi auto output
+- sway keybind screens output
 
 # DE
 - try a GTK theme with some transparency
@@ -12,13 +13,11 @@
 - assign gimp and float
 
 # CLI
-- sway keybind screens output
 - userbin or fish functions ?
 - add oftc to weechat configuration
 - up wrapper : 'ix' and 'upfile' = auto-copy
 - fix alacritty scroll up after clear : not any solution really... needs to CTRL+L
 - silent weechat role
-- neovim guitermcolor theme?
 
 # SERVICES
 - run weechat as a service
