@@ -9,6 +9,7 @@
 - waybar network indicator bug
 - firefox menu size when scaling
 - waybar urgent styling issue : https://github.com/Alexays/Waybar/issues/704
+- wob styling : https://github.com/francma/wob/issues/38
 
 # CLI
 - sway keybind screens output
