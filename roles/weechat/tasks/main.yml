@@ -31,7 +31,6 @@
     - '*/bar show title'
     - '*/bar hide status'
     - '*/set weechat.bar.buflist.position top'
-    - '*/set buflist.format.number ""'
     - '*/script install colorize_nicks.py highmon.pl'
     - '*/set weechat.look.separator_horizontal " "'
     - '*/set weechat.look.prefix_suffix " "'
@@ -68,6 +67,7 @@
     - '*/set irc.server.oftc.ssl on'
     - '*/set irc.server.oftc.sasl_username "{{ nickname.user_input }}"'
     - '*/set irc.server.oftc.sasl_password "{{ password.user_input }}"'
+    - '*/set buflist.format.number ""'
     - '*/save'
     - '*/reload'
   when: stat_fifo.stat.exists
