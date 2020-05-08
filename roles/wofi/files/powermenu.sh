@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-action=$(echo -e "suspend\nlock\nhibernate\nsuspend-then-hibernate\nlogout\nshutdown\nreboot" | wofi -d -p "power:")
+action=$(echo -e "suspend\nlock\nlogout\nshutdown\nreboot" | wofi -d -p "power:" -L 5)
 
 if [[ "$action" == "lock" ]]
 then
@@ -9,17 +9,7 @@ fi
 
 if [[ "$action" == "suspend" ]]
 then
-    swaylock-fancy && systemctl suspend-then-hibernate && echo '*/reconnect' >~/.weechat/weechat_fifo
-fi
-
-if [[ "$action" == "suspend-then-hibernate" ]]
-then
-    ~/.i3/i3lock-fancy-multimonitor/lock && systemctl suspend-then-hibernate && echo '*/reconnect' >~/.weechat/weechat_fifo
-fi
-
-if [[ "$action" == "hibernate" ]]
-then
-    systemctl hibernate
+    swaylock-fancy && systemctl suspend && echo '*/reconnect' >~/.weechat/weechat_fifo
 fi
 
 if [[ "$action" == "logout" ]]
