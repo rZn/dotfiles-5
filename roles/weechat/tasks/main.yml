@@ -68,7 +68,7 @@
     - '*/set irc.server.oftc.ssl on'
     - '*/set irc.server.oftc.sasl_username "{{ nickname.user_input }}"'
     - '*/set irc.server.oftc.sasl_password "{{ password.user_input }}"'
-    - '*/set buflist.format.number ""'
+    - '*/set buflist.format.number " "'
     - '*/save'
     - '*/reload'
   when: stat_fifo.stat.exists
