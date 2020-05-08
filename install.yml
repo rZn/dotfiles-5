@@ -50,7 +50,7 @@
     - { role: openvpn, tags: openvpn }
     - { role: borgbackup, tags: borgbackup }
     - { role: weechat, tags: weechat }
-    #- { role: tiny, tags: tiny }
+    - { role: tiny, tags: tiny }
   tasks:
     - include_role:
         name: vagrant
