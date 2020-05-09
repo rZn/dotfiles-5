@@ -56,7 +56,3 @@
         name: vagrant
       when: ansible_user_id == "vagrant"
       tags: vagrant
-
-- hosts: laptop
-  roles:
-    - { role: xbindkeys, tags: xbindkeys }
