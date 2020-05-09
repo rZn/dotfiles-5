@@ -15,19 +15,21 @@
 
 # CLI
 - userbin or fish functions ?
-- add oftc to weechat configuration
 - up wrapper : 'ix' and 'upfile' = auto-copy
-- silent weechat role : fuck weechat, lets wait for tiny-irc-client
 - pureprompt root mark : https://github.com/rafaelrinaldi/pure/issues/117
-  -> template file as root remove pure
+  -> disable some tasks for "root" user : how to catch running user
 - noto-fonts doesnt work
+
+# IRC
 - tiny-irc : https://github.com/osa1/tiny/issues/created_by/eoli3n
+  - silent weechat role : fuck weechat, lets wait for tiny-irc-client
+  - add oftc to weechat configuration
 
 # SERVICES
-- why needs to sudo to get prompt for password for services : no need as scripting openvpn
 - QRCODE vpn
   - backup script as a service
   - run VPN as a service
+  - why needs to sudo to get prompt for password for services : no need as scripting openvpn
 
 #TEST
 - repair travis runs

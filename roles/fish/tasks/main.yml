@@ -24,6 +24,7 @@
     fish -lc "ln -s $OMF_PATH/themes/pure/conf.d/_pure_init.fish ~/.config/fish/conf.d/pure_init.fish"
   args:
     creates: ~/.config/fish/conf.d/pure.fish
+  when: ansible_user_id != "root"
 
 - name: check git plugin install
   shell: grep 'abbr.*git' ~/.config/fish/fish_variables
