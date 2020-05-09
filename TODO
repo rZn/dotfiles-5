@@ -18,9 +18,7 @@
 - userbin or fish functions ?
 - up wrapper : 'ix' and 'upfile' = auto-copy
 - pureprompt root mark : https://github.com/rafaelrinaldi/pure/issues/117
-  -> disable some tasks for "root" user : how to catch running user
-- noto-fonts doesnt work
-- kitty link to ff not working
+- noto-fonts doesnt work: see morning chars on #archlinux-fr
 - change bat comment color ?
 
 # IRC
