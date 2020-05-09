@@ -18,3 +18,4 @@
   copy:
     src: powermenu.sh
     dest: ~/.config/wofi/
+    mode: 0755
