@@ -8,19 +8,16 @@
   copy:
     src: settings.ini
     dest: ~/.config/gtk-3.0/
-    backup: yes
 
 - name: Configure GTK2
   copy:
     src: gtkrc-2.0
     dest: ~/.config/.gtkrc-2.0
-    backup: yes
 
 - name: Configure Qt as GTK theme
   copy:
     src: Trolltech.conf
     dest: ~/.config/
-    backup: yes
 
 - name: Link Xdefaults
   file:

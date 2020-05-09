@@ -35,23 +35,18 @@
   shell: fish -c "omf install https://github.com/jhillyerd/plugin-git"
   when: gitcheck is failed
 
-- name: Globale fish configuration
+- name: Copy dircolors
   copy:
-    src: config.fish
-    dest: ~/.config/fish/
-    backup: yes
+    src: dircolors
+    dest: ~/.config/
+
+- name: Sync fish config files
+  synchronize:
+    src: files/fish/
+    dest: ~/.config/
 
 - name: Laptops fish configuration
   copy:
     src: laptop.fish
     dest: ~/.config/fish/conf.d/
-    backup: yes
   when: "'laptop' in {{ group_names }}"
-
-- name: copy aliases
-  synchronize:
-    src: files/functions
-    dest: ~/.config/fish/
-
-- debug:
-    msg: "Do not forget to 'chsh /usr/bin/fish'"
