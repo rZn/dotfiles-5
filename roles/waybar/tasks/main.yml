@@ -7,5 +7,5 @@
 
 - name: template styles.css
   template:
-    src: styles.j2
-    dest: ~/.config/waybar/styles.css
+    src: style.j2
+    dest: ~/.config/waybar/style.css
