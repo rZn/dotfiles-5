@@ -17,7 +17,6 @@
 - userbin or fish functions ?
 - add oftc to weechat configuration
 - up wrapper : 'ix' and 'upfile' = auto-copy
-- fix alacritty scroll up after clear : not any solution really... needs to CTRL+L
 - silent weechat role
 - pureprompt root mark : https://github.com/rafaelrinaldi/pure/issues/117
   -> template file as root remove pure
