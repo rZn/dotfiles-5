@@ -46,7 +46,7 @@
     - { role: waybar, tags: waybar }
     - { role: variety, tags: variety }
     - { role: wofi, tags: wofi }
-    - { role: alacritty, tags: alacritty }
+    - { role: kitty, tags: kitty }
     - { role: openvpn, tags: openvpn }
     - { role: borgbackup, tags: borgbackup }
     - { role: weechat, tags: weechat }
