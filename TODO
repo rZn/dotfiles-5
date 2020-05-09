@@ -19,6 +19,8 @@
 - fix alacritty scroll up after clear : not any solution really... needs to CTRL+L
 - silent weechat role
 - pureprompt root mark
+- noto-fonts doesnt work
+- tiny-irc : https://github.com/osa1/tiny/issues/created_by/eoli3n
 
 # SERVICES
 - run weechat as a service
