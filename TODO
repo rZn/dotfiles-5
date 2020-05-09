@@ -24,7 +24,8 @@
 - tiny-irc : https://github.com/osa1/tiny/issues/created_by/eoli3n
   - silent weechat role : fuck weechat, lets wait for tiny-irc-client
   - add oftc to weechat configuration
-- tiny-irc default channel
+- tiny-irc default channels
+- oftc config to tiny?
 
 # SERVICES
 - QRCODE vpn
@@ -35,7 +36,6 @@
 #TEST
 - repair travis runs
 - wf-recorder
-- weechat doesnt start at sway startup , ssh-add too ?
 
 # SNAPSHOTS
 - neovim with kitty config file
