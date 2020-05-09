@@ -4,3 +4,8 @@
   synchronize:
     src: waybar
     dest: ~/.config/
+
+- name: template styles.css
+  template:
+    src: styles.j2
+    dest: ~/.config/waybar/styles.css

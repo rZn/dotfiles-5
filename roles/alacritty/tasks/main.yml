@@ -5,8 +5,8 @@
     state: directory
 
 - name: copy alacritty conf file
-  copy:
-    src: alacritty.yml
+  template:
+    src: alacritty.j2
     dest: ~/.config/alacritty/alacritty.yml
 
 - name: alias clear to clear -x to keep history scrolling

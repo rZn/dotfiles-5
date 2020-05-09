@@ -5,6 +5,6 @@
     state: directory
 
 - name: copy kitty conf file
-  copy:
-    src: kitty.conf
-    dest: ~/.config/kitty/
+  template:
+    src: kitty.j2
+    dest: ~/.config/kitty/kitty.conf
