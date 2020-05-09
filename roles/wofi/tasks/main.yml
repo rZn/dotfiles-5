@@ -4,10 +4,10 @@
     path: ~/.config/wofi
     state: directory
 
-- name: copy wofi style
-  copy:
-    src: style.css
-    dest: ~/.config/wofi/
+- name: template wofi style
+  template:
+    src: style.j2
+    dest: ~/.config/wofi/style.css
 
 - name: copy wofi config
   copy:
