@@ -43,8 +43,9 @@
 
 - name: Sync fish config files
   synchronize:
-    src: files/fish/
-    dest: ~/.config/
+    src: files/fish
+    dest: ~/.config
+    recursive: yes
 
 - name: Laptops fish configuration
   copy:
