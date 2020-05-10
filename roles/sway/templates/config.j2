@@ -117,10 +117,18 @@ bindsym $mod+Shift+q exec ~/.config/wofi/powermenu.sh
 bindsym $mod+Shift+p exec grimshot save area
 bindsym $mod+p exec grimshot save output
 
+# variety
+bindsym $mod+Control+w exec variety --next
+
 # apps
 bindsym $mod+Control+t exec thunar
 bindsym $mod+Control+n exec connman-gtk
 bindsym $mod+Control+p exec pavucontrol
+
+# bindsym spotify
+bindsym $mod+less exec playerctl previous
+bindsym $mod+Shift+less exec playerctl next
+bindsym $mod+space exec playerctl play-pause
 
 # switch to workspace
 bindsym $mod+ampersand workspace $tag1
@@ -165,11 +173,6 @@ assign [app_id="connman-gtk"] $tag10
 for_window [app_id="connman-gtk"] focus
 assign [app_id="pavucontrol"] $tag10
 for_window [app_id="pavucontrol"] focus
-
-# bindsym spotify
-bindsym $mod+less exec playerctl previous
-bindsym $mod+Shift+less exec playerctl next
-bindsym $mod+space exec playerctl play-pause
 
 # move workspace between screens
 bindsym $mod+Prior move workspace to output left
