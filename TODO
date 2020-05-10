@@ -10,7 +10,6 @@
 - firefox menu size when scaling
 - waybar urgent styling issue : https://github.com/Alexays/Waybar/issues/704
 - wob styling : https://github.com/francma/wob/issues/38
-- assign gimp and float
 - mpv still ok with wayland ?
 
 # CLI
@@ -19,14 +18,9 @@
 - pureprompt root mark : https://github.com/rafaelrinaldi/pure/issues/117
 - noto-fonts doesnt work: see morning chars on #archlinux-fr
 - change bat comment color ?
-- byndsim to variety --next
 
 # IRC
 - tiny-irc : https://github.com/osa1/tiny/issues/created_by/eoli3n
-  - silent weechat role : fuck weechat, lets wait for tiny-irc-client
-  - add oftc to weechat configuration
-- tiny-irc default channels
-- oftc config to tiny?
 
 # SERVICES
 - QRCODE vpn
