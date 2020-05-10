@@ -4,6 +4,11 @@
     path: ~/.config/tiny/
     state: directory
 
+- name: create log dir
+  file:
+    path: ~/.tiny_logs
+    state: directory
+
 - name: template conf file
   template:
     src: config.yml.j2
