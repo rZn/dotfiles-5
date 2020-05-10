@@ -3,31 +3,39 @@ servers:
     - addr: chat.freenode.net
       port: 6697
       tls: true
-      realname: yourname
+      realname: eoli3n
       nicks:
         - eoli3n
 
       # Channels to automatically join
       join:
           - '#archlinux-fr'
+          - '#archlinux'
+          - '#gamedev-fr'
           - '#nixos'
-          - '#nixos-fr'
 
       # SASL authentication
       sasl:
         username: 'eoli3n'
         password: '{{ sasl_password }}'
 
+    - addr: irc.oftc.net
+      port: 6697
+      tls: true
+      realname: eoli3n
+      nicks:
+        - eoli3n
+
 # Defaults used when connecting to servers via the /connect command
 defaults:
     nicks:
       - eoli3n
-    realname: yourname
+    realname: eoli3n
     join: []
     tls: false
 
 # Where to put log files
-log_dir: '/home/user/tiny_logs'
+log_dir: '~/.tiny_logs'
 
 # How to show timestamps. Should be a valid strftime() format string. Run `man
 # strftime` in your shell for strftime format specification.
