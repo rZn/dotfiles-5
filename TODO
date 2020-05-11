@@ -27,6 +27,9 @@
 - wob styling : https://github.com/francma/wob/issues/38
 - wofi issues : https://todo.sr.ht/~scoopta/wofi
 
+# IMPROVMENTS
+- dynamic username: sed 's/user/{{ user }}/g' and use templating
+
 #TEST
 - repair travis runs
 - wf-recorder
