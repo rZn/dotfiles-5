@@ -9,6 +9,7 @@
 - tray menu theme and over window
 - firefox menu size when scaling
 - sway border issue : https://github.com/swaywm/sway/issues/5327
+- transparent notifications ?
 
 # CLI
 - userbin or fish functions ?
