@@ -1,3 +1,0 @@
-for f in ~/.xprofile.d/*.sh; do
-    . $f
-done

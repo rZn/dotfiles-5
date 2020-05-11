@@ -1,0 +1,15 @@
+- variety : https://github.com/varietywalls/variety/issues/253
+- waybar, systray
+    - https://github.com/Robinhuett/dotfiles/tree/master/.config/sway
+- swaylock
+    - https://github.com/Robinhuett/dotfiles/tree/master/.config/swaylock
+- move to screen bug : https://github.com/swaywm/sway/issues/4792
+- look des apps Qt : https://www.reddit.com/r/archlinux/comments/do8vde/uniform_look_for_qt_and_gtk_applications_on_sway/
+- autostart sway at login tty1
+- Wofi focusing on current screen and no blur
+- Mako : notifications : https://github.com/emersion/mako
+     - https://github.com/Robinhuett/dotfiles/blob/master/.config/mako/config
+
+- raccourci pour eteindre eteindre ou pas la sortie videoproj
+- rofi alt tab : https://www.reddit.com/r/swaywm/comments/aolf3u/quick_script_for_rofi_alttabbing_window_switcher/
+- chrome wayland support ?

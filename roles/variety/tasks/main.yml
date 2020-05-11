@@ -1,17 +1,10 @@
 ---
-- name: install variety
-  package:
-    name: variety
-    state: present
-  become: yes
+- name: create variety config dir
+  file:
+    path: ~/.config/variety
+    state: directory 
 
 - name: configure variety
   copy:
     src: variety.conf
     dest: ~/.config/variety
-    backup: yes
-
-- name: configure variety xprofile
-  copy:
-    src: variety.sh
-    dest: ~/.xprofile.d/

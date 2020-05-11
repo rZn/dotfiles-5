@@ -1,7 +1,0 @@
-[module/networkspeeddown-wired]
-type = internal/network
-interface = eno1
-label-connected = "%downspeed:7%"
-format-connected = <label-connected>
-format-connected-prefix = " "
-format-connected-prefix-foreground = #5b

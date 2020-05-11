@@ -1,16 +1,4 @@
 ---
-- name: Upgrade git
-  package:
-    name: git
-    state: latest
-
-- name: Install fish
-  package:
-    name: fish
-    state: present
-  ignore_errors: True
-  become: yes
-
 - name: Get oh-my-fish installer
   get_url:
     url: https://get.oh-my.fish
@@ -19,9 +7,8 @@
   changed_when: false
 
 - name: Install oh-my-fish
-  shell: /tmp/oh-my.fish --noninteractive -y
+  shell: fish -c "/tmp/oh-my.fish --noninteractive -y"
   args:
-    executable: /usr/bin/fish
     creates: ~/.config/fish/conf.d/omf.fish
 
 - name: Remove oh-my-fish installer
@@ -31,43 +18,48 @@
   changed_when: false
 
 - name: Install pureprompt plugin
+  become_method: su
   shell: |
-    omf install pure
-    ln -s $OMF_PATH/themes/pure/conf.d/pure.fish ~/.config/fish/conf.d/pure.fish
-    ln -s $OMF_PATH/themes/pure/conf.d/_pure_init.fish ~/.config/fish/conf.d/pure_init.fish
+    fish -c "omf install pure"
+    fish -lc "ln -s $OMF_PATH/themes/pure/conf.d/pure.fish ~/.config/fish/conf.d/pure.fish"
+    fish -lc "ln -s $OMF_PATH/themes/pure/conf.d/_pure_init.fish ~/.config/fish/conf.d/pure_init.fish"
   args:
-    executable: /usr/bin/fish
     creates: ~/.config/fish/conf.d/pure.fish
 
 - name: check git plugin install
-  shell: grep git ~/.config/fish/fish_variables
+  shell: grep 'abbr.*git' ~/.config/fish/fish_variables
   register: gitcheck
   ignore_errors: True
   changed_when: false
 
 - name: Install git plugin
-  shell: omf install https://github.com/jhillyerd/plugin-git
-  args:
-    executable: /usr/bin/fish
+  become_method: su
+  shell: fish -c "omf install https://github.com/jhillyerd/plugin-git"
   when: gitcheck is failed
 
-- name: Globale fish configuration
+- name: Copy dircolors
   copy:
-    src: config.fish
-    dest: ~/.config/fish/
-    backup: yes
+    src: dircolors
+    dest: ~/.config/
+
+- name: Sync fish config files (root)
+  synchronize:
+    src: files/fish
+    dest: /root/.config
+    recursive: yes
+  when: ansible_user_id == "root"
+  tags: rsync
+
+- name: Sync fish config files (users)
+  synchronize:
+    src: files/fish
+    dest: ~/.config
+    recursive: yes
+  when: ansible_user_id != "root"
+  tags: rsync
 
 - name: Laptops fish configuration
   copy:
     src: laptop.fish
     dest: ~/.config/fish/conf.d/
-    backup: yes
   when: "'laptop' in {{ group_names }}"
-
-- name: copy aliases
-  synchronize:
-    src: files/functions
-    dest: ~/.config/fish/
-
-- debug:
-    msg: "Do not forget to 'chsh /usr/bin/fish'"

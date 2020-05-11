@@ -1,3 +1,0 @@
----
-- name: restart polybar
-  shell: ~/.config/polybar/launch.sh

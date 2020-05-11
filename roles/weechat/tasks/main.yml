@@ -1,20 +1,6 @@
 ---
-- name: Install weechat
-  package:
-    name:
-      - screen
-      - weechat
-    state: present
-  become: True
-
-- name: Weechat in xprofile
-  copy:
-    src: weechat.sh
-    dest: ~/.xprofile.d/
-  when: ansible_user_id != "vagrant"
-
 - name: Start weechat
-  shell: screen -DmS weechat /usr/bin/weechat &
+  shell: screen -DmS weechat weechat &
   changed_when: False
 
 - name: Test if weechat fifo is enable
@@ -22,8 +8,19 @@
   register: stat_fifo
 
 - debug:
-    msg: "Please active fifo with '/fifo enable' in weechat"
+    msg: "Please active fifo with '/fifo' in weechat"
   when: not stat_fifo.stat.exists
+
+- name: Register nickname
+  pause:
+    prompt: "Enter your IRC nickname:"
+  register: nickname
+
+- name: Register password
+  pause:
+    prompt: "Enter your IRC password:"
+    echo: no
+  register: password
 
 - name: Theme weechat
   shell: echo {{item}} >~/.weechat/weechat_fifo
@@ -33,8 +30,9 @@
     - '*/bar hide nicklist'
     - '*/bar show title'
     - '*/bar hide status'
-    - '*/bar hide buflist'
-    - '*/script install colorize_nicks.py highmon.pl buffers.pl'
+    - '*/set irc.look.server_buffer independent'
+    - '*/set weechat.bar.buflist.position top'
+    - '*/script install colorize_nicks.py highmon.pl'
     - '*/set weechat.look.separator_horizontal " "'
     - '*/set weechat.look.prefix_suffix " "'
     - '*/set buffers.color.hotlist_message_fg 7'
@@ -55,11 +53,29 @@
     - '*/set weechat.look.read_marker none'
     - '*/set env TERM screen-256color'
     - '*/set weechat.look.buffer_time_format \${color:252}%H\${color:245}%M\${color:240}%S'
+    - '*/server add freenode chat.freenode.net'
+    - '*/set irc.server.freenode.nicks "{{ nickname.user_input }}"'
+    - '*/set irc.server.freenode.autoconnect on'
+    - '*/set irc.server.freenode.addresses "chat.freenode.net/7000"'
+    - '*/set irc.server.freenode.ssl on'
+    - '*/set irc.server.freenode.sasl_username "{{ nickname.user_input }}"'
+    - '*/set irc.server.freenode.sasl_password "{{ password.user_input }}"'
+    - '*/set irc.server.freenode.autojoin "#archlinux,#archlinux-fr,#gamedev-fr,#nixos,#nixos-fr,#ansible,#docker"'
+    - '*/server add oftc irc.oftc.net'
+    - '*/set irc.server.oftc.nicks "{{ nickname.user_input }}"'
+    - '*/set irc.server.oftc.autoconnect on'
+    - '*/set irc.server.oftc.addresses "irc.oftc.net/6697"'
+    - '*/set irc.server.oftc.ssl on'
+    - '*/set irc.server.oftc.sasl_username "{{ nickname.user_input }}"'
+    - '*/set irc.server.oftc.sasl_password "{{ password.user_input }}"'
+    - '*/set buflist.format.number " "'
     - '*/save'
     - '*/reload'
+  when: stat_fifo.stat.exists
 
 - name: Create themed file
   file:
     path: ~/.weechat/themed
     state: touch
   changed_when: false
+  when: stat_fifo.stat.exists

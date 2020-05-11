@@ -1,0 +1,15 @@
+---
+- name: create alacritty conf dir
+  file:
+    path: ~/.config/alacritty/
+    state: directory
+
+- name: copy alacritty conf file
+  template:
+    src: alacritty.j2
+    dest: ~/.config/alacritty/alacritty.yml
+
+- name: alias clear to clear -x to keep history scrolling
+  copy:
+    src: clear.fish
+    dest: ~/.config/fish/functions

@@ -1,8 +1,0 @@
-[module/vpncheck]
-type = custom/script
-exec = pgrep openvpn
-interval = 5
-label = vpn
-format-underline = #268bd2
-format-prefix = " "
-format-prefix-foreground = #5b

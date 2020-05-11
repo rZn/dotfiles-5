@@ -1,0 +1,5 @@
+---
+- name: git config file
+  copy:
+    src: gitconfig
+    dest: ~/.gitconfig

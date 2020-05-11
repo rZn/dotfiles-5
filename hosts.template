@@ -1,3 +1,4 @@
+#localhost ansible_connection=local ansible_user=user
 [server]
 [laptop]
 [desktop]

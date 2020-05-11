@@ -1,4 +1,0 @@
----
-- name: Install termite terminfo
-  shell: curl -s https://raw.githubusercontent.com/thestinger/termite/master/termite.terminfo | tic -x -
-  become: True

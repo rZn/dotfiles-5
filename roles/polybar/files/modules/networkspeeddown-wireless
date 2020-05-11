@@ -1,7 +1,0 @@
-[module/networkspeeddown-wireless]
-type = internal/network
-interface = wlp2s0
-label-connected = "%downspeed:7%"
-format-connected = <label-connected>
-format-connected-suffix = " "
-format-connected-suffix-foreground = #5b

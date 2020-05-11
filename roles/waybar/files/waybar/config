@@ -1,0 +1,112 @@
+[{
+    "layer": "bottom",
+    "position": "top",
+
+    "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
+    "modules-center": [],
+    "modules-right": ["pulseaudio", "backlight", "network", "custom/vpn", "custom/pkg", "battery", "clock"],
+    "sway/mode": {
+        "format": " {}"
+    },
+    "sway/workspaces": {
+        "format": "{name}",
+        "disable-scroll": true
+    },
+    "sway/window": {
+        "max-length": 80,
+        "tooltip": false
+    },
+    "clock": {
+        "interval": 1,
+        "format": "{:%d<span foreground='#929292'>%m</span><span foreground='#606060'>%y</span> %H<span foreground='#929292'>%M</span><span foreground='#606060'>%S</span>}",
+        "tooltip": false
+    },
+    "battery": {
+        "format-icons": ["", "", "", "", ""],
+        "format": "<span foreground='#929292'>{icon}</span> {capacity}%",
+        "format-charging": "<span foreground='#929292'>{icon}</span> {capacity}%",
+        "format-discharging": "<span foreground='#929292'>{icon}</span> {time}",
+        "format-full": "<span foreground='#929292'>{icon}</span> {capacity}%",
+        "interval": 30,
+        "states": {
+            "warning": 25,
+            "critical": 10
+        },
+        "tooltip": false
+    },
+    "custom/pkg": {
+        "format": "{}",
+        "interval": 3600,
+        "exec": "~/.config/waybar/modules/pkg.sh"
+    },
+    "network": {
+        "format-wifi": "<span foreground='#929292'></span> {essid} <span foreground='#929292'>{signalStrength}%</span>",
+        "format-ethernet": "<span foreground='#929292'></span> {ifname}",
+        "format-disconnected": "",
+        "tooltip": false
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "<span foreground='#929292'></span>",
+        "format-icons": {
+            "default": ["<span foreground='#929292'></span>"],
+            "headphones": ["<span foreground='#929292'></span>"]
+        },
+        "on-scroll-up": "pamixer -ui 1 && pamixer --get-volume > $SWAYSOCK.wob",
+        "on-scroll-down": "pamixer -ud 1 && pamixer --get-volume > $SWAYSOCK.wob",
+        "tooltip": false
+    },
+    "custom/vpn": {
+        "format": "<span foreground='#929292'></span> vpn",
+        "interval": 5,
+        "exec" : "pgrep openvpn"
+    },
+    "backlight": {
+        "format": "<span foreground='#929292'>{icon}</span> {percent}%",
+        "format-icons": [""],
+        "on-scroll-up": "light -A 2 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob",
+        "on-scroll-down": "light -U 2 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob"
+    }
+}, {
+    "layer": "bottom",
+    "position": "bottom",
+
+    "modules-left": ["tray", "custom/spotify"],
+    "modules-center": ["network#speed"],
+    "modules-right": ["temperature", "custom/storage", "cpu", "memory" ],
+    "custom/spotify": {
+        "interval": 1,
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/spotify.sh",
+        "exec-if": "pgrep spotify",
+        "escape": true
+    },
+    "network#speed": {
+        "format-wifi": "<span foreground='#929292'></span> {bandwidthDownOctets} <span foreground='#929292'></span> {bandwidthUpOctets}",
+        "format-ethernet": "<span foreground='#929292'></span> {bandwidthDownOctets} <span foreground='#929292'></span> {bandwidthUpOctets}",
+        "interval": 1
+    },
+    "temperature": {
+        "format": "<span foreground='#929292'></span> {temperatureC}°C",
+        "thermal-zone": 1,
+        "critical-threshold": 60,
+	    "format-critical": "<span foreground='#ff5c57'></span> {temperatureC}°C"
+    },
+    "custom/storage": {
+        "format": "<span foreground='#929292'></span> {}%",
+        "return-type": "json",
+        "interval": 60,
+        "exec": "~/.config/waybar/modules/storage.sh /"
+    },
+    "cpu": {
+        "interval": 3,
+        "format": "<span foreground='#929292'></span> {usage}%"
+    },
+    "memory": {
+        "interval": 3,
+        "format": "<span foreground='#929292'></span> {percentage}%"
+    },
+    "tray": {
+        "icon-size": 18
+    }
+}]

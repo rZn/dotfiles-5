@@ -1,0 +1,40 @@
+---
+###
+# https://github.com/swaywm/sway/issues/3814
+###
+
+- name: create sway config dir
+  file:
+    path: ~/.config/sway/
+    state: directory
+
+- name: copy configuration file
+  template:
+    src: config.j2
+    dest: ~/.config/sway/config
+
+- name: autostart sway
+  copy:
+    src: sway.fish
+    dest: ~/.config/fish/conf.d/
+
+- name: create swaylock dir config
+  file:
+    path: ~/.config/swaylock/
+    state: directory
+
+- name: copy swaylock config
+  copy:
+    src: swaylock.config
+    dest: ~/.config/swaylock/config
+
+- name: copy gsettings importer
+  copy:
+    src: import-gsettings
+    dest: ~/.config/sway/
+    mode: 0755
+
+- name: copy config user.dirs
+  copy:
+    src: user-dirs.dirs
+    dest: ~/.config/

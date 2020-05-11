@@ -1,5 +1,17 @@
 ---
 - name: Configure ssh-agent
   copy:
-    src: ssh-add.sh
-    dest: ~/.xprofile.d/
+    src: ssh-agent.service
+    dest: ~/.config/systemd/user/
+
+- name: Configure pam environment
+  copy:
+    src: pam_environment
+    dest: ~/.pam_environment
+
+- name: Start and enable ssh-agent service
+  systemd:
+    name: ssh-agent
+    state: started
+    enabled: yes
+    scope: user 

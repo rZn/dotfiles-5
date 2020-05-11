@@ -1,30 +1,29 @@
-# i3-gaps Acid Dark 
+# Sway Acid Dark 
 
 [![Build Status](https://travis-ci.org/eoli3n/dotfiles.svg?branch=master)](https://travis-ci.org/eoli3n/dotfiles)
 
-**i3-gaps zsh pureprompt polybar**
+**Sway fish pure waybar neovim**
 
-![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/i3gaps.png)
+![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/sway.png)
 
-**Weechat**
+**Tiny irc client**
 
-![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/weechat.png)
+![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/irc.png)
 
-**Chrome Rofi Stylish**
+**Firefox/Tabliss Wofi**
 
-![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/chrome-rofi.png)
+![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/ff.png)
 
-**Connman GTK Theme**
+**Connman/Thunar GTK Theme**
 
-![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/connman-gtk.png)
+![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/gtk.png)
 
-## Why using Ansible ?
-Ansible allows to duplicate this Desktop Environment over multiple hosts with specific configuration (dualscreen, packages...).
-All your nodes will have access to all configurations if
-- your git repo is accessible from every nodes
-- your current node ssh keys is authorized on all nodes
+## Why dotfiles with Ansible ?
 
-You should be able to edit and push from/to any managed hosts.
+- Config files derivation by host or by OS with jinja2 templating
+- It can manage packages too
+- Secrets with Ansible-vault
+- Multiple hosts and ability to update a config on all hosts from a single command
 
 ## Test VMs|Containers
 Please check ``vagrant/*/README.md`` and ``docker/*/README.md``
@@ -32,87 +31,27 @@ Please check ``vagrant/*/README.md`` and ``docker/*/README.md``
 ## Docs
 Please look at ``roles/*/README.md`` if exists for specific hosts configuration.
 
-## Desktop/Laptop Environment
-
-Should not be used as ``root``.
-
-#### Supported OS
-
-- Archlinux
-
-#### Dependencies
-
-- ansible >= 2.4
-
-#### Role list
-
-- packages-common
-- fish
-- neovim
-- terminfo
-- screen
-- authorized_keys
-- packages-desktop
-- gtk
-- i3-wm
-- picom
-- polybar
-- variety
-- rofi
-- neofetch
-- termite
-- weechat
-- ssh-agent
-- dpms
-- packages-laptop [only laptop tag]
-- xbindkeys [only laptop tag]
-
-## Server Environment
-
-Only cli tools
-It could be run as ``root``.
-
-#### Supported OS
-
-- Archlinux
-- Debian
-- Centos
-- FreeBSD : need to ``sudo ln -s /usr/local/bin/python2 /usr/bin/python``
-
-#### Dependencies
-
-- ansible >= 2.4
-
-#### Role list
-
-- packages-common
-- fish
-- neovim
-- terminfo
-- screen
-- authorized_keys
-
 ## How to
 
 ** Use carefully** backup your home before using ! Ansible will backup any existing conf file before overriding.
 
-#### 1° Fork Me!
+#### 1. Fork Me!
 
-#### 2° Clone your repo on a personal host
+#### 2. Clone your repo on a personal host
 ```
 git clone --recursive https://github.com/[your_repo]/dotfiles
 cd dotfiles
 ```
-#### 3° Generate ssh keys
+#### 3. Generate ssh keys
 ```
 ssh-keygen -t rsa
 ```
-#### 4° Replace your ssh key in ``authorized_keys`` role
+#### 4. Replace your ssh key in ``authorized_keys`` role
 !!! Use as is, you will add my SSH key in your authorized_keys !!!
 ```
 cp ~/.ssh/id_rsa.pub dotfiles/roles/authorized_keys/id_rsa.pub
 ```
-#### 5° Generate hosts file with your managed hosts
+#### 5. Generate hosts file with your managed hosts
 ``hosts`` file is defaultly gitignored.
 ```
 cd dotfiles
@@ -134,7 +73,7 @@ host2 ansible_user=user2
 ```
 Remove useless groups and hosts
 
-#### 6° Deploy SSH keys on nodes
+#### 6. Deploy SSH keys on nodes
 Node per node if password differ between users.
 It adds your public ssh keys on hosts
 ```
@@ -143,7 +82,7 @@ ansible-playbook install.yml -t init_ssh -l host2 -k
 ansible-playbook install.yml -t init_ssh -l host3 -k
 ```
 
-#### 7° Run ansible-playbook
+#### 7. Run ansible-playbook
 
 For runs on hosts configured with root user
 You can use without providing extra passwords
@@ -154,7 +93,7 @@ For hosts configured with non-root user
 User needs to be in sudoers.
 You need to use -K to ask sudo password, and -l <host> to limit to that host
 ```
-ansible-playbook install.yml -l host1 -K
+ansible-playbook install.yml -l host1 -K --ask-vault-pass
 ```
 
 #### Extra commands
@@ -180,12 +119,13 @@ localhost ansible_connection=local ansible_user=user
 [desktop]
 ```
 ```
-ansible-playbook install.yml -l localhost -K
+ansible-playbook install.yml -l localhost -K --ask-vault-pass
 ```
 
 ## Previously
 
 * [i3-gaps Dark Solarized](https://github.com/eoli3n/dotfiles/tree/zsh-agnoster-solarized)
+* [i3-gaps Acid Dark](https://github.com/eoli3n/dotfiles/tree/i3-gaps-acid-dark)
 
 **IRC**
 

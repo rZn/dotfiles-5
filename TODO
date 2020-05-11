@@ -1,21 +1,41 @@
-# TODO
+# DISPLAY
+- hardware acceleration : firefox, alacritty, kitty, mpv
+- mpv still ok with wayland ?
+- configure kanshi auto output
+- sway keybind screens output
 
-- borgbackup: install and configure role
-- tmux: install and configure role
-- playbook: update all vagrant specific task to match docker hosts
+# DE
+- try a GTK theme with some transparency
+- tray menu theme and over window
+- firefox menu size when scaling
+- sway border issue : https://github.com/swaywm/sway/issues/5327
+- transparent notifications ?
 
-# TOFIX
+# CLI
+- userbin or fish functions ?
+- up wrapper : 'ix' and 'upfile' = auto-copy
 
-- vagrant: chsh in vagrant config file for FreeBSD
-- playbook: add {{ tag }} to fail module to print in "limit to distrib" task
-- vagrant: tty in qwerty for debian keyboard
+# SERVICES
+- QRCODE vpn
+  - backup script as a service
+  - run VPN as a service
+  - why needs to sudo to get prompt for password for services : no need as scripting openvpn
 
-# FEATURE IDEA
+# ISSUES
+- tiny-irc : https://github.com/osa1/tiny/issues/created_by/eoli3n
+- noto-fonts doesnt work in tiny : https://github.com/osa1/tiny/issues/193
+- waybar urgent styling issue : https://github.com/Alexays/Waybar/issues/704
+- wob styling : https://github.com/francma/wob/issues/38
+- wofi issues : https://todo.sr.ht/~scoopta/wofi
 
-- playbook: Add a tag "dotfiles", and pass every copy/templates/file with dest={{ dotsroot }}
-  then : ansible-playbook localhost install.yml -t dotfiles -e 'dotsroot: tmp'
-  to compile only dotfiles in an example dir ~/tmp ? what about lineinfile module ?
-- vagrant: ansible provisionner -> https://github.com/hashicorp/vagrant/issues/7890
-- all: Ubuntu compat|docker|vagrant for server tag
-- all: Debian|Ubuntu|CentOS|FreeBSD compat|docker|vagrant for desktop/laptop tag
-- docker: install virtual display xephyr to use docker as vagrant
+# IMPROVMENTS
+- dynamic username: sed 's/user/{{ user }}/g' and use templating
+
+#TEST
+- repair travis runs
+- wf-recorder
+
+# SNAPSHOTS
+- neovim with kitty config file
+- screenshots with wifi and on battery
+- firefox tabliss

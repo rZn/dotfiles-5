@@ -5,6 +5,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+Plug 'connorholyday/vim-snazzy'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -24,6 +26,14 @@ let g:airline_symbols.space = "\ua0"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline_theme = 'minimalist'
+
+" Configure hexokinase colorizer
+:set termguicolors
+let g:Hexokinase_highlighters = [ 'virtual' ]
+
+" Set colorscheme
+let g:SnazzyTransparent = 1
+colorscheme snazzy
 
 " Default term cursor
 set guicursor=

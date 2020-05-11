@@ -1,0 +1,10 @@
+---
+- name: create kitty conf dir
+  file:
+    path: ~/.config/kitty/
+    state: directory
+
+- name: copy kitty conf file
+  template:
+    src: kitty.j2
+    dest: ~/.config/kitty/kitty.conf

@@ -1,0 +1,11 @@
+---
+- name: copy waybar configuration
+  tags: waybar
+  synchronize:
+    src: waybar
+    dest: ~/.config/
+
+- name: template styles.css
+  template:
+    src: style.j2
+    dest: ~/.config/waybar/style.css

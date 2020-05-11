@@ -1,0 +1,21 @@
+---
+- name: create wofi config dir
+  file:
+    path: ~/.config/wofi
+    state: directory
+
+- name: template wofi style
+  template:
+    src: style.j2
+    dest: ~/.config/wofi/style.css
+
+- name: copy wofi config
+  copy:
+    src: config
+    dest: ~/.config/wofi/
+
+- name: copy wofi powermenu
+  copy:
+    src: powermenu.sh
+    dest: ~/.config/wofi/
+    mode: 0755

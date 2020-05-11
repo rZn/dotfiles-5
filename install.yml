@@ -3,67 +3,56 @@
   roles:
     - { role: authorized_keys, tags: init_ssh }
 
-- hosts: server
-  tags: limit
-  tasks:
-    - name: Limit to Archlinux/Debian/Centos/FreeBSD
-      fail:
-        msg: "{{ ansible_distribution }} is not supported with this tag."
-      when: (ansible_distribution != "CentOS") and
-            (ansible_distribution != "Debian") and
-            (ansible_distribution != "Archlinux") and
-            (ansible_distribution != "FreeBSD")
-
 - hosts: desktop:laptop
   tags: limit
   tasks:
-    - name: Limit to Archlinux
+    - name: Limit to Archlinux and NixOS
       fail:
         msg: "{{ ansible_distribution }} is not supported with this tag."
-      when: ansible_distribution != "Archlinux"
+      when: (ansible_distribution != "Archlinux") and
+            (ansible_distribution != "NixOS")
     
     - name: Limit to user accounts
       fail:
         msg: "Don't run as root."
       when: ansible_user_id == "root"
 
-- hosts: server:desktop:laptop
-  tasks:
-    - name: update package list if apt
-      apt:
-        update_cache: yes
-      when: ansible_distribution == "Debian" 
-
+# Configure user cli
 - hosts: server:desktop:laptop
   roles:
-    - { role: packages-common, tags: packages-common }
     - { role: fish, tags: fish }
     - { role: neovim, tags: neovim }
-    - { role: terminfo, tags: terminfo }
     - { role: screen, tags: screen }
+    - { role: git, tags: git }
+    - { role: userbin, tags: userbin }
+
+# Configure root cli
+- hosts: server:desktop:laptop
+  become: yes
+
+  roles:
+    - { role: fish, tags: fish }
+    - { role: neovim, tags: neovim }
+    - { role: screen, tags: screen }
+    - { role: git, tags: git }
+    - { role: userbin, tags: userbin }
 
 - hosts: desktop:laptop
   roles:
-    - { role: xprofile, tags: xprofile }
-    - { role: packages-desktop, tags: packages-desktop }
+    - role: ssh-agent
+      tags: ssh-agent
+      when: ansible_distribution == "Archlinux"
     - { role: gtk, tags: gtk }
-    - { role: i3-wm, tags: i3-wm }
-    - { role: picom, tags: picom }
-    - { role: polybar, tags: polybar }
+    - { role: sway, tags: sway }
+    - { role: waybar, tags: waybar }
     - { role: variety, tags: variety }
-    - { role: rofi, tags: rofi }
-    - { role: neofetch, tags: neofetch }
-    - { role: termite, tags: termite }
-    - { role: weechat, tags: weechat }
-    - { role: ssh-agent, tags: ssh-agent }
-    - { role: dpms, tags: dpms }
+    - { role: wofi, tags: wofi }
+    - { role: kitty, tags: kitty }
+    - { role: openvpn, tags: openvpn }
+    - { role: borgbackup, tags: borgbackup }
+    - { role: tiny, tags: tiny }
   tasks:
     - include_role:
         name: vagrant
       when: ansible_user_id == "vagrant"
       tags: vagrant
-
-- hosts: laptop
-  roles:
-    - { role: packages-laptop, tags: packages-laptop }
-    - { role: xbindkeys, tags: xbindkeys }
