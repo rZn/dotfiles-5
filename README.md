@@ -2,21 +2,21 @@
 
 [![Build Status](https://travis-ci.org/eoli3n/dotfiles.svg?branch=master)](https://travis-ci.org/eoli3n/dotfiles)
 
-**sway fish pureprompt waybar**
+**Sway fish pure waybar neovim**
 
-![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/i3gaps.png)
+![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/sway.png)
 
-**Weechat**
+**Tiny irc client**
 
-![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/weechat.png)
+![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/irc.png)
 
-**Firefox Wofi**
+**Firefox/Tabliss Wofi**
 
-![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/chrome-rofi.png)
+![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/ff.png)
 
-**Connman GTK Theme**
+**Connman/Thunar GTK Theme**
 
-![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/connman-gtk.png)
+![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/gtk.png)
 
 ## Why dotfiles with Ansible ?
 
