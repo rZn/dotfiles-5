@@ -29,6 +29,7 @@
 # Configure root cli
 - hosts: server:desktop:laptop
   become: yes
+
   roles:
     - { role: fish, tags: fish }
     - { role: neovim, tags: neovim }

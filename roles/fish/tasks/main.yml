@@ -18,6 +18,7 @@
   changed_when: false
 
 - name: Install pureprompt plugin
+  become_method: su
   shell: |
     fish -c "omf install pure"
     fish -lc "ln -s $OMF_PATH/themes/pure/conf.d/pure.fish ~/.config/fish/conf.d/pure.fish"
@@ -32,6 +33,7 @@
   changed_when: false
 
 - name: Install git plugin
+  become_method: su
   shell: fish -c "omf install https://github.com/jhillyerd/plugin-git"
   when: gitcheck is failed
 
@@ -40,11 +42,21 @@
     src: dircolors
     dest: ~/.config/
 
-- name: Sync fish config files
+- name: Sync fish config files (root)
+  synchronize:
+    src: files/fish
+    dest: /root/.config
+    recursive: yes
+  when: ansible_user_id == "root"
+  tags: rsync
+
+- name: Sync fish config files (users)
   synchronize:
     src: files/fish
     dest: ~/.config
     recursive: yes
+  when: ansible_user_id != "root"
+  tags: rsync
 
 - name: Laptops fish configuration
   copy:
