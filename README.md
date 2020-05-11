@@ -1,22 +1,20 @@
 # i3-gaps Acid Dark 
 
-[![Build Status](https://travis-ci.org/eoli3n/dotfiles.svg?branch=master)](https://travis-ci.org/eoli3n/dotfiles)
-
 **i3-gaps zsh pureprompt polybar**
 
-![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/i3gaps.png)
+![alt tag](https://github.com/eoli3n/dotfiles/blob/i3-gaps-acid-dark/screenshots/i3gaps.png)
 
 **Weechat**
 
-![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/weechat.png)
+![alt tag](https://github.com/eoli3n/dotfiles/blob/i3-gaps-acid-dark/screenshots/weechat.png)
 
 **Chrome Rofi Stylish**
 
-![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/chrome-rofi.png)
+![alt tag](https://github.com/eoli3n/dotfiles/blob/i3-gaps-acid-dark/screenshots/chrome-rofi.png)
 
 **Connman GTK Theme**
 
-![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/connman-gtk.png)
+![alt tag](https://github.com/eoli3n/dotfiles/blob/i3-gaps-acid-dark/screenshots/connman-gtk.png)
 
 ## Why using Ansible ?
 Ansible allows to duplicate this Desktop Environment over multiple hosts with specific configuration (dualscreen, packages...).
