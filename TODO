@@ -10,6 +10,7 @@
 - firefox menu size when scaling
 - sway border issue : https://github.com/swaywm/sway/issues/5327
 - transparent notifications ?
+- TRIM and SCRUB detectors
 
 # CLI
 - userbin or fish functions ?
