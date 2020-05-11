@@ -6,28 +6,30 @@
 # DE
 - try a GTK theme with some transparency
 - tray menu theme and over window
-- wofi issues : https://todo.sr.ht/~scoopta/wofi
 - firefox menu size when scaling
-- waybar urgent styling issue : https://github.com/Alexays/Waybar/issues/704
-- wob styling : https://github.com/francma/wob/issues/38
 - mpv still ok with wayland ?
 - sway border issue : https://github.com/swaywm/sway/issues/5327
 
 # CLI
 - userbin or fish functions ?
 - up wrapper : 'ix' and 'upfile' = auto-copy
-- pureprompt root mark : https://github.com/rafaelrinaldi/pure/issues/117
-- noto-fonts doesnt work: see morning chars on #archlinux-fr
-- change bat comment color ?
-
-# IRC
-- tiny-irc : https://github.com/osa1/tiny/issues/created_by/eoli3n
 
 # SERVICES
 - QRCODE vpn
   - backup script as a service
   - run VPN as a service
   - why needs to sudo to get prompt for password for services : no need as scripting openvpn
+
+# ISSUES
+- pureprompt root mark : https://github.com/rafaelrinaldi/pure/issues/117
+- tiny-irc : https://github.com/osa1/tiny/issues/created_by/eoli3n
+- noto-fonts doesnt work in tiny : https://github.com/osa1/tiny/issues/193
+- waybar urgent styling issue : https://github.com/Alexays/Waybar/issues/704
+- wob styling : https://github.com/francma/wob/issues/38
+- wofi issues : https://todo.sr.ht/~scoopta/wofi
+
+# IMPROVMENTS
+- dynamic username: sed 's/user/{{ user }}/g' and use templating
 
 #TEST
 - repair travis runs
