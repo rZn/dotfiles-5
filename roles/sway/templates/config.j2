@@ -118,7 +118,7 @@ bindsym $mod+Shift+p exec grimshot save area
 bindsym $mod+p exec grimshot save output
 
 # variety
-bindsym $mod+Control+w exec variety --next
+bindsym $mod+less exec variety --next
 
 # apps
 bindsym $mod+Control+t exec thunar
@@ -126,9 +126,9 @@ bindsym $mod+Control+n exec connman-gtk
 bindsym $mod+Control+p exec pavucontrol
 
 # bindsym spotify
-bindsym $mod+less exec playerctl previous
-bindsym $mod+Shift+less exec playerctl next
-bindsym $mod+space exec playerctl play-pause
+bindsym $mod+Control+left exec playerctl previous
+bindsym $mod+Control+down exec playerctl next
+bindsym $mod+Control+right exec playerctl play-pause
 
 # switch to workspace
 bindsym $mod+ampersand workspace $tag1
@@ -147,7 +147,7 @@ bindsym $mod+Shift+ampersand move container to workspace $tag1
 bindsym $mod+Shift+eacute move container to workspace $tag2
 bindsym $mod+Shift+quotedbl move container to workspace $tag3
 bindsym $mod+Shift+apostrophe move container to workspace $tag4
-bindsym $mod+Shift+5 move container to workspace $tag5
+bindsym $mod+Shift+parenleft move container to workspace $tag5
 bindsym $mod+Shift+minus move container to workspace $tag6
 bindsym $mod+Shift+egrave move container to workspace $tag7
 bindsym $mod+Shift+underscore move container to workspace $tag8
@@ -155,9 +155,6 @@ bindsym $mod+Shift+ccedilla move container to workspace $tag9
 bindsym $mod+Shift+agrave move container to workspace $tag10
 
 # floatings
-for_window [class="XTerm"] floating enable, border normal
-for_window [class="feh"] floating enable, border normal
-for_window [class="Gpick"] floating enable, border pixel 1
 for_window [title="Images de Variety"] floating enable, border pixel 1, move left 647px
 
 # assign and focus xwayland

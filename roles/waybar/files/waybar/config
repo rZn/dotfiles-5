@@ -75,11 +75,10 @@
     "modules-center": ["network#speed"],
     "modules-right": ["temperature", "custom/storage", "cpu", "memory" ],
     "custom/spotify": {
+        "format": "<span foreground='#929292'></span> {}",
         "interval": 1,
-        "return-type": "json",
         "exec": "~/.config/waybar/modules/spotify.sh",
-        "exec-if": "pgrep spotify",
-        "escape": true
+        "exec-if": "pgrep spotify"
     },
     "network#speed": {
         "format-wifi": "<span foreground='#929292'></span> {bandwidthDownOctets} <span foreground='#929292'></span> {bandwidthUpOctets}",
