@@ -28,20 +28,20 @@ ENV PATH="${PATH}:/usr/bin/core_perl"
 RUN pacman -S --noconfirm \ 
       ansible \
       jshon \
-      git
+      git \
+      fish
 # Fix tmp dir perms
 RUN chmod 1777 /tmp
 # Create test user
-RUN useradd -m test \
- && chown -R test:test /home/test \
- && echo -e "test\ntest" | passwd test
-RUN echo "test ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers 
+RUN useradd -m user \
+ && chown -R user:user /home/user \
+ && echo -e "user\nuser" | passwd user
+RUN echo "user ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers 
 # User run
-USER test
-WORKDIR /home/test/
+USER user
+WORKDIR /home/user/
 ENV LANG="fr_FR.UTF-8"
 RUN mkdir dotfiles
 COPY . dotfiles/
 RUN cd dotfiles; ansible-playbook -i docker/archlinux/hosts install.yml | tee ansible.log
-RUN echo -e "test" | chsh -s '/usr/bin/zsh'
-ENTRYPOINT /usr/bin/zsh
+ENTRYPOINT /bin/bash
