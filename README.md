@@ -125,7 +125,7 @@ ansible-playbook install.yml -l localhost -K --ask-vault-pass
 ## Previously
 
 * [i3-gaps Dark Solarized](https://github.com/eoli3n/dotfiles/tree/zsh-agnoster-solarized)
-* [i3-gaps Acid Dark](https://github.com/eoli3n/dotfiles/tree/zsh-agnoster-solarized)
+* [i3-gaps Acid Dark](https://github.com/eoli3n/dotfiles/tree/i3-gaps-acid-dark)
 
 **IRC**
 
