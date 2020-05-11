@@ -8,6 +8,7 @@
 - tray menu theme and over window
 - firefox menu size when scaling
 - mpv still ok with wayland ?
+- sway border issue : https://github.com/swaywm/sway/issues/5327
 
 # CLI
 - userbin or fish functions ?
@@ -37,3 +38,4 @@
 # SNAPSHOTS
 - neovim with kitty config file
 - screenshots with wifi and on battery
+- firefox tabliss
