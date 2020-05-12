@@ -1,27 +1,24 @@
 ---
-- name: create openvpn dir
-  file:
-    path: /root/openvpn
-    state: directory
-  become: yes
-
 - name: copy openvpn config
   copy:
     src: client.conf.secret
-    dest: /root/openvpn/client.conf
+    dest: /etc/openvpn/client/client.conf
     mode: 0600
-  become: yes
 
-- name: copy openvpn auth config
+- name: copy openvpn custom resolv script
   copy:
-    src: auth.conf.secret
-    dest: /root/openvpn/auth.conf
-    mode: 0600
-  become: yes
+    src: custom-resolv-conf.sh.secret
+    dest: /etc/openvpn/client/custom-resolv-conf.sh
+    mode: 0700
 
-- name: copy openvpn auth config
+- name: copy otp script
   copy:
-    src: custom-resolv-conf.sh
-    dest: /root/openvpn/
-    mode: 0750
-  become: yes
+    src: otp.sh.secret
+    dest: /etc/openvpn/client/otp.sh
+    mode: 0700
+
+- name: install custom vpn service
+  copy:
+    src: vpnum.service.secret
+    dest: /etc/systemd/system/vpnum.service
+  notify: reload systemd

@@ -16,6 +16,9 @@
 - userbin or fish functions ?
 - up wrapper : 'ix' and 'upfile' = auto-copy
 
+# FIX
+- home PATH is added to root
+
 # SERVICES
 - QRCODE vpn
   - backup script as a service

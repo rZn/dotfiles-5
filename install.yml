@@ -48,7 +48,7 @@
     - { role: variety, tags: variety }
     - { role: wofi, tags: wofi }
     - { role: kitty, tags: kitty }
-    - { role: openvpn, tags: openvpn }
+    - { role: openvpn, tags: openvpn, become: yes }
     - { role: borgbackup, tags: borgbackup }
     - { role: tiny, tags: tiny }
   tasks:
