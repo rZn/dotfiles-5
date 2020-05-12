@@ -18,7 +18,7 @@
 
 ![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/gtk.png)
 
-## Why dotfiles with Ansible ?
+### Why dotfiles with Ansible ?
 
 - Modularity: Roles as modules
 - Factorization: Configuration files templated with jinja2 which use includes
@@ -26,15 +26,16 @@
 - Flexibility: Push your dotfiles from/to any hosts you manage
 - Toolbox: Dry-run mode, diff mode, files/vars encryption with Ansible-vault, tags...
 
-## Test VMs|Containers
+### Test VMs|Containers
 Please check ``vagrant/*/README.md`` and ``docker/*/README.md``
 
-## Docs
+### Docs
 Please look at ``roles/*/README.md`` if exists for specific hosts configuration.
 
-## How to
+### How to
 
-** Use carefully** backup your home before using ! Ansible will backup any existing conf file before overriding.
+** Use carefully** backup your home before using !  
+You can use ``--check`` to dry-run and ``--diff`` to see what could change.
 
 #### 1. Fork Me!
 
@@ -56,7 +57,7 @@ cp ~/.ssh/id_rsa.pub dotfiles/roles/authorized_keys/id_rsa.pub
 ``hosts`` file is defaultly gitignored.
 ```
 cd dotfiles
-mv hosts.template hosts
+cp hosts.template hosts
 ```
 Add your hosts in right sections
 - server : install only cli tools
@@ -72,15 +73,14 @@ host1 ansible_user=user
 [desktop]
 host2 ansible_user=user2
 ```
-Remove useless groups and hosts
 
 #### 6. Deploy SSH keys on nodes
 Node per node if password differ between users.
-It adds your public ssh keys on hosts
+It adds your public ssh keys on hosts.
 ```
-ansible-playbook install.yml -t init_ssh -l host1 -k
-ansible-playbook install.yml -t init_ssh -l host2 -k
-ansible-playbook install.yml -t init_ssh -l host3 -k
+ansible-playbook install.yml -t init_ssh -l host1 --ask-pass
+ansible-playbook install.yml -t init_ssh -l host2 --ask-pass
+ansible-playbook install.yml -t init_ssh -l host3 --ask-pass
 ```
 
 #### 7. Run ansible-playbook
@@ -92,9 +92,9 @@ ansible-playbook install.yml -l server
 ```
 For hosts configured with non-root user
 User needs to be in sudoers.
-You need to use -K to ask sudo password, and -l <host> to limit to that host
+You need to use ``-K|--ask-become-pass`` to ask sudo password, and -l <host> to limit to that host
 ```
-ansible-playbook install.yml -l host1 -K --ask-vault-pass
+ansible-playbook install.yml -l host1 --ask-become-pass --ask-vault-pass
 ```
 
 #### Extra commands
@@ -123,11 +123,7 @@ localhost ansible_connection=local ansible_user=user
 ansible-playbook install.yml -l localhost -K --ask-vault-pass
 ```
 
-## Previously
+### Previously
 
 * [i3-gaps Dark Solarized](https://github.com/eoli3n/dotfiles/tree/zsh-agnoster-solarized)
 * [i3-gaps Acid Dark](https://github.com/eoli3n/dotfiles/tree/i3-gaps-acid-dark)
-
-**IRC**
-
-eoli3n @ freenode #archlinux-fr
