@@ -73,7 +73,7 @@
 
     "modules-left": ["tray", "custom/spotify"],
     "modules-center": ["network#speed"],
-    "modules-right": ["temperature", "custom/storage", "cpu", "memory" ],
+    "modules-right": ["custom/zfs-trim", "custom/zfs-scrub", "temperature", "custom/storage", "cpu", "memory" ],
     "custom/spotify": {
         "format": "<span foreground='#929292'></span> {}",
         "interval": 1,
@@ -96,6 +96,18 @@
         "return-type": "json",
         "interval": 60,
         "exec": "~/.config/waybar/modules/storage.sh /"
+    },
+    "custom/zfs-trim": {
+        "format": "<span foreground='#ff5c57'></span> trimming...",
+        "interval": 5,
+        "exec": "true",
+        "exec-if" : "systemctl is-active --quiet zfs-trim"
+    },
+    "custom/zfs-scrub": {
+        "format": "<span foreground='#ff5c57'></span> scrubbing...",
+        "interval": 5,
+        "exec": "true",
+        "exec-if" : "systemctl is-active --quiet zfs-scrub"
     },
     "cpu": {
         "interval": 3,
