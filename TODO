@@ -18,6 +18,7 @@
 
 # FIX
 - home PATH is added to root
+- not start tiny in a screen
 
 # SERVICES
 - QRCODE vpn
