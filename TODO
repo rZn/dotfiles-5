@@ -19,6 +19,7 @@
 # FIX
 - home PATH is added to root
 - not start tiny in a screen
+- systemctl pager is fucked
 
 # SERVICES
 - QRCODE vpn
