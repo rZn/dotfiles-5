@@ -20,10 +20,11 @@
 
 ## Why dotfiles with Ansible ?
 
-- Config files derivation by host or by OS with jinja2 templating
-- It can manage packages too
-- Secrets with Ansible-vault
-- Multiple hosts and ability to update a config on all hosts from a single command
+- Modularity: Roles as modules
+- Factorization: Configuration files templated with jinja2 which use includes
+- Simplicity: It only requires SSH on distant hosts, and can work locally too, ansible is available via pip.
+- Flexibility: Push your dotfiles from/to any hosts you manage
+- Toolbox: Dry-run mode, diff mode, files/vars encryption with Ansible-vault, tags...
 
 ## Test VMs|Containers
 Please check ``vagrant/*/README.md`` and ``docker/*/README.md``
