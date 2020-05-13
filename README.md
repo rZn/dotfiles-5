@@ -32,20 +32,20 @@ See ``vagrant/*/README.md`` and ``docker/*/README.md``.
 
 ### How to
 
-**Use carefully** backup your home before using !  
+**Use carefully**, backup your home before using !  
 You should use ``--check`` to dry-run and ``--diff`` first.
 
 Check details in ``roles/*/README.md``.  
 
-###### 1. Fork Me!
+##### 1. Fork Me!
 
-###### 2. Clone your repo on your master host
+##### 2. Clone your repo
 
 Use recursive mode to get aur ansible module for Archlinux.
 ```
 git clone --recursive https://github.com/*/dotfiles
 ```
-###### 3. Generate hosts file
+##### 3. Configure inventory
 
 ``hosts`` file is defaultly gitignored.
 ```
@@ -73,14 +73,14 @@ If you just want to use it on local host
 localhost ansible_connection=local ansible_user=user
 ```
 
-###### 4. Configure SSH connexions
+##### 4. Configure SSH
 
 Push your SSH public key on all your ``users@hosts``
 ```
 ssh-copy-id -i path/to/ssh/key.pub user@host
 ```
 
-###### 5. (Dry)Run
+##### 5. (Dry)Run
 
 ```
 ansible-playbook install.yml -CD
