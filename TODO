@@ -37,3 +37,4 @@
 #TEST
 - wf-recorder
 - systemctl pager is fucked, still ?
+- ssh-agent after reinstall
