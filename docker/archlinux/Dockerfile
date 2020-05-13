@@ -43,5 +43,5 @@ WORKDIR /home/user/
 ENV LANG="fr_FR.UTF-8"
 RUN mkdir dotfiles
 COPY . dotfiles/
-RUN cd dotfiles; ansible-playbook -i docker/archlinux/hosts install.yml | tee ansible.log
+RUN cd dotfiles; ansible-playbook -i docker/archlinux/hosts install.yml
 ENTRYPOINT /bin/bash
