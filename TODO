@@ -20,6 +20,7 @@
 - home PATH is added to root
 - not start tiny in a screen
 - copy/paste kitty->firefox remove '\n'
+- notifications never disapear
 
 # SERVICES
 - waybar module to check last run of zfs-scrub, zfs-trim, backup services
