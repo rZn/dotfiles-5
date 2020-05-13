@@ -54,7 +54,7 @@ cp hosts.template hosts
 ```
 Add your hosts in section
 - *cli*: install only cli tools
-- *desktop*: install graphic environment
+- *desktop*: install desktop environment
 
 Define which user to configure with *ansible_user*.  
 You can't use **root** account for host in *desktop* section.  
