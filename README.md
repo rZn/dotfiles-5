@@ -26,10 +26,6 @@
 - Flexibility: Push your dotfiles from/to any hosts.
 - Toolbox: Dry-run mode, diff mode, secrets encryption, tags...
 
-### Test
-
-See ``vagrant/*/README.md`` and ``docker/*/README.md``.
-
 ### How to
 
 **Use carefully**, backup your home before using !  

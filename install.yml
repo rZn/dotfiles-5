@@ -32,9 +32,3 @@
     - { role: variety, tags: variety }
     - { role: wofi, tags: wofi }
     - { role: kitty, tags: kitty }
-
-  tasks:
-    - include_role:
-        name: vagrant
-      when: ansible_user_id == "vagrant"
-      tags: vagrant
