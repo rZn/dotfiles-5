@@ -1,8 +1,4 @@
 ---
-- hosts: all
-  roles:
-    - { role: authorized_keys, tags: init_ssh }
-
 - hosts: desktop
   tags: limit
   tasks:

@@ -18,109 +18,77 @@
 
 ![alt tag](https://github.com/eoli3n/dotfiles/blob/master/screenshots/gtk.png)
 
-### Why dotfiles with Ansible ?
+### Why Ansible ?
 
-- Modularity: Roles as modules
-- Factorization: Configuration files templated with jinja2 which use includes
-- Simplicity: It only requires SSH on distant hosts, and can work locally too, ansible is available via pip.
-- Flexibility: Push your dotfiles from/to any hosts you manage
-- Toolbox: Dry-run mode, diff mode, files/vars encryption with Ansible-vault, tags...
+- Modularity: [Roles](https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html) as modules.
+- Factorization: It uses [jinja2](https://docs.ansible.com/ansible-container/container_yml/template.html) templating engine.
+- Simplicity: No agent, only SSH, available via pip.
+- Flexibility: Push your dotfiles from/to any hosts.
+- Toolbox: Dry-run mode, diff mode, secrets encryption, tags...
 
-### Test VMs|Containers
-Please check ``vagrant/*/README.md`` and ``docker/*/README.md``
+### Test
 
-### Docs
-Please look at ``roles/*/README.md`` if exists for specific hosts configuration.
+See ``vagrant/*/README.md`` and ``docker/*/README.md``.
 
 ### How to
 
 ** Use carefully** backup your home before using !  
-You can use ``--check`` to dry-run and ``--diff`` to see what could change.
+You can use ``--check`` to dry-run and ``--diff`` to see what could change.  
 
-#### 1. Fork Me!
+Check details in ``roles/*/README.md``.  
 
-#### 2. Clone your repo on a personal host
+1. Fork Me!
+
+2. Clone your repo on your master host
+
+Use recursive mode to get aur ansible module for Archlinux.
 ```
-git clone --recursive https://github.com/[your_repo]/dotfiles
-cd dotfiles
+git clone --recursive https://github.com/*/dotfiles
 ```
-#### 3. Generate ssh keys
-```
-ssh-keygen -t rsa
-```
-#### 4. Replace your ssh key in ``authorized_keys`` role
-!!! Use as is, you will add my SSH key in your authorized_keys !!!
-```
-cp ~/.ssh/id_rsa.pub dotfiles/roles/authorized_keys/id_rsa.pub
-```
-#### 5. Generate hosts file with your managed hosts
+3. Generate hosts file
+
 ``hosts`` file is defaultly gitignored.
 ```
 cd dotfiles
 cp hosts.template hosts
 ```
-Add your hosts in right sections
-- server : install only cli tools
-- desktop : install graphic environment
-- laptop : install desktop + some extra packages
+Add your hosts in section
+- *cli*: install only cli tools
+- *desktop*: install graphic environment
 
-Please explicitly define an ``ansible_user`` which will receive configurations
+Define which user to configure with *ansible_user*.  
+You can't use **root** account for host in *desktop* section.  
+Users needs to be sudoers.  
 ```
-[server]
+[cli]
 server1 ansible_user=root
-[laptop]
-host1 ansible_user=user
 [desktop]
+host1 ansible_user=user
 host2 ansible_user=user2
 ```
 
-#### 6. Deploy SSH keys on nodes
-Node per node if password differ between users.
-It adds your public ssh keys on hosts.
+If you just want to use it on local host
 ```
-ansible-playbook install.yml -t init_ssh -l host1 --ask-pass
-ansible-playbook install.yml -t init_ssh -l host2 --ask-pass
-ansible-playbook install.yml -t init_ssh -l host3 --ask-pass
-```
-
-#### 7. Run ansible-playbook
-
-For runs on hosts configured with root user
-You can use without providing extra passwords
-```
-ansible-playbook install.yml -l server
-```
-For hosts configured with non-root user
-User needs to be in sudoers.
-You need to use ``-K|--ask-become-pass`` to ask sudo password, and -l <host> to limit to that host
-```
-ansible-playbook install.yml -l host1 --ask-become-pass --ask-vault-pass
-```
-
-#### Extra commands
-To list tasks and tags
-```
-ansible-playbook install.yml --list-tasks
-```
-To limit to a tag
-```
-ansible-playbook install.yml -K -t <tag>
-```
-To dry-run and print files diff on all declared hosts
-```
-ansible-playbook install.yml -l host1 -CDK
-```
-
-#### Local run
-Add localhost line and user in right hosts file section
-```
-[server]
-[laptop]
-localhost ansible_connection=local ansible_user=user
 [desktop]
+localhost ansible_connection=local ansible_user=user
 ```
+
+4. Configure SSH connexions
+
+Push your SSH public key on all your ``users@hosts``
 ```
-ansible-playbook install.yml -l localhost -K --ask-vault-pass
+ssh-copy-id -i path/to/ssh/key.pub user@host
+```
+
+5. (Dry)Run
+
+```
+ansible-playbook install.yml -CD
+ansible-playbook install.yml
+```
+To configure cli tools for root on desktop hosts
+```
+ansible-playbook install.yml -b -K
 ```
 
 ### Previously
