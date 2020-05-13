@@ -9,3 +9,8 @@
     src: backup.sh.secret
     dest: /root/scripts/backup.sh
     mode: 0700
+
+- name: copy backup timer
+  copy:
+    src: backup.timer
+    dest: /etc/systemd/system/
