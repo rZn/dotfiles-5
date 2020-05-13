@@ -19,12 +19,12 @@
 # FIX
 - home PATH is added to root
 - not start tiny in a screen
-- systemctl pager is fucked
 - copy/paste kitty->firefox remove '\n'
 
 # SERVICES
 - backup service status=fail if vpn doesnt connect
 - waybar module to check last run of zfs-scrub, zfs-trim, backup services
+- how to configure backup timer by host
 
 # ISSUES
 - tiny-irc : https://github.com/osa1/tiny/issues/created_by/eoli3n
@@ -39,8 +39,4 @@
 #TEST
 - repair travis runs
 - wf-recorder
-
-# SNAPSHOTS
-- neovim with kitty config file
-- screenshots with wifi and on battery
-- firefox tabliss
+- systemctl pager is fucked, still ?
