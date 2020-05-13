@@ -29,7 +29,7 @@
 ### How to
 
 **Use carefully**, backup your home before using !  
-You should use ``--check`` to dry-run and ``--diff`` first.
+You should use ``--check`` and ``--diff`` to dryrun first.
 
 Check details in ``roles/*/README.md``.  
 
