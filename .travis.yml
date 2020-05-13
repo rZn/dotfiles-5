@@ -11,4 +11,5 @@ install:
   - docker build -t archlinux/dotfiles -f docker/archlinux/Dockerfile .
 
 script:
+  - docker run archlinux/dotfiles ansible-playbook install.yml --syntax-check
   - docker run archlinux/dotfiles ansible-playbook -i docker/archlinux/hosts install.yml
