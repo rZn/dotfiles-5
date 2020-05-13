@@ -41,6 +41,5 @@ RUN echo "user ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 USER user
 WORKDIR /home/user/
 ENV LANG="fr_FR.UTF-8"
-RUN mkdir dotfiles
-COPY . dotfiles/
+COPY . .
 ENTRYPOINT /bin/bash
