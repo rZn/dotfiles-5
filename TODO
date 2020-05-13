@@ -5,11 +5,12 @@
 - sway keybind screens output
 
 # DE
-- try a GTK theme with some transparency
+* try a GTK theme with some transparency
 - tray menu theme and over window
 - firefox menu size when scaling
-- sway border issue : https://github.com/swaywm/sway/issues/5327
+* sway border issue : https://github.com/swaywm/sway/issues/5327
 - transparent notifications ?
+- waybar module to check last run of zfs-scrub, zfs-trim, backup services
 
 # CLI
 - userbin or fish functions ?
@@ -19,15 +20,11 @@
 - copy/paste kitty->firefox remove '\n'
 - notifications never disapear
 
-# SERVICES
-- waybar module to check last run of zfs-scrub, zfs-trim, backup services
-
 # ISSUES
-- tiny-irc : https://github.com/osa1/tiny/issues/created_by/eoli3n
-- noto-fonts doesnt work in tiny : https://github.com/osa1/tiny/issues/193
-- waybar urgent styling issue : https://github.com/Alexays/Waybar/issues/704
-- wob styling : https://github.com/francma/wob/issues/38
-- wofi issues : https://todo.sr.ht/~scoopta/wofi
+* tiny-irc : https://github.com/osa1/tiny/issues/created_by/eoli3n
+* waybar urgent styling issue : https://github.com/Alexays/Waybar/issues/704
+* wob styling : https://github.com/francma/wob/issues/38
+* wofi issues : https://todo.sr.ht/~scoopta/wofi
 
 # IMPROVMENTS
 - dynamic username: sed 's/user/{{ user }}/g' and use templating
@@ -36,7 +33,7 @@
 - readd terminfo role
 
 #TEST
-- wf-recorder
-- systemctl pager is fucked, still ?
-- ssh-agent after reinstall
+* wf-recorder
+* systemctl pager is fucked, still ?
+* ssh-agent after reinstall
 - retest vagrant boxes
