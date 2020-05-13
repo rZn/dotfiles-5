@@ -18,6 +18,7 @@
 # FIX
 - copy/paste kitty->firefox remove '\n'
 - notifications never disapear
+- travis fails on nvim pluginstall
 
 # SERVICES
 - waybar module to check last run of zfs-scrub, zfs-trim, backup services
