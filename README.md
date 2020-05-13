@@ -93,7 +93,9 @@ To configure cli tools for root on desktop hosts
 ansible-playbook install.yml -b -K
 ```
 
-### Previously
+-----
+
+##### Previously
 
 * [i3-gaps Dark Solarized](https://github.com/eoli3n/dotfiles/tree/zsh-agnoster-solarized)
 * [i3-gaps Acid Dark](https://github.com/eoli3n/dotfiles/tree/i3-gaps-acid-dark)
