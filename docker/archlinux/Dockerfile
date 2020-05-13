@@ -30,6 +30,7 @@ RUN pacman -S --noconfirm \
       ansible \
       jshon \
       git \
+      neovim \
       fish
 # Fix tmp dir perms
 RUN chmod 1777 /tmp
