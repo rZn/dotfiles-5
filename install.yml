@@ -48,7 +48,6 @@
     - { role: variety, tags: variety }
     - { role: wofi, tags: wofi }
     - { role: kitty, tags: kitty }
-    - { role: tiny, tags: tiny }
   tasks:
     - include_role:
         name: vagrant
