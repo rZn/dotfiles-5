@@ -16,7 +16,6 @@
 - up wrapper : 'ix' and 'upfile' = auto-copy
 
 # FIX
-- home PATH is added to root
 - copy/paste kitty->firefox remove '\n'
 - notifications never disapear
 

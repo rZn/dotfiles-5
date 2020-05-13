@@ -42,4 +42,4 @@ USER user
 WORKDIR /home/user/
 ENV LANG="fr_FR.UTF-8"
 COPY . .
-ENTRYPOINT /bin/bash
+CMD ["/bin/bash"]
