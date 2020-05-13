@@ -43,30 +43,36 @@ git clone --recursive https://github.com/*/dotfiles
 ```
 ##### 3. Configure inventory
 
-``hosts`` file is defaultly gitignored.
+Create inventory file from template.
+
 ```
 cd dotfiles
 cp hosts.template hosts
 ```
-Add your hosts in section
-- *cli*: install only cli tools
-- *desktop*: install desktop environment
 
-Define which user to configure with *ansible_user*.  
-You can't use **root** account for host in *desktop* section.  
+Add your hostnames in section:
+- *cli*: install only cli tools
+- *desktop*: install desktop environment  
+
+Define which user will get configurations with *ansible_user* var.  
 Users needs to be sudoers.  
+*desktop* hosts **can't use root**.  
+
+###### a. localhost run
+
+```
+[desktop]
+localhost ansible_connection=local ansible_user=user
+```
+
+###### b. multiple hosts run
+
 ```
 [cli]
 server1 ansible_user=root
 [desktop]
 host1 ansible_user=user
 host2 ansible_user=user2
-```
-
-If you just want to use it on local host
-```
-[desktop]
-localhost ansible_connection=local ansible_user=user
 ```
 
 ##### 4. Configure SSH
