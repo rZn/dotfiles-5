@@ -1,0 +1,13 @@
+[Unit]
+Description=Backup Service
+Requires=vpn.service
+After=vpn.service
+BindsTo=vpn.service
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/root/scripts/backup.sh
+ExecStop=pkill --signal SIGTERM openvpn

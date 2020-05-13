@@ -59,7 +59,7 @@
     "custom/vpn": {
         "format": "<span foreground='#929292'></span> vpn",
         "interval": 5,
-        "exec" : "pgrep openvpn"
+        "exec" : "systemctl is-active --quiet vpn"
     },
     "backlight": {
         "format": "<span foreground='#929292'>{icon}</span> {percent}%",
@@ -73,7 +73,7 @@
 
     "modules-left": ["tray", "custom/spotify"],
     "modules-center": ["network#speed"],
-    "modules-right": ["custom/zfs-trim", "custom/zfs-scrub", "temperature", "custom/storage", "cpu", "memory" ],
+    "modules-right": ["custom/backup", "custom/zfs-trim", "custom/zfs-scrub", "temperature", "custom/storage", "cpu", "memory" ],
     "custom/spotify": {
         "format": "<span foreground='#929292'></span> {}",
         "interval": 1,
@@ -100,14 +100,20 @@
     "custom/zfs-trim": {
         "format": "<span foreground='#ff5c57'></span> trimming...",
         "interval": 5,
-        "exec": "true",
+        "exec": "echo a",
         "exec-if" : "systemctl is-active --quiet zfs-trim"
     },
     "custom/zfs-scrub": {
         "format": "<span foreground='#ff5c57'></span> scrubbing...",
         "interval": 5,
-        "exec": "true",
+        "exec": "echo a",
         "exec-if" : "systemctl is-active --quiet zfs-scrub"
+    },
+    "custom/backup": {
+        "format": "<span foreground='#ff5c57'></span> backup...",
+        "interval": 5,
+        "exec": "echo a",
+        "exec-if" : "systemctl is-active --quiet backup"
     },
     "cpu": {
         "interval": 3,

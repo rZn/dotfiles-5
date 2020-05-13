@@ -49,7 +49,7 @@
     - { role: wofi, tags: wofi }
     - { role: kitty, tags: kitty }
     - { role: openvpn, tags: openvpn, become: yes }
-    - { role: borgbackup, tags: borgbackup }
+    - { role: borgbackup, tags: borgbackup, become: yes }
     - { role: tiny, tags: tiny }
   tasks:
     - include_role:

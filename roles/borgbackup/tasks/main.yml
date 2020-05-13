@@ -1,11 +1,11 @@
 ---
+- name: create script dir
+  file:
+    path: /root/scripts
+    state: directory
+
 - name: copy home backup script
   copy:
-    src: backup
-    dest: ~/bin/
-    mode: 0755
-
-- name: copy fish backup function
-  copy:
-    src: backup.fish
-    dest: ~/.config/fish/functions/
+    src: backup.sh.secret
+    dest: /root/scripts/backup.sh
+    mode: 0700

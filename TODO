@@ -20,12 +20,11 @@
 - home PATH is added to root
 - not start tiny in a screen
 - systemctl pager is fucked
+- copy/paste kitty->firefox remove '\n'
 
 # SERVICES
-- QRCODE vpn
-  - backup script as a service
-  - run VPN as a service
-  - why needs to sudo to get prompt for password for services : no need as scripting openvpn
+- backup service status=fail if vpn doesnt connect
+- waybar module to check last run of zfs-scrub, zfs-trim, backup services
 
 # ISSUES
 - tiny-irc : https://github.com/osa1/tiny/issues/created_by/eoli3n

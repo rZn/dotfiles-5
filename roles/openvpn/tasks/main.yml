@@ -13,6 +13,6 @@
 
 - name: install custom vpn service
   copy:
-    src: vpn.service.secret
+    src: vpn.service
     dest: /etc/systemd/system/vpn.service
   notify: reload systemd
