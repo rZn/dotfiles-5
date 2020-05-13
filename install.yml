@@ -3,7 +3,7 @@
   roles:
     - { role: authorized_keys, tags: init_ssh }
 
-- hosts: desktop:laptop
+- hosts: desktop
   tags: limit
   tasks:
     - name: Limit to Archlinux and NixOS
@@ -18,7 +18,7 @@
       when: ansible_user_id == "root"
 
 # Configure user cli
-- hosts: server:desktop:laptop
+- hosts: cli
   roles:
     - { role: fish, tags: fish }
     - { role: neovim, tags: neovim }
@@ -26,18 +26,7 @@
     - { role: git, tags: git }
     - { role: userbin, tags: userbin }
 
-# Configure root cli
-- hosts: server:desktop:laptop
-  become: yes
-
-  roles:
-    - { role: fish, tags: fish }
-    - { role: neovim, tags: neovim }
-    - { role: screen, tags: screen }
-    - { role: git, tags: git }
-    - { role: userbin, tags: userbin }
-
-- hosts: desktop:laptop
+- hosts: desktop
   roles:
     - role: ssh-agent
       tags: ssh-agent
@@ -48,6 +37,7 @@
     - { role: variety, tags: variety }
     - { role: wofi, tags: wofi }
     - { role: kitty, tags: kitty }
+
   tasks:
     - include_role:
         name: vagrant

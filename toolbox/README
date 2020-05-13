@@ -1,4 +1,0 @@
-# upgrade to debian buster
-```
-ansible <target> -m include_role -a 'name=buster_upgrade'
-```
