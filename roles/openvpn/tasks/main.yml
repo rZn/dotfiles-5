@@ -5,12 +5,6 @@
     dest: /etc/openvpn/client/client.conf
     mode: 0600
 
-- name: copy openvpn custom resolv script
-  copy:
-    src: custom-resolv-conf.sh.secret
-    dest: /etc/openvpn/client/custom-resolv-conf.sh
-    mode: 0700
-
 - name: copy otp script
   copy:
     src: otp.sh.secret
