@@ -32,8 +32,8 @@ See ``vagrant/*/README.md`` and ``docker/*/README.md``.
 
 ### How to
 
-** Use carefully** backup your home before using !  
-You can use ``--check`` to dry-run and ``--diff`` to see what could change.  
+**Use carefully** backup your home before using !  
+You should use ``--check`` to dry-run and ``--diff`` first.
 
 Check details in ``roles/*/README.md``.  
 
