@@ -18,7 +18,6 @@
 
 # FIX
 - home PATH is added to root
-- not start tiny in a screen
 - copy/paste kitty->firefox remove '\n'
 - notifications never disapear
 
