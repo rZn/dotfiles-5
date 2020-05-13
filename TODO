@@ -35,6 +35,5 @@
 - fish role is ugly
 
 #TEST
-- repair travis runs
 - wf-recorder
 - systemctl pager is fucked, still ?

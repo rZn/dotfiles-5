@@ -1,0 +1,8 @@
+---
+- name: enable ssh-agent                  
+  systemd:
+    name: ssh-agent
+    daemon_reload: yes
+    enabled: yes
+    scope: user
+  when: ansible_virtualization_role == "host"
