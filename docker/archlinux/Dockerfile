@@ -22,6 +22,7 @@ RUN pacman -Syu --noconfirm \
       autoconf \
       gettext \
       patch \
+      rsync \
       xorg-server-xephyr 
 ENV PATH="${PATH}:/usr/bin/core_perl"
 # Project deps
