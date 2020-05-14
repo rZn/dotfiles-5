@@ -1,11 +1,8 @@
 # DISPLAY
-- hardware acceleration : firefox, alacritty, kitty, mpv
+- hardware acceleration : firefox, kitty, mpv
 - mpv still ok with wayland ?
 - configure kanshi auto output
 - sway keybind screens output
-
-# DE
-- firefox menu size when scaling
 
 # CLI
 - userbin or fish functions ?
@@ -21,10 +18,10 @@
 * wofi issues : https://todo.sr.ht/~scoopta/wofi
 * tray menu theme and over window : https://github.com/Alexays/Waybar/issues/21#issuecomment-628648061
 * sway border issue : https://github.com/swaywm/sway/issues/5327
+* firefox menu size when scaling : https://bugzilla.mozilla.org/show_bug.cgi?id=1638168
 
 # IMPROVMENTS
 * try a GTK theme with some transparency
-- readd terminfo role
 - dynamic waybar colors
 - rclone mount service
 
