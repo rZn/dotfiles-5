@@ -60,9 +60,15 @@ Users needs to be sudoers.
 
 ###### a. localhost run
 
+I will use a trick here to let ansible think that i use 2 hosts.  
+It will configure *root* with *cli* and *user* with *desktop* environment.
+That trick needs ``-K`` without ``-b`` when running playbook.
+
 ```
+[cli]
+cli_user ansible_connection=local ansible_user=root
 [desktop]
-localhost ansible_connection=local ansible_user=user
+desktop ansible_connection=local ansible_user=user
 ```
 
 ###### b. multiple hosts run
@@ -94,7 +100,7 @@ ansible-playbook install.yml
 ```
 To configure cli tools for root on desktop hosts
 ```
-ansible-playbook install.yml -b -K
+ansible-playbook install.yml -b -K -l desktop
 ```
 
 -----
