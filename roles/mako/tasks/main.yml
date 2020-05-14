@@ -1,0 +1,12 @@
+---
+
+- name: create mako config dir
+  file:
+    path: ~/.config/mako/
+    state: directory
+
+- name: template mako config file
+  template:
+    src: config.j2
+    dest: ~/.config/mako/config
+  notify: reload mako

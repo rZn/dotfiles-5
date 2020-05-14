@@ -5,7 +5,6 @@
 - sway keybind screens output
 
 # DE
-- tray menu theme and over window
 - firefox menu size when scaling
 * sway border issue : https://github.com/swaywm/sway/issues/5327
 - transparent notifications ?
@@ -24,6 +23,7 @@
 * waybar urgent styling issue : https://github.com/Alexays/Waybar/issues/704
 * wob styling : https://github.com/francma/wob/issues/38
 * wofi issues : https://todo.sr.ht/~scoopta/wofi
+* tray menu theme and over window : https://github.com/Alexays/Waybar/issues/21#issuecomment-628648061
 
 # IMPROVMENTS
 * try a GTK theme with some transparency

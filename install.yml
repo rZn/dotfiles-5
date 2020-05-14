@@ -30,4 +30,5 @@
     - { role: sway, tags: sway }
     - { role: waybar, tags: waybar }
     - { role: wofi, tags: wofi }
+    - { role: mako, tags: mako }
     - { role: kitty, tags: kitty }
