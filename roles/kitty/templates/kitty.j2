@@ -22,30 +22,23 @@ enable_audio_bell no
 background #202020
 background_opacity 0.9
 
-# Black + DarkGrey
-color0  #282a36
-color8  #686868
-# DarkRed + Red
-color1  #ff5c57
-color9  #ff5c57
-# DarkGreen + Green
-color2  #5af78e
-color10 #5af78e
-# DarkYellow + Yellow
-color3  #f3f99d
-color11 #f3f99d
-# DarkBlue + Blue
-color4  #57c7ff
-color12 #57c7ff
-# DarkMagenta + Magenta
-color5  #ff6ac1
-color13 #ff6ac1
-# DarkCyan + Cyan (both
-color6  #9aedfe
-color14 #9aedfe
-# LightGrey + White
-color7  #eff0eb
-color15 #f1f1f0
+# Generated with ansible jinja2 template
+color0  {{ color0 }}
+color8  {{ color8 }}
+color1  {{ color1 }}
+color9  {{ color9 }}
+color2  {{ color2 }}
+color10 {{ color10 }}
+color3  {{ color3 }}
+color11 {{ color11 }}
+color4  {{ color4 }}
+color12 {{ color12 }}
+color5  {{ color5 }}
+color13 {{ color13 }}
+color6  {{ color6 }}
+color14 {{ color14 }}
+color7  {{ color7 }}
+color15 {{ color15}}
 
 # Mappings
 map ctrl+Up   change_font_size current +1.0
