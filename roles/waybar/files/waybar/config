@@ -74,7 +74,7 @@
 
     "modules-left": ["tray", "custom/spotify"],
     "modules-center": ["network#speed"],
-    "modules-right": ["custom/backup", "custom/zfs-trim", "custom/zfs-scrub", "temperature", "custom/storage", "cpu", "memory" ],
+    "modules-right": ["custom/systemd", "custom/backup", "custom/zfs-trim", "custom/zfs-scrub", "temperature", "custom/storage", "cpu", "memory" ],
     "custom/spotify": {
         "format": "<span foreground='#929292'></span> {}",
         "interval": 1,
@@ -102,19 +102,25 @@
         "format": "<span foreground='#ff5c57'></span> trimming...",
         "interval": 5,
         "exec": "echo a",
-        "exec-if" : "systemctl is-active --quiet zfs-trim"
+        "exec-if": "systemctl is-active --quiet zfs-trim"
     },
     "custom/zfs-scrub": {
         "format": "<span foreground='#ff5c57'></span> scrubbing...",
         "interval": 5,
         "exec": "echo a",
-        "exec-if" : "systemctl is-active --quiet zfs-scrub"
+        "exec-if": "systemctl is-active --quiet zfs-scrub"
     },
     "custom/backup": {
         "format": "<span foreground='#ff5c57'></span> backup...",
         "interval": 5,
         "exec": "echo a",
-        "exec-if" : "systemctl is-active --quiet backup"
+        "exec-if": "systemctl is-active --quiet backup"
+    },
+    "custom/systemd": {
+        "format": "<span foreground='#ff5c57'> {}</span>",
+        "interval": 5,
+        "exec": "~/.config/waybar/modules/systemd.sh",
+        "exec-if": "~/.config/waybar/modules/systemd.sh"
     },
     "cpu": {
         "interval": 3,
