@@ -31,6 +31,7 @@ RUN pacman -S --noconfirm \
       jshon \
       git \
       neovim \
+      mako \
       fish
 # Fix tmp dir perms
 RUN chmod 1777 /tmp
