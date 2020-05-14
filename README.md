@@ -55,8 +55,8 @@ Add your hostnames in section:
 - ***desktop***: install cli tools + desktop environment  
 
 Define which user will get configurations with *ansible_user* var.  
-Users needs to be sudoers.  
-*desktop* hosts **can't use root**.  
+- Users needs to be sudoers.  
+- *desktop* hosts **can't use root**.  
 
 ###### a. localhost run
 
