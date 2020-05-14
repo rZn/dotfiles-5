@@ -97,8 +97,8 @@ ssh-copy-id -i path/to/ssh/key.pub user@host
 ansible-playbook install.yml -CD
 ansible-playbook install.yml
 ```
-To configure cli tools for root on desktop hosts:
-Note: *ansible_user* needs to be sudoers.  
+To configure cli tools for root on desktop hosts:  
+*Note: ansible_user needs to be sudoers.*  
 ```
 ansible-playbook install.yml -b -K -l desktop
 ```
