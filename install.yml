@@ -29,6 +29,5 @@
     - { role: gtk, tags: gtk }
     - { role: sway, tags: sway }
     - { role: waybar, tags: waybar }
-    - { role: variety, tags: variety }
     - { role: wofi, tags: wofi }
     - { role: kitty, tags: kitty }
