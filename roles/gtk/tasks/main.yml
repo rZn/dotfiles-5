@@ -10,9 +10,9 @@
     dest: ~/.config/gtk-3.0/
 
 - name: Configure GTK2
-  copy:
-    src: gtkrc-2.0
-    dest: ~/.config/.gtkrc-2.0
+  template:
+    src: gtkrc-2.0.j2
+    dest: ~/.gtkrc-2.0
 
 - name: Configure Qt as GTK theme
   copy:
