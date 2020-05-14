@@ -29,6 +29,7 @@
 * try a GTK theme with some transparency
 - how to configure a user and root for desktop in one run ?
 - readd terminfo role
+- change theme in config file
 
 #TEST
 * wf-recorder
