@@ -75,14 +75,18 @@ host1 ansible_user=user
 host2 ansible_user=user2
 ```
 
-##### 4. Configure SSH
+##### 4. Configure vars
+
+You can configure desktop environment in ``group_vars/all.yml``
+
+##### 5. Configure SSH
 
 Push your SSH public key on all your ``users@hosts``
 ```
 ssh-copy-id -i path/to/ssh/key.pub user@host
 ```
 
-##### 5. (Dry)Run
+##### 6. (Dry)Run
 
 ```
 ansible-playbook install.yml -CD
