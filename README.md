@@ -51,8 +51,8 @@ cp hosts.template hosts
 ```
 
 Add your hostnames in section:
-- *cli*: install only cli tools
-- *desktop*: install desktop environment  
+- ***cli***: install only cli tools
+- ***desktop***: install cli tools + desktop environment  
 
 Define which user will get configurations with *ansible_user* var.  
 Users needs to be sudoers.  
