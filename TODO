@@ -26,6 +26,7 @@
 * try a GTK theme with some transparency
 - readd terminfo role
 - dynamic waybar colors
+- rclone mount service
 
 #TEST
 * wf-recorder
