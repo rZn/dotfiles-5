@@ -6,16 +6,13 @@
 
 # DE
 - firefox menu size when scaling
-* sway border issue : https://github.com/swaywm/sway/issues/5327
-- transparent notifications ?
-- waybar module to check last run of zfs-scrub, zfs-trim, backup services
 
 # CLI
 - userbin or fish functions ?
 - up wrapper : 'ix' and 'upfile' = auto-copy
 
 # FIX
-- copy/paste kitty->firefox remove '\n'
+- copy/paste kitty->firefox remove '\n' ?
 
 # ISSUES
 * tiny-irc : https://github.com/osa1/tiny/issues/created_by/eoli3n
@@ -23,13 +20,13 @@
 * wob styling : https://github.com/francma/wob/issues/38
 * wofi issues : https://todo.sr.ht/~scoopta/wofi
 * tray menu theme and over window : https://github.com/Alexays/Waybar/issues/21#issuecomment-628648061
+* sway border issue : https://github.com/swaywm/sway/issues/5327
 
 # IMPROVMENTS
 * try a GTK theme with some transparency
 - readd terminfo role
-- change theme in config file : dynamic waybar colors
+- dynamic waybar colors
 
 #TEST
 * wf-recorder
-* systemctl pager is fucked, still ?
 * ssh-agent after reinstall
