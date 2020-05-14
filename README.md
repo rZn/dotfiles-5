@@ -35,14 +35,15 @@ Check details in ``roles/*/README.md``.
 
 ##### 1. Fork Me!
 
-First, configure desktop environment in ``group_vars/all.yml``.
-
 ##### 2. Clone your repo
 
 Use recursive mode to get aur ansible module for Archlinux.
 ```
 git clone --recursive https://github.com/*/dotfiles
 ```
+
+Then, configure desktop environment in [group_vars/all.yml](group_vars/all.yml).
+
 ##### 3. Configure inventory
 
 Create inventory file from template.
