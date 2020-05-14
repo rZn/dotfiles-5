@@ -16,7 +16,6 @@
 
 # FIX
 - copy/paste kitty->firefox remove '\n'
-- notifications never disapear
 
 # ISSUES
 * tiny-irc : https://github.com/osa1/tiny/issues/created_by/eoli3n
