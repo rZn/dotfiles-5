@@ -59,7 +59,8 @@
     "custom/vpn": {
         "format": "<span foreground='#929292'></span> vpn",
         "interval": 5,
-        "exec" : "systemctl is-active --quiet vpn"
+        "exec" : "echo a",
+        "exec-if" : "systemctl is-active --quiet vpn"
     },
     "backlight": {
         "format": "<span foreground='#929292'>{icon}</span> {percent}%",
