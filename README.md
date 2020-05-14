@@ -60,8 +60,8 @@ Define which user will get configurations with *ansible_user* var.
 
 ###### a. localhost run
 
-I will use a trick here to let ansible think that i use 2 hosts.  
-It will configure *root* with *cli* and *user* with *desktop* environment.
+Let's use a trick to let ansible think that there is 2 different hosts.  
+It will configure *root* with *cli* tools only and *user* with *desktop* environment.
 That trick needs ``-K`` without ``-b`` when running playbook.
 
 ```
