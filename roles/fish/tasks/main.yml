@@ -42,24 +42,32 @@
     src: dircolors
     dest: ~/.config/
 
-- name: Sync fish config files (root)
+# Separated root|users synchronize as module bugs when using become on the task: it copies always in user homedir
+- name: Sync fish config files for cli (if user)
   synchronize:
-    src: files/fish
-    dest: /root/.config
-    recursive: yes
-  when: ansible_user_id == "root"
-  tags: rsync
-
-- name: Sync fish config files (users)
-  synchronize:
-    src: files/fish
-    dest: ~/.config
+    src: fish/cli/
+    dest: ~/.config/fish
     recursive: yes
   when: ansible_user_id != "root"
-  tags: rsync
 
-- name: Laptops fish configuration
-  copy:
-    src: laptop.fish
-    dest: ~/.config/fish/conf.d/
-  when: "'laptop' in {{ group_names }}"
+- name: Sync fish config files for cli (if root)
+  synchronize:
+    src: fish/cli/
+    dest: /root/.config/fish
+    recursive: yes
+  when: ansible_user_id == "root"
+
+- name: Sync fish config files for desktop (if user)
+  synchronize:
+    src: files/fish/desktop/
+    dest: ~/.config/fish
+    recursive: yes
+  when: ansible_user_id != "root"
+
+- name: Sync fish config files for desktop (if root)
+  synchronize:
+    src: files/fish/desktop
+    dest: /root/.config/fish
+    recursive: yes
+  when: ansible_user_id == "root"
+

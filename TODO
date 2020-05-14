@@ -5,7 +5,6 @@
 - sway keybind screens output
 
 # DE
-* try a GTK theme with some transparency
 - tray menu theme and over window
 - firefox menu size when scaling
 * sway border issue : https://github.com/swaywm/sway/issues/5327
@@ -27,7 +26,8 @@
 * wofi issues : https://todo.sr.ht/~scoopta/wofi
 
 # IMPROVMENTS
-- dynamic username: sed 's/user/{{ user }}/g' and use templating
+* try a GTK theme with some transparency
+* dynamic username: sed 's/user/{{ user }}/g' and use templating
 - how to configure a user and root for desktop in one run ?
 - fish role is ugly
 - readd terminfo role
