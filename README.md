@@ -55,7 +55,6 @@ Add your hostnames in section:
 - ***desktop***: install cli tools + desktop environment  
 
 Define which user will get configurations with *ansible_user* var.  
-- Users needs to be sudoers.  
 - *desktop* hosts **can't use root**.  
 
 ###### a. localhost run
@@ -98,7 +97,8 @@ ssh-copy-id -i path/to/ssh/key.pub user@host
 ansible-playbook install.yml -CD
 ansible-playbook install.yml
 ```
-To configure cli tools for root on desktop hosts
+To configure cli tools for root on desktop hosts:
+Note: *ansible_user* needs to be sudoers.  
 ```
 ansible-playbook install.yml -b -K -l desktop
 ```
