@@ -9,9 +9,9 @@
 - up wrapper : 'ix' and 'upfile' = auto-copy
 
 # FIX
+- copy/paste are fucked
 - copy/paste kitty->firefox remove '\n' ?
 - move to brightnessctl waybar config and bindsym
-- root config of fish no pure prompt
 
 # ISSUES
 * tiny-irc : https://github.com/osa1/tiny/issues/created_by/eoli3n
@@ -29,4 +29,3 @@
 
 #TEST
 * wf-recorder
-* ssh-agent after reinstall
