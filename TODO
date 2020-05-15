@@ -29,3 +29,4 @@
 
 #TEST
 * wf-recorder
+- waybar modules systemd, retest !
