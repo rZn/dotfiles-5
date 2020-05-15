@@ -1,34 +1,46 @@
 ---
-- hosts: desktop
-  tags: limit
-  tasks:
+- hosts: all
+  gather_facts: yes
+  pre_tasks:
     - name: Limit to Archlinux and NixOS
       fail:
         msg: "{{ ansible_distribution }} is not supported with this tag."
       when: (ansible_distribution != "Archlinux") and
             (ansible_distribution != "NixOS")
-    
-    - name: Limit to user accounts
-      fail:
-        msg: "Don't run as root."
-      when: ansible_user_id == "root"
 
 - hosts: cli:desktop
   roles:
-    - { role: fish, tags: fish }
-    - { role: neovim, tags: neovim }
-    - { role: screen, tags: screen }
-    - { role: git, tags: git }
-    - { role: userbin, tags: userbin }
+    - role: fish
+      tags: fish
+    - role: neovim
+      tags: neovim
+    - role: screen
+      tags: screen
+    - role: git
+      tags: git,cli
+    - role: userbin
+      tags: userbin
 
 - hosts: desktop
   roles:
     - role: ssh-agent
       tags: ssh-agent
-      when: ansible_distribution == "Archlinux"
-    - { role: gtk, tags: gtk }
-    - { role: sway, tags: sway }
-    - { role: waybar, tags: waybar }
-    - { role: wofi, tags: wofi }
-    - { role: mako, tags: mako }
-    - { role: kitty, tags: kitty }
+      when: ansible_distribution == "Archlinux" and ansible_user_id != 'root'
+    - role: gtk
+      tags: gtk
+      when: ansible_user_id != 'root'
+    - role: sway
+      tags: sway
+      when: ansible_user_id != 'root'
+    - role: waybar
+      tags: waybar
+      when: ansible_user_id != 'root'
+    - role: wofi
+      tags: wofi
+      when: ansible_user_id != 'root'
+    - role: mako
+      tags: mako
+      when: ansible_user_id != 'root'
+    - role: kitty
+      tags: kitty
+      when: ansible_user_id != 'root'

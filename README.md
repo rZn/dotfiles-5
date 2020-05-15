@@ -55,24 +55,19 @@ cp hosts.template hosts
 Add your hostnames in section:
 - ***cli***: install only cli tools
 - ***desktop***: install cli tools + desktop environment  
-
 Define which user will get configurations with *ansible_user* var.  
-- *desktop* hosts **can't use root**.  
 
 ###### a. localhost run
 
-Let's use a trick to let ansible think that there is 2 different hosts.  
-It will configure *root* with *cli* tools only and *user* with *desktop* environment.
-That trick needs ``-K`` without ``-b`` when running playbook.
-
 ```
 [cli]
-cli_user ansible_connection=local ansible_user=root
 [desktop]
-desktop ansible_connection=local ansible_user=user
+localhost ansible_connection=local
 ```
 
 ###### b. multiple hosts run
+
+Note: *desktop* hosts **can't use root**.  
 
 ```
 [cli]
@@ -95,10 +90,11 @@ ssh-copy-id -i path/to/ssh/key.pub user@host
 ansible-playbook install.yml -CD
 ansible-playbook install.yml
 ```
-To configure cli tools for root on desktop hosts:  
-*Note: ansible_user needs to be sudoers.*  
+
+For *desktop* hosts, if ``ansible_user`` is sudoer, to install cli tools for *root*, use:
+
 ```
-ansible-playbook install.yml -b -K -l desktop
+ansible-playbook install.yml -l host1 -b -K
 ```
 
 -----
