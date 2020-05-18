@@ -99,19 +99,19 @@
         "exec": "~/.config/waybar/modules/storage.sh /"
     },
     "custom/zfs-trim": {
-        "format": "<span foreground='#ff5c57'></span> trimming...",
+        "format": "<span foreground='#5af78e'></span> trimming...",
         "interval": 5,
         "exec": "echo a",
         "exec-if": "systemctl is-active --quiet zfs-trim"
     },
     "custom/zfs-scrub": {
-        "format": "<span foreground='#ff5c57'></span> scrubbing...",
+        "format": "<span foreground='#5af78e'></span> scrubbing...",
         "interval": 5,
         "exec": "echo a",
         "exec-if": "systemctl is-active --quiet zfs-scrub"
     },
     "custom/backup": {
-        "format": "<span foreground='#ff5c57'></span> backup...",
+        "format": "<span foreground='#5af78e'></span> backup...",
         "interval": 5,
         "exec": "echo a",
         "exec-if": "systemctl is-active --quiet backup"
