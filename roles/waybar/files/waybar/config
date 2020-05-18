@@ -65,8 +65,8 @@
     "backlight": {
         "format": "<span foreground='#929292'>{icon}</span> {percent}%",
         "format-icons": [""],
-        "on-scroll-up": "light -A 2 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob",
-        "on-scroll-down": "light -U 2 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob"
+        "on-scroll-up": "brightnessctl set +2% && brightnessctl -m | cut -d',' -f4 | tr -d '%' > $SWAYSOCK.wob",
+        "on-scroll-down": "brightnessctl set 2%- && brightnessctl -m | cut -d',' -f4 | tr -d '%' > $SWAYSOCK.wob"
     }
 }, {
     "layer": "bottom",
