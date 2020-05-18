@@ -11,6 +11,7 @@
 # FIX
 - copy/paste are fucked
 - copy/paste kitty->firefox remove '\n' ?
+- change kitty block char when unused term
 
 # ISSUES
 * tiny-irc : https://github.com/osa1/tiny/issues/created_by/eoli3n
