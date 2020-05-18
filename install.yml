@@ -44,3 +44,6 @@
     - role: kitty
       tags: kitty
       when: ansible_user_id != 'root'
+    - role: mpv
+      tags: mpv
+      when: ansible_user_id != 'root'
