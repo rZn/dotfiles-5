@@ -18,16 +18,6 @@
     state: absent
   changed_when: false
 
-- name: Install pureprompt plugin
-  become_method: su
-  shell: |
-    omf install pure
-    ln -s $OMF_PATH/themes/pure/conf.d/pure.fish ~/.config/fish/conf.d/pure.fish
-    ln -s $OMF_PATH/themes/pure/conf.d/_pure_init.fish ~/.config/fish/conf.d/pure_init.fish
-  args:
-    creates: ~/.config/fish/conf.d/pure.fish
-    executable: /usr/bin/fish
-
 - name: check git plugin install
   shell: grep 'abbr.*git' ~/.config/fish/fish_variables
   register: gitcheck
@@ -44,6 +34,11 @@
 - name: Copy dircolors
   copy:
     src: dircolors
+    dest: ~/.config/
+
+- name: Copy starship config
+  copy:
+    src: starship.toml
     dest: ~/.config/
 
 # Separated root|users synchronize as module bugs when using become on the task: it copies always in user homedir

@@ -1,0 +1,19 @@
+[character]
+symbol = "➜"
+style_success = "purple"
+style_failure = "red"
+
+[directory]
+style = "blue"
+
+[cmd_duration]
+style = "yellow"
+
+[git_branch]
+symbol = ""
+style = "#808080"
+
+[git_status]
+style = "red"
+prefix = ""
+suffix = ""
