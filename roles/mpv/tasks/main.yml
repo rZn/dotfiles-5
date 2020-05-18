@@ -1,0 +1,11 @@
+---
+
+- name: create mpv config dir
+  file:
+    path: ~/.config/mpv
+    state: directory
+
+- name: copy mpv config file
+  copy:
+    src: mpv.conf
+    dest: ~/.config/mpv
