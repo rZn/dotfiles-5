@@ -31,3 +31,4 @@
 * wf-recorder
 - waybar modules systemd, retest !
 - drun drun-display_generic=true wofi conf file
+- launch kitty in xwayland mode to be able to share window 
