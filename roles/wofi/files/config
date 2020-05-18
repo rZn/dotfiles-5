@@ -2,3 +2,4 @@ width=100%
 xoffset=0px
 allow_images=true
 image_size=20px
+drun-display_generic=true
