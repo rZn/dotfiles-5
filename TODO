@@ -30,3 +30,4 @@
 #TEST
 * wf-recorder
 - waybar modules systemd, retest !
+- drun drun-display_generic=true wofi conf file
