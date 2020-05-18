@@ -26,6 +26,7 @@
 * try a GTK theme with some transparency
 - dynamic waybar colors
 - rclone mount service
+- import pictures in shotwell
 
 #TEST
 * wf-recorder
