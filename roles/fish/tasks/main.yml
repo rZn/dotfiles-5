@@ -18,6 +18,12 @@
     state: absent
   changed_when: false
 
+- name: Install starship (root)
+  shell: curl -fsSL https://starship.rs/install.sh | bash -s -- --yes
+  args:
+    creates: /usr/local/bin/starship
+  when: ansible_user_id == 'root'
+
 - name: check git plugin install
   shell: grep 'abbr.*git' ~/.config/fish/fish_variables
   register: gitcheck
