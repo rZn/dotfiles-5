@@ -5,10 +5,6 @@
     path: ~/.config/mako/
     state: directory
 
-- shell: pgrep mako
-  register: mako_running
-  ignore_errors: True
-
 - name: template mako config file
   template:
     src: config.j2

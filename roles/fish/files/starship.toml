@@ -8,6 +8,7 @@ style = "blue"
 
 [cmd_duration]
 style = "yellow"
+prefix = ""
 
 [git_branch]
 symbol = ""
@@ -15,5 +16,5 @@ style = "#808080"
 
 [git_status]
 style = "red"
-prefix = ""
-suffix = ""
+prefix = " "
+suffix = " "

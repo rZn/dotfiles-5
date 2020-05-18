@@ -7,7 +7,6 @@
 # CLI
 - userbin or fish functions ?
 - up wrapper : 'ix' and 'upfile' = auto-copy
-- starship : add space sep to git_status
 
 # FIX
 - copy/paste are fucked
