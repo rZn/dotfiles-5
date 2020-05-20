@@ -1,0 +1,11 @@
+---
+
+- name: create imv config dir
+  file:
+    path: ~/.config/imv
+    state: directory
+
+- name: copy imv config file
+  copy:
+    src: config
+    dest: ~/.config/imv/

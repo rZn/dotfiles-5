@@ -47,3 +47,6 @@
     - role: mpv
       tags: mpv
       when: ansible_user_id != 'root'
+    - role: imv
+      tags: imv
+      when: ansible_user_id != 'root'
