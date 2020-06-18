@@ -1,21 +1,50 @@
 #INCLUDE####################################################
 # output configuration
-set $left "HDMI-A-2"
-set $center "HDMI-A-3"
-set $right "HDMI-A-1"
-
-output $left pos 0 0 res 1920x1200
-output $center pos 1920 0 res 1920x1200
-output $right pos 3840 120 res 1920x1080
+set $laptop "eDP-1"
+set $screen "DP-3"
+set $proj "DP-2"
+#output $laptop pos 1920 1330 res 1920x1080 scale 1.4
+#output $screen pos 0 1080 res 1920x1080
+#output $proj pos 0 0 res 1920x1080
+output $laptop pos 3840 309 res 1920x1080 scale 1.4
+output $screen pos 1920 0 res 1920x1080
+output $proj pos 0 0 res 1920x1080
 
 # dpms
 output * dpms on
 
+# turn of screen when laptop closed
+bindswitch --reload lid:on output $laptop disable
+bindswitch --reload lid:off output $laptop enable
+
+# assign workspace to screens
+workspace $tag1 output $screen
+workspace $tag2 output $laptop
+workspace $tag3 output $laptop
+workspace $tag4 output $laptop
+workspace $tag5 output $laptop
+workspace $tag6 output $laptop
+workspace $tag7 output $laptop
+workspace $tag8 output $laptop
+workspace $tag9 output $laptop
+workspace $tag10 output $laptop
+
+# laptop bindsyms
+bindsym XF86AudioRaiseVolume exec pamixer -ui 5 && \
+  pamixer --get-volume > $SWAYSOCK.wob
+bindsym XF86AudioLowerVolume exec pamixer -ud 5 && \
+  pamixer --get-volume > $SWAYSOCK.wob
+bindsym XF86AudioMute exec pamixer --toggle-mute && \
+  ( pamixer --get-mute && echo 0 > $SWAYSOCK.wob ) || \
+  pamixer --get-volume > $SWAYSOCK.wob
+bindsym XF86AudioMicMute exec amixer set Capture toggle
+bindsym XF86MonBrightnessUp exec brightnessctl set +10% && \
+  brightnessctl -m | cut -d',' -f4 | tr -d '%' > $SWAYSOCK.wob
+bindsym XF86MonBrightnessDown exec brightnessctl set 10%- && \
+  brightnessctl -m | cut -d',' -f4 | tr -d '%' > $SWAYSOCK.wob
+
 # exec startup apps
-exec --no-startup-id swaymsg 'exec xbindkeys &'
 exec --no-startup-id swaymsg 'exec variety &'
-exec --no-startup-id swaymsg 'exec firefox'
-exec --no-startup-id swaymsg 'exec firefox -new-window https://gmail.com https://mail.umontpellier.fr'
-exec --no-startup-id swaymsg 'workspace $tag4; exec termite -e "screen -rd weechat &"'
-exec --no-startup-id swaymsg 'workspace $tag2; exec termite -e "ssh-add" && termite'
+exec --no-startup-id swaymsg 'workspace $tag4; exec kitty -e "tiny"'
+exec --no-startup-id swaymsg 'workspace $tag2; exec kitty -e "ssh-add" && kitty'
 #INCLUDE####################################################
