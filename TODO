@@ -27,6 +27,7 @@
 - dynamic waybar colors
 - rclone mount service
 - import pictures in shotwell
+- remove exec in waybar modules
 
 #TEST
 * wf-recorder
