@@ -27,7 +27,7 @@
 - dynamic waybar colors
 - rclone mount service
 - import pictures in shotwell
-- remove exec in waybar modules
+- remove exec in waybar modules : https://github.com/Alexays/Waybar/issues/707
 
 #TEST
 * wf-recorder
