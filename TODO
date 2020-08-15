@@ -13,7 +13,6 @@
 - copy/paste kitty->firefox remove '\n' ?
 - change kitty block char when unused term
 - $PATH with ~/bin not working
-- win+maj+r to reload sway conf fucks display layout
 - disable tooltip on waybar modules
 
 # ISSUES
