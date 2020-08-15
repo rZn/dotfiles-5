@@ -12,6 +12,9 @@
 - copy/paste are fucked
 - copy/paste kitty->firefox remove '\n' ?
 - change kitty block char when unused term
+- $PATH with ~/bin not working
+- win+maj+r to reload sway conf fucks display layout
+- disable tooltip on waybar modules
 
 # ISSUES
 * tiny-irc : https://github.com/osa1/tiny/issues/created_by/eoli3n
@@ -27,7 +30,7 @@
 - dynamic waybar colors
 - rclone mount service
 - import pictures in shotwell
-- remove exec in waybar modules
+- remove exec in waybar modules : https://github.com/Alexays/Waybar/issues/707
 
 #TEST
 * wf-recorder

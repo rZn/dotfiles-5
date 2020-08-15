@@ -1,14 +1,11 @@
 #INCLUDE####################################################
 # output configuration
-set $laptop "eDP-1"
-set $screen "DP-3"
-set $proj "DP-2"
-#output $laptop pos 1920 1330 res 1920x1080 scale 1.4
-#output $screen pos 0 1080 res 1920x1080
-#output $proj pos 0 0 res 1920x1080
-output $laptop pos 3840 309 res 1920x1080 scale 1.4
-output $screen pos 1920 0 res 1920x1080
-output $proj pos 0 0 res 1920x1080
+set $left "HDMI-A-2"
+set $center "HDMI-A-3"
+set $right "DP-2"
+output $left pos 0 0 res 1920x1200
+output $center pos 1920 0 res 1920x1200
+output $right pos 3840 0 res 1920x1200
 
 # dpms
 output * dpms on
@@ -18,30 +15,16 @@ bindswitch --reload lid:on output $laptop disable
 bindswitch --reload lid:off output $laptop enable
 
 # assign workspace to screens
-workspace $tag1 output $screen
-workspace $tag2 output $laptop
-workspace $tag3 output $laptop
-workspace $tag4 output $laptop
-workspace $tag5 output $laptop
-workspace $tag6 output $laptop
-workspace $tag7 output $laptop
-workspace $tag8 output $laptop
-workspace $tag9 output $laptop
-workspace $tag10 output $laptop
-
-# laptop bindsyms
-bindsym XF86AudioRaiseVolume exec pamixer -ui 5 && \
-  pamixer --get-volume > $SWAYSOCK.wob
-bindsym XF86AudioLowerVolume exec pamixer -ud 5 && \
-  pamixer --get-volume > $SWAYSOCK.wob
-bindsym XF86AudioMute exec pamixer --toggle-mute && \
-  ( pamixer --get-mute && echo 0 > $SWAYSOCK.wob ) || \
-  pamixer --get-volume > $SWAYSOCK.wob
-bindsym XF86AudioMicMute exec amixer set Capture toggle
-bindsym XF86MonBrightnessUp exec brightnessctl set +10% && \
-  brightnessctl -m | cut -d',' -f4 | tr -d '%' > $SWAYSOCK.wob
-bindsym XF86MonBrightnessDown exec brightnessctl set 10%- && \
-  brightnessctl -m | cut -d',' -f4 | tr -d '%' > $SWAYSOCK.wob
+workspace $tag1 output $left
+workspace $tag2 output $center
+workspace $tag3 output $right
+workspace $tag4 output $right
+workspace $tag5 output $center
+workspace $tag6 output $center
+workspace $tag7 output $center
+workspace $tag8 output $center
+workspace $tag9 output $center
+workspace $tag10 output $center
 
 # exec startup apps
 exec --no-startup-id swaymsg 'exec variety &'
